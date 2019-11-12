@@ -61,6 +61,12 @@
   <ItemGroup>
     <Build Include="User.sql" />
     <Build Include="Client.sql" />
+    <Build Include="ClientAppointment.sql" />
+    <Build Include="achievementGifts.sql" />
+    <Build Include="LevelUp.sql" />
+    <Build Include="TrainingExercise.sql" />
+    <Build Include="TrainingLevel.sql" />
+    <Build Include="ClientTraining.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="LevelDB.refactorlog" />

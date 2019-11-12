@@ -21,4 +21,46 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="ClientLevel" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="87541708-14b1-4f8a-83a8-b872fcade1ac" ChangeDateTime="11/12/2019 08:38:02">
+    <Property Name="ElementName" Value="[dbo].[ClientAppointment].[Appointment]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ClientAppointment]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ClientAppointment" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="04a48b96-3b7e-4db8-885c-ae3dc2c696ed" ChangeDateTime="11/12/2019 08:56:01">
+    <Property Name="ElementName" Value="[dbo].[LevelUp].[Xp]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[LevelUp]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="XpEarned" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2d965a58-13ae-4c7f-86be-0a5d29937256" ChangeDateTime="11/12/2019 09:13:17">
+    <Property Name="ElementName" Value="[dbo].[TrainingLevel].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[TrainingLevel]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TrainingId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="efd09f73-3810-461c-bfb9-8cbac5583f2e" ChangeDateTime="11/12/2019 09:16:00">
+    <Property Name="ElementName" Value="[dbo].[ClientTraining].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ClientTraining]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ExerciseId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="4affbd8f-0251-421d-b104-f02ed37b8efb" ChangeDateTime="11/12/2019 09:16:31">
+    <Property Name="ElementName" Value="[dbo].[ClientTraining].[TrainigType]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ClientTraining]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TrainingType" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5689b6e1-e569-45df-b889-08bea6785c55" ChangeDateTime="11/12/2019 09:18:56">
+    <Property Name="ElementName" Value="[dbo].[TrainingExercise].[Sqaut]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[TrainingExercise]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Squat" />
+  </Operation>
 </Operations>
