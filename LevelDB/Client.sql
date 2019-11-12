@@ -1,4 +1,5 @@
-﻿CREATE TABLE [dbo].[Client]
+﻿--Konrad Kirkebjerg
+CREATE TABLE [dbo].[Client]
 (
 	[Id] INT NOT NULL PRIMARY KEY, 
     [Weight] DECIMAL NOT NULL, 
@@ -8,3 +9,4 @@
     [ClientLevel] INT NOT NULL, 
     [Height] INT NOT NULL
 )
+

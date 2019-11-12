@@ -1,4 +1,5 @@
-﻿CREATE TABLE [dbo].[LevelUp]
+﻿--Konrad KirkebjergC
+CREATE TABLE [dbo].[LevelUp]
 (
 	[Id] INT NOT NULL PRIMARY KEY, 
     [GoalName] NVARCHAR(50) NULL, 

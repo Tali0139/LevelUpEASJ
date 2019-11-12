@@ -1,4 +1,5 @@
-﻿CREATE TABLE [dbo].[TrainingExercise]
+﻿--Konrad Kirkebjerg
+CREATE TABLE [dbo].[TrainingExercise]
 (
 	[Id] INT NOT NULL PRIMARY KEY, 
     [Squat] INT NULL, 

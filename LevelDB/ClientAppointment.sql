@@ -1,4 +1,5 @@
-﻿CREATE TABLE [dbo].[ClientAppointment]
+﻿--Konrad Kirkebjerg
+CREATE TABLE [dbo].[ClientAppointment]
 (
 	[Id] INT NOT NULL PRIMARY KEY, 
     [ClientAppointment] NVARCHAR(50) NULL, 
