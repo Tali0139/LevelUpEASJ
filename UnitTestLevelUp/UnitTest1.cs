@@ -9,7 +9,7 @@ namespace UnitTestLevelUp
         [TestMethod]
         public void TestMethod1()
         {
-            //Har vi snart fri? Ja!
+            
 
 
 
