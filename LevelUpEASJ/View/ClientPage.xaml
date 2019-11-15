@@ -18,6 +18,25 @@
                 <GradientStop Color="#FF1F2833" Offset="0.686"/>
             </LinearGradientBrush>
         </Grid.Background>
+        
+        <StackPanel>
+            <SplitView x:Name="mySplitView" Background="#1f2833" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsPaneOpen="False" DisplayMode="CompactInline" OpenPaneLength="550" CompactPaneLength="0" >
+                <SplitView.Pane>
+                    <StackPanel>
+
+                    </StackPanel>
+                </SplitView.Pane>
+
+                <SplitView.Content>
+                    <StackPanel>
+                    </StackPanel>
+                </SplitView.Content>
+            </SplitView>
+            <RelativePanel Margin="0,0,0,0">
+                <ToggleButton x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Background="Transparent"  Content="&#xE700;" Checked="Hamburgerbutton_OnChecked" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="50" Height="50" Foreground="#66fcf1" />
+            </RelativePanel>
+        </StackPanel>
+
     </Grid>
     
 </Page>
