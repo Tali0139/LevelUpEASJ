@@ -20,9 +20,9 @@ namespace LevelUpEASJ.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Login : Page
+    public sealed partial class CreateClient : Page
     {
-        public Login()
+        public CreateClient()
         {
             this.InitializeComponent();
         }
@@ -31,16 +31,6 @@ namespace LevelUpEASJ.View
         {
             this.mySplitView.IsPaneOpen = !this.mySplitView.IsPaneOpen;
 
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(ClientPage));
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(CreateClient));
         }
     }
 }
