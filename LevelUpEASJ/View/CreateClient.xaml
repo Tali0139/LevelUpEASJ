@@ -19,7 +19,15 @@
         </Grid.Background>
 
         <StackPanel>
-            <SplitView x:Name="mySplitView" Background="#1f2833" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsPaneOpen="False" DisplayMode="CompactOverlay" OpenPaneLength="550" CompactPaneLength="0" Height="1" Opacity="0.98" >
+            <SplitView x:Name="mySplitView" Background="#1f2833" 
+                       HorizontalAlignment="Stretch" 
+                       VerticalAlignment="Stretch" 
+                       IsPaneOpen="False" 
+                       DisplayMode="CompactOverlay" 
+                       OpenPaneLength="550" 
+                       CompactPaneLength="0" 
+                       Height="1" 
+                       Opacity="0.98" >
                 <SplitView.Pane>
                     <StackPanel>
 
@@ -28,7 +36,7 @@
 
                 <SplitView.Content>
                     <StackPanel Margin="0,0,0,-768" Height="786" VerticalAlignment="Top">
-                        
+
 
                         <StackPanel HorizontalAlignment="Center"
                                     Width="275"
@@ -52,12 +60,18 @@
                                    Margin="0,10,0,0"
                             />
 
-                            <TextBox Background="White"
+                            <TextBox x:Name="NavnBox" 
+                                 Background="White"
                                  Margin="0,5,0,0"
                                  Width="200"
                                  HorizontalAlignment="Left"
                                  PlaceholderText="Indtast navn"
                                  Height="35"
+                                 Foreground="black"
+                                 
+                                
+                                 
+                                 
                             >
                                 <TextBox.Resources>
                                     <Style x:Key="RundeKanter" TargetType="TextBox">
@@ -178,7 +192,7 @@
                                                                 <VisualState x:Name="Focused">
                                                                     <Storyboard>
                                                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="PlaceholderTextContentPresenter">
-                                                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource TextControlPlaceholderForegroundFocused}"/>
+                                                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Black"/>
                                                                         </ObjectAnimationUsingKeyFrames>
                                                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="BorderElement">
                                                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource TextControlBackgroundFocused}"/>
@@ -187,7 +201,7 @@
                                                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource TextControlBorderBrushFocused}"/>
                                                                         </ObjectAnimationUsingKeyFrames>
                                                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentElement">
-                                                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource TextControlForegroundFocused}"/>
+                                                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Blue"/>
                                                                         </ObjectAnimationUsingKeyFrames>
                                                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="RequestedTheme" Storyboard.TargetName="ContentElement">
                                                                             <DiscreteObjectKeyFrame KeyTime="0" Value="Light"/>
@@ -224,7 +238,7 @@
                                 <TextBox.Style>
                                     <StaticResource ResourceKey="RundeKanter"/>
                                 </TextBox.Style>
-                                
+
                             </TextBox>
 
                             <TextBlock Text="Alder"
@@ -232,12 +246,14 @@
                                    FontSize="18"
                                    Margin="0,10,0,0"
                             />
-                            <TextBox Background="White"
+                            <TextBox x:Name="AlderBox"
+                                 Background="White"
                                  Margin="0,5,0,0"
                                  Width="200"
                                  HorizontalAlignment="Left"
                                  PlaceholderText="Indtast alder"
                                      Height="35"
+                                     InputScope="Number"
                             >
                                 <TextBox.Resources>
                                     <Style x:Key="RundeKanter" TargetType="TextBox">
@@ -423,6 +439,7 @@
                                    Margin="0,10,0,0"
                             />
                             <TextBox Background="White"
+                                     x:Name="HøjdeBox"
                                  Margin="0,5,0,0"
                                  Width="200"
                                  HorizontalAlignment="Left"
@@ -607,6 +624,7 @@
                                  HorizontalAlignment="Left"
                                  PlaceholderText="Indtast vægt"
                                      Height="35"
+                                     x:Name="VægtBox"
                             >
                                 <TextBox.Resources>
                                     <Style x:Key="RundeKanter" TargetType="TextBox">
@@ -802,7 +820,7 @@
                                      HorizontalAlignment="Left"
                                      PlaceholderText="Indtast brugernavn"
                                      Height="35"
-                            >
+                                     >
                                 <TextBox.Resources>
                                     <Style x:Key="RundeKanter" TargetType="TextBox">
                                         <Setter Property="MinWidth" Value="{ThemeResource TextControlThemeMinWidth}"/>
@@ -1151,33 +1169,29 @@
                                 </TextBox.Style>
 
                             </TextBox>
-
-
-
-
-
-
                         </StackPanel>
-
-
-
-
-
-
                         <TextBox Text="Højde, køn(vælge), højde, alder, username, password"
                                  Margin="0,100,0,0"
                                  FontSize="15"
-                                 
                             />
-
 
                     </StackPanel>
                 </SplitView.Content>
             </SplitView>
-            <RelativePanel Margin="0,0,0,0">
-                <ToggleButton x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Background="Transparent"  Content="&#xE700;" Checked="Hamburgerbutton_OnChecked" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="50" Height="50" Foreground="#66fcf1" />
+            <RelativePanel HorizontalAlignment="Left" 
+                           Width="50"
+                           >
+                <ToggleButton x:Name="HamburgerButton" 
+                              FontFamily="Segoe MDL2 Assets" 
+                              Background="Transparent"  
+                              Content="&#xE700;" 
+                              Checked="Hamburgerbutton_OnChecked" 
+                              HorizontalAlignment="Left" 
+                              VerticalAlignment="Stretch" 
+                              Width="50" 
+                              Height="50" 
+                              Foreground="#66fcf1" />
             </RelativePanel>
         </StackPanel>
-
     </Grid>
 </Page>

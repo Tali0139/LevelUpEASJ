@@ -37,9 +37,10 @@
                    HorizontalAlignment="Stretch"
                    VerticalAlignment="Stretch"
                    IsPaneOpen="False"
-                   DisplayMode="CompactInline"
+                   DisplayMode="CompactOverlay"
                    OpenPaneLength="210"
-                   CompactPaneLength="0" >
+                   CompactPaneLength="0"
+                   Opacity="0.98">
 
             <SplitView.Pane>
                 <StackPanel Orientation="Vertical"
@@ -52,15 +53,86 @@
                             Height="50"
                             Content="Knap 1"
                             Foreground="White">
-    
+
                     </Button>
 
                 </StackPanel>
             </SplitView.Pane>
 
             <SplitView.Content>
-                <StackPanel Orientation="Horizontal"
-                            Margin="175,0,0,0">
+                <StackPanel Orientation="Vertical"
+                            Margin="0,0,0,0"
+                            >
+
+                    <SymbolIcon Symbol="Contact"
+                                Foreground="#66fcf1"
+                                Height="50"
+                                Margin="135,100,243,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+                        <SymbolIcon.RenderTransform>
+                            <CompositeTransform ScaleX="3.0"
+                                                ScaleY="3.0"/>
+                        </SymbolIcon.RenderTransform>
+                    </SymbolIcon>
+
+                    <StackPanel Orientation="Vertical"
+                                HorizontalAlignment="Stretch"
+                                Margin="0,60,0,0">
+
+                        <TextBlock Text="Velkommen tilbage"
+                               Foreground="White"
+                               FontSize="18"
+                               HorizontalAlignment="Center"
+                        />
+                        <TextBlock Text="Antal klienter: "
+                               Foreground="White"
+                               FontSize="18"
+                               HorizontalAlignment="Center"
+                        />
+
+                        <Line X1="0"
+                              X2="0"
+                              Y1="440"
+                              Y2="0"
+                              Stroke="#66fcf1"
+                              Margin="216,30,0,0"
+                            />
+
+                        <Line X1="0"
+                              X2="162"
+                              Stroke="#66fcf1"
+                              Margin="25,-294,0,0"
+                              HorizontalAlignment="left"
+                            />
+
+                        <Line X1="0"
+                              X2="162"
+                              Stroke="#66fcf1"
+                              Margin="25,-148,0,0"
+                              HorizontalAlignment="left"
+                            />
+
+                        <Line X1="0"
+                              X2="162"
+                              Stroke="#66fcf1"
+                              Margin="0,-148,25,0"
+                              HorizontalAlignment="Right"
+                            />
+
+                        <Line X1="0"
+                              X2="162"
+                              Stroke="#66fcf1"
+                              Margin="0,-294,25,0"
+                              HorizontalAlignment="Right"
+                            />
+
+                    </StackPanel>
+
+
+
+
+
+
 
                 </StackPanel>
             </SplitView.Content>

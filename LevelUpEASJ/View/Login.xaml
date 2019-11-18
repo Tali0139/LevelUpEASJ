@@ -450,9 +450,6 @@
                                 </Setter>
                             </Style>
                         </PasswordBox.Resources>
-                        <PasswordBox.Style>
-                            <StaticResource ResourceKey="Kodeord"/>
-                        </PasswordBox.Style>
                     </PasswordBox>
                     <Button 
                         Content="Login"
@@ -728,9 +725,6 @@
                                 </Setter>
                             </Style>
                         </TextBox.Resources>
-                        <TextBox.Style>
-                            <StaticResource ResourceKey="RundeKanter"/>
-                        </TextBox.Style>
                     </TextBox>
 
                     <Button 
@@ -818,9 +812,6 @@
                                 </Setter>
                             </Style>
                         </Button.Resources>
-                        <Button.Style>
-                            <StaticResource ResourceKey="ButtonStyle1"/>
-                        </Button.Style>
                     </Button>
 
 

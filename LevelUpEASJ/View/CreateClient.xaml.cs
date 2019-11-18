@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -30,7 +31,12 @@ namespace LevelUpEASJ.View
         private void Hamburgerbutton_OnChecked(object sender, RoutedEventArgs e)
         {
             this.mySplitView.IsPaneOpen = !this.mySplitView.IsPaneOpen;
-
         }
+
+       
+
+
+
+
     }
 }

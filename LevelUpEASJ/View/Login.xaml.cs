@@ -35,7 +35,7 @@ namespace LevelUpEASJ.View
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(ClientPage));
+            this.Frame.Navigate(typeof(TrainerPage));
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
