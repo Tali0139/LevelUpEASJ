@@ -9,14 +9,77 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Height="768px" Width="432px">
+
         <Grid.Background>
-            <LinearGradientBrush EndPoint="1.5,1" StartPoint="0.02,0" SpreadMethod="Pad" Opacity="1" MappingMode="RelativeToBoundingBox">
-                <GradientStop Color="#FF1F2833" Offset="0.137"/>
-                <GradientStop Color="#FFE91EAD" Offset="0.98"/>
-                <GradientStop Color="#FFE91EAD" Offset="0"/>
-                <GradientStop Color="#FF1F2833" Offset="0.686"/>
+            <LinearGradientBrush EndPoint="1.5,1"
+                                 StartPoint="0.02,0"
+                                 SpreadMethod="Pad"
+                                 Opacity="1"
+                                 MappingMode="RelativeToBoundingBox">
+
+                <GradientStop Color="#FF1F2833"
+                              Offset="0.137"/>
+
+                <GradientStop Color="#FFE91EAD"
+                              Offset="0.98"/>
+
+                <GradientStop Color="#FFE91EAD"
+                              Offset="0"/>
+
+                <GradientStop Color="#FF1F2833"
+                              Offset="0.686"/>
             </LinearGradientBrush>
         </Grid.Background>
-        
+
+
+        <SplitView x:Name="mySplitView"
+                   PaneBackground="#FF1F2833"
+                   HorizontalAlignment="Stretch"
+                   VerticalAlignment="Stretch"
+                   IsPaneOpen="False"
+                   DisplayMode="CompactInline"
+                   OpenPaneLength="210"
+                   CompactPaneLength="0" >
+
+            <SplitView.Pane>
+                <StackPanel Orientation="Vertical"
+                            Background="Transparent"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch" >
+                    <Button Background="Transparent"
+                            Margin="0,50,0,0"
+                            HorizontalAlignment="Stretch"
+                            Height="50"
+                            Content="Knap 1"
+                            Foreground="White">
+    
+                    </Button>
+
+                </StackPanel>
+            </SplitView.Pane>
+
+            <SplitView.Content>
+                <StackPanel Orientation="Horizontal"
+                            Margin="175,0,0,0">
+
+                </StackPanel>
+            </SplitView.Content>
+        </SplitView>
+
+        <RelativePanel Margin="0,0,0,0"
+                       HorizontalAlignment="Stretch"
+                       VerticalAlignment="Stretch">
+
+            <ToggleButton x:Name="HamburgerButton"
+                          FontFamily="Segoe MDL2 Assets"
+                          Background="Transparent" 
+                          Content="&#xE700;" 
+                          Checked="Hamburgerbutton_OnChecked" 
+                          HorizontalAlignment="Left" 
+                          VerticalAlignment="Stretch" 
+                          Width="50" 
+                          Height="50" 
+                          Foreground="#66fcf1" />
+        </RelativePanel>
     </Grid>
 </Page>
