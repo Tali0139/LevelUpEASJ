@@ -67,7 +67,9 @@
                     <SymbolIcon Symbol="Contact"
                                 Foreground="#66fcf1"
                                 Height="50"
-                                Margin="135,100,243,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                Margin="135,100,243,0" 
+                                HorizontalAlignment="Stretch" 
+                                VerticalAlignment="Stretch">
 
                         <SymbolIcon.RenderTransform>
                             <CompositeTransform ScaleX="3.0"
