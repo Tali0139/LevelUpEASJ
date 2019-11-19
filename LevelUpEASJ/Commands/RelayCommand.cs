@@ -36,7 +36,7 @@ namespace LevelUpEASJ.Commands
             _execute();
         }
 
-  
+
         public void RaiseCanExecuteChanged()
         {
             CanExecuteChanged?.Invoke(this, EventArgs.Empty);
