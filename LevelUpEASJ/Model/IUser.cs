@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 using Windows.ApplicationModel.Contacts;
 
 namespace LevelUpEASJ.Model
+
+// KOmmentar test
 {
-    public class IUser
+    public class IUser  
     {
         private int _id;
         private string _firstName;
