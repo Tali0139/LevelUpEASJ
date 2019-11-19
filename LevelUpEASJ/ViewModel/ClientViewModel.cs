@@ -11,9 +11,9 @@ namespace LevelUpEASJ.ViewModel
 {
     class ClientViewModel : INotifyPropertyChanged
     {
-        private IUser _ iUser;
-        private Client _client;
-        private ClientCatalogSingleton _ singleton;
+        //private IUser _ iUser;
+        //private Client _client;
+        //private ClientCatalogSingleton _ singleton;
 
 
 
