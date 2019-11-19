@@ -29,6 +29,10 @@ namespace LevelUpEASJ.Model
             _password = Password;
         }
 
+
+
+
+
         public int UserID
         {
             get { return _id; }
