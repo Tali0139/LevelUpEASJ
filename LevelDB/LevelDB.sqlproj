@@ -57,6 +57,7 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Snapshots" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="User.sql" />
@@ -67,6 +68,7 @@
     <Build Include="TrainingExercise.sql" />
     <Build Include="TrainingLevel.sql" />
     <Build Include="ClientTraining.sql" />
+    <Build Include="XpSystem.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="LevelDB.refactorlog" />
