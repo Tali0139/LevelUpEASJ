@@ -1,0 +1,53 @@
+﻿{
+   "ContextClassName": "LeveldbContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "DoNotCombineNamespace": false,
+   "IdReplace": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": null,
+   "ProjectRootNamespace": "Console.db",
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "HasPrimaryKey": true,
+         "Name": "dbo.achievementGifts"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "dbo.Client"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "dbo.ClientAppointment"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "dbo.ClientTraining"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "dbo.LevelUp"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "dbo.TrainingExercise"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "dbo.TrainingLevel"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "dbo.User"
+      }
+   ],
+   "UseDatabaseNames": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseInflector": true,
+   "UseLegacyPluralizer": false
+}

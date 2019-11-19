@@ -32,5 +32,15 @@ namespace LevelUpEASJ.View
             this.mySplitView.IsPaneOpen = !this.mySplitView.IsPaneOpen;
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(TrainerPage));
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(CreateClient));
+        }
     }
 }
