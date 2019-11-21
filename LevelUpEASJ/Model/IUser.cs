@@ -31,7 +31,47 @@ namespace LevelUpEASJ.Model
             _password = Password;
         }
 
-       
+
+        public int UserID
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
+
+        public string FirstName
+        {
+            get { return _firstName; }
+            set { _firstName = value; }
+        }
+
+
+        public string LastName
+        {
+            get { return _lastName; }
+            set { _lastName = value; }
+        }
+
+
+        public string UserName
+        {
+            get { return _username; }
+            set { _username = value; }
+        }
+
+
+        public string Password
+        {
+            get { return _password; }
+            set { _password = value; }
+        }
+
+
+
+
+        public override string ToString()
+        {
+            return $"{FirstName + LastName + UserName + Password}";
+        }
 
     }
 }
