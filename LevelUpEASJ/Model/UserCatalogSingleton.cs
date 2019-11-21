@@ -8,12 +8,7 @@ namespace LevelUpEASJ.Model
 {
     public class UserCatalogSingleton
     {
-        using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using LevelUpEASJ.Persistency;
+       
 
     namespace LevelUpEASJ.Model
     {
