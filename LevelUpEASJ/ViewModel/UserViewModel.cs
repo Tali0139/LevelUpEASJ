@@ -1,19 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using LevelUpEASJ.Annotations;
+using LevelUpEASJ.Model;
 
 namespace LevelUpEASJ.ViewModel
 {
-    class ClientViewModel : INotifyPropertyChanged
+    class UserViewModel : INotifyPropertyChanged
     {
-        //private IUser _ iUser;
-        //private Client _client;
-        //private ClientCatalogSingleton _ singleton;
+
+     
+
+
+
+
+
+
+
 
 
 
