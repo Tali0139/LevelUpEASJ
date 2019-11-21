@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 using Newtonsoft.Json;
 
 namespace LevelUpEASJ.Persistency
@@ -59,9 +61,15 @@ namespace LevelUpEASJ.Persistency
             throw new NotImplementedException();
         }
 
-        public Task Update(int key, T obj)
+        public async Task Update(int key, T obj)
         {
-            throw new NotImplementedException();
+            CancellationToken cancellationToken = new CancellationToken();
+            string urlNew = url + "/" + key;
+            string serialized = JsonConvert.SerializeObject(obj);
+            StringContent sc = new StringContent(serialized, Encoding.UTF8, "json/application");
+            HttpResponseMessage response = _HttpClient.PutAsync(urlNew, sc, cancellationToken).Result;
+            response.EnsureSuccessStatusCode();
+
         }
     }
 }
