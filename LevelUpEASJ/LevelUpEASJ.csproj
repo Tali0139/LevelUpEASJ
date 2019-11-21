@@ -123,6 +123,7 @@
     <Compile Include="Model\Client.cs" />
     <Compile Include="Model\Trainer.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="Model\UserCatalogSingleton.cs" />
     <Compile Include="Persistency\LevelUpCRUD.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
