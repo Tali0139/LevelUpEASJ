@@ -6,20 +6,15 @@ using System.Threading.Tasks;
 
 namespace LevelUpEASJ.Model
 {
-    public class UserCatalogSingleton
-    {
-        using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using LevelUpEASJ.Persistency;
+    
+    
+       
 
-    namespace LevelUpEASJ.Model
+   namespace LevelUpEASJ.Model
     {
         public class UserCatalogSingleton
         {
-            private const string url = "api/User/";
+            private const string apiId = "api/User/";
             private List<User> _users;
             private UserCatalogSingleton()
             {
