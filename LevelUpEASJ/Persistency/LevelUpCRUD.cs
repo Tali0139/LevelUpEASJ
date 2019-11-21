@@ -5,32 +5,32 @@ using System.Net.Http;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Windows.Security.Cryptography.Core;
 using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 using Newtonsoft.Json;
 
 namespace LevelUpEASJ.Persistency
 {
-    public class LevelUpCRUD<T>:ILevelUpCRUD<T> where T : class
+    public class LevelUpCRUD<T> where T : class
     {
         private string _serverURL;
-        private string _apiPrefix;
         private string _apiId;
         private HttpClientHandler _handler;
         private HttpClient _HttpClient;
         private string url;
-        
 
+        public const string serverURL = "http://localhost:52352";
+        
        
-        public LevelUpCRUD(string serverURL, string apiPrefix, string apiId)
+        public LevelUpCRUD(string serverURL, string apiId)
         {
             _serverURL = serverURL;
             _apiId = apiId;
-            _apiPrefix = apiPrefix;
             _handler = new HttpClientHandler();
             _handler.UseDefaultCredentials = true;
             _HttpClient = new HttpClient(_handler);
             _HttpClient.BaseAddress = new Uri(_serverURL);
-            url = serverURL + "/" + apiPrefix + "/" + apiId;
+            url = serverURL + "/" + apiId;
         }
 
 
@@ -50,9 +50,17 @@ namespace LevelUpEASJ.Persistency
             response.EnsureSuccessStatusCode();
         }
 
-        public Task<List<T>> Load()
+        public async Task<List<T>> Load()
         {
-            throw new NotImplementedException();
+            string urlNew = url;
+            HttpResponseMessage response = _HttpClient.GetAsync(urlNew).Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                string s = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<List<T>>(s);
+            }
+            return null;
         }
 
     

@@ -121,7 +121,6 @@
     </Compile>
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Model\IUser.cs" />
-    <Compile Include="Persistency\ILevelUpCRUD.cs" />
     <Compile Include="Persistency\LevelUpCRUD.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
