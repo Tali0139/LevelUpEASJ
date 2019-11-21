@@ -7,6 +7,82 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <Style x:Key="ButtonStyle1" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{ThemeResource ButtonForeground}"/>
+            <Setter Property="BorderBrush" Value="{ThemeResource ButtonBorderBrush}"/>
+            <Setter Property="BorderThickness" Value="{ThemeResource ButtonBorderThemeThickness}"/>
+            <Setter Property="Padding" Value="8,4,8,4"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+            <Setter Property="UseSystemFocusVisuals" Value="True"/>
+            <Setter Property="FocusVisualMargin" Value="-3"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid x:Name="RootGrid" Background="{TemplateBinding Background}">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <Storyboard>
+                                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundPointerOver}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="BorderBrush">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBorderBrushPointerOver}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Foreground">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonForegroundPointerOver}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundPressed}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="BorderBrush">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBorderBrushPressed}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Foreground">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonForegroundPressed}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <PointerDownThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundDisabled}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="BorderBrush">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBorderBrushDisabled}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Foreground">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonForegroundDisabled}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentPresenter x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentTransitions="{TemplateBinding ContentTransitions}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            
+        </Style>
+    </Page.Resources>
 
 
     <Grid Height="768px" Width="432px">
@@ -152,30 +228,45 @@
                               Margin="216,30,0,0"/>
 
                         <StackPanel Orientation="Vertical"
-                                    Height="480" 
+                                    Height="484" 
                                     HorizontalAlignment="Left" 
                                     Width="216"
-                                    Margin="-216,0,0,0">
+                                    Margin="-216,0,0,0" VerticalAlignment="Stretch">
+
+                            <Button Style="{StaticResource ButtonStyle1}"
+                                    Background="Transparent" 
+                                    HorizontalAlignment="Left" 
+                                    Height="120" 
+                                    VerticalAlignment="Center" 
+                                    Width="162"
+                                    Margin="25,50,0,0">
+                              
+
+                                
+                                <Image Source="../../Assets/DumbBellIcon.PNG"/>
 
 
-                            <Image Source="../Assets/DumbBellIcon.PNG"
-                               Margin="56,75,56,0" 
-                               VerticalAlignment="Top"
-                               HorizontalAlignment="Stretch"/>
+
+                            </Button>
 
 
                             <Line X1="0"
                                   X2="162"
                                   Stroke="#66fcf1"
-                                  Margin="25,35,0,0"
+                                  Margin="25,0,0,0"
                                   HorizontalAlignment="left"/>
 
 
-                            <Image Source="../Assets/CalenderIcon.PNG"  
-                               Margin="57,25,67,0" 
-                               Height="100" 
-                               HorizontalAlignment="Stretch" 
-                               VerticalAlignment="Top"/>
+                            <Button Style="{StaticResource ButtonStyle1}"
+                                    Background="Transparent"
+                                    HorizontalAlignment="Left"
+                                    Height="120"
+                                    VerticalAlignment="Center"
+                                    Width="162"
+                                    Margin="25,25,0,0"
+                                    >
+                                <Image Source="../Assets/CalenderIcon.PNG"></Image>
+                            </Button>
 
                             <Line X1="0"
                                   X2="162"
@@ -183,12 +274,15 @@
                                   Margin="25,25,0,0"
                                   HorizontalAlignment="left"/>
 
+                            <Button Style="{StaticResource ButtonStyle1}"
+                                    Background="Transparent"
+                                    Height="120"
+                                    Width="162"
+                                    Margin="25,10,0,0">
 
-                            <Image Source="../Assets/MedalIcon.PNG" 
-                               Margin="64,25,64,0" 
-                               Height="110" 
-                               HorizontalAlignment="Stretch" 
-                               VerticalAlignment="Top"/>
+                                <Image Source="../Assets/MedalIcon.PNG"></Image>
+                            </Button>
+
 
                         </StackPanel>
 
@@ -197,35 +291,54 @@
                                     HorizontalAlignment="Right"
                                     Width="216">
 
-                            <Image Source="../Assets/ClockIcon.PNG"
-                                   Margin="56,51,56,0"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Stretch"/>
+                           
+                            <Button Style="{StaticResource ButtonStyle1}"
+                                    Background="Transparent"
+                                    Height="120"
+                                    Width="162"
+                                    Margin="25,50,0,0">
+
+                                <Image Source="../Assets/ClockIcon.PNG"/>
+                            </Button>
+
+                            <Line X1="0"
+                                  X2="162"
+                                  Stroke="#66fcf1"
+                                  Margin="25,0,0,0"
+                                  HorizontalAlignment="left"/>
+
+                            <Button Style="{StaticResource ButtonStyle1}"
+                                    Background="Transparent"
+                                    Height="120"
+                                    Width="162"
+                                    Margin="25,25,0,0">
+
+                                <Image Source="../Assets/GiftIcon.PNG"></Image>
+                            </Button>
+                            
 
                             <Line X1="0"
                                   X2="162"
                                   Stroke="#66fcf1"
                                   Margin="25,25,0,0"
-                                  HorizontalAlignment="left"/>
-
-
-                            <Image Source="../Assets/GiftIcon.PNG"
-                                   Height="110"
-                                   HorizontalAlignment="Stretch"
-                                   VerticalAlignment="Center" 
-                                   Margin="56,20,56,0"/>
-
-                            <Line X1="0"
-                                  X2="162"
-                                  Stroke="#66fcf1"
-                                  Margin="25,20,0,0"
                                   HorizontalAlignment="Left" Width="163"/>
 
-                            <Image Source="../Assets/PhoneIconTransparent.PNG"
+
+                            <Button Style="{StaticResource ButtonStyle1}"
+                                    Background="Transparent"
+                                    Height="120"
+                                    Width="162"
+                                    Margin="25,10,0,0">
+
+
+                                <Image Source="../Assets/PhoneIconTransparent.PNG"></Image>
+                            </Button>
+
+                            <!--<Image Source="../Assets/PhoneIconTransparent.PNG"
                                    Height="100"
                                    HorizontalAlignment="Stretch"
                                    VerticalAlignment="Bottom"
-                                   Margin="25,25,25,25"/>
+                                   Margin="25,25,25,25"/>-->
 
 
 
