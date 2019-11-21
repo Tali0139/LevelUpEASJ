@@ -11,7 +11,7 @@ using Newtonsoft.Json;
 
 namespace LevelUpEASJ.Persistency
 {
-    public class LevelUpCRUD<T> where T : class
+    public class LevelUpCRUD<T> 
     {
         private string _serverURL;
         private string _apiId;
@@ -34,16 +34,21 @@ namespace LevelUpEASJ.Persistency
         }
 
 
-        public async Task Create(int key, T obj)
+        public async Task<string> Create(int key, T obj)
         {
             string urlNew = url + "/" + key;
             string serialized = JsonConvert.SerializeObject(obj);
             StringContent sc = new StringContent(serialized, Encoding.UTF8, "json/application");
             HttpResponseMessage response = _HttpClient.PostAsync(urlNew, sc).Result;
-            response.EnsureSuccessStatusCode();
+
+            if (response.IsSuccessStatusCode)
+            {
+                return await response.Content.ReadAsStringAsync();
+            }
+            else return null;
         }
         
-        public async Task Delete(int key)
+        public void Delete(int key)
         {
             string urlNew = url + "/" + key;
             HttpResponseMessage response = _HttpClient.DeleteAsync(urlNew).Result;
@@ -54,7 +59,6 @@ namespace LevelUpEASJ.Persistency
         {
             string urlNew = url;
             HttpResponseMessage response = _HttpClient.GetAsync(urlNew).Result;
-
             if (response.IsSuccessStatusCode)
             {
                 string s = await response.Content.ReadAsStringAsync();
@@ -64,20 +68,27 @@ namespace LevelUpEASJ.Persistency
         }
 
     
-        public Task<T> Read(int key)
+        public void Read(int key)
         {
-            throw new NotImplementedException();
+            string urlNew = url + "/" + key;
+            HttpResponseMessage response = _HttpClient.GetAsync(urlNew).Result;
+            response.EnsureSuccessStatusCode();
         }
 
-        public async Task Update(int key, T obj)
+
+
+        public async Task<string> Update(int key, T obj)
         {
             CancellationToken cancellationToken = new CancellationToken();
             string urlNew = url + "/" + key;
             string serialized = JsonConvert.SerializeObject(obj);
             StringContent sc = new StringContent(serialized, Encoding.UTF8, "json/application");
             HttpResponseMessage response = _HttpClient.PutAsync(urlNew, sc, cancellationToken).Result;
-            response.EnsureSuccessStatusCode();
-
+            if (response.IsSuccessStatusCode)
+            {
+                return await response.Content.ReadAsStringAsync();
+            }
+            return null;
         }
     }
 }
