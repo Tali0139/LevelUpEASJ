@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Windows.ApplicationModel.Contacts;
 
 namespace LevelUpEASJ.Model
-
-// KOmmentar test
 {
-    public class IUser  
+
+    public class User
     {
         private int _id;
         private string _firstName;
@@ -17,18 +15,18 @@ namespace LevelUpEASJ.Model
         private string _lastName;
         private string _password;
 
-        public IUser()
+        public User()
         {
 
         }
 
-        public IUser(int Id, string FirstName, string LastName, string Username, string Password)
+        public User(int id, string firstName, string lastName, string username, string password)
         {
-            _id = Id;
-            _firstName = FirstName;
-            _lastName = LastName;
-            _username = Username;
-            _password = Password;
+            _id = id;
+            _firstName = firstName;
+            _lastName = lastName;
+            _username = username;
+            _password = password;
         }
 
 
@@ -75,3 +73,4 @@ namespace LevelUpEASJ.Model
 
     }
 }
+
