@@ -270,6 +270,16 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LevelUpDB\LevelUpDB.sqlproj">
+      <Project>{27beb993-8d4c-48a4-9972-78baf1e10245}</Project>
+      <Name>LevelUpDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UnitTestLevelUp\UnitTestLevelUp.csproj">
+      <Project>{c43fab53-effb-479e-8fee-25c62c8af417}</Project>
+      <Name>UnitTestLevelUp</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

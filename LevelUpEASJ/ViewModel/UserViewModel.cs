@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using LevelUpEASJ.Annotations;
 using LevelUpEASJ.Commands;
 using LevelUpEASJ.Model;
-using LevelUpEASJ.Model.LevelUpEASJ.Model;
 
 namespace LevelUpEASJ.ViewModel
 {
