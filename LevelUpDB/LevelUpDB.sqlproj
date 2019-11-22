@@ -127,7 +127,7 @@
     <Build Include="dbo\Tables\Client.sql" />
     <Build Include="dbo\Tables\ClientTraining.sql" />
     <Build Include="dbo\Tables\TrainingExercise.sql" />
-    <Build Include="dbo\Tables\IUser.sql" />
+    <Build Include="dbo\Tables\User.sql" />
     <Build Include="dbo\Tables\Trainer.sql" />
     <Build Include="dbo\Tables\LevelUp.sql" />
     <Build Include="dbo\Tables\ClientGifts.sql" />

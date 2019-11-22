@@ -6,11 +6,11 @@ namespace LevelUpAPI
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("IUser")]
-    public partial class IUser
+    [Table("User")]
+    public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public IUser()
+        public User()
         {
             ClientAppointment = new HashSet<ClientAppointment>();
         }

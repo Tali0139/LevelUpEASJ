@@ -14,6 +14,6 @@ namespace LevelUpAPI
 
         public int? YearsOfExperience { get; set; }
 
-        public virtual IUser IUser { get; set; }
+        public virtual User User { get; set; }
     }
 }

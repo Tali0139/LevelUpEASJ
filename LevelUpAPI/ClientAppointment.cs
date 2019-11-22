@@ -34,7 +34,7 @@ namespace LevelUpAPI
 
         public virtual ExperiencePoints ExperiencePoints { get; set; }
 
-        public virtual IUser IUser { get; set; }
+        public virtual User User { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ClientTraining> ClientTraining { get; set; }

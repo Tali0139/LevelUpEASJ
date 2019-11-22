@@ -1,22 +1,25 @@
-﻿using System;
+﻿using LevelUpEASJ.Persistency;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace LevelUpEASJ.Model
 {
-    
-    
-       
 
-   namespace LevelUpEASJ.Model
-    {
+    
         public class UserCatalogSingleton
         {
+            
             private const string apiId = "api/User/";
+            private int key = Instance._user.UserID;
             private List<User> _users;
+            private User _user;
             private UserCatalogSingleton()
+            
+
             {
                 _users = new List<User>();
 
@@ -35,6 +38,8 @@ namespace LevelUpEASJ.Model
                 }
             }
 
+            public LevelUpCRUD LevelUpCrud { get; set; }
+
 
 
             private int _count;
@@ -46,44 +51,32 @@ namespace LevelUpEASJ.Model
                     _count = value;
                 }
             }
-            public List<User> Users
-            {
-                //get { return  _users; }
-                get
-                {
-                    //return  users();
-                    return LevelUpCRUD.Load(key);
-                }
-                set
-                {
-                    _users = value;
 
-                }
+            public async Task<List<Object>> Load()
+            {
+                return await LevelUpCrud.Load();
+                
             }
 
-
-            public void Create(User user)
+      
+            public  async Task<string> Create(int key, Object user)
             {
-                //_students.Add(student);
-                LevelUpCRUD.Create(key, user);
+            return await LevelUpCrud.Create(key, user);
             }
 
             public void Delete(User u)
             {
-                //_students.Remove(s);
-                //myClient.DeleteStudent(s.StudentID);
-
-                LevelUpCRUD.Delete(key + u.User);
-                LevelUpCRUD.Load(key);
+                LevelUpCrud.Delete(u.UserID);
+                
+                
             }
 
             public void update(User u)
             {
-                //myClient.UpdateStudent(s);
-                LevelUpCRUD.Update(url + u.Id, u);
+                LevelUpCrud.Update(key, u);
             }
         }
-    }
+    
 
 }
-}
+
