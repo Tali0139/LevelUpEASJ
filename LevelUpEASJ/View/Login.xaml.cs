@@ -27,12 +27,6 @@ namespace LevelUpEASJ.View
             this.InitializeComponent();
         }
 
-        private void Hamburgerbutton_OnChecked(object sender, RoutedEventArgs e)
-        {
-            this.mySplitView.IsPaneOpen = !this.mySplitView.IsPaneOpen;
-
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(TrainerPage));

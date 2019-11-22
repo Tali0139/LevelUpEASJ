@@ -32,5 +32,25 @@ namespace LevelUpEASJ.View
             this.mySplitView.IsPaneOpen = !this.mySplitView.IsPaneOpen;
 
         }
+
+        private void TrainerClientView_Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(TrainerClientView));
+        }
+
+        private void DailyCalenderTrainer_Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(DailyCalenderTrainer));
+        }
+
+        private void CalenderTrainer_Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(CalenderTrainer));
+        }
+
+        private void InventoryTrainerPage_Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(InventoryTrainerPage));
+        }
     }
 }
