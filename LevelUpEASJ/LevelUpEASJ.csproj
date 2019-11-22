@@ -121,7 +121,6 @@
     </Compile>
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Model\Client.cs" />
-    <Compile Include="Model\LevelUpCRUD.cs" />
     <Compile Include="Model\Trainer.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\UserCatalogSingleton.cs" />
