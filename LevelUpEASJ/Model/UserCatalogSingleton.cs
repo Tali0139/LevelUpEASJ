@@ -7,12 +7,8 @@ using System.Threading.Tasks;
 
 namespace LevelUpEASJ.Model
 {
-    
-    
-       
 
-   namespace LevelUpEASJ.Model
-    {
+    
         public class UserCatalogSingleton
         {
             private const string apiId = "api/User/";
@@ -87,7 +83,7 @@ namespace LevelUpEASJ.Model
                 LevelUpCRUD.Update(url + u.Id, u);
             }
         }
-    }
+    
 
 }
-}
+
