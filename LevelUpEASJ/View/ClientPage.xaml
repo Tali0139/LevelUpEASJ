@@ -239,7 +239,7 @@
                                     Height="120" 
                                     VerticalAlignment="Center" 
                                     Width="162"
-                                    Margin="25,50,0,0">
+                                    Margin="25,25,0,0">
                               
 
                                 
@@ -253,7 +253,7 @@
                             <Line X1="0"
                                   X2="162"
                                   Stroke="#66fcf1"
-                                  Margin="25,0,0,0"
+                                  Margin="25,25,0,0"
                                   HorizontalAlignment="left"/>
 
 
@@ -296,7 +296,7 @@
                                     Background="Transparent"
                                     Height="120"
                                     Width="162"
-                                    Margin="25,50,0,0">
+                                    Margin="25,25,0,0">
 
                                 <Image Source="../Assets/ClockIcon.PNG"/>
                             </Button>
@@ -304,7 +304,7 @@
                             <Line X1="0"
                                   X2="162"
                                   Stroke="#66fcf1"
-                                  Margin="25,0,0,0"
+                                  Margin="25,25,0,0"
                                   HorizontalAlignment="left"/>
 
                             <Button Style="{StaticResource ButtonStyle1}"
