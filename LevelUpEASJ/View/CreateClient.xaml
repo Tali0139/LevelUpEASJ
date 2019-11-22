@@ -8,6 +8,10 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+
+
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
+
     <Grid Height="768px" Width="432px">
         <Grid.Background>
             <LinearGradientBrush EndPoint="1.5,1" StartPoint="0.02,0" SpreadMethod="Pad" Opacity="1" MappingMode="RelativeToBoundingBox">
@@ -612,6 +616,7 @@
                                     <StaticResource ResourceKey="RundeKanter"/>
                                 </TextBox.Style>
                             </TextBox>
+
                             <TextBlock Text="Vægt"
                                    Foreground="White"
                                    FontSize="18"
@@ -794,7 +799,8 @@
                             </TextBox>
 
 
-                            <Line X1="0"
+
+                                    <Line X1="0"
                                   X2="250"
                                   Stroke="#66fcf1"
                                   Margin="0,25,0,0"
@@ -1194,4 +1200,5 @@
             </RelativePanel>
         </StackPanel>
     </Grid>
+        </ScrollViewer>
 </Page>
