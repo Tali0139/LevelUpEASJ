@@ -19,6 +19,7 @@ namespace LevelUpEASJ.Model
             private List<User> _users;
             private User _user;
             private UserCatalogSingleton()
+
             {
                 _users = new List<User>();
 
