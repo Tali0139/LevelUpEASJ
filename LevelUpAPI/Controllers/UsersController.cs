@@ -12,44 +12,44 @@ using LevelUpAPI;
 
 namespace LevelUpAPI.Controllers
 {
-    public class IUsersController : ApiController
+    public class UsersController : ApiController
     {
         private LevelUpDBContext db = new LevelUpDBContext();
 
         // GET: api/IUsers
-        public IQueryable<IUser> GetIUser()
+        public IQueryable<User> GetUser()
         {
-            return db.IUser;
+            return db.User;
         }
 
         // GET: api/IUsers/5
-        [ResponseType(typeof(IUser))]
-        public IHttpActionResult GetIUser(int id)
+        [ResponseType(typeof(User))]
+        public IHttpActionResult GetUser(int id)
         {
-            IUser iUser = db.IUser.Find(id);
-            if (iUser == null)
+            User user = db.User.Find(id);
+            if (user == null)
             {
                 return NotFound();
             }
 
-            return Ok(iUser);
+            return Ok(user);
         }
 
         // PUT: api/IUsers/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutIUser(int id, IUser iUser)
+        public IHttpActionResult PutUser(int id, User User)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != iUser.Id)
+            if (id != User.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(iUser).State = EntityState.Modified;
+            db.Entry(User).State = EntityState.Modified;
 
             try
             {
@@ -57,7 +57,7 @@ namespace LevelUpAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!IUserExists(id))
+                if (!UserExists(id))
                 {
                     return NotFound();
                 }
@@ -71,15 +71,15 @@ namespace LevelUpAPI.Controllers
         }
 
         // POST: api/IUsers
-        [ResponseType(typeof(IUser))]
-        public IHttpActionResult PostIUser(IUser iUser)
+        [ResponseType(typeof(User))]
+        public IHttpActionResult PostUser(User User)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.IUser.Add(iUser);
+            db.User.Add(User);
 
             try
             {
@@ -87,7 +87,7 @@ namespace LevelUpAPI.Controllers
             }
             catch (DbUpdateException)
             {
-                if (IUserExists(iUser.Id))
+                if (UserExists(User.Id))
                 {
                     return Conflict();
                 }
@@ -97,23 +97,23 @@ namespace LevelUpAPI.Controllers
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = iUser.Id }, iUser);
+            return CreatedAtRoute("DefaultApi", new { id = User.Id }, User);
         }
 
         // DELETE: api/IUsers/5
-        [ResponseType(typeof(IUser))]
-        public IHttpActionResult DeleteIUser(int id)
+        [ResponseType(typeof(User))]
+        public IHttpActionResult DeleteUser(int id)
         {
-            IUser iUser = db.IUser.Find(id);
-            if (iUser == null)
+            User user = db.User.Find(id);
+            if (user == null)
             {
                 return NotFound();
             }
 
-            db.IUser.Remove(iUser);
+            db.User.Remove(user);
             db.SaveChanges();
 
-            return Ok(iUser);
+            return Ok(user);
         }
 
         protected override void Dispose(bool disposing)
@@ -125,9 +125,9 @@ namespace LevelUpAPI.Controllers
             base.Dispose(disposing);
         }
 
-        private bool IUserExists(int id)
+        private bool UserExists(int id)
         {
-            return db.IUser.Count(e => e.Id == id) > 0;
+            return db.User.Count(e => e.Id == id) > 0;
         }
     }
 }

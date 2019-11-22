@@ -8,6 +8,6 @@
     [XpEarned]        INT      NULL,
     PRIMARY KEY CLUSTERED ([AppointmentId] ASC),
     CONSTRAINT [FK_ClientAppointment_ExperiencePoints] FOREIGN KEY ([XpEarned]) REFERENCES [dbo].[ExperiencePoints] ([XpEarned]),
-    CONSTRAINT [FK_ClientAppointment_IUser] FOREIGN KEY ([Id]) REFERENCES [dbo].[IUser] ([Id])
+    CONSTRAINT [FK_ClientAppointment_User] FOREIGN KEY ([Id]) REFERENCES [dbo].[User] ([Id])
 );
 
