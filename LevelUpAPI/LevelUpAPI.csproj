@@ -169,14 +169,14 @@
     <Compile Include="ClientTraining.cs" />
     <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\IUsersController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="C__RefactorLog.cs" />
     <Compile Include="ExperiencePoints.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="IUser.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="LevelUp.cs" />
     <Compile Include="LevelUpDBContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

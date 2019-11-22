@@ -32,7 +32,7 @@ namespace LevelUpAPI
 
         public int Height { get; set; }
 
-        public virtual IUser IUser { get; set; }
+        public virtual User User { get; set; }
 
         public virtual LevelUp LevelUp { get; set; }
 
