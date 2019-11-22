@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LevelUpEASJ.Persistency;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,7 @@ namespace LevelUpEASJ.Model
         {
             private const string apiId = "api/User/";
             private List<User> _users;
+            private User _user;
             private UserCatalogSingleton()
             {
                 _users = new List<User>();
@@ -64,6 +66,7 @@ namespace LevelUpEASJ.Model
 
             public void Create(User user)
             {
+                
                 //_students.Add(student);
                 LevelUpCRUD.Create(key, user);
             }
