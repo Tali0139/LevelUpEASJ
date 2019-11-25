@@ -135,7 +135,7 @@
             <SplitView.Content>
 
 
-                <StackPanel Orientation="Horizontal"
+                <StackPanel Orientation="Vertical"
                             Height="768"
                             VerticalAlignment="Top">
 
@@ -158,10 +158,14 @@
                                     Height="200"
                                     Width="216"
                                     HorizontalAlignment="Right"
-                                    VerticalAlignment="Top">
-                        <TextBlock>
+                                    VerticalAlignment="Top"
+                                    Margin="0,-200,0,0">
 
-                        </TextBlock>
+                        <TextBlock Text="[Navn på træner]"
+                                   Foreground="White"
+                                   FontSize="25"
+                                   HorizontalAlignment="Left"
+                                   Margin="0,75,0,0"/>
 
                         <TextBlock Text="Antal af Klienter: [5]"
                                        Height="50"
@@ -172,38 +176,44 @@
                                        Foreground="White"
                                        Margin="0,0,0,0">
                         </TextBlock>
-                            </StackPanel>
+                    </StackPanel>
 
-                </StackPanel>
+                    <StackPanel Orientation="Horizontal"
+                                Height="568">
 
-                <!--<StackPanel Orientation="Vertical"
-                                Height="538">
-
-                    <ListView x:Name="ListView_All_Clients"
+                        <ListView x:Name="ListView_All_Clients"
                                   Background="Transparent"
-                                  Height="538">
+                                  Width="432" 
+                                  VerticalAlignment="Stretch">
 
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Vertical"
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Vertical"
                                                 Height="100"
                                                 Width="100"
                                                 >
 
-                                    <StackPanel Orientation="Horizontal"
+                                        <StackPanel Orientation="Horizontal"
                                                     Height="35"
                                                     />
 
-                                    
-
-                                </StackPanel>
-                            </DataTemplate>
-
-                        </ListView.ItemTemplate>
-                    </ListView>
 
 
-                </StackPanel>-->
+                                    </StackPanel>
+                                </DataTemplate>
+
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+
+                    </StackPanel>
+
+
+
+
+                </StackPanel>
+
+
             </SplitView.Content>
         </SplitView>
 
