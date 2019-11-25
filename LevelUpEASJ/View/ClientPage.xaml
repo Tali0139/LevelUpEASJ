@@ -80,9 +80,11 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-            
+
         </Style>
     </Page.Resources>
+
+
 
 
     <Grid Height="768px" Width="432px">
@@ -115,7 +117,7 @@
                    VerticalAlignment="Stretch"
                    IsPaneOpen="False"
                    DisplayMode="CompactOverlay"
-                   OpenPaneLength="210"
+                   OpenPaneLength="216"
                    CompactPaneLength="0"
                    Opacity="0.98">
 
@@ -124,14 +126,23 @@
                             Background="Transparent"
                             HorizontalAlignment="Stretch"
                             VerticalAlignment="Stretch" >
-                    <Button Background="Transparent"
+                    <Button Style="{StaticResource ButtonStyle1}"
+                            Background="Transparent"
                             Margin="0,50,0,0"
                             HorizontalAlignment="Stretch"
                             Height="50"
                             Content="Knap 1"
-                            Foreground="White">
+                            Foreground="#66f1fc"/>
 
-                    </Button>
+
+                    <Button Style="{StaticResource ButtonStyle1}"
+                            Background="Transparent"
+                            Margin="0,0,0,0"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Bottom"
+                            Content="Log ud"
+                            Foreground="#66f1fc"
+                            Height="50" Click="LogOutButton_Click"/>
 
                 </StackPanel>
             </SplitView.Pane>
@@ -239,21 +250,22 @@
                                     Height="120" 
                                     VerticalAlignment="Center" 
                                     Width="162"
-                                    Margin="25,25,0,0">
-                              
-
-                                
-                                <Image Source="../../Assets/DumbBellIcon.PNG"/>
-
-
-
+                                    Margin="25,0,0,0">
+                                <Image Source="../../Assets/DumbBellIconGennemsigtig.png"/>
                             </Button>
+
+                            <TextBlock Text="Se træninger"
+                                       Foreground="#66f1fc"
+                                       HorizontalAlignment="Center"
+                                       FontSize="18">
+
+                            </TextBlock>
 
 
                             <Line X1="0"
                                   X2="162"
                                   Stroke="#66fcf1"
-                                  Margin="25,25,0,0"
+                                  Margin="25,10,0,0"
                                   HorizontalAlignment="left"/>
 
 
@@ -263,15 +275,21 @@
                                     Height="120"
                                     VerticalAlignment="Center"
                                     Width="162"
-                                    Margin="25,25,0,0"
+                                    Margin="25,10,0,0"
                                     >
-                                <Image Source="../Assets/CalenderIcon.PNG"></Image>
+                                <Image Source="../Assets/CalenderIconGennemsigtig.png"></Image>
                             </Button>
+                            <TextBlock Text="Kalender"
+                                       Foreground="#66f1fc"
+                                       HorizontalAlignment="Center"
+                                       FontSize="18">
+
+                            </TextBlock>
 
                             <Line X1="0"
                                   X2="162"
                                   Stroke="#66fcf1"
-                                  Margin="25,25,0,0"
+                                  Margin="25,10,0,0"
                                   HorizontalAlignment="left"/>
 
                             <Button Style="{StaticResource ButtonStyle1}"
@@ -280,8 +298,14 @@
                                     Width="162"
                                     Margin="25,10,0,0">
 
-                                <Image Source="../Assets/MedalIcon.PNG"></Image>
+                                <Image Source="../Assets/MedalIconGennemsigtig.png"></Image>
                             </Button>
+                            <TextBlock Text="Mål"
+                                       Foreground="#66f1fc"
+                                       HorizontalAlignment="Center"
+                                       FontSize="18">
+
+                            </TextBlock>
 
 
                         </StackPanel>
@@ -291,36 +315,50 @@
                                     HorizontalAlignment="Right"
                                     Width="216">
 
-                           
+
                             <Button Style="{StaticResource ButtonStyle1}"
                                     Background="Transparent"
                                     Height="120"
                                     Width="162"
-                                    Margin="25,25,0,0">
+                                    Margin="25,0,0,0">
 
-                                <Image Source="../Assets/ClockIcon.PNG"/>
+                                <Image Source="../Assets/BrugerIconGennemsigitg.png"/>
                             </Button>
+
+                            <TextBlock Text="Rediger data"
+                                       Foreground="#66f1fc"
+                                       HorizontalAlignment="Center"
+                                       FontSize="18">
+
+                            </TextBlock>
 
                             <Line X1="0"
                                   X2="162"
                                   Stroke="#66fcf1"
-                                  Margin="25,25,0,0"
+                                  Margin="25,10,0,0"
                                   HorizontalAlignment="left"/>
 
                             <Button Style="{StaticResource ButtonStyle1}"
                                     Background="Transparent"
                                     Height="120"
                                     Width="162"
-                                    Margin="25,25,0,0">
+                                    Margin="25,10,0,0">
 
-                                <Image Source="../Assets/GiftIcon.PNG"></Image>
+                                <Image Source="../Assets/GiftIconGennemsigitg.png"></Image>
                             </Button>
-                            
+
+                            <TextBlock Text="Rediger data"
+                                       Foreground="#66f1fc"
+                                       HorizontalAlignment="Center"
+                                       FontSize="18">
+
+                            </TextBlock>
+
 
                             <Line X1="0"
                                   X2="162"
                                   Stroke="#66fcf1"
-                                  Margin="25,25,0,0"
+                                  Margin="25,10,0,0"
                                   HorizontalAlignment="Left" Width="163"/>
 
 
@@ -334,14 +372,12 @@
                                 <Image Source="../Assets/PhoneIconTransparent.PNG"></Image>
                             </Button>
 
-                            <!--<Image Source="../Assets/PhoneIconTransparent.PNG"
-                                   Height="100"
-                                   HorizontalAlignment="Stretch"
-                                   VerticalAlignment="Bottom"
-                                   Margin="25,25,25,25"/>-->
+                            <TextBlock Text="Kontakt træner"
+                                       Foreground="#66f1fc"
+                                       HorizontalAlignment="Center"
+                                       FontSize="18">
 
-
-
+                            </TextBlock>
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>
