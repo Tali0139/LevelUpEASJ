@@ -3,5 +3,6 @@
     [YearsOfExperience] INT NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_Trainer_User] FOREIGN KEY ([Id]) REFERENCES [dbo].[User] ([Id])
+	ON DELETE CASCADE,
 );
 

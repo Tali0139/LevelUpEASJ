@@ -4,6 +4,6 @@
     [Level]            INT           NULL,
     [ItemsInInventory] INT           NULL,
     PRIMARY KEY CLUSTERED ([GiftItemId] ASC),
-    CONSTRAINT [FK_AchievementGifts_Level] FOREIGN KEY ([Level]) REFERENCES [dbo].[LevelUp] ([Level])
+    CONSTRAINT [FK_AchievementGifts_Level] FOREIGN KEY ([Level]) REFERENCES [dbo].[LevelUp] ([Level])ON DELETE CASCADE
 );
 
