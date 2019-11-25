@@ -13,10 +13,10 @@ namespace LevelUpEASJ.Model
     {
 
         private const string apiId = "api/User/";
-        private int key = Instance._user.UserID;
+        //private int key = Instance._user.UserID;
         private List<User> _users;
         private User _user;
-        private string serverUrl = "http://localhost:52352";
+        private string serverUrl = "http://localhost:53409";
         private LevelUpCRUD<User> _levelUpCrud;
         private UserCatalogSingleton()
         {

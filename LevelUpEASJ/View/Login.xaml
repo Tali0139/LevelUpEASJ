@@ -6,8 +6,11 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+    xmlns:lvm="using:LevelUpEASJ.ViewModel"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+<Page.DataContext>
+    <lvm:UserViewModel></lvm:UserViewModel>
+</Page.DataContext>
     <Page.Resources>
         <Style x:Key="ButtonStyle1" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
@@ -126,6 +129,7 @@
                                      Width="200"
                                      Margin="0,130,0,0"
                                      PlaceholderText="              Brugernavn"
+                                     Text="{Binding UserName, Mode=TwoWay}"
                                      HorizontalAlignment="Center" BorderThickness="0"
                                      >
                     <TextBox.Resources>
@@ -302,6 +306,7 @@
                              PlaceholderText="                Kodeord"
                              HorizontalAlignment="Center"
                              PasswordChar="*" 
+                             Password="{Binding Password, Mode=TwoWay}"
                              BorderThickness="0">
                     <PasswordBox.Resources>
                         <Style x:Key="Kodeord" TargetType="PasswordBox">
@@ -497,6 +502,7 @@
                         BorderBrush="#66fcf1"
                         HorizontalAlignment="Center"
                         Margin="0,10,0,10"
+                        Command="{Binding CheckCommand}"
                         Foreground="white" Background="{x:Null}" BorderThickness="0" Click="Button_Click"
                         >
                     <Button.Resources>

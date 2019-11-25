@@ -31,6 +31,7 @@ namespace LevelUpEASJ.ViewModel
         private int totalXp;
         private int level;
         private int yearsOfExperience;
+        private bool _exist = false;
 
 
         public UserViewModel()
@@ -41,6 +42,8 @@ namespace LevelUpEASJ.ViewModel
             _trainers = new ObservableCollection<Trainer>();
             _clients = new ObservableCollection<Client>();
             _selectedUser = new User();
+            CheckCommand = new RelayCommand(DoesUserExist);
+
 
 
             //AddCommand = new RelayCommand(toAddNewUser);
@@ -61,16 +64,33 @@ namespace LevelUpEASJ.ViewModel
         public RelayCommand AddCommand { get; set; }
         public RelayCommand DeleteCommand { get; set; }
         public RelayCommand UpdateCommand { get; set; }
+        public RelayCommand CheckCommand { get; set; }
 
-        public bool DoesUserExist(string username, string password)
+        public bool Exist
         {
-            User myUser = new User(id, firstName, lastName, username, password);
-            Client myClient = new Client(id, firstName, lastName, username, password, weight, height, fatPercent, gender, totalXp, level);
-            Trainer myTrainer = new Trainer(id, firstName, lastName, username, password, yearsOfExperience);
-            List<User> myList = singleton.Load().Result;
+            get { return _exist;}
+            set { _exist = value; }
+        }
 
+        public void DoesUserExist()
+        {
+            //User myUser = new User(id, firstName, lastName, userName, password);
+            //Client myClient = new Client(id, firstName, lastName, userName, password, weight, height, fatPercent, gender, totalXp, level);
+            //Trainer myTrainer = new Trainer(id, firstName, lastName, userName, password, yearsOfExperience);
+            List<User> myList = singleton.Load().Result;
+           
+            
+            foreach (var User in myList)
+            {
+
+                if (User.UserName == userName && User.Password == password)
+                    _exist = true;               
+            }
+
+
+            
             //bool check = singleton
-            return true;
+            
 
         }
 
