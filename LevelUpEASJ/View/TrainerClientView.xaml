@@ -7,6 +7,82 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <Style x:Key="ButtonStyle1" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{ThemeResource ButtonForeground}"/>
+            <Setter Property="BorderBrush" Value="{ThemeResource ButtonBorderBrush}"/>
+            <Setter Property="BorderThickness" Value="{ThemeResource ButtonBorderThemeThickness}"/>
+            <Setter Property="Padding" Value="8,4,8,4"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+            <Setter Property="UseSystemFocusVisuals" Value="True"/>
+            <Setter Property="FocusVisualMargin" Value="-3"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid x:Name="RootGrid" Background="{TemplateBinding Background}">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <Storyboard>
+                                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundPointerOver}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="BorderBrush">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBorderBrushPointerOver}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Foreground">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonForegroundPointerOver}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundPressed}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="BorderBrush">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBorderBrushPressed}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Foreground">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonForegroundPressed}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <PointerDownThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundDisabled}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="BorderBrush">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBorderBrushDisabled}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Foreground">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonForegroundDisabled}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentPresenter x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentTransitions="{TemplateBinding ContentTransitions}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+    </Page.Resources>
 
     <Grid Height="768px" Width="432px">
         <Grid.Background>
@@ -18,22 +94,121 @@
             </LinearGradientBrush>
         </Grid.Background>
 
-        <StackPanel>
-            <SplitView x:Name="mySplitView" Background="#1f2833" Grid.Row="0" IsPaneOpen="False" DisplayMode="CompactInline" OpenPaneLength="150" >
-                <SplitView.Pane>
-                    <StackPanel>
+        <SplitView x:Name="mySplitView"
+                   PaneBackground="#FF1F2833"
+                   HorizontalAlignment="Stretch"
+                   VerticalAlignment="Stretch"
+                   IsPaneOpen="False"
+                   DisplayMode="CompactOverlay"
+                   OpenPaneLength="210"
+                   CompactPaneLength="0"
+                   Opacity="0.98">
 
-                    </StackPanel>
-                </SplitView.Pane>
+            <SplitView.Pane>
+                <StackPanel Orientation="Vertical"
+                        
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch">
 
-                <SplitView.Content>
-                    <StackPanel>
+                    <Button Style="{StaticResource ButtonStyle1}"
+                                Background="Transparent"
+                                Margin="0,50,0,0"
+                                HorizontalAlignment="Stretch"
+                                Height="50"
+                                Content="Knap 1"
+                                Foreground="#66f1fc"/>
+
+
+                    <Button Style="{StaticResource ButtonStyle1}"
+                                Background="Transparent"
+                                Margin="0,0,0,0"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Bottom"
+                                Content="Log ud"
+                                Foreground="#66f1fc"
+                                Height="50"/>
+
+
+                </StackPanel>
+            </SplitView.Pane>
+
+            <SplitView.Content>
+
+
+                <StackPanel Orientation="Horizontal"
+                            Height="768"
+                            VerticalAlignment="Top">
+
+                    <StackPanel Orientation="Horizontal"
+                                    Height="200"
+                                    Width="216"
+                                    VerticalAlignment="Top"
+                                    HorizontalAlignment="Left"
+                                    >
+
+                        <Image Source="../Assets/BrugerIconGennemsigitg.png"
+                                   Height="130"
+                                   Width="130"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Top"
+                                   Margin="50,50,0,0"/>
                     </StackPanel>
-                </SplitView.Content>
-            </SplitView>
-            <RelativePanel Margin="0,0,0,0">
-                <ToggleButton x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Background="Transparent"  Content="&#xE700;" Checked="Hamburgerbutton_OnChecked" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="50" Height="50" Foreground="#66fcf1" />
-            </RelativePanel>
-        </StackPanel>
+
+                    <StackPanel Orientation="Vertical"
+                                    Height="200"
+                                    Width="216"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Top">
+                        <TextBlock>
+
+                        </TextBlock>
+
+                        <TextBlock Text="Antal af Klienter: [5]"
+                                       Height="50"
+                                       Width="200"
+
+                                       HorizontalAlignment="Right"
+                                       FontSize="20"
+                                       Foreground="White"
+                                       Margin="0,0,0,0">
+                        </TextBlock>
+                            </StackPanel>
+
+                </StackPanel>
+
+                <!--<StackPanel Orientation="Vertical"
+                                Height="538">
+
+                    <ListView x:Name="ListView_All_Clients"
+                                  Background="Transparent"
+                                  Height="538">
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical"
+                                                Height="100"
+                                                Width="100"
+                                                >
+
+                                    <StackPanel Orientation="Horizontal"
+                                                    Height="35"
+                                                    />
+
+                                    
+
+                                </StackPanel>
+                            </DataTemplate>
+
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+
+                </StackPanel>-->
+            </SplitView.Content>
+        </SplitView>
+
+        <RelativePanel Margin="0,0,0,0">
+            <ToggleButton x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Background="Transparent"  Content="&#xE700;" Checked="Hamburgerbutton_OnChecked" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="50" Height="50" Foreground="#66fcf1" />
+        </RelativePanel>
     </Grid>
 </Page>
