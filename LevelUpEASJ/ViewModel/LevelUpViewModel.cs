@@ -48,20 +48,28 @@ namespace LevelUpEASJ.ViewModel
             _selectedClient = new Client(0,"","","","",0,0,0.0,"",0,0.0);
             CheckCommand = new RelayCommand(DoesUserExist);
 
-
-
+        
             //AddCommand = new RelayCommand(toAddNewUser);
             //DeleteCommand = new RelayCommand(toDeleteUser);
             //UpdateCommand = new RelayCommand(toUpdateUser);
         }
 
+        public ObservableCollection<Client> all_Clients
+        {
+            get
+            {
+                _clients = new ObservableCollection<Client>(clientSingleton.Clients);
+                return _clients;
+            }
+        }
 
-        //public ObservableCollection<User> all_Users
+
+        //public ObservableCollection<Client> all_clients
         //{
         //    get
         //    {
-        //        _users = new ObservableCollection<User>(singleton.Users);
-        //        return _users;
+        //        _clients = new ObservableCollection<Client>(clientSingleton.ReadList().Result);
+        //        return _clients;
         //    }
         //}
 

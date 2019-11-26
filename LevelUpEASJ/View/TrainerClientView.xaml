@@ -3,10 +3,16 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:LevelUpEASJ.View"
+    xmlns:lvm="using:LevelUpEASJ.ViewModel"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.DataContext>
+        <lvm:LevelUpViewModel></lvm:LevelUpViewModel>
+    </Page.DataContext>
+
+
     <Page.Resources>
         <Style x:Key="ButtonStyle1" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
@@ -167,7 +173,7 @@
                                    HorizontalAlignment="Left"
                                    Margin="0,75,0,0"/>
 
-                        <TextBlock Text="Antal af Klienter: [5]"
+                        <TextBlock Text="Antal af Klienter:"
                                        Height="50"
                                        Width="200"
 
@@ -176,26 +182,53 @@
                                        Foreground="White"
                                        Margin="0,0,0,0">
                         </TextBlock>
+                        <TextBlock Text="{Binding all_Clients.Count}"
+                                   Foreground="White"
+                                   FontSize="20"
+                                   Width="45"
+                                   Margin="170,-50,0,0"
+                            />
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal"
-                                Height="568">
+                                Height="568"
+                                Width="432">
 
-                        <ListView x:Name="ListView_All_Clients"
-                                  Background="Transparent"
-                                  Width="432" 
-                                  VerticalAlignment="Stretch">
+                        <ListView x:Name="ListView_All_Clients" ItemsSource="{Binding all_Clients}">
+
+
 
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Vertical"
+                                                HorizontalAlignment="Stretch"
                                                 Height="100"
-                                                Width="100"
+                                                Width="432"
+                                                Margin="-12,0,0,0"
                                                 >
 
                                         <StackPanel Orientation="Horizontal"
-                                                    Height="35"
-                                                    />
+                                                    Height="75"
+                                                    Width="432">
+                                            <TextBlock Height="50"
+                                                        Width="150"
+                                                        
+                                                Text="{Binding FirstName}"
+                                                     Foreground="White"
+                                                     FontSize="20">
+
+
+                                            </TextBlock>
+
+                                            <Line X1="0"
+                                                  X2="400"
+                                                  Stroke="#66fcf1"
+                                                  Margin="-135,0,0,0"
+                                                  VerticalAlignment="Bottom"
+                                                  HorizontalAlignment="Center"/>
+
+                                        </StackPanel>
+
 
 
 

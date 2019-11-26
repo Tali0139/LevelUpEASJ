@@ -9,7 +9,7 @@
     xmlns:cvm="using:LevelUpEASJ.ViewModel"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.DataContext>
-        <cvm:UserViewModel></cvm:UserViewModel>
+        <cvm:LevelUpViewModel></cvm:LevelUpViewModel>
     </Page.DataContext>
     <Page.Resources>
         <Style x:Key="ButtonStyle1" TargetType="Button">

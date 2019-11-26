@@ -18,8 +18,29 @@ namespace LevelUpEASJ.Model
         private ClientCatalogSingleton()
         {
             _clients = new List<Client>();
-            _levelUpCrud=new LevelUpCRUD<Client>(serverUrl,apiId);
+           _levelUpCrud = new LevelUpCRUD<Client>(serverUrl,apiId);
+
+
+
+           Client c1 = new Client(1, "Omar", "Jaber", "Oj", "1234", 68, 170, 16.8, "Mand", 38, 25);
+           Client c2 = new Client(2, "Olivia", "Ownsabeach", "Olivia", "1234", 86, 140, 28.3, "Hen", 110, 26.6);
+           Client c3 = new Client(3, "Taliiia", "fukifuki", "Tali", "1234", 68, 168, 18.8, "Kvinde", 48, 35);
+           Client c4 = new Client(4, "Konraaad", "Blabli", "Kon", "1234", 75, 175, 15.5, "Mand", 38, 30);
+           Client c5 = new Client(5, "omar", "jaber", "oj", "1234", 68, 170, 16.8, "mand", 38, 25);
+            _clients.Add(c1);
+           _clients.Add(c2);
+           _clients.Add(c3);
+           _clients.Add(c4);
+            _clients.Add(c5);
         }
+
+
+        public List<Client> Clients
+        {
+            get { return _clients; }
+            set { _clients = value; }
+        }
+
 
         private static ClientCatalogSingleton _clientInstance;
 
