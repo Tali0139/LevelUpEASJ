@@ -123,16 +123,9 @@
     <Folder Include="dbo\Tables\" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\achievementGifts.sql" />
     <Build Include="dbo\Tables\Client.sql" />
-    <Build Include="dbo\Tables\ClientTraining.sql" />
-    <Build Include="dbo\Tables\TrainingExercise.sql" />
     <Build Include="dbo\Tables\User.sql" />
     <Build Include="dbo\Tables\Trainer.sql" />
-    <Build Include="dbo\Tables\LevelUp.sql" />
-    <Build Include="dbo\Tables\ClientGifts.sql" />
-    <Build Include="dbo\Tables\ClientAppointment.sql" />
-    <Build Include="dbo\Tables\ExperiencePoints.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="LevelUpDB.refactorlog" />
