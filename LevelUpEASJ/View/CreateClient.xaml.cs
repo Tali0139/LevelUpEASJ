@@ -28,9 +28,14 @@ namespace LevelUpEASJ.View
             this.InitializeComponent();
         }
 
-        
 
-       
+        private void Create_Client_Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(ClientPage));
+        }
+
+
+
 
 
 
