@@ -40,23 +40,24 @@
                                        Foreground="White"
                                        FontSize="25"
                                        HorizontalAlignment="Left"
-                                       Margin="0,50,0,0"/>
+                                       Margin="15,50,0,0"/>
 
                     <Line X1="0"
                                   X2="250"
                                   Stroke="#66fcf1"
-                                  Margin="0,10,0,0"/>
+                                  Margin="0,10,0,0"
+                                  HorizontalAlignment="Center"/>
 
                     <TextBlock Text="Navn"
                                    Foreground="White"
                                    FontSize="18"
-                                   Margin="0,10,0,0"/>
+                                   Margin="30,10,0,0"/>
 
                     <TextBox x:Name="NavnBox" 
                                  Background="White"
                                  Margin="0,5,0,0"
                                  Width="215"
-                                 HorizontalAlignment="Left"
+                                 HorizontalAlignment="Center"
                                  PlaceholderText="Indtast navn"
                                  Height="35"
                                  Foreground="black">
@@ -230,12 +231,12 @@
                     <TextBlock Text="Alder"
                                    Foreground="White"
                                    FontSize="18"
-                                   Margin="0,10,0,0"/>
+                                   Margin="30,10,0,0"/>
                     <TextBox x:Name="AlderBox"
                                  Background="White"
                                  Margin="0,5,0,0"
                                  Width="215"
-                                 HorizontalAlignment="Left"
+                                 HorizontalAlignment="Center"
                                  PlaceholderText="Indtast alder"
                                      Height="35"
                                      MaxLength="2">
@@ -409,9 +410,10 @@
                     <TextBlock Text="Køn"
                                    Foreground="White"
                                    FontSize="18"
-                                   Margin="0,10,0,0"/>
+                                   Margin="30,10,0,0"/>
 
-                    <ComboBox Background="White">
+                    <ComboBox Background="White"
+                              Margin="30,5,0,0">
                         <ComboBoxItem Content="Mand"/>
                         <ComboBoxItem Content="Kvinde"/>
                     </ComboBox>
@@ -419,12 +421,12 @@
                     <TextBlock Text="Højde"
                                    Foreground="White"
                                    FontSize="18"
-                                   Margin="0,10,0,0"/>
+                                   Margin="30,10,0,0"/>
                     <TextBox Background="White"
                                      x:Name="HøjdeBox"
                                  Margin="0,5,0,0"
                                  Width="215"
-                                 HorizontalAlignment="Left"
+                                 HorizontalAlignment="Center"
                                  PlaceholderText="Indtast højde"
                                      Height="35"
                                      MaxLength="3">
@@ -598,12 +600,12 @@
                     <TextBlock Text="Vægt"
                                    Foreground="White"
                                    FontSize="18"
-                                   Margin="0,10,0,0"/>
+                                   Margin="25,10,0,0"/>
 
                     <TextBox Background="White"
                                  Margin="0,5,0,0"
                                  Width="215"
-                                 HorizontalAlignment="Left"
+                                 HorizontalAlignment="Center"
                                  PlaceholderText="Indtast vægt"
                                      Height="35"
                                      x:Name="VægtBox"
@@ -778,12 +780,12 @@
                     <TextBlock Text="Omkreds af mave"
                                    Foreground="White"
                                    FontSize="18"
-                                   Margin="0,10,0,0"/>
+                                   Margin="30,10,0,0"/>
 
                     <TextBox Background="White"
                                  Margin="0,5,0,0"
                                  Width="215"
-                                 HorizontalAlignment="Left"
+                                 HorizontalAlignment="Center"
                                  PlaceholderText="Indtast omkreds"
                                      Height="35"
                                      >
@@ -957,12 +959,12 @@
                     <TextBlock Text="Omkreds af arme"
                                    Foreground="White"
                                    FontSize="18"
-                                   Margin="0,10,0,0"/>
+                                   Margin="30,10,0,0"/>
 
                     <TextBox Background="White"
                                  Margin="0,5,0,0"
                                  Width="215"
-                                 HorizontalAlignment="Left"
+                                 HorizontalAlignment="Center"
                                  PlaceholderText="Indtast omkreds"
                                      Height="35"
                                      >
@@ -1140,24 +1142,25 @@
                     <Line X1="0"
                                   X2="250"
                                   Stroke="#66fcf1"
-                                  Margin="0,25,0,0"/>
+                                  Margin="0,25,0,0"
+                                  HorizontalAlignment="Center"/>
 
                     <TextBlock Text="Oprettelse af login"
                                        Foreground="White"
                                        FontSize="25"
                                        HorizontalAlignment="Left"
-                                       Margin="0,10,0,0"/>
+                                       Margin="15,10,0,0"/>
 
                     <TextBlock x:Name="Username"
                                        Text="Brugernavn"
                                        Foreground="White"
                                        FontSize="18"
-                                       Margin="0,25,0,0"/>
+                                       Margin="30,25,0,0"/>
                     <TextBox x:Name="UsernameBox"
                                      Background="White"
                                      Margin="0,5,0,0"
                                      Width="215"
-                                     HorizontalAlignment="Left"
+                                     HorizontalAlignment="Center"
                                      PlaceholderText="Indtast brugernavn"
                                      Height="35">
                         <TextBox.Resources>
@@ -1331,12 +1334,12 @@
                     <TextBlock Text="Adgangskode"
                                        Foreground="White"
                                        FontSize="18"
-                                       Margin="0,10,0,0"/>
+                                       Margin="15,10,0,0"/>
                     <TextBox x:Name="PasswordBox"
                                      Background="White"
                                      Margin="0,5,0,0"
                                      Width="215"
-                                     HorizontalAlignment="Left"
+                                     HorizontalAlignment="Center"
                                      PlaceholderText="Indtast adgangskode"
                                      Height="35">
                         <TextBox.Resources>
@@ -1505,6 +1508,94 @@
                             <StaticResource ResourceKey="RundeKanter"/>
                         </TextBox.Style>
                     </TextBox>
+
+                    <Button 
+                        Content="Opret bruger"
+                        FontSize="14"
+                        Height="35"
+                        Width="215"
+                        BorderBrush="#66fcf1"
+                        HorizontalAlignment="Center"
+                        Margin="0,50,0,0"
+                        Foreground="white" Background="{x:Null}" BorderThickness="0" Click="Create_Client_Button_Click"
+                        >
+                        <Button.Resources>
+                            <Style x:Key="ButtonStyle1" TargetType="Button">
+                                <Setter Property="Background" Value="{ThemeResource ButtonBackground}"/>
+                                <Setter Property="Foreground" Value="{ThemeResource ButtonForeground}"/>
+                                <Setter Property="BorderBrush" Value="{ThemeResource ButtonBorderBrush}"/>
+                                <Setter Property="BorderThickness" Value="{ThemeResource ButtonBorderThemeThickness}"/>
+                                <Setter Property="Padding" Value="8,4,8,4"/>
+                                <Setter Property="HorizontalAlignment" Value="Left"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+                                <Setter Property="FontWeight" Value="Normal"/>
+                                <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+                                <Setter Property="UseSystemFocusVisuals" Value="True"/>
+                                <Setter Property="FocusVisualMargin" Value="-3"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Grid x:Name="RootGrid" Background="{TemplateBinding Background}" CornerRadius="17" BorderThickness="2" BorderBrush="#66fcf1">
+                                                <VisualStateManager.VisualStateGroups>
+                                                    <VisualStateGroup x:Name="CommonStates">
+                                                        <VisualState x:Name="Normal">
+                                                            <Storyboard>
+                                                                <PointerUpThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                        <VisualState x:Name="PointerOver">
+                                                            <Storyboard>
+                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="RootGrid">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundPointerOver}"/>
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBorderBrushPointerOver}"/>
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonForegroundPointerOver}"/>
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                                <PointerUpThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                        <VisualState x:Name="Pressed">
+                                                            <Storyboard>
+                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="RootGrid">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundPressed}"/>
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBorderBrushPressed}"/>
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonForegroundPressed}"/>
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                                <PointerDownThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                        <VisualState x:Name="Disabled">
+                                                            <Storyboard>
+                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="RootGrid">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundDisabled}"/>
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBorderBrushDisabled}"/>
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonForegroundDisabled}"/>
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                    </VisualStateGroup>
+                                                </VisualStateManager.VisualStateGroups>
+                                                <ContentPresenter x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTransitions="{TemplateBinding ContentTransitions}" Content="{TemplateBinding Content}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+
                 </StackPanel>
             </StackPanel>
 
