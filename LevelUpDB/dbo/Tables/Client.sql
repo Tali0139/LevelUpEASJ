@@ -9,6 +9,8 @@
     [Age] INT NOT NULL, 
     PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_Client_User] FOREIGN KEY ([Id]) REFERENCES [dbo].[User] ([Id]) ON DELETE CASCADE,
-    CONSTRAINT [FK_Client_LevelUp] FOREIGN KEY ([Level]) REFERENCES [dbo].[LevelUp] ([Level]) ON DELETE NO ACTION
-);
-
+    );
+INSERT INTO Client
+(Id)
+VALUES
+(1);
