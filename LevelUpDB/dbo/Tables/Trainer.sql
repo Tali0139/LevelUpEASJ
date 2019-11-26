@@ -5,4 +5,8 @@
     CONSTRAINT [FK_Trainer_User] FOREIGN KEY ([Id]) REFERENCES [dbo].[User] ([Id])
 	ON DELETE CASCADE,
 );
+INSERT INTO Trainer
+(Id)
+VALUES
+(2);
 
