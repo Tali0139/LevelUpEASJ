@@ -72,30 +72,23 @@ namespace LevelUpEASJ.ViewModel
 
         public bool Exist
         {
-            get { return _exist;}
+            get { return _exist; }
             set { _exist = value; }
         }
 
         public void DoesUserExist()
         {
             //User myUser = new User(id, firstName, lastName, userName, password);
-            Client myClient = new Client(id, firstName, lastName, userName, password, weight, height, fatPercent, gender, waistSize, armSize);
+            //  Client myClient = new Client(id, firstName, lastName, userName, password, weight, height, fatPercent, gender, waistSize, armSize);
             //Trainer myTrainer = new Trainer(id, firstName, lastName, userName, password, yearsOfExperience);
             List<User> myList = singleton.Load().Result;
-           
-            
+
             foreach (var User in myList)
             {
 
                 if (User.UserName == userName && User.Password == password)
-                    _exist = true;               
+                    _exist = true;
             }
-
-
-            
-            //bool check = singleton
-            
-
         }
 
         private int _id;
@@ -125,7 +118,7 @@ namespace LevelUpEASJ.ViewModel
                 OnPropertyChanged();
             }
         }
-        
+
         private string _lastName;
         public string LastName
         {
@@ -171,13 +164,13 @@ namespace LevelUpEASJ.ViewModel
 
         public int WaistSize
         {
-            get { return waistSize;}
+            get { return waistSize; }
             set { waistSize = value; }
         }
 
         public double ArmSize
         {
-            get { return armSize;}
+            get { return armSize; }
             set { armSize = value; }
         }
 

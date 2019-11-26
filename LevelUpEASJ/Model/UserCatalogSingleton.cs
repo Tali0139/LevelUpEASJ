@@ -37,10 +37,7 @@ namespace LevelUpEASJ.Model
             }
         }
 
-        //public LevelUpCRUD LevelUpCrud { get; set; }
-
-
-
+        
         private int _count;
         public int Count
         {
@@ -57,30 +54,28 @@ namespace LevelUpEASJ.Model
         }
 
 
+        public void Read()
+        {
+            _levelUpCrud.Read(_user.UserID);
+        }
 
-        //public async Task <List<User>> Users
-        //{
-        //    get { return await Load(); }
-        //    set { _users = value; }
-        //}
+        public async Task<string> Create()
+        {
+            return await _levelUpCrud.Create(_user.UserID, _user);
+        }
 
-
-        //public  async Task<string> Create(int key, Object user)
-        //{
-        //return await LevelUpCrud.Create(key, user);
-        //}
-
-        //public void Delete(User u)
-        //{
-        //    LevelUpCrud.Delete(u.UserID);
+        public void Delete()
+        {
+            _levelUpCrud.Delete(_user.UserID);
+        }
 
 
-        //}
+        public async Task<string> Update()
+        {
+            return await _levelUpCrud.Update(_user.UserID, _user);
+        }
 
-        //public void update(User u)
-        //{
-        //    LevelUpCrud.Update(key, u);
-        //}
+
     }
 
 }
