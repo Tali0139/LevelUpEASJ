@@ -213,9 +213,19 @@
                                             <TextBlock Height="50"
                                                         Width="150"
                                                         
-                                                Text="{Binding FirstName}"
+                                                Text="{Binding Age }"
                                                      Foreground="White"
                                                      FontSize="20">
+
+
+                                            </TextBlock>
+
+                                            <TextBlock Height="50"
+                                                       Width="150"
+                                                        
+                                                       Text="{Binding FatPercent }"
+                                                       Foreground="White"
+                                                       FontSize="20">
 
 
                                             </TextBlock>

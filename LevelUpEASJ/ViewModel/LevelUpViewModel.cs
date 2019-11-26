@@ -45,7 +45,7 @@ namespace LevelUpEASJ.ViewModel
             _users = new ObservableCollection<User>();
             _trainers = new ObservableCollection<Trainer>();
             _clients = new ObservableCollection<Client>();
-            _selectedClient = new Client(0,"","","","",0,0,0.0,"",0,0.0);
+            _selectedClient = new Client(0,"","","","",0,0,0,0.0,"",0,0.0);
             CheckCommand = new RelayCommand(DoesUserExist);
 
         
