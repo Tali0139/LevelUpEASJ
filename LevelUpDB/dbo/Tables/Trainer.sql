@@ -1,4 +1,6 @@
-﻿CREATE TABLE [dbo].[Trainer] (
+﻿Use LevelUpDB;
+GO;
+CREATE TABLE [dbo].[Trainer] (
     [Id]                INT NOT NULL,
     [YearsOfExperience] INT NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC),
@@ -9,4 +11,4 @@ INSERT INTO Trainer
 (Id)
 VALUES
 (2);
-
+GO;

@@ -1,6 +1,6 @@
 using System;
 
-namespace LevelUpWebAPI.Areas.HelpPage.ModelDescriptions
+namespace LevelUpWebApi.Areas.HelpPage.ModelDescriptions
 {
     public class ParameterAnnotation
     {

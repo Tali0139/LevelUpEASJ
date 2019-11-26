@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace LevelUpWebAPI
+namespace LevelUpWebApi
 {
     public class FilterConfig
     {

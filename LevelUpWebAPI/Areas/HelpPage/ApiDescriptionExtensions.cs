@@ -3,7 +3,7 @@ using System.Text;
 using System.Web;
 using System.Web.Http.Description;
 
-namespace LevelUpWebAPI.Areas.HelpPage
+namespace LevelUpWebApi.Areas.HelpPage
 {
     public static class ApiDescriptionExtensions
     {

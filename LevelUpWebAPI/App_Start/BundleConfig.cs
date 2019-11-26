@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace LevelUpWebAPI
+namespace LevelUpWebApi
 {
     public class BundleConfig
     {

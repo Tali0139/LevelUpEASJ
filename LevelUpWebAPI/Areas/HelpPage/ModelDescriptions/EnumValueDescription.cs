@@ -1,4 +1,4 @@
-namespace LevelUpWebAPI.Areas.HelpPage.ModelDescriptions
+namespace LevelUpWebApi.Areas.HelpPage.ModelDescriptions
 {
     public class EnumValueDescription
     {

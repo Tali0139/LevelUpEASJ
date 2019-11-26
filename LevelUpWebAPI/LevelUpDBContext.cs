@@ -1,4 +1,4 @@
-namespace LevelUpWebAPI
+namespace LevelUpWebApi
 {
     using System;
     using System.Data.Entity;
@@ -13,60 +13,35 @@ namespace LevelUpWebAPI
         }
 
         public virtual DbSet<C__RefactorLog> C__RefactorLog { get; set; }
-        public virtual DbSet<achievementGift> achievementGifts { get; set; }
         public virtual DbSet<Client> Clients { get; set; }
-        public virtual DbSet<ClientAppointment> ClientAppointments { get; set; }
-        public virtual DbSet<ClientGift> ClientGifts { get; set; }
-        public virtual DbSet<ClientTraining> ClientTrainings { get; set; }
-        public virtual DbSet<ExperiencePoint> ExperiencePoints { get; set; }
-        public virtual DbSet<LevelUp> LevelUps { get; set; }
         public virtual DbSet<Trainer> Trainers { get; set; }
-        public virtual DbSet<TrainingExercise> TrainingExercises { get; set; }
         public virtual DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<achievementGift>()
-                .HasMany(e => e.ClientGifts)
-                .WithOptional(e => e.achievementGift)
-                .HasForeignKey(e => e.GiftId);
-
             modelBuilder.Entity<Client>()
                 .Property(e => e.Weight)
                 .HasPrecision(18, 0);
 
             modelBuilder.Entity<Client>()
-                .Property(e => e.Gender)
-                .IsFixedLength();
-
-            modelBuilder.Entity<Client>()
-                .Property(e => e.FatPercent)
+                .Property(e => e.FatPercentage)
                 .HasPrecision(18, 0);
 
-            modelBuilder.Entity<LevelUp>()
-                .HasMany(e => e.achievementGifts)
-                .WithOptional(e => e.LevelUp)
-                .WillCascadeOnDelete();
+            modelBuilder.Entity<Client>()
+                .Property(e => e.ArmSize)
+                .HasPrecision(18, 0);
 
-            modelBuilder.Entity<LevelUp>()
-                .HasMany(e => e.Clients)
-                .WithRequired(e => e.LevelUp)
-                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Trainer>()
+                .Property(e => e.YearsOfExpericence)
+                .IsFixedLength();
 
             modelBuilder.Entity<User>()
                 .HasOptional(e => e.Client)
-                .WithRequired(e => e.User)
-                .WillCascadeOnDelete();
-
-            modelBuilder.Entity<User>()
-                .HasMany(e => e.ClientAppointments)
-                .WithOptional(e => e.User)
-                .WillCascadeOnDelete();
+                .WithRequired(e => e.User);
 
             modelBuilder.Entity<User>()
                 .HasOptional(e => e.Trainer)
-                .WithRequired(e => e.User)
-                .WillCascadeOnDelete();
+                .WithRequired(e => e.User);
         }
     }
 }

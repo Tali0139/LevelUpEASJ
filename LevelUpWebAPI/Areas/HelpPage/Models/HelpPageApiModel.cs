@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http.Headers;
 using System.Web.Http.Description;
-using LevelUpWebAPI.Areas.HelpPage.ModelDescriptions;
+using LevelUpWebApi.Areas.HelpPage.ModelDescriptions;
 
-namespace LevelUpWebAPI.Areas.HelpPage.Models
+namespace LevelUpWebApi.Areas.HelpPage.Models
 {
     /// <summary>
     /// The model that represents an API displayed on the help page.

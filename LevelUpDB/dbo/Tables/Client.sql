@@ -1,4 +1,6 @@
-﻿CREATE TABLE [dbo].[Client] (
+﻿Use LevelUpDB;
+GO;
+CREATE TABLE [dbo].[Client] (
     [Id]         INT          NOT NULL,
     [Weight]     DECIMAL (18) NOT NULL,
     [Gender]     NCHAR (10)   NOT NULL,
@@ -14,3 +16,4 @@ INSERT INTO Client
 (Id)
 VALUES
 (1);
+GO;

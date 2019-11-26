@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using LevelUpWebAPI.Areas.HelpPage.ModelDescriptions;
-using LevelUpWebAPI.Areas.HelpPage.Models;
+using LevelUpWebApi.Areas.HelpPage.ModelDescriptions;
+using LevelUpWebApi.Areas.HelpPage.Models;
 
-namespace LevelUpWebAPI.Areas.HelpPage.Controllers
+namespace LevelUpWebApi.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

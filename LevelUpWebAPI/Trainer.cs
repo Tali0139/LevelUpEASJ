@@ -1,4 +1,4 @@
-namespace LevelUpWebAPI
+namespace LevelUpWebApi
 {
     using System;
     using System.Collections.Generic;
@@ -12,7 +12,8 @@ namespace LevelUpWebAPI
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
-        public int? YearsOfExperience { get; set; }
+        [StringLength(10)]
+        public string YearsOfExpericence { get; set; }
 
         public virtual User User { get; set; }
     }

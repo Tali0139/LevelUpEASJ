@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace LevelUpWebAPI.Areas.HelpPage.ModelDescriptions
+namespace LevelUpWebApi.Areas.HelpPage.ModelDescriptions
 {
     public interface IModelDocumentationProvider
     {

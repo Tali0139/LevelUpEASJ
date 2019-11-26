@@ -1,6 +1,6 @@
 using System.Collections.ObjectModel;
 
-namespace LevelUpWebAPI.Areas.HelpPage.ModelDescriptions
+namespace LevelUpWebApi.Areas.HelpPage.ModelDescriptions
 {
     public class ComplexTypeModelDescription : ModelDescription
     {
