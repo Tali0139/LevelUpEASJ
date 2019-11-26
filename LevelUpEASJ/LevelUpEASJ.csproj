@@ -124,11 +124,10 @@
     <Compile Include="Model\ClientCatalogSingleton.cs" />
     <Compile Include="Model\Trainer.cs" />
     <Compile Include="Model\User.cs" />
-    <Compile Include="Model\UserCatalogSingleton.cs" />
     <Compile Include="Persistency\LevelUpCRUD.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModel\UserViewModel.cs" />
+    <Compile Include="ViewModel\LevelUpViewModel.cs" />
     <Compile Include="View\CalenderTrainer.xaml.cs">
       <DependentUpon>CalenderTrainer.xaml</DependentUpon>
     </Compile>

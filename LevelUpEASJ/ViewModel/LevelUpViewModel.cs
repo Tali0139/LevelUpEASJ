@@ -12,13 +12,13 @@ using LevelUpEASJ.Model;
 
 namespace LevelUpEASJ.ViewModel
 {
-    class UserViewModel : INotifyPropertyChanged
+    class LevelUpViewModel : INotifyPropertyChanged
     {
-        private UserCatalogSingleton singleton;
+        private ClientCatalogSingleton clientSingleton;
         private ObservableCollection<User> _users;
         private ObservableCollection<Client> _clients;
         private ObservableCollection<Trainer> _trainers;
-        private User _selectedUser;
+        private Client _selectedClient;
         private int id;
         private string firstName;
         private string lastName;
@@ -38,14 +38,14 @@ namespace LevelUpEASJ.ViewModel
 
 
 
-        public UserViewModel()
+        public LevelUpViewModel()
         {
 
-            singleton = UserCatalogSingleton.Instance;
+            clientSingleton = ClientCatalogSingleton.ClientInstance;
             _users = new ObservableCollection<User>();
             _trainers = new ObservableCollection<Trainer>();
             _clients = new ObservableCollection<Client>();
-            _selectedUser = new User();
+            _selectedClient = new Client(0,"","","","",0,0,0.0,"",0,0.0);
             CheckCommand = new RelayCommand(DoesUserExist);
 
 
@@ -81,12 +81,12 @@ namespace LevelUpEASJ.ViewModel
             //User myUser = new User(id, firstName, lastName, userName, password);
             //  Client myClient = new Client(id, firstName, lastName, userName, password, weight, height, fatPercent, gender, waistSize, armSize);
             //Trainer myTrainer = new Trainer(id, firstName, lastName, userName, password, yearsOfExperience);
-            List<User> myList = singleton.Load().Result;
+            List<Client> myList = clientSingleton.ReadList().Result;
 
-            foreach (var User in myList)
+            foreach (var person in myList)
             {
 
-                if (User.UserName == userName && User.Password == password)
+                if (person.UserName == userName && person.Password == password)
                     _exist = true;
             }
         }
@@ -174,18 +174,17 @@ namespace LevelUpEASJ.ViewModel
             set { armSize = value; }
         }
 
+        public int ClientCount
+        {
+            get { return clientSingleton.Count; }
+        }
 
-        //public int UserCount
-        //{
-        //    get { return singleton.Users.Count; }
-        //}
-
-        //public User SelectedUser
-        //{
-        //    get { return _selectedUser; }
-        //    set { _selectedUser = value; OnPropertyChanged(); }
-        //}
-
+        public Client SelectedClient
+        {
+            get { return _selectedClient; }
+            set { _selectedClient = value; OnPropertyChanged(); }
+        }
+        
 
         //public void toAddNewUser()
         //{
