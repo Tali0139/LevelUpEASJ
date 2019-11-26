@@ -5,5 +5,10 @@
     [Password]  NVARCHAR (50) NOT NULL,
     [Lastname]  NVARCHAR (50) NOT NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
+    
 );
-
+INSERT INTO User
+(Id, Firstname, Username, Password, Lastname)
+VALUES
+(1,"Peter","Amazing", "Spiderman","Parker"),
+(2, "Rasmus", "Pandekage","Mary","Klump");
