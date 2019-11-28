@@ -1,6 +1,10 @@
 ﻿CREATE TABLE [dbo].[Trainer]
 (
 	[Id] INT NOT NULL PRIMARY KEY, 
-    [YearsOfExpericence] NCHAR(10) NULL, 
+    [YearsOfExpericence] INT NULL, 
+    [Username] VARCHAR(50) NULL, 
+    [FirstName] NVARCHAR(50) NULL, 
+    [LastName] NVARCHAR(50) NULL, 
+    [Password] NVARCHAR(50) NULL, 
     CONSTRAINT [FK_Trainer_User] FOREIGN KEY ([Id]) REFERENCES [User]([Id]) 
 )
