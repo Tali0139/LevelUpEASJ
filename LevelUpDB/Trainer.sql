@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Trainer]
 (
-	[Id] INT NOT NULL PRIMARY KEY, 
+	[Id] INT NOT NULL PRIMARY KEY  IDENTITY, 
     [YearsOfExpericence] INT NULL, 
     [Username] VARCHAR(50) NULL, 
     [FirstName] NVARCHAR(50) NULL, 

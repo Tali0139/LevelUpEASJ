@@ -5,8 +5,15 @@
     xmlns:local="using:LevelUpEASJ.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:lvm="using:LevelUpEASJ.ViewModel"
+
     mc:Ignorable="d"
+    
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.DataContext>
+        <lvm:LevelUpViewModel></lvm:LevelUpViewModel>
+    </Page.DataContext>
+
 
 
 
@@ -54,6 +61,8 @@
                                    Margin="30,10,0,0"/>
 
                     <TextBox x:Name="NavnBox" 
+                                 Text="{Binding FirstName, Mode= TwoWay}"
+                                 
                                  Background="White"
                                  Margin="0,5,0,0"
                                  Width="215"
@@ -233,6 +242,7 @@
                                    FontSize="18"
                                    Margin="30,10,0,0"/>
                     <TextBox x:Name="AlderBox"
+                                 Text="{Binding Age}"
                                  Background="White"
                                  Margin="0,5,0,0"
                                  Width="215"
@@ -412,18 +422,22 @@
                                    FontSize="18"
                                    Margin="30,10,0,0"/>
 
-                    <ComboBox Background="White"
+                    <ComboBox Background="White" ItemsSource="{Binding Køn}"
+                             SelectedItem="{Binding Gender, Mode=TwoWay}"
                               Margin="30,5,0,0">
-                        <ComboBoxItem Content="Mand"/>
-                        <ComboBoxItem Content="Kvinde"/>
+                        <!--<ComboBoxItem Content="Mand"/>
+                        <ComboBoxItem Content="Kvinde"/>-->
                     </ComboBox>
 
                     <TextBlock Text="Højde"
+                                   
                                    Foreground="White"
                                    FontSize="18"
                                    Margin="30,10,0,0"/>
                     <TextBox Background="White"
+                             
                                      x:Name="HøjdeBox"
+                                 Text="{Binding Height, Mode=TwoWay}"   
                                  Margin="0,5,0,0"
                                  Width="215"
                                  HorizontalAlignment="Center"
@@ -609,6 +623,7 @@
                                  PlaceholderText="Indtast vægt"
                                      Height="35"
                                      x:Name="VægtBox"
+                                     Text="{Binding Weight, Mode=TwoWay}"
                                     MaxLength="3">
                         <TextBox.Resources>
                             <Style x:Key="RundeKanter" TargetType="TextBox">
@@ -787,6 +802,7 @@
                                  Width="215"
                                  HorizontalAlignment="Center"
                                  PlaceholderText="Indtast omkreds"
+                                 Text="{Binding WaistSize, Mode=TwoWay}"
                                      Height="35"
                                      >
                         <TextBox.Resources>
@@ -966,6 +982,7 @@
                                  Width="215"
                                  HorizontalAlignment="Center"
                                  PlaceholderText="Indtast omkreds"
+                                 Text="{Binding ArmSize, Mode=TwoWay}"
                                      Height="35"
                                      >
                         <TextBox.Resources>
@@ -1157,6 +1174,7 @@
                                        FontSize="18"
                                        Margin="30,25,0,0"/>
                     <TextBox x:Name="UsernameBox"
+                                     Text="{Binding UserName, Mode=TwoWay}"
                                      Background="White"
                                      Margin="0,5,0,0"
                                      Width="215"
@@ -1336,6 +1354,7 @@
                                        FontSize="18"
                                        Margin="15,10,0,0"/>
                     <TextBox x:Name="PasswordBox"
+                                     Text="{Binding Password, Mode=TwoWay}"
                                      Background="White"
                                      Margin="0,5,0,0"
                                      Width="215"
@@ -1517,7 +1536,7 @@
                         BorderBrush="#66fcf1"
                         HorizontalAlignment="Center"
                         Margin="0,50,0,0"
-                        Foreground="white" Background="{x:Null}" BorderThickness="0" Click="Create_Client_Button_Click"
+                        Foreground="white" Background="{x:Null}" Command="{Binding AddCommand}" BorderThickness="0" Click="Create_Client_Button_Click"
                         >
                         <Button.Resources>
                             <Style x:Key="ButtonStyle1" TargetType="Button">

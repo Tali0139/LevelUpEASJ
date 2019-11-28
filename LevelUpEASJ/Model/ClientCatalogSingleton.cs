@@ -18,7 +18,7 @@ namespace LevelUpEASJ.Model
         private ClientCatalogSingleton()
         {
             _clients = new List<Client>();
-           _levelUpCrud = new LevelUpCRUD<Client>(serverUrl,apiId);
+            _levelUpCrud = new LevelUpCRUD<Client>(serverUrl, apiId);
 
         }
 
@@ -47,7 +47,7 @@ namespace LevelUpEASJ.Model
         private int _count;
         public int Count
         {
-            get { return _count;}
+            get { return _count; }
             set { _count = value; }
         }
 
@@ -64,6 +64,26 @@ namespace LevelUpEASJ.Model
         public async Task<string> Create()
         {
             return await _levelUpCrud.Create(_client.UserID, _client);
+        }
+
+        public async void AddClient(Client nc)
+        {
+            bool exist = false;
+            if (_levelUpCrud.Load() != null)
+            {
+                foreach (var c in _levelUpCrud.Load().Result)
+                {
+                    if (c.UserName == nc.UserName)
+                        exist = true;
+                }
+
+                if (exist == false)
+                {
+                    nc.UserID = Count++;
+                    await _levelUpCrud.Create(nc.UserID, nc);
+                }
+                
+            }
         }
 
         public void Delete()

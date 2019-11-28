@@ -8,7 +8,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{820B02F6-420E-47A5-9DA4-F054BD10152B}</ProjectGuid>
+    <ProjectGuid>{1A7C045E-CA1C-42A9-9D7A-28C6E0B0CE76}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -165,7 +165,6 @@
     <Compile Include="Client.cs" />
     <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\TrainersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="C__RefactorLog.cs" />
     <Compile Include="Global.asax.cs">
@@ -275,7 +274,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50400</DevelopmentServerPort>
+          <DevelopmentServerPort>53497</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:53409/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

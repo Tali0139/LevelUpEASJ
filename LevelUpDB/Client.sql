@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Client]
 (
-	[Id] INT NOT NULL PRIMARY KEY, 
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY,
     [Height] INT NULL, 
     [Weight] DECIMAL NULL, 
     [FatPercentage] DECIMAL NULL, 

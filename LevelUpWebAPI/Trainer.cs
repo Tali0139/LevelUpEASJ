@@ -9,7 +9,6 @@ namespace LevelUpWebAPI
     [Table("Trainer")]
     public partial class Trainer
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         public int? YearsOfExpericence { get; set; }

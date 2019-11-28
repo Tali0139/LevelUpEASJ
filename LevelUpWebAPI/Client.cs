@@ -9,7 +9,6 @@ namespace LevelUpWebAPI
     [Table("Client")]
     public partial class Client
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         public int? Height { get; set; }

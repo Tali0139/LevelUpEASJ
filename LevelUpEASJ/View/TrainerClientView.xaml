@@ -213,7 +213,7 @@
                                             <TextBlock Height="50"
                                                         Width="150"
                                                         
-                                                Text="{Binding UserID}"
+                                                Text="{Binding FirstName}"
                                                      Foreground="White"
                                                      FontSize="20">
 
@@ -223,7 +223,7 @@
                                             <TextBlock Height="50"
                                                        Width="150"
                                                         
-                                                       Text="{Binding FatPercent }"
+                                                       Text="{Binding LastName }"
                                                        Foreground="White"
                                                        FontSize="20">
 

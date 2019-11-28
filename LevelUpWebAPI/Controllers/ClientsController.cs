@@ -80,22 +80,7 @@ namespace LevelUpWebAPI.Controllers
             }
 
             db.Clients.Add(client);
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateException)
-            {
-                if (ClientExists(client.Id))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = client.Id }, client);
         }
