@@ -213,7 +213,7 @@
                                             <TextBlock Height="50"
                                                         Width="150"
                                                         
-                                                Text="{Binding Age }"
+                                                Text="{Binding UserID}"
                                                      Foreground="White"
                                                      FontSize="20">
 
