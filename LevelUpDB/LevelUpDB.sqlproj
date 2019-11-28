@@ -59,7 +59,6 @@
     <Folder Include="Properties" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="User.sql" />
     <Build Include="Client.sql" />
     <Build Include="Trainer.sql" />
   </ItemGroup>

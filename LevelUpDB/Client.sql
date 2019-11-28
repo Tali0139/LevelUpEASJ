@@ -12,5 +12,4 @@
     [FirstName] NVARCHAR(50) NULL, 
     [LastName] NVARCHAR(50) NULL, 
     [Password] VARCHAR(50) NULL, 
-    CONSTRAINT [FK_Client_User] FOREIGN KEY ([Id]) REFERENCES [User]([Id])
 )

@@ -6,5 +6,4 @@
     [FirstName] NVARCHAR(50) NULL, 
     [LastName] NVARCHAR(50) NULL, 
     [Password] NVARCHAR(50) NULL, 
-    CONSTRAINT [FK_Trainer_User] FOREIGN KEY ([Id]) REFERENCES [User]([Id]) 
 )
