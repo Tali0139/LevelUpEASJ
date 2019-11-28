@@ -12,7 +12,7 @@ namespace LevelUpEASJ.Model
         private const string apiId = "api/Clients/";
         private List<Client> _clients;
         private Client _client;
-        private string serverUrl = "http://localhost:49306";
+        private string serverUrl = "http://localhost:53409";
         private LevelUpCRUD<Client> _levelUpCrud;
 
         private ClientCatalogSingleton()

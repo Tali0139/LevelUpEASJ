@@ -12,7 +12,7 @@ namespace LevelUpEASJ.Model
         private const string apiId = "api/Trainers/";
         private List<Trainer> _trainers;
         private Trainer _trainer;
-        private string serverUrl = "http://localhost:49306";
+        private string serverUrl = "http://localhost:53409";
         private LevelUpCRUD<Trainer> _levelUpCrudTrainer;
 
         private TrainerCatalogSingleton()
