@@ -15,22 +15,24 @@ namespace LevelUpEASJ.ViewModel
     class LevelUpViewModel : INotifyPropertyChanged
     {
         private ClientCatalogSingleton clientSingleton;
-        private ObservableCollection<User> _users;
         private ObservableCollection<Client> _clients;
+        private TrainerCatalogSingleton trainerSingleton;
         private ObservableCollection<Trainer> _trainers;
         private Client _selectedClient;
+        private Trainer _selectedTrainer;
         private int id;
         private string firstName;
         private string lastName;
         private string userName;
         private string password;
-        private int weight;
+        private double weight;
         private int height;
         private double fatPercent;
         private string gender;
         private int totalXp;
         private int level;
         private int yearsOfExperience;
+        private int age;
         private bool _exist = false;
         private int waistSize;
         private double armSize;
@@ -42,16 +44,13 @@ namespace LevelUpEASJ.ViewModel
         {
 
             clientSingleton = ClientCatalogSingleton.ClientInstance;
-            _users = new ObservableCollection<User>();
+            trainerSingleton = TrainerCatalogSingleton.TrainerInstance;
             _trainers = new ObservableCollection<Trainer>();
             _clients = new ObservableCollection<Client>();
-            _selectedClient = new Client(0,"","","","",0,0,0,0.0,"",0,0.0);
+            _selectedClient = new Client(0, "", "", "", "", 0, 0, 0, 0.0, "", 0, 0.0);
+            _selectedTrainer = new Trainer(0, "", "", "", "", 0);
             CheckCommand = new RelayCommand(DoesUserExist);
 
-        
-            //AddCommand = new RelayCommand(toAddNewUser);
-            //DeleteCommand = new RelayCommand(toDeleteUser);
-            //UpdateCommand = new RelayCommand(toUpdateUser);
         }
 
         public ObservableCollection<Client> all_Clients
@@ -59,19 +58,19 @@ namespace LevelUpEASJ.ViewModel
             get
             {
                 _clients = new ObservableCollection<Client>(clientSingleton.Clients);
-                return _clients;
+               return _clients;
             }
         }
 
+        public ObservableCollection<Trainer> all_Trainers
+        {
+            get
+            {
+                _trainers = new ObservableCollection<Trainer>(trainerSingleton.Trainers);
+                return _trainers;
+            }
+        }
 
-        //public ObservableCollection<Client> all_clients
-        //{
-        //    get
-        //    {
-        //        _clients = new ObservableCollection<Client>(clientSingleton.ReadList().Result);
-        //        return _clients;
-        //    }
-        //}
 
         public RelayCommand AddCommand { get; set; }
         public RelayCommand DeleteCommand { get; set; }
@@ -102,8 +101,14 @@ namespace LevelUpEASJ.ViewModel
         private int _id;
         public int UserID
         {
+            
             get
             {
+                List<Client> myList = clientSingleton.ReadList().Result;
+                foreach (var person in myList)
+                {
+                    _id = person.UserID;
+                }
                 return _id;
             }
             set

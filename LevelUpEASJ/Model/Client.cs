@@ -9,7 +9,7 @@ namespace LevelUpEASJ.Model
 {
     public class Client : User
     {
-        private int _weight;
+        private double _weight;
         private int _height;
         private double _fatPercent;
         private string _gender;
@@ -19,7 +19,7 @@ namespace LevelUpEASJ.Model
         private double _armSize;
         private int _age;
 
-        public Client(int id, string firstName, string lastName, string username, string password, int Age, int Weight, int Height, double FatPercent, string Gender, int WaistSize, double ArmSize) : base(id, firstName, lastName, username, password)
+        public Client(int id, string firstName, string lastName, string username, string password, int Age, double Weight, int Height, double FatPercent, string Gender, int WaistSize, double ArmSize) : base(id, firstName, lastName, username, password)
 
         {
             _weight = Weight;
@@ -32,7 +32,7 @@ namespace LevelUpEASJ.Model
 
         }
 
-        public int Weight
+        public double Weight
         {
             get { return _weight; }
             set {_weight = value; }
