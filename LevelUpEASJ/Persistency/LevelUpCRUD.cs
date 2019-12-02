@@ -45,7 +45,7 @@ namespace LevelUpEASJ.Persistency
             try
             {
                 var serialized = JsonConvert.SerializeObject(obj);
-                StringContent sc = new StringContent(serialized, Encoding.UTF8, "json/application");
+                StringContent sc = new StringContent(serialized, Encoding.UTF8, "application/json");
                 HttpResponseMessage response = await _HttpClient.PostAsync(urlNew, sc);
 
                 if (response.IsSuccessStatusCode)
@@ -95,7 +95,7 @@ namespace LevelUpEASJ.Persistency
             CancellationToken cancellationToken = new CancellationToken();
             string urlNew = url + "/" + key;
             string serialized = JsonConvert.SerializeObject(obj);
-            StringContent sc = new StringContent(serialized, Encoding.UTF8, "json/application");
+            StringContent sc = new StringContent(serialized, Encoding.UTF8, "application/json");
             HttpResponseMessage response = _HttpClient.PutAsync(urlNew, sc, cancellationToken).Result;
             if (response.IsSuccessStatusCode)
             {
