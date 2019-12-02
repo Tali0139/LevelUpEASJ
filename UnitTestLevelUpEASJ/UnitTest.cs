@@ -6,58 +6,45 @@ using LevelUpEASJ.Model;
 
 namespace UnitTestLevelUpEASJ
 {
-    [TestClass]
-    public class UnitTest1
-    {
-        [TestMethod]
-        public void TestCountOfClients()
-        {
-            LevelUpViewModel lv = new LevelUpViewModel();
-            Assert.AreEqual(3, lv.ClientCount);
-        }
-    }
+    ////[TestClass]
+    ////public class UnitTest1
+
+    ////{
+    ////    LevelUpViewModel lv = new LevelUpViewModel();
+
+    ////    [TestMethod]
+    ////    public void TestCountOfClients()
+    ////    {
+    ////        Assert.AreEqual(4, lv.ClientCount);
+    ////    }
 
 
-    //[TestClass]
-    //public class UnitTest2
-    //{
-    //    [TestMethod]
-    //    public void TestIdNameOfClients()
-    //    {
-    //        LevelUpViewModel lv = new LevelUpViewModel();
 
-    //        Assert.AreEqual(3, lv.FirstName);
-    //    }
-    //}
+    ////    [TestMethod]
+    ////    public void TestIdNameOfClients()
+    ////    {
+    ////        string s = lv.all_Clients[2].FirstName;
+
+    ////        Assert.AreEqual("Mohammed", s);
+    ////    }
+
+    ////    [TestMethod]
+    ////    public void TestAddOfClients()
+    ////    {
 
 
-    //[TestClass]
-    //public class UnitTest3
-    //{
-    //    [TestMethod]
-    //    public void TestAddOfClients()
-    //    {
-    //        LevelUpViewModel lv = new LevelUpViewModel();
+    ////        Client c1 = new Client(99, "Kon", "test", "test", "1234", 10, 10.2, 10, 10.8, "mand", 10, 60);
+    ////        ClientCatalogSingleton.ClientInstance.AddClient(c1);
 
-    //        Client c1 = new Client(99, "Kon", "test", "test", "1234", 10, 10.2, 10, 10.8, "mand", 10, 60);
+    ////        Assert.AreEqual(4, lv.ClientCount);
+    ////        string s = lv.all_Clients[3].FirstName;
+    ////        Assert.AreEqual("Kon", s);
+
+
+
             
-    //        lv.ToAddNewClient(c1);
-    //        Assert.AreEqual(4, lv.ClientCount)
-
-
-
-
-    //         [TestMethod]
-    //    public void TestAdd_Tour()
-    //        {
-    //            TourCatalog tc = new TourCatalog();
-    //            Display tour = new Display();
-
-    //            tc.addTour1(tour);
-    //            Assert.AreEqual(1, tc.Tour1.Count);
-    //        }
     //    }
+
+
     //}
-
-
 }
