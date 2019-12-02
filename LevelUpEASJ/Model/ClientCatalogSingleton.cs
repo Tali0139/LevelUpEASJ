@@ -47,7 +47,7 @@ namespace LevelUpEASJ.Model
         private int _count;
         public int Count
         {
-            get { return _count; }
+            get { return Clients.Count; }
             set { _count = value; }
         }
 

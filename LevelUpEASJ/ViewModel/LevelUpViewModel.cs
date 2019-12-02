@@ -13,7 +13,7 @@ using LevelUpEASJ.Model;
 
 namespace LevelUpEASJ.ViewModel
 {
-    class LevelUpViewModel : INotifyPropertyChanged
+    public class LevelUpViewModel : INotifyPropertyChanged
     {
         private ClientCatalogSingleton clientSingleton;
         private ObservableCollection<Client> _clients;
@@ -261,7 +261,7 @@ namespace LevelUpEASJ.ViewModel
 
         public int ClientCount
         {
-            get { return clientSingleton.Count; }
+            get { return all_Clients.Count; }
         }
 
         public Client SelectedClient
