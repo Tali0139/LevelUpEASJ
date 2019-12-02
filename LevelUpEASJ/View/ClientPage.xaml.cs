@@ -37,5 +37,7 @@ namespace LevelUpEASJ.View
         {
             this.Frame.Navigate(typeof(Login));
         }
+
+       
     }
 }
