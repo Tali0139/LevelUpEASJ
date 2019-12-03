@@ -61,15 +61,10 @@ namespace LevelUpEASJ.Model
             _levelUpCrud.Read(_client.UserID);
         }
 
-        //public async Task<string> Create()
-        //{
-        //    return await _levelUpCrud.Create(_client.UserID, _client);
-        //} denne metode kan slettes, da den bare gør det samme som AddClient, og aldrig bruges!
 
         public async void AddClient(Client nc)
         {
             bool exist = false;
-           // if (_levelUpCrud.Load() != null) denne linje kode kan slettes, da den aldrig bliver null!
             {
                 foreach (var c in _levelUpCrud.Load().Result)
                 {
@@ -86,12 +81,12 @@ namespace LevelUpEASJ.Model
             }
         }
 
-        public void Delete()
+        public void DeleteClient(Client newClient)
         {
             _levelUpCrud.Delete(_client.UserID);
         }
 
-        public async Task<string> Update()
+        public async Task<string> UpdateClient(Client selectedClient)
         {
             return await _levelUpCrud.Update(_client.UserID, _client);
         }

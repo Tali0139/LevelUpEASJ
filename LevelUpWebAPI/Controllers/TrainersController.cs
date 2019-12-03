@@ -13,44 +13,44 @@ using LevelUpWebAPI;
 
 namespace LevelUpWebAPI.Controllers
 {
-    public class ClientsController : ApiController
+    public class TrainersController : ApiController
     {
         private LevelUpDBContext db = new LevelUpDBContext();
 
-        // GET: api/Clients
-        public IQueryable<Client> GetClients()
+        // GET: api/Trainers
+        public IQueryable<Trainer> GetTrainers()
         {
-            return db.Clients;
+            return db.Trainers;
         }
 
-        // GET: api/Clients/5
-        [ResponseType(typeof(Client))]
-        public async Task<IHttpActionResult> GetClient(int id)
+        // GET: api/Trainers/5
+        [ResponseType(typeof(Trainer))]
+        public async Task<IHttpActionResult> GetTrainer(int id)
         {
-            Client client = await db.Clients.FindAsync(id);
-            if (client == null)
+            Trainer trainer = await db.Trainers.FindAsync(id);
+            if (trainer == null)
             {
                 return NotFound();
             }
 
-            return Ok(client);
+            return Ok(trainer);
         }
 
-        // PUT: api/Clients/5
+        // PUT: api/Trainers/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutClient(int id, Client client)
+        public async Task<IHttpActionResult> PutTrainer(int id, Trainer trainer)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != client.Id)
+            if (id != trainer.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(client).State = EntityState.Modified;
+            db.Entry(trainer).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +58,7 @@ namespace LevelUpWebAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ClientExists(id))
+                if (!TrainerExists(id))
                 {
                     return NotFound();
                 }
@@ -71,35 +71,35 @@ namespace LevelUpWebAPI.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Clients
-        [ResponseType(typeof(Client))]
-        public async Task<IHttpActionResult> PostClient(Client client)
+        // POST: api/Trainers
+        [ResponseType(typeof(Trainer))]
+        public async Task<IHttpActionResult> PostTrainer(Trainer trainer)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Clients.Add(client);
+            db.Trainers.Add(trainer);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = client.Id }, client);
+            return CreatedAtRoute("DefaultApi", new { id = trainer.Id }, trainer);
         }
 
-        // DELETE: api/Clients/5
-        [ResponseType(typeof(Client))]
-        public async Task<IHttpActionResult> DeleteClient(int id)
+        // DELETE: api/Trainers/5
+        [ResponseType(typeof(Trainer))]
+        public async Task<IHttpActionResult> DeleteTrainer(int id)
         {
-            Client client = await db.Clients.FindAsync(id);
-            if (client == null)
+            Trainer trainer = await db.Trainers.FindAsync(id);
+            if (trainer == null)
             {
                 return NotFound();
             }
 
-            db.Clients.Remove(client);
+            db.Trainers.Remove(trainer);
             await db.SaveChangesAsync();
 
-            return Ok(client);
+            return Ok(trainer);
         }
 
         protected override void Dispose(bool disposing)
@@ -111,9 +111,9 @@ namespace LevelUpWebAPI.Controllers
             base.Dispose(disposing);
         }
 
-        private bool ClientExists(int id)
+        private bool TrainerExists(int id)
         {
-            return db.Clients.Count(e => e.Id == id) > 0;
+            return db.Trainers.Count(e => e.Id == id) > 0;
         }
     }
 }
