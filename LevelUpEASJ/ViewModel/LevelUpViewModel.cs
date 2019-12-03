@@ -48,8 +48,8 @@ namespace LevelUpEASJ.ViewModel
             trainerSingleton = TrainerCatalogSingleton.TrainerInstance;
             _trainers = new ObservableCollection<Trainer>();
             _clients = new ObservableCollection<Client>();
-            _selectedClient = new Client(UserID, FirstName, LastName, UserName, Password, Age, Weight, Height, Fatpercent, Gender, WaistSize, ArmSize);
-            _selectedTrainer = new Trainer(UserID, FirstName, LastName, UserName, Password, YearOfExerience);
+            _selectedClient = new Client(UserID, FirstName, LastName, PhoneNumber, UserName, Password, Age, Weight, Height, Fatpercent, Gender, WaistSize, ArmSize);
+            _selectedTrainer = new Trainer(UserID, FirstName, LastName, PhoneNumber,UserName, Password, YearsOfExperience);
             CheckCommand = new RelayCommand(DoesUserExist);
             AddCommand = new RelayCommand(ToAddNewClient);
             _køn=new List<string>();
@@ -92,11 +92,7 @@ namespace LevelUpEASJ.ViewModel
 
         public void DoesUserExist()
         {
-            //User myUser = new User(id, firstName, lastName, userName, password);
-            //  Client myClient = new Client(id, firstName, lastName, userName, password, weight, height, fatPercent, gender, waistSize, armSize);
-            //Trainer myTrainer = new Trainer(id, firstName, lastName, userName, password, yearsOfExperience);
             List<Client> myList = clientSingleton.ReadList().Result;
-
             foreach (var person in myList)
             {
 
@@ -109,7 +105,6 @@ namespace LevelUpEASJ.ViewModel
         private int _id;
         public int UserID
         {
-
             get
             {
                 List<Client> myList = clientSingleton.ReadList().Result;
@@ -129,58 +124,38 @@ namespace LevelUpEASJ.ViewModel
         private string _firstName;
         public string FirstName
         {
-            get
-            {
-                return _firstName;
-            }
-            set
-            {
-                _firstName = value;
-                OnPropertyChanged();
-            }
+            get{return _firstName;}
+            set{_firstName = value; OnPropertyChanged();}
         }
 
         private string _lastName;
         public string LastName
         {
-            get
-            {
-                return _lastName;
-            }
-            set
-            {
-                _lastName = value;
-                OnPropertyChanged();
-            }
+            get{return _lastName;}
+            set{_lastName = value; OnPropertyChanged();}
+        }
+
+        private int _phoneNumber;
+        public int PhoneNumber
+        {
+            get{return _phoneNumber;}
+            set{_phoneNumber = value; OnPropertyChanged();}
         }
 
 
         private string _userName;
         public string UserName
         {
-            get
-            {
-                return _userName;
-            }
-            set
-            {
-                _userName = value;
-                OnPropertyChanged();
-            }
-        }
-        public string Gender
-        {
-            get
-            {
-                return gender;
-            }
-            set
-            {
-               gender = value;
-                OnPropertyChanged();
-            }
+            get{return _userName;}
+            set{_userName = value; OnPropertyChanged();}
         }
 
+        
+        public string Gender
+        {
+            get{return gender;}
+            set{gender = value; OnPropertyChanged();}
+        }
 
 
         public int Age
@@ -188,28 +163,19 @@ namespace LevelUpEASJ.ViewModel
             get { return age; }
             set { age = value; OnPropertyChanged(); }
         }
+
+
         private string _password;
         public string Password
         {
-            get
-            {
-                return _password;
-            }
-            set
-            {
-                _password = value;
-                OnPropertyChanged();
-            }
+            get{return _password;}
+            set{_password = value; OnPropertyChanged();}
         }
 
         private List<string> _køn;
         public List<string> Køn
         {
-            get
-            {
-               
-                return _køn;
-            }
+            get{return _køn;}
             set { _køn = value; OnPropertyChanged();}
         }
 
@@ -218,27 +184,22 @@ namespace LevelUpEASJ.ViewModel
             get { return fatPercent; }
             set { fatPercent = value; OnPropertyChanged();}
         }
+
         public int WaistSize
         {
             get { return waistSize; }
-            set
-            {
-                waistSize = value;
-                OnPropertyChanged();
-            }
+            set {waistSize = value; OnPropertyChanged();}
         }
 
         public int Height
         {
             get { return height; }
-
             set { height = value; OnPropertyChanged(); }
         }
 
         public double Weight
         {
             get { return weight; }
-
             set { weight = value; OnPropertyChanged(); }
         }
 
@@ -246,14 +207,10 @@ namespace LevelUpEASJ.ViewModel
         public double ArmSize
         {
             get { return armSize; }
-            set
-            {
-                armSize = value;
-                OnPropertyChanged();
-            }
+            set { armSize = value; OnPropertyChanged();}
         }
 
-        public int YearOfExerience
+        public int YearsOfExperience
         {
             get { return yearsOfExperience; }
             set { yearsOfExperience = value; OnPropertyChanged(); }
@@ -273,61 +230,29 @@ namespace LevelUpEASJ.ViewModel
 
         public void ToAddNewClient()
         {
-            Client NewClient = new Client(id, FirstName, LastName, UserName, Password, age, weight, height, fatPercent,
+            Client NewClient = new Client(id, FirstName, LastName, PhoneNumber, UserName, Password, age, weight, height, fatPercent,
                 gender, WaistSize, ArmSize);
             clientSingleton.AddClient(NewClient);
             OnPropertyChanged(nameof(all_Clients));
             OnPropertyChanged(nameof(ClientCount));
         }
 
-        //public void toAddNewUser()
-        //{
-        //    User NewUser = new User(_id, _firstName, _lastName, _userName, _password);
-        //    singleton.addUser(NewUser);
-        //    OnPropertyChanged(nameof(all_Users));
-        //    OnPropertyChanged(nameof(UserCount));
-        //}
 
-        //public void toDeleteUser()
-        //{
-        //    singleton.deleteUser(SelectedUser);
-        //    OnPropertyChanged(nameof(all_Users));
-        //    OnPropertyChanged(nameof(UserCount));
-        //}
+        public void ToDeleteClient()
+        {
+           clientSingleton.DeleteClient(SelectedClient);
+            OnPropertyChanged(nameof(all_Clients));
+            OnPropertyChanged(nameof(ClientCount));
+        }
 
 
-        //public void toUpdateUser()
-        //{
-        //    singleton.updateUser(SelectedUser);
-        //    OnPropertyChanged(nameof(all_Users));
-        //    OnPropertyChanged(nameof(UserCount));
-        //}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        public async void ToUpdateClient()
+        {
+           await clientSingleton.UpdateClient(SelectedClient);  
+           OnPropertyChanged(nameof(all_Clients));
+           OnPropertyChanged(nameof(ClientCount));
+          
+        }
 
 
 

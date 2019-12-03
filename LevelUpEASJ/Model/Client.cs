@@ -19,7 +19,7 @@ namespace LevelUpEASJ.Model
         private double _armSize;
         private int _age;
 
-        public Client(int id, string firstName, string lastName, string username, string password, int Age, double Weight, int Height, double FatPercent, string Gender, int WaistSize, double ArmSize) : base(id, firstName, lastName, username, password)
+        public Client(int id, string firstName, string lastName, int phoneNumber,string username, string password, int Age, double Weight, int Height, double FatPercent, string Gender, int WaistSize, double ArmSize) : base(id, firstName, lastName, phoneNumber, username, password)
 
         {
             _weight = Weight;

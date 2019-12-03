@@ -1,14 +1,11 @@
-﻿Use LevelUpDB;
-GO;
-CREATE TABLE [dbo].[Trainer] (
-    [Id]                INT NOT NULL,
-    [YearsOfExperience] INT NULL,
-    PRIMARY KEY CLUSTERED ([Id] ASC),
-    CONSTRAINT [FK_Trainer_User] FOREIGN KEY ([Id]) REFERENCES [dbo].[User] ([Id])
-	ON DELETE CASCADE,
+﻿CREATE TABLE [dbo].[Trainer] (
+    [Id]                 INT           IDENTITY (1, 1) NOT NULL,
+    [YearsOfExpericence] INT           NULL,
+    [Username]           VARCHAR (50)  NULL,
+    [FirstName]          NVARCHAR (50) NULL,
+    [LastName]           NVARCHAR (50) NULL,
+    [Password]           NVARCHAR (50) NULL,
+    [PhoneNumber]        INT           NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
 );
-INSERT INTO Trainer
-(Id)
-VALUES
-(2);
-GO;
+
