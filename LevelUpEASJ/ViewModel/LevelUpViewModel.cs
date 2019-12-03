@@ -241,8 +241,8 @@ namespace LevelUpEASJ.ViewModel
         public void ToDeleteClient()
         {
            clientSingleton.DeleteClient(SelectedClient);
-            OnPropertyChanged(nameof(all_Clients));
-            OnPropertyChanged(nameof(ClientCount));
+           OnPropertyChanged(nameof(all_Clients));
+           OnPropertyChanged(nameof(ClientCount));
         }
 
 
