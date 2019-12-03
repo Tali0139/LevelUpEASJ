@@ -4,12 +4,14 @@ using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Devices.Display.Core;
+using Windows.UI.Xaml;
 using LevelUpEASJ.Persistency;
 using Remotion.Linq.Clauses;
 
 namespace LevelUpEASJ.Model
 {
-    class Levels
+    public class Levels
     {
         private int _minXP;
         private int _maxXP;
@@ -21,6 +23,32 @@ namespace LevelUpEASJ.Model
         private LevelUpCRUD<Client> _levelUpCrudClient;
         private List<Client> _allClients;
 
+        public Levels(int Level, int MinXP, int MaxXP)
+        {
+            _Level = Level;
+            _maxXP = MaxXP;
+            _minXP = MinXP;
+        }
+
+        public int Level
+        {
+            get { return _Level;}
+            set { _Level=value;  }
+        }
+
+        public int MaxXP
+        {
+            get { return _maxXP; }
+            set { _maxXP = value; }
+        }
+
+        public int MinXP
+        {
+            get { return _minXP; }
+            set { _minXP = value; }
+        }
+
+
         public List<Client> AllClient
         {
             get { return _levelUpCrudClient.Load().Result; }
@@ -31,11 +59,27 @@ namespace LevelUpEASJ.Model
             get { return _levelUpCrud.Load().Result; }
         }
 
-        public async void GetLevelForClient()
+        public int GetLevelForClient()
         {
-            _totalXP = from c in AllClient 
-            var query = from l in AllLevels select new {l._minXP, l._maxXP};
-        }
+            var getClientXp = from c in AllClient select new{ c.TotalXP};
+            foreach (var cxp in getClientXp)
+            {
+                _totalXP = cxp.TotalXP;
+                return _totalXP;
+            }
+           
 
+            var setLevel = from l in AllLevels select new {l._minXP, l._maxXP, l._Level};
+            foreach (var xp in setLevel)
+            {
+                if (_totalXP > xp._minXP && _totalXP < xp._maxXP)
+                {
+                    _Level = xp._Level;
+                    return _Level;
+                }
+            }
+            return 0;
+        }
+        
     }
 }
