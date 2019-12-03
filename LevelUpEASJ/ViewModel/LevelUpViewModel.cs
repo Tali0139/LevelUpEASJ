@@ -221,10 +221,21 @@ namespace LevelUpEASJ.ViewModel
             get { return all_Clients.Count; }
         }
 
+        public int TrainerCount
+        {
+            get { return all_Trainers.Count; }
+        }
+
         public Client SelectedClient
         {
             get { return _selectedClient; }
             set { _selectedClient = value; OnPropertyChanged(); }
+        }
+
+        public Trainer SelectedTrainer
+        {
+            get { return _selectedTrainer; }
+            set { _selectedTrainer = value; OnPropertyChanged(); }
         }
 
 
@@ -252,6 +263,32 @@ namespace LevelUpEASJ.ViewModel
            OnPropertyChanged(nameof(all_Clients));
            OnPropertyChanged(nameof(ClientCount));
           
+        }
+
+
+        public void ToAddNewTrainer()
+        {
+            Trainer newTrainer = new Trainer(id, firstName, lastName, PhoneNumber, userName, Password,yearsOfExperience);
+            trainerSingleton.AddTrainer(newTrainer);
+            OnPropertyChanged(nameof(all_Trainers));
+            OnPropertyChanged(nameof(TrainerCount));
+        }
+
+
+        public void ToDeleteTrainer()
+        {
+            trainerSingleton.DeleteTrainer(SelectedTrainer);
+            OnPropertyChanged(nameof(all_Trainers));
+            OnPropertyChanged(nameof(TrainerCount));
+        }
+
+
+        public async void ToUpdateTrainer()
+        {
+            await trainerSingleton.UpdateTrainer(SelectedTrainer);
+            OnPropertyChanged(nameof(all_Trainers));
+            OnPropertyChanged(nameof(TrainerCount));
+
         }
 
 
