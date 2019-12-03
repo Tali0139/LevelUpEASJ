@@ -141,6 +141,9 @@
     <Compile Include="View\DailyCalenderTrainer.xaml.cs">
       <DependentUpon>DailyCalenderTrainer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\EditClientPage.xaml.cs">
+      <DependentUpon>EditClientPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\InventoryTrainerPage.xaml.cs">
       <DependentUpon>InventoryTrainerPage.xaml</DependentUpon>
     </Compile>
@@ -202,6 +205,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\DailyCalenderTrainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EditClientPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

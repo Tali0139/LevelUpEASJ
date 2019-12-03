@@ -38,6 +38,10 @@ namespace LevelUpEASJ.View
             this.Frame.Navigate(typeof(Login));
         }
 
+        private void Edit_Client_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(EditClientPage));
+        }
        
     }
 }
