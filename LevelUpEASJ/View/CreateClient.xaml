@@ -26,7 +26,7 @@
                     HorizontalScrollMode="Disabled"
                   >
 
-        <Grid Height="1000" Width="432px">
+        <Grid Height="1100" Width="432px">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="1.5,1" StartPoint="0.02,0" SpreadMethod="Pad" Opacity="1" MappingMode="RelativeToBoundingBox">
                     <GradientStop Color="#FF1F2833" Offset="0.137"/>
