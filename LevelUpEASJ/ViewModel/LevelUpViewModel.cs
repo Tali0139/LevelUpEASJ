@@ -41,7 +41,7 @@ namespace LevelUpEASJ.ViewModel
         private bool _exist = false;
         private int waistSize;
         private double armSize;
-        private int _clientLevel;
+        private int _level;
         private int _minXP;
         private int _maxXP;
 
@@ -96,18 +96,10 @@ namespace LevelUpEASJ.ViewModel
                 return _levels;
             }
         }
-
-        public int GetClientLevel(Client nc)
+        
+        public int Level
         {
-            Levels l = new Levels(level, minXp, maxXp);
-            int _clientLevel = l.GetLevelForClient(nc);
-            return _clientLevel;
-        }
-
-        public int ClientLevel
-        {
-            get { return _clientLevel;}
-            set { _clientLevel = value; OnPropertyChanged();}
+            get { return _selectedLevels.GetLevelForClient(SelectedClient);}
         }
        
         public RelayCommand AddCommand { get; set; }

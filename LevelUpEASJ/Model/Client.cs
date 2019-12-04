@@ -30,7 +30,7 @@ namespace LevelUpEASJ.Model
             _waistSize = WaistSize;
             _age = Age;
             _totalXp = TotalXP;
-
+            
         }
 
         public double Weight
@@ -82,8 +82,6 @@ namespace LevelUpEASJ.Model
         }
 
         
-
-
     }
 
 }
