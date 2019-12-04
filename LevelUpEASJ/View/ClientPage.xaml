@@ -325,7 +325,8 @@
                                     Background="Transparent"
                                     Height="120"
                                     Width="162"
-                                    Margin="25,0,0,0">
+                                    Margin="25,0,0,0"
+                                    Click="Edit_Client_Click">
 
                                 <Image Source="../Assets/BrugerIconGennemsigitg.png"/>
                             </Button>

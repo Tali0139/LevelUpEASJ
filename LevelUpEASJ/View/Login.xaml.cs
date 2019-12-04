@@ -29,7 +29,7 @@ namespace LevelUpEASJ.View
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(TrainerPage));
+            this.Frame.Navigate(typeof(ClientPage));
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -37,6 +37,9 @@ namespace LevelUpEASJ.View
             this.Frame.Navigate(typeof(CreateClient));
         }
 
-
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AdminLogin));
+        }
     }
 }
