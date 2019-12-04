@@ -26,7 +26,7 @@ namespace LevelUpEASJ.ViewModel
         private int id;
         private string firstName;
         private string lastName;
-        private string userName;
+        private string username;
         private string password;
         private double weight;
         private int height;
@@ -41,9 +41,6 @@ namespace LevelUpEASJ.ViewModel
         private bool _exist = false;
         private int waistSize;
         private double armSize;
-        private int _level;
-        private int _minXP;
-        private int _maxXP;
 
 
 
@@ -55,18 +52,15 @@ namespace LevelUpEASJ.ViewModel
             trainerSingleton = TrainerCatalogSingleton.TrainerInstance;
             _trainers = new ObservableCollection<Trainer>();
             _clients = new ObservableCollection<Client>();
-            _levels = new ObservableCollection<Levels>();
-            _selectedClient = new Client(UserID, FirstName, LastName, PhoneNumber, UserName, Password, Age, Weight,
-                Height, Fatpercent, Gender, WaistSize, ArmSize, TotalXP);
-            _selectedTrainer = new Trainer(UserID, FirstName, LastName, PhoneNumber, UserName, Password,
-                YearsOfExperience);
-            _selectedLevels = new Levels(level, minXp, maxXp);
-            CheckCommand = new RelayCommand(DoesUserExist);
+            _levels= new ObservableCollection<Levels>();
+            _selectedClient = new Client(UserID, FirstName, LastName, PhoneNumber, UserName, Password, Age, Weight, Height, Fatpercent, Gender, WaistSize, ArmSize, TotalXP);
+            _selectedTrainer = new Trainer(UserID, FirstName, LastName, PhoneNumber,UserName, Password, YearsOfExperience);
+            _selectedLevels=new Levels(level,minXp,maxXp);
+            //CheckCommand = new RelayCommand(DoesUserExist);
             AddCommand = new RelayCommand(ToAddNewClient);
-            _køn = new List<string>();
+            _køn=new List<string>();
             _køn.Add("Mand");
             _køn.Add("Kvinde");
-
 
         }
 
@@ -94,18 +88,15 @@ namespace LevelUpEASJ.ViewModel
             {
                 _levels = new ObservableCollection<Levels>();
                 return _levels;
+                //SKAL VI HAVE EN SINGLETON? VI SKAL HUSKE AT LAVE PROPERTIES: JEG HAR MULIGVIS OVERSET NOGET, ER TRÆT..-TALIA
             }
         }
-        
-        public int Level
-        {
-            get { return _selectedLevels.GetLevelForClient(SelectedClient);}
-        }
-       
+
+
         public RelayCommand AddCommand { get; set; }
         public RelayCommand DeleteCommand { get; set; }
         public RelayCommand UpdateCommand { get; set; }
-        public RelayCommand CheckCommand { get; set; }
+        //public RelayCommand CheckCommand { get; set; }
 
 
 
@@ -115,16 +106,19 @@ namespace LevelUpEASJ.ViewModel
             set { _exist = value; }
         }
 
-        public void DoesUserExist()
+        public bool DoesUserExist(string username, string password)
         {
             List<Client> myList = clientSingleton.ReadList().Result;
             foreach (var person in myList)
             {
 
-                if (person.UserName == userName && person.Password == password)
+                if (person.UserName == username && person.Password == password)
                     _exist = true;
             }
+
+            return _exist;
         }
+
 
 
         private int _id;
@@ -252,10 +246,21 @@ namespace LevelUpEASJ.ViewModel
             get { return all_Clients.Count; }
         }
 
+        public int TrainerCount
+        {
+            get { return all_Trainers.Count; }
+        }
+
         public Client SelectedClient
         {
             get { return _selectedClient; }
             set { _selectedClient = value; OnPropertyChanged(); }
+        }
+
+        public Trainer SelectedTrainer
+        {
+            get { return _selectedTrainer; }
+            set { _selectedTrainer = value; OnPropertyChanged(); }
         }
 
 
@@ -283,6 +288,32 @@ namespace LevelUpEASJ.ViewModel
            OnPropertyChanged(nameof(all_Clients));
            OnPropertyChanged(nameof(ClientCount));
           
+        }
+
+
+        public void ToAddNewTrainer()
+        {
+            Trainer newTrainer = new Trainer(id, firstName, lastName, PhoneNumber, username, Password,yearsOfExperience);
+            trainerSingleton.AddTrainer(newTrainer);
+            OnPropertyChanged(nameof(all_Trainers));
+            OnPropertyChanged(nameof(TrainerCount));
+        }
+
+
+        public void ToDeleteTrainer()
+        {
+            trainerSingleton.DeleteTrainer(SelectedTrainer);
+            OnPropertyChanged(nameof(all_Trainers));
+            OnPropertyChanged(nameof(TrainerCount));
+        }
+
+
+        public async void ToUpdateTrainer()
+        {
+            await trainerSingleton.UpdateTrainer(SelectedTrainer);
+            OnPropertyChanged(nameof(all_Trainers));
+            OnPropertyChanged(nameof(TrainerCount));
+
         }
 
 
