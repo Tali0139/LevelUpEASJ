@@ -11,7 +11,15 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using System.Data.SqlClient;
 using Windows.UI.Xaml.Navigation;
+using System.Data;
+using System.ServiceModel.Channels;
+using Windows.UI.Popups;
+using LevelUpEASJ.Model;
+using LevelUpEASJ.Persistency;
+using LevelUpEASJ.ViewModel;
+
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -27,16 +35,33 @@ namespace LevelUpEASJ.View
             this.InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(TrainerPage));
+            LevelUpViewModel luvm = new LevelUpViewModel();
+            var messageDialogWrong = new MessageDialog("Brugernavn og/eller adgangskode ikke korrekt");
+            var messageDialogEnter = new MessageDialog("Indtast brugernavn og adgangskode");
+            string username = UsernameBox.Text;
+            string password = PasswordBox.Password;
+            bool afterCheck = luvm.DoesUserExist(username, password);
+            {
+                {
+                    if (afterCheck == true)
+                        this.Frame.Navigate(typeof(ClientPage));
+                    else if (UsernameBox.Text == "" && PasswordBox.Password == "")
+                    {
+                        await messageDialogEnter.ShowAsync();
+                    }
+                    else
+                    {
+                        await messageDialogWrong.ShowAsync();
+                    }
+                }
+            }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(CreateClient));
         }
-
-
     }
 }

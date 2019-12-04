@@ -26,7 +26,7 @@ namespace LevelUpEASJ.ViewModel
         private int id;
         private string firstName;
         private string lastName;
-        private string userName;
+        private string username;
         private string password;
         private double weight;
         private int height;
@@ -56,7 +56,7 @@ namespace LevelUpEASJ.ViewModel
             _selectedClient = new Client(UserID, FirstName, LastName, PhoneNumber, UserName, Password, Age, Weight, Height, Fatpercent, Gender, WaistSize, ArmSize, TotalXP);
             _selectedTrainer = new Trainer(UserID, FirstName, LastName, PhoneNumber,UserName, Password, YearsOfExperience);
             _selectedLevels=new Levels(level,minXp,maxXp);
-            CheckCommand = new RelayCommand(DoesUserExist);
+            //CheckCommand = new RelayCommand(DoesUserExist);
             AddCommand = new RelayCommand(ToAddNewClient);
             _køn=new List<string>();
             _køn.Add("Mand");
@@ -96,7 +96,7 @@ namespace LevelUpEASJ.ViewModel
         public RelayCommand AddCommand { get; set; }
         public RelayCommand DeleteCommand { get; set; }
         public RelayCommand UpdateCommand { get; set; }
-        public RelayCommand CheckCommand { get; set; }
+        //public RelayCommand CheckCommand { get; set; }
 
 
 
@@ -106,16 +106,19 @@ namespace LevelUpEASJ.ViewModel
             set { _exist = value; }
         }
 
-        public void DoesUserExist()
+        public bool DoesUserExist(string username, string password)
         {
             List<Client> myList = clientSingleton.ReadList().Result;
             foreach (var person in myList)
             {
 
-                if (person.UserName == userName && person.Password == password)
+                if (person.UserName == username && person.Password == password)
                     _exist = true;
             }
+
+            return _exist;
         }
+
 
 
         private int _id;
@@ -290,7 +293,7 @@ namespace LevelUpEASJ.ViewModel
 
         public void ToAddNewTrainer()
         {
-            Trainer newTrainer = new Trainer(id, firstName, lastName, PhoneNumber, userName, Password,yearsOfExperience);
+            Trainer newTrainer = new Trainer(id, firstName, lastName, PhoneNumber, username, Password,yearsOfExperience);
             trainerSingleton.AddTrainer(newTrainer);
             OnPropertyChanged(nameof(all_Trainers));
             OnPropertyChanged(nameof(TrainerCount));
