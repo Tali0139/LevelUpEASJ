@@ -99,9 +99,15 @@ namespace LevelUpEASJ.ViewModel
         
         public int Level
         {
-            get { return _selectedLevels.GetLevelForClient(SelectedClient);}
+            get
+            {
+                _level = _selectedLevels.GetLevelForClient(clientSingleton.Clients[UserID]);
+                return _level;
+            }
+            set { _level = value; }
         }
        
+
         public RelayCommand AddCommand { get; set; }
         public RelayCommand DeleteCommand { get; set; }
         public RelayCommand UpdateCommand { get; set; }
