@@ -15,7 +15,7 @@ namespace LevelUpEASJ.Model
     {
         private int _minXP;
         private int _maxXP;
-        private int _Level;
+        private int _level;
         private int _totalXP;
         private ClientCatalogSingleton _clientCatalog;
         private LevelUpCRUD<Levels> _levelUpCrud;
@@ -25,15 +25,15 @@ namespace LevelUpEASJ.Model
 
         public Levels(int Level, int MinXP, int MaxXP)
         {
-            _Level = Level;
+            _level = Level;
             _maxXP = MaxXP;
             _minXP = MinXP;
         }
 
         public int Level
         {
-            get { return _Level;}
-            set { _Level=value;  }
+            get { return _level;}
+            set { _level=value;  }
         }
 
         public int MaxXP
@@ -69,13 +69,13 @@ namespace LevelUpEASJ.Model
             }
            
 
-            var setLevel = from l in AllLevels select new {l._minXP, l._maxXP, l._Level};
+            var setLevel = from l in AllLevels select new {l._minXP, l._maxXP, l._level};
             foreach (var xp in setLevel)
             {
                 if (_totalXP > xp._minXP && _totalXP < xp._maxXP)
                 {
-                    _Level = xp._Level;
-                    return _Level;
+                    _level = xp._level;
+                    return _level;
                 }
             }
             return 0;
