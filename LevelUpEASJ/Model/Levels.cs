@@ -59,26 +59,24 @@ namespace LevelUpEASJ.Model
             get { return _levelUpCrud.Load().Result; }
         }
 
-        public int GetLevelForClient()
+        public int GetLevelForClient(Client nc)
         {
-            var getClientXp = from c in AllClient select new{ c.TotalXP};
+            var getClientXp = from c in AllClient where c.UserID== nc.UserID select new{ c.TotalXP};
             foreach (var cxp in getClientXp)
             {
                 _totalXP = cxp.TotalXP;
                 return _totalXP;
             }
            
-
             var setLevel = from l in AllLevels select new {l._minXP, l._maxXP, l._level};
             foreach (var xp in setLevel)
             {
                 if (_totalXP > xp._minXP && _totalXP < xp._maxXP)
                 {
                     _level = xp._level;
-                    return _level;
                 }
             }
-            return 0;
+            return _level;
         }
         
     }

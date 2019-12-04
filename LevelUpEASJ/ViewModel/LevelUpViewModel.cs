@@ -41,6 +41,9 @@ namespace LevelUpEASJ.ViewModel
         private bool _exist = false;
         private int waistSize;
         private double armSize;
+        private int _clientLevel;
+        private int _minXP;
+        private int _maxXP;
 
 
 
@@ -52,15 +55,18 @@ namespace LevelUpEASJ.ViewModel
             trainerSingleton = TrainerCatalogSingleton.TrainerInstance;
             _trainers = new ObservableCollection<Trainer>();
             _clients = new ObservableCollection<Client>();
-            _levels= new ObservableCollection<Levels>();
-            _selectedClient = new Client(UserID, FirstName, LastName, PhoneNumber, UserName, Password, Age, Weight, Height, Fatpercent, Gender, WaistSize, ArmSize, TotalXP);
-            _selectedTrainer = new Trainer(UserID, FirstName, LastName, PhoneNumber,UserName, Password, YearsOfExperience);
-            _selectedLevels=new Levels(level,minXp,maxXp);
+            _levels = new ObservableCollection<Levels>();
+            _selectedClient = new Client(UserID, FirstName, LastName, PhoneNumber, UserName, Password, Age, Weight,
+                Height, Fatpercent, Gender, WaistSize, ArmSize, TotalXP);
+            _selectedTrainer = new Trainer(UserID, FirstName, LastName, PhoneNumber, UserName, Password,
+                YearsOfExperience);
+            _selectedLevels = new Levels(level, minXp, maxXp);
             CheckCommand = new RelayCommand(DoesUserExist);
             AddCommand = new RelayCommand(ToAddNewClient);
-            _køn=new List<string>();
+            _køn = new List<string>();
             _køn.Add("Mand");
             _køn.Add("Kvinde");
+
 
         }
 
@@ -88,11 +94,22 @@ namespace LevelUpEASJ.ViewModel
             {
                 _levels = new ObservableCollection<Levels>();
                 return _levels;
-                //SKAL VI HAVE EN SINGLETON? VI SKAL HUSKE AT LAVE PROPERTIES: JEG HAR MULIGVIS OVERSET NOGET, ER TRÆT..-TALIA
             }
         }
 
+        public int GetClientLevel(Client nc)
+        {
+            Levels l = new Levels(level, minXp, maxXp);
+            int _clientLevel = l.GetLevelForClient(nc);
+            return _clientLevel;
+        }
 
+        public int ClientLevel
+        {
+            get { return _clientLevel;}
+            set { _clientLevel = value; OnPropertyChanged();}
+        }
+       
         public RelayCommand AddCommand { get; set; }
         public RelayCommand DeleteCommand { get; set; }
         public RelayCommand UpdateCommand { get; set; }
