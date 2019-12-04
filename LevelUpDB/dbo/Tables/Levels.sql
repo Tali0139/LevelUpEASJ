@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Levels]
+(
+	[Level] INT NOT NULL PRIMARY KEY,
+	[MinXP] INT NOT NULL,
+	[MaxXP] INT NOT NULL
+)

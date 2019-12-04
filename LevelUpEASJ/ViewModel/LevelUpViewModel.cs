@@ -19,8 +19,10 @@ namespace LevelUpEASJ.ViewModel
         private ObservableCollection<Client> _clients;
         private TrainerCatalogSingleton trainerSingleton;
         private ObservableCollection<Trainer> _trainers;
+        private ObservableCollection<Levels> _levels;
         private Client _selectedClient;
         private Trainer _selectedTrainer;
+        private Levels _selectedLevels;
         private int id;
         private string firstName;
         private string lastName;
@@ -31,6 +33,8 @@ namespace LevelUpEASJ.ViewModel
         private double fatPercent;
         private string gender;
         private int totalXp;
+        private int minXp;
+        private int maxXp;
         private int level;
         private int yearsOfExperience;
         private int age;
@@ -48,8 +52,10 @@ namespace LevelUpEASJ.ViewModel
             trainerSingleton = TrainerCatalogSingleton.TrainerInstance;
             _trainers = new ObservableCollection<Trainer>();
             _clients = new ObservableCollection<Client>();
-            _selectedClient = new Client(UserID, FirstName, LastName, PhoneNumber, UserName, Password, Age, Weight, Height, Fatpercent, Gender, WaistSize, ArmSize);
+            _levels= new ObservableCollection<Levels>();
+            _selectedClient = new Client(UserID, FirstName, LastName, PhoneNumber, UserName, Password, Age, Weight, Height, Fatpercent, Gender, WaistSize, ArmSize, TotalXP);
             _selectedTrainer = new Trainer(UserID, FirstName, LastName, PhoneNumber,UserName, Password, YearsOfExperience);
+            _selectedLevels=new Levels(level,minXp,maxXp);
             CheckCommand = new RelayCommand(DoesUserExist);
             AddCommand = new RelayCommand(ToAddNewClient);
             _køn=new List<string>();
@@ -73,6 +79,16 @@ namespace LevelUpEASJ.ViewModel
             {
                 _trainers = new ObservableCollection<Trainer>(trainerSingleton.Trainers);
                 return _trainers;
+            }
+        }
+
+        public ObservableCollection<Levels> all_Levels
+        {
+            get
+            {
+                _levels = new ObservableCollection<Levels>();
+                return _levels;
+                //SKAL VI HAVE EN SINGLETON? VI SKAL HUSKE AT LAVE PROPERTIES: JEG HAR MULIGVIS OVERSET NOGET, ER TRÆT..-TALIA
             }
         }
 
@@ -207,7 +223,13 @@ namespace LevelUpEASJ.ViewModel
         public double ArmSize
         {
             get { return armSize; }
-            set { armSize = value; OnPropertyChanged();}
+            set{armSize = value; OnPropertyChanged();}
+        }
+
+        public int TotalXP
+        {
+            get { return totalXp; }
+            set { totalXp = value; OnPropertyChanged(); }
         }
 
         public int YearsOfExperience
@@ -242,7 +264,7 @@ namespace LevelUpEASJ.ViewModel
         public void ToAddNewClient()
         {
             Client NewClient = new Client(id, FirstName, LastName, PhoneNumber, UserName, Password, age, weight, height, fatPercent,
-                gender, WaistSize, ArmSize);
+                gender, WaistSize, ArmSize, TotalXP);
             clientSingleton.AddClient(NewClient);
             OnPropertyChanged(nameof(all_Clients));
             OnPropertyChanged(nameof(ClientCount));
@@ -252,8 +274,8 @@ namespace LevelUpEASJ.ViewModel
         public void ToDeleteClient()
         {
            clientSingleton.DeleteClient(SelectedClient);
-            OnPropertyChanged(nameof(all_Clients));
-            OnPropertyChanged(nameof(ClientCount));
+           OnPropertyChanged(nameof(all_Clients));
+           OnPropertyChanged(nameof(ClientCount));
         }
 
 

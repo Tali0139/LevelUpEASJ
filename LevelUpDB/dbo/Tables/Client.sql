@@ -12,6 +12,7 @@
     [LastName]      NVARCHAR (50) NULL,
     [Password]      VARCHAR (50)  NULL,
     [PhoneNumber]   INT           NULL,
+	[TotalXP]		INT			NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
