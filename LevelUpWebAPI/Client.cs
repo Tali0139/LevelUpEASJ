@@ -39,5 +39,7 @@ namespace LevelUpWebAPI
         public string Password { get; set; }
 
         public int? PhoneNumber { get; set; }
+
+        public int? TotalXP { get; set; }
     }
 }

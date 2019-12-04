@@ -163,7 +163,7 @@
                                 Margin="0,60,0,0"
                                 Height="220">
 
-                        <TextBlock Text="[NAVN]"
+                        <TextBlock Text="Navn"
                                Foreground="White"
                                FontSize="25"
                                HorizontalAlignment="Center"/>
@@ -171,7 +171,7 @@
                         <StackPanel Orientation="Horizontal"
                                     HorizontalAlignment="Center">
 
-                            <TextBlock Text="[EXP]"
+                            <TextBlock Text="{Binding SelectedClient.TotalXP , Mode=OneWay}"
                                        Foreground="White"
                                        FontSize="18"/>
 
