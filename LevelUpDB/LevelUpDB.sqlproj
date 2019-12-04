@@ -133,7 +133,7 @@
     <RefactorLog Include="LevelUpDB.refactorlog" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Levels insert into script.sql" />
+    <None Include="InsertLevelsAndClientData.sql" />
     <None Include="Security\InsertClientDataScript.sql" />
   </ItemGroup>
 </Project>
