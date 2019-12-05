@@ -706,7 +706,7 @@
                         Margin="0,20,0,0"
                         Foreground="white"
                         Background="Transparent"
-                        BorderThickness="0" Click="Button_Click_2" 
+                        BorderThickness="0" 
                 >
                     <Button.Resources>
                         <Style x:Key="ButtonStyle1" TargetType="Button">
