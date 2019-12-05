@@ -36,7 +36,6 @@ namespace LevelUpEASJ.Model
                 {
                     _trainerInstance = new TrainerCatalogSingleton();
                 }
-
                 return _trainerInstance;
             }
         }
