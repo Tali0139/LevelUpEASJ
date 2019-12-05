@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using LevelUpEASJ.ViewModel;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -22,10 +23,13 @@ namespace LevelUpEASJ.View
     /// </summary>
     public sealed partial class ClientPage : Page
     {
+        LevelUpViewModel luvm = new LevelUpViewModel();
         public ClientPage()
         {
             this.InitializeComponent();
+            this.DataContext = luvm;
         }
+
 
         private void Hamburgerbutton_OnChecked(object sender, RoutedEventArgs e)
         {
@@ -42,6 +46,15 @@ namespace LevelUpEASJ.View
         {
             this.Frame.Navigate(typeof(EditClientPage));
         }
-       
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            NavnBox.Text = luvm.clientSingleton.NyClient.FirstName.ToString();
+            WeightBox.Text = luvm.clientSingleton.NyClient.Weight.ToString();
+            XPBox.Text = luvm.clientSingleton.NyClient.TotalXP.ToString();
+            LevelBox.Text = "level: " + luvm.clientSingleton.NyClient.Gender.ToString();
+            //NavnBox.Text = lvm.FirstName.ToString();
+        }
     }
 }

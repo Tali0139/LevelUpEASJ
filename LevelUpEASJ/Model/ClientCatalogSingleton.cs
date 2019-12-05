@@ -14,13 +14,25 @@ namespace LevelUpEASJ.Model
         private Client _client;
         private string serverUrl = "http://localhost:53409";
         private LevelUpCRUD<Client> _levelUpCrud;
+        private Client c;
+
+        public Client NyClient
+        {
+            get
+            {
+                return c;
+            }
+            set
+            {
+                c = value;
+            } }
 
 
         private ClientCatalogSingleton()
         {
             _clients = new List<Client>();
             _levelUpCrud = new LevelUpCRUD<Client>(serverUrl, apiId);
-
+            c = new Client();
         }
 
         private static ClientCatalogSingleton _clientInstance;
@@ -77,7 +89,7 @@ namespace LevelUpEASJ.Model
                     nc.UserID = Count++;
                     await _levelUpCrud.Create(nc.UserID, nc);
                 }
-                
+
             }
         }
 

@@ -30,14 +30,16 @@ namespace LevelUpEASJ.View
     /// </summary>
     public sealed partial class Login : Page
     {
+        LevelUpViewModel luvm = new LevelUpViewModel();
+
         public Login()
         {
             this.InitializeComponent();
+            this.DataContext = luvm;
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            LevelUpViewModel luvm = new LevelUpViewModel();
             var messageDialogWrong = new MessageDialog("Brugernavn og/eller adgangskode ikke korrekt");
             var messageDialogEnter = new MessageDialog("Indtast brugernavn og adgangskode");
             string username = UsernameBox.Text;

@@ -15,7 +15,7 @@ namespace LevelUpEASJ.ViewModel
 {
     public class LevelUpViewModel : INotifyPropertyChanged
     {
-        private ClientCatalogSingleton clientSingleton;
+        public ClientCatalogSingleton clientSingleton { get; set; }
         private ObservableCollection<Client> _clients;
         private TrainerCatalogSingleton trainerSingleton;
         private ObservableCollection<Trainer> _trainers;
@@ -50,19 +50,24 @@ namespace LevelUpEASJ.ViewModel
 
             clientSingleton = ClientCatalogSingleton.ClientInstance;
             trainerSingleton = TrainerCatalogSingleton.TrainerInstance;
+
+
             _trainers = new ObservableCollection<Trainer>();
             _clients = new ObservableCollection<Client>();
-            _levels= new ObservableCollection<Levels>();
+            _levels = new ObservableCollection<Levels>();
             _selectedClient = new Client(UserID, FirstName, LastName, PhoneNumber, UserName, Password, Age, Weight, Height, Fatpercent, Gender, WaistSize, ArmSize, TotalXP);
-            _selectedTrainer = new Trainer(UserID, FirstName, LastName, PhoneNumber,UserName, Password, YearsOfExperience);
-            _selectedLevels=new Levels(level,minXp,maxXp);
+            _selectedTrainer = new Trainer(UserID, FirstName, LastName, PhoneNumber, UserName, Password, YearsOfExperience);
+            _selectedLevels = new Levels(level, minXp, maxXp);
             //CheckCommand = new RelayCommand(DoesUserExist);
             AddCommand = new RelayCommand(ToAddNewClient);
-            _køn=new List<string>();
+            _køn = new List<string>();
             _køn.Add("Mand");
             _køn.Add("Kvinde");
 
         }
+
+        public ClientCatalogSingleton ClientCatalogSingleton { get; set; }
+
 
         public ObservableCollection<Client> all_Clients
         {
@@ -88,7 +93,6 @@ namespace LevelUpEASJ.ViewModel
             {
                 _levels = new ObservableCollection<Levels>();
                 return _levels;
-                //SKAL VI HAVE EN SINGLETON? VI SKAL HUSKE AT LAVE PROPERTIES: JEG HAR MULIGVIS OVERSET NOGET, ER TRÆT..-TALIA
             }
         }
 
@@ -113,7 +117,8 @@ namespace LevelUpEASJ.ViewModel
             {
 
                 if (person.UserName == username && person.Password == password)
-                    _exist = true;
+                ClientCatalogSingleton.ClientInstance.NyClient = person;
+                _exist = true;
             }
 
             return _exist;
@@ -143,37 +148,37 @@ namespace LevelUpEASJ.ViewModel
         private string _firstName;
         public string FirstName
         {
-            get{return _firstName;}
-            set{_firstName = value; OnPropertyChanged();}
+            get { return _firstName; }
+            set { _firstName = value; OnPropertyChanged(); }
         }
 
         private string _lastName;
         public string LastName
         {
-            get{return _lastName;}
-            set{_lastName = value; OnPropertyChanged();}
+            get { return _lastName; }
+            set { _lastName = value; OnPropertyChanged(); }
         }
 
         private int _phoneNumber;
         public int PhoneNumber
         {
-            get{return _phoneNumber;}
-            set{_phoneNumber = value; OnPropertyChanged();}
+            get { return _phoneNumber; }
+            set { _phoneNumber = value; OnPropertyChanged(); }
         }
 
 
         private string _userName;
         public string UserName
         {
-            get{return _userName;}
-            set{_userName = value; OnPropertyChanged();}
+            get { return _userName; }
+            set { _userName = value; OnPropertyChanged(); }
         }
 
-        
+
         public string Gender
         {
-            get{return gender;}
-            set{gender = value; OnPropertyChanged();}
+            get { return gender; }
+            set { gender = value; OnPropertyChanged(); }
         }
 
 
@@ -187,27 +192,27 @@ namespace LevelUpEASJ.ViewModel
         private string _password;
         public string Password
         {
-            get{return _password;}
-            set{_password = value; OnPropertyChanged();}
+            get { return _password; }
+            set { _password = value; OnPropertyChanged(); }
         }
 
         private List<string> _køn;
         public List<string> Køn
         {
-            get{return _køn;}
-            set { _køn = value; OnPropertyChanged();}
+            get { return _køn; }
+            set { _køn = value; OnPropertyChanged(); }
         }
 
         public double Fatpercent
         {
             get { return fatPercent; }
-            set { fatPercent = value; OnPropertyChanged();}
+            set { fatPercent = value; OnPropertyChanged(); }
         }
 
         public int WaistSize
         {
             get { return waistSize; }
-            set {waistSize = value; OnPropertyChanged();}
+            set { waistSize = value; OnPropertyChanged(); }
         }
 
         public int Height
@@ -226,7 +231,7 @@ namespace LevelUpEASJ.ViewModel
         public double ArmSize
         {
             get { return armSize; }
-            set{armSize = value; OnPropertyChanged();}
+            set { armSize = value; OnPropertyChanged(); }
         }
 
         public int TotalXP
@@ -264,6 +269,7 @@ namespace LevelUpEASJ.ViewModel
         }
 
 
+
         public void ToAddNewClient()
         {
             Client NewClient = new Client(id, FirstName, LastName, PhoneNumber, UserName, Password, age, weight, height, fatPercent,
@@ -276,24 +282,24 @@ namespace LevelUpEASJ.ViewModel
 
         public void ToDeleteClient()
         {
-           clientSingleton.DeleteClient(SelectedClient);
-           OnPropertyChanged(nameof(all_Clients));
-           OnPropertyChanged(nameof(ClientCount));
+            clientSingleton.DeleteClient(SelectedClient);
+            OnPropertyChanged(nameof(all_Clients));
+            OnPropertyChanged(nameof(ClientCount));
         }
 
 
         public async void ToUpdateClient()
         {
-           await clientSingleton.UpdateClient(SelectedClient);  
-           OnPropertyChanged(nameof(all_Clients));
-           OnPropertyChanged(nameof(ClientCount));
-          
+            await clientSingleton.UpdateClient(SelectedClient);
+            OnPropertyChanged(nameof(all_Clients));
+            OnPropertyChanged(nameof(ClientCount));
+
         }
 
 
         public void ToAddNewTrainer()
         {
-            Trainer newTrainer = new Trainer(id, firstName, lastName, PhoneNumber, username, Password,yearsOfExperience);
+            Trainer newTrainer = new Trainer(id, firstName, lastName, PhoneNumber, username, Password, yearsOfExperience);
             trainerSingleton.AddTrainer(newTrainer);
             OnPropertyChanged(nameof(all_Trainers));
             OnPropertyChanged(nameof(TrainerCount));

@@ -1,5 +1,4 @@
-﻿
-<Page
+﻿<Page
     x:Class="LevelUpEASJ.View.ClientPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -163,7 +162,9 @@
                                 Margin="0,60,0,0"
                                 Height="220">
 
-                        <TextBlock Text="Navn"
+                        <TextBlock 
+                            x:Name="NavnBox"
+                            Text=""
                                Foreground="White"
                                FontSize="25"
                                HorizontalAlignment="Center"/>
@@ -171,7 +172,8 @@
                         <StackPanel Orientation="Horizontal"
                                     HorizontalAlignment="Center">
 
-                            <TextBlock Text="{Binding SelectedClient.TotalXP , Mode=OneWay}"
+                            <TextBlock x:Name="XPBox"
+                                        Text=""
                                        Foreground="White"
                                        FontSize="18"/>
 
@@ -182,7 +184,8 @@
                                   HorizontalAlignment="Center"
                                   Margin="10,0,0,0"/>
 
-                            <TextBlock Text="[WEIGHT]"
+                            <TextBlock x:Name="WeightBox"
+                                        Text=""
                                        Foreground="White"
                                        FontSize="18"
                                        Margin="10,0,0,0"/>
@@ -212,7 +215,8 @@
                                   Margin="0,100,0,0"
                                   HorizontalAlignment="Center"/>
 
-                            <TextBlock Text="Level 10"
+                            <TextBlock x:Name="LevelBox"
+                                Text=""
                                    Foreground="White"
                                    FontSize="20"
                                    HorizontalAlignment="Center"/>
