@@ -1,52 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
-  <Operation Name="Rename Refactor" Key="f817d6a7-ca14-4e4d-9e8c-566d8be06d7e" ChangeDateTime="11/18/2019 13:16:13">
-    <Property Name="ElementName" Value="[dbo].[Client].[age]" />
+  <Operation Name="Rename Refactor" Key="7c669d63-15f4-4579-8bcc-9248a56cedf9" ChangeDateTime="12/03/2019 10:14:00">
+    <Property Name="ElementName" Value="[dbo].[Levels].[Id]" />
     <Property Name="ElementType" Value="SqlSimpleColumn" />
-    <Property Name="ParentElementName" Value="[dbo].[Client]" />
+    <Property Name="ParentElementName" Value="[dbo].[Levels]" />
     <Property Name="ParentElementType" Value="SqlTable" />
-    <Property Name="NewName" Value="Age" />
-  </Operation>
-  <Operation Name="Rename Refactor" Key="508257f8-8db4-499c-a0b1-acce74858813" ChangeDateTime="11/26/2019 09:31:15">
-    <Property Name="ElementName" Value="[dbo].[User].[FirstName]" />
-    <Property Name="ElementType" Value="SqlSimpleColumn" />
-    <Property Name="ParentElementName" Value="[dbo].[User]" />
-    <Property Name="ParentElementType" Value="SqlTable" />
-    <Property Name="NewName" Value="UserName" />
-  </Operation>
-  <Operation Name="Rename Refactor" Key="87f36859-c06a-420a-b4fe-d4c6e7db8242" ChangeDateTime="11/26/2019 09:31:21">
-    <Property Name="ElementName" Value="[dbo].[User].[UserName]" />
-    <Property Name="ElementType" Value="SqlSimpleColumn" />
-    <Property Name="ParentElementName" Value="[dbo].[User]" />
-    <Property Name="ParentElementType" Value="SqlTable" />
-    <Property Name="NewName" Value="Username" />
-  </Operation>
-  <Operation Name="Rename Refactor" Key="c988a934-858f-4ed0-bcec-6515cc88c351" ChangeDateTime="11/26/2019 09:34:36">
-    <Property Name="ElementName" Value="[dbo].[Client].[Wetght]" />
-    <Property Name="ElementType" Value="SqlSimpleColumn" />
-    <Property Name="ParentElementName" Value="[dbo].[Client]" />
-    <Property Name="ParentElementType" Value="SqlTable" />
-    <Property Name="NewName" Value="Weight" />
-  </Operation>
-  <Operation Name="Rename Refactor" Key="72d6e777-ea2c-4477-bc36-ac67bacb1d60" ChangeDateTime="11/26/2019 09:38:35">
-    <Property Name="ElementName" Value="[dbo].[Client].[Sex]" />
-    <Property Name="ElementType" Value="SqlSimpleColumn" />
-    <Property Name="ParentElementName" Value="[dbo].[Client]" />
-    <Property Name="ParentElementType" Value="SqlTable" />
-    <Property Name="NewName" Value="Gender" />
-  </Operation>
-  <Operation Name="Rename Refactor" Key="9a13f9a8-66e9-451b-9524-20c860c5cf1b" ChangeDateTime="11/26/2019 09:42:26">
-    <Property Name="ElementName" Value="[dbo].[Client].[StomachSize]" />
-    <Property Name="ElementType" Value="SqlSimpleColumn" />
-    <Property Name="ParentElementName" Value="[dbo].[Client]" />
-    <Property Name="ParentElementType" Value="SqlTable" />
-    <Property Name="NewName" Value="Waist" />
-  </Operation>
-  <Operation Name="Rename Refactor" Key="d36b5c8e-c532-4675-b33a-eff2af2a3e9f" ChangeDateTime="11/26/2019 09:42:33">
-    <Property Name="ElementName" Value="[dbo].[Client].[Waist]" />
-    <Property Name="ElementType" Value="SqlSimpleColumn" />
-    <Property Name="ParentElementName" Value="[dbo].[Client]" />
-    <Property Name="ParentElementType" Value="SqlTable" />
-    <Property Name="NewName" Value="WaistSize" />
+    <Property Name="NewName" Value="Level" />
   </Operation>
 </Operations>

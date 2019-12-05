@@ -10,12 +10,13 @@ namespace LevelUpWebAPI
         public LevelUpDBContext()
             : base("name=LevelUpDBContext")
         {
-            base.Configuration.LazyLoadingEnabled = false;
-            base.Configuration.ProxyCreationEnabled = false;
+            Configuration.LazyLoadingEnabled = false;
+            Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual DbSet<C__RefactorLog> C__RefactorLog { get; set; }
         public virtual DbSet<Client> Clients { get; set; }
+        public virtual DbSet<Level> Levels { get; set; }
         public virtual DbSet<Trainer> Trainers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

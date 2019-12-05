@@ -223,7 +223,7 @@
                                             <TextBlock Height="50"
                                                        Width="150"
                                                         
-                                                       Text="{Binding LastName }"
+                                                       Text="{Binding Level }"
                                                        Foreground="White"
                                                        FontSize="20">
 

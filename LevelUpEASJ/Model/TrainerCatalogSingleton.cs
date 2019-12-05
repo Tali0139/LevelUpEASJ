@@ -7,7 +7,7 @@ using LevelUpEASJ.Persistency;
 
 namespace LevelUpEASJ.Model
 {
-    class TrainerCatalogSingleton
+    public class TrainerCatalogSingleton
     {
         private const string apiId = "api/Trainers/";
         private List<Trainer> _trainers;
@@ -18,7 +18,7 @@ namespace LevelUpEASJ.Model
         private TrainerCatalogSingleton()
         {
             _trainers = new List<Trainer>();
-            _levelUpCrudTrainer = new LevelUpCRUD<Trainer>(serverUrl,apiId);
+            _levelUpCrudTrainer = new LevelUpCRUD<Trainer>(serverUrl, apiId);
         }
 
         public List<Trainer> Trainers
@@ -34,9 +34,8 @@ namespace LevelUpEASJ.Model
             {
                 if (_trainerInstance == null)
                 {
-                    _trainerInstance=new TrainerCatalogSingleton();
+                    _trainerInstance = new TrainerCatalogSingleton();
                 }
-
                 return _trainerInstance;
             }
         }
@@ -59,14 +58,36 @@ namespace LevelUpEASJ.Model
             _levelUpCrudTrainer.Read(_trainer.UserID);
         }
 
-        public void DeleteTrainer()
+        public void DeleteTrainer(Trainer newTrainer)
         {
             _levelUpCrudTrainer.Delete(_trainer.UserID);
         }
 
-        public async Task<string> UpdateTrainer()
+        public async Task<string> UpdateTrainer(Trainer selectedTrainer)
         {
             return await _levelUpCrudTrainer.Update(_trainer.UserID, _trainer);
         }
+
+
+        public async void AddTrainer(Trainer nt)
+        {
+            bool exist = false;
+            {
+                foreach (var t in _levelUpCrudTrainer.Load().Result)
+                {
+                    if (t.UserName == nt.UserName)
+                        exist = true;
+                }
+
+                if (exist == false)
+                {
+                    nt.UserID = CountTrainer++;
+                    await _levelUpCrudTrainer.Create(nt.UserID, nt);
+                }
+
+            }
+        }
+
+
     }
 }
