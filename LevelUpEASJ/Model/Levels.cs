@@ -71,7 +71,7 @@ namespace LevelUpEASJ.Model
             var setLevel = from l in AllLevels select new {l._minXP, l._maxXP, l._level};
             foreach (var xp in setLevel)
             {
-                if (_totalXP > xp._minXP && _totalXP < xp._maxXP)
+                if (_totalXP >= xp._minXP && _totalXP <= xp._maxXP)
                 {
                     _level = xp._level;
                 }
