@@ -58,12 +58,12 @@ namespace LevelUpEASJ.Model
             _levelUpCrudTrainer.Read(_trainer.UserID);
         }
 
-        public void DeleteTrainer(Trainer newTrainer)
+        public void DeleteTrainer(Trainer newLevels)
         {
             _levelUpCrudTrainer.Delete(_trainer.UserID);
         }
 
-        public async Task<string> UpdateTrainer(Trainer selectedTrainer)
+        public async Task<string> UpdateTrainer(Trainer selectedLevels)
         {
             return await _levelUpCrudTrainer.Update(_trainer.UserID, _trainer);
         }

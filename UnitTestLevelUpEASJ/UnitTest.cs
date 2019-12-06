@@ -109,8 +109,8 @@ namespace UnitTestLevelUpEASJ
 
 
         //    //    Trainer t3 = new Trainer(3,"Træner3", "trænersen3", 88888888, "træner3", "1234", 12);
-        //    //    TrainerCatalogSingleton.TrainerInstance.AddTrainer(t3);
-        //    //    TrainerCatalogSingleton.TrainerInstance.DeleteTrainer(t3);
+        //    //    LevelCatalogSingleton.TrainerInstance.AddTrainer(t3);
+        //    //    LevelCatalogSingleton.TrainerInstance.DeleteTrainer(t3);
 
         //    //    Assert.AreEqual(2, lv.TrainerCount);
 

@@ -10,6 +10,7 @@ using Windows.Devices.PointOfService;
 using LevelUpEASJ.Annotations;
 using LevelUpEASJ.Commands;
 using LevelUpEASJ.Model;
+using LevelUpEASJ.View;
 
 namespace LevelUpEASJ.ViewModel
 {
@@ -19,10 +20,10 @@ namespace LevelUpEASJ.ViewModel
         private ObservableCollection<Client> _clients;
         private TrainerCatalogSingleton trainerSingleton;
         private ObservableCollection<Trainer> _trainers;
-        private ObservableCollection<Levels> _levels;
+        private ObservableCollection<Level> _levels;
         private Client _selectedClient;
         private Trainer _selectedTrainer;
-        private Levels _selectedLevels;
+        private Level _selectedLevels;
         private int id;
         private string firstName;
         private string lastName;
@@ -50,14 +51,14 @@ namespace LevelUpEASJ.ViewModel
 
             clientSingleton = ClientCatalogSingleton.ClientInstance;
             trainerSingleton = TrainerCatalogSingleton.TrainerInstance;
-
+           
 
             _trainers = new ObservableCollection<Trainer>();
             _clients = new ObservableCollection<Client>();
-            _levels = new ObservableCollection<Levels>();
+            _levels = new ObservableCollection<Level>();
             _selectedClient = new Client(UserID, FirstName, LastName, PhoneNumber, UserName, Password, Age, Weight, Height, Fatpercent, Gender, WaistSize, ArmSize, TotalXP);
             _selectedTrainer = new Trainer(UserID, FirstName, LastName, PhoneNumber, UserName, Password, YearsOfExperience);
-            _selectedLevels = new Levels(level, minXp, maxXp);
+            _selectedLevels = new Level(level, minXp, maxXp);
             //CheckCommand = new RelayCommand(DoesUserExist);
             AddCommand = new RelayCommand(ToAddNewClient);
             _køn = new List<string>();
@@ -87,16 +88,9 @@ namespace LevelUpEASJ.ViewModel
             }
         }
 
-        public ObservableCollection<Levels> all_Levels
-        {
-            get
-            {
-                _levels = new ObservableCollection<Levels>();
-                return _levels;
-            }
-        }
-
-
+       
+     
+        
         public RelayCommand AddCommand { get; set; }
         public RelayCommand DeleteCommand { get; set; }
         public RelayCommand UpdateCommand { get; set; }
@@ -124,7 +118,13 @@ namespace LevelUpEASJ.ViewModel
             return _exist;
         }
 
-
+        public string ClientLevel
+        {
+            get
+            {
+                return LevelCatalogSingleton.LevelInstance.GetLevelForClient(ClientCatalogSingleton.ClientInstance.NyClient).ToString();
+            }
+        }
 
         private int _id;
         public int UserID
@@ -268,7 +268,11 @@ namespace LevelUpEASJ.ViewModel
             set { _selectedTrainer = value; OnPropertyChanged(); }
         }
 
-
+        public Level SelectedLevel
+        {
+            get { return _selectedLevels; }
+            set { _selectedLevels = value;OnPropertyChanged(); }
+        }
 
         public void ToAddNewClient()
         {
@@ -299,8 +303,8 @@ namespace LevelUpEASJ.ViewModel
 
         public void ToAddNewTrainer()
         {
-            Trainer newTrainer = new Trainer(id, firstName, lastName, PhoneNumber, username, Password, yearsOfExperience);
-            trainerSingleton.AddTrainer(newTrainer);
+            Trainer newLevels = new Trainer(id, firstName, lastName, PhoneNumber, username, Password, yearsOfExperience);
+            trainerSingleton.AddTrainer(newLevels);
             OnPropertyChanged(nameof(all_Trainers));
             OnPropertyChanged(nameof(TrainerCount));
         }
