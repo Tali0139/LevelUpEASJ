@@ -142,6 +142,9 @@
     <Compile Include="View\CreateClient.xaml.cs">
       <DependentUpon>CreateClient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\CreateClientGoal.xaml.cs">
+      <DependentUpon>CreateClientGoal.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DailyCalenderTrainer.xaml.cs">
       <DependentUpon>DailyCalenderTrainer.xaml</DependentUpon>
     </Compile>
@@ -209,6 +212,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\CreateClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CreateClientGoal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
