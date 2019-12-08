@@ -20,10 +20,10 @@ namespace LevelUpEASJ.ViewModel
         private ObservableCollection<Client> _clients;
         private TrainerCatalogSingleton trainerSingleton;
         private ObservableCollection<Trainer> _trainers;
-        private ObservableCollection<Level> _levels;
+        private ObservableCollection<Levels> _levels;
         private Client _selectedClient;
         private Trainer _selectedTrainer;
-        private Level _selectedLevels;
+        private Levels _selectedLevels;
         private int id;
         private string firstName;
         private string lastName;
@@ -36,7 +36,7 @@ namespace LevelUpEASJ.ViewModel
         private int totalXp;
         private int minXp;
         private int maxXp;
-        private int level;
+        private int levelValue;
         private int yearsOfExperience;
         private int age;
         private bool _exist = false;
@@ -55,10 +55,10 @@ namespace LevelUpEASJ.ViewModel
 
             _trainers = new ObservableCollection<Trainer>();
             _clients = new ObservableCollection<Client>();
-            _levels = new ObservableCollection<Level>();
+            _levels = new ObservableCollection<Levels>();
             _selectedClient = new Client(UserID, FirstName, LastName, PhoneNumber, UserName, Password, Age, Weight, Height, Fatpercent, Gender, WaistSize, ArmSize, TotalXP);
             _selectedTrainer = new Trainer(UserID, FirstName, LastName, PhoneNumber, UserName, Password, YearsOfExperience);
-            _selectedLevels = new Level(level, minXp, maxXp);
+            _selectedLevels = new Levels(levelValue, minXp, maxXp);
             //CheckCommand = new RelayCommand(DoesUserExist);
             AddCommand = new RelayCommand(ToAddNewClient);
             _køn = new List<string>();
@@ -268,7 +268,7 @@ namespace LevelUpEASJ.ViewModel
             set { _selectedTrainer = value; OnPropertyChanged(); }
         }
 
-        public Level SelectedLevel
+        public Levels SelectedLevel
         {
             get { return _selectedLevels; }
             set { _selectedLevels = value;OnPropertyChanged(); }

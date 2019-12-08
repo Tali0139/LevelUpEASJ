@@ -11,29 +11,29 @@ using Remotion.Linq.Clauses;
 
 namespace LevelUpEASJ.Model
 {
-    public class Level
+    public class Levels
     {
         private int _minXP;
         private int _maxXP;
-        private int _level;
+        private int _levelValue;
         private int _totalXP;
         private ClientCatalogSingleton _clientCatalog;
-        private LevelUpCRUD<Level> _levelUpCrud;
-        private List<Level> _allLevels;
+        private LevelUpCRUD<Levels> _levelUpCrud;
+        private List<Levels> _allLevels;
         private LevelUpCRUD<Client> _levelUpCrudClient;
         private List<Client> _allClients;
 
-        public Level(int Level, int MinXP, int MaxXP)
+        public Levels(int LevelValue, int MinXP, int MaxXP)
         {
-            _level = Level;
+            _levelValue = LevelValue;
             _maxXP = MaxXP;
             _minXP = MinXP;
         }
-
-        public int Levelvalue
+        
+        public int LevelValue
         {
-            get { return _level;}
-            set { _level=value;  }
+            get { return _levelValue; }
+            set { _levelValue = value;  }
         }
 
         public int MaxXP

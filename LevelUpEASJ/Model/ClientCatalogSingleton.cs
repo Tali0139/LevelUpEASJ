@@ -45,7 +45,6 @@ namespace LevelUpEASJ.Model
                 {
                     _clientInstance = new ClientCatalogSingleton();
                 }
-
                 return _clientInstance;
             }
         }

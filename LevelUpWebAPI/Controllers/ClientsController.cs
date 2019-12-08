@@ -8,8 +8,9 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using LevelUpWebAPI;
 
-namespace LevelUpWebAPI
+namespace LevelUpWebAPI.Controllers
 {
     public class ClientsController : ApiController
     {

@@ -9,9 +9,8 @@ namespace LevelUpWebAPI
     public partial class Level
     {
         [Key]
-        [Column("Level")]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Level1 { get; set; }
+        public int LevelValue { get; set; }
 
         public int MinXP { get; set; }
 

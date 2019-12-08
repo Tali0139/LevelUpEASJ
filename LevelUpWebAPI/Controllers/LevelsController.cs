@@ -8,8 +8,9 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using LevelUpWebAPI;
 
-namespace LevelUpWebAPI
+namespace LevelUpWebAPI.Controllers
 {
     public class LevelsController : ApiController
     {
@@ -43,7 +44,7 @@ namespace LevelUpWebAPI
                 return BadRequest(ModelState);
             }
 
-            if (id != level.Level1)
+            if (id != level.LevelValue)
             {
                 return BadRequest();
             }
@@ -86,7 +87,7 @@ namespace LevelUpWebAPI
             }
             catch (DbUpdateException)
             {
-                if (LevelExists(level.Level1))
+                if (LevelExists(level.LevelValue))
                 {
                     return Conflict();
                 }
@@ -96,7 +97,7 @@ namespace LevelUpWebAPI
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = level.Level1 }, level);
+            return CreatedAtRoute("DefaultApi", new { id = level.LevelValue }, level);
         }
 
         // DELETE: api/Levels/5
@@ -126,7 +127,7 @@ namespace LevelUpWebAPI
 
         private bool LevelExists(int id)
         {
-            return db.Levels.Count(e => e.Level1 == id) > 0;
+            return db.Levels.Count(e => e.LevelValue == id) > 0;
         }
     }
 }
