@@ -55,7 +55,24 @@
                                   Margin="0,10,0,0"
                                   HorizontalAlignment="Center"/>
 
-                    <TextBlock Text="Vælg øvelse"
+                        <TextBlock Text="Vælg Client"
+                               Foreground="White"
+                               FontSize="18"
+                               Margin="30,10,0,0"/>
+
+                        <ComboBox Background="White" 
+                                  ItemsSource="{Binding all_Clients}"
+                                   DisplayMemberPath="UserName"
+                                  
+                                    SelectedValue="{Binding UserName}"
+                                  Margin="30,5,0,0" HorizontalAlignment="Left" 
+                                  VerticalAlignment="Top"
+                                  Width="211">
+                           
+                        </ComboBox>
+                  
+
+                        <TextBlock Text="Vælg øvelse"
                                    Foreground="White"
                                    FontSize="18"
                                    Margin="30,10,0,0"/>
@@ -72,19 +89,7 @@
 
                         </ComboBox>
 
-
-                        <TextBlock Text="Vælg Client"
-                               Foreground="White"
-                               FontSize="18"
-                               Margin="30,10,0,0"/>
-
-                        <ComboBox Background="White" ItemsSource="{Binding all_Clients}"
-                              SelectedItem="{Binding FirstName, Mode=TwoWay}"
-                              Margin="30,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="211">
-                        </ComboBox>
-                        <TextBox 
-                                 Text="Xp for øvelse"
-                                 
+                        <TextBox                                                                 
                                  Background="White"
                                  Margin="0,10,0,0"
                                  Width="215"
@@ -268,17 +273,20 @@
 
 
 
-                                                   
-
-                
-
-             
 
 
 
 
 
-                    <Line X1="0"
+
+
+
+
+
+
+
+
+                        <Line X1="0"
                                   X2="250"
                                   Stroke="#66fcf1"
                                   Margin="0,25,0,0"

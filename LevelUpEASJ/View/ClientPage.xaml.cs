@@ -57,6 +57,8 @@ namespace LevelUpEASJ.View
            XpToNextLevel.Text = luvm.ClientXPtoNextLevel.ToString();
            BMIblock.Text = "BMI: " + luvm.BMI.ToString("0.##");
 
+          
+
         }
     }
 }
