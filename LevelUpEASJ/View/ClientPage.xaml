@@ -166,9 +166,10 @@
                             x:Name="NavnBox"
                             Text=""
                                Foreground="White"
-                               FontSize="25"
-                               HorizontalAlignment="Center"/>
-
+                               FontSize="30"
+                               HorizontalAlignment="Center"
+                               Margin ="0,0,0,0"/>
+                        
                         <StackPanel Orientation="Horizontal"
                                     HorizontalAlignment="Center">
 
@@ -179,7 +180,7 @@
 
                             <Line X1="0"
                                   X2="0"
-                                  Y1="20"
+                                  Y1="23"
                                   Stroke="#66fcf1"
                                   HorizontalAlignment="Center"
                                   Margin="10,0,0,0"/>
@@ -220,7 +221,8 @@
                                 Text=""
                                    Foreground="White"
                                    FontSize="20"
-                                   HorizontalAlignment="Center"/>
+                                   HorizontalAlignment="Center"
+                                   Margin ="0,0,0,3"/>
 
                             <Line X1="0"
                               X2="162"
