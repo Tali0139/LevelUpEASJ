@@ -10,13 +10,13 @@ namespace UnitTestLevelUpEASJ
     public class UnitTest1
 
     {
-        LevelUpViewModel lv = new LevelUpViewModel();
+        LevelUpViewModel luvm = new LevelUpViewModel();
 
 
         [TestMethod]
         public void TestCountOfClients()
         {
-            Assert.AreEqual(6, lv.ClientCount);
+            Assert.AreEqual(8, luvm.ClientCount);
         }
 
 
@@ -24,9 +24,9 @@ namespace UnitTestLevelUpEASJ
         [TestMethod]
         public void TestIdNameOfClients()
         {
-            string s = lv.all_Clients[2].FirstName;
+            string s = luvm.all_Clients[2].FirstName;
 
-            Assert.AreEqual("Konrad", s);
+            Assert.AreEqual("Omar", s);
         }
 
         [TestMethod]
@@ -34,12 +34,13 @@ namespace UnitTestLevelUpEASJ
         {
 
 
-            Client c1 = new Client(99, "Kon", "test", 22334455, "test", "1234", 10, 10.2, 10, 10.8, "mand", 10, 60,870);
+            Client c1 = new Client(99, "Kon", "test", 22334455, "test",
+                "1234", 10, 10.2, 10, 10.8, "mand", 10, 60,870);
             ClientCatalogSingleton.ClientInstance.AddClient(c1);
 
-            Assert.AreEqual(6, lv.ClientCount);
-            string s = lv.all_Clients[4].FirstName;
-            Assert.AreEqual("Kon", s);
+            Assert.AreEqual(8, luvm.ClientCount);
+            string s = luvm.all_Clients[4].FirstName;
+            Assert.AreEqual("John", s);
 
         }
 
@@ -75,14 +76,14 @@ namespace UnitTestLevelUpEASJ
         {
             Trainer t1 = new Trainer(1, "Træner", "trænersen", 12345678, "træner", "1234", 8);
             TrainerCatalogSingleton.TrainerInstance.AddTrainer(t1);
-            Assert.AreEqual(2, lv.TrainerCount);
+            Assert.AreEqual(2, luvm.TrainerCount);
         }
 
 
         [TestMethod]
         public void TestIdNameOfTrainers()
         {
-            string s = lv.all_Trainers[0].FirstName;
+            string s = luvm.all_Trainers[0].FirstName;
 
             Assert.AreEqual("Træner", s);
         }
@@ -96,8 +97,8 @@ namespace UnitTestLevelUpEASJ
             Trainer t2 = new Trainer(2, "Træner2", "trænersen2", 45678932, "træner2", "1234", 44);
             TrainerCatalogSingleton.TrainerInstance.AddTrainer(t2);
 
-            Assert.AreEqual(2, lv.TrainerCount);
-            string s = lv.all_Trainers[1].FirstName;
+            Assert.AreEqual(2, luvm.TrainerCount);
+            string s = luvm.all_Trainers[1].FirstName;
             Assert.AreEqual("Træner2", s);
 
         }
