@@ -122,6 +122,8 @@
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Model\Client.cs" />
     <Compile Include="Model\ClientCatalogSingleton.cs" />
+    <Compile Include="Model\Exercise.cs" />
+    <Compile Include="Model\ExerciseCatalogSingleton.cs" />
     <Compile Include="Model\LevelCatalogSingleton.cs" />
     <Compile Include="Model\Level.cs" />
     <Compile Include="Model\Trainer.cs" />

@@ -7,4 +7,67 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="Level" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="7ba360de-6833-4c74-9cda-b4447200ab41" ChangeDateTime="12/09/2019 10:46:07">
+    <Property Name="ElementName" Value="[dbo].[Exercises].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Exercises]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Exercise" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f571c782-e7f8-442e-9fe6-6d862e91c3f5" ChangeDateTime="12/09/2019 10:56:47">
+    <Property Name="ElementName" Value="[dbo].[Exercises].[Exercise]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Exercises]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ExerciseName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="62958199-d270-46e3-a631-47777d33ca72" ChangeDateTime="12/09/2019 12:45:51">
+    <Property Name="ElementName" Value="[dbo].[Exercises].[ExerciseName]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Exercises]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ExerciseNameId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5fa06422-bf8f-4ba0-b45d-7d192b16780e" ChangeDateTime="12/09/2019 12:46:31">
+    <Property Name="ElementName" Value="[dbo].[Exercises].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Exercises]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ExerciseId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="62d20c38-9c28-497c-8955-c220fe5d3576" ChangeDateTime="12/09/2019 12:46:38">
+    <Property Name="ElementName" Value="[dbo].[Exercises].[ExerciseNameId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Exercises]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ExerciseName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="114de2e5-97ad-477c-b69e-ae9cab1aff20" ChangeDateTime="12/09/2019 12:48:00">
+    <Property Name="ElementName" Value="[dbo].[ClientExercise].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ClientExercise]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ClientExerciseId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a0cf8b6b-1cfc-4a85-aa0c-e1414c97d49c" ChangeDateTime="12/09/2019 12:48:37">
+    <Property Name="ElementName" Value="[dbo].[ClientExercise].[Data]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ClientExercise]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Dato" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="51e681b1-ffbb-49b7-816b-887196c74065" ChangeDateTime="12/09/2019 12:48:55">
+    <Property Name="ElementName" Value="[dbo].[ClientExercise].[Client]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ClientExercise]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ClientId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e6ee3cec-5be4-4480-9317-c562dd87fcfc" ChangeDateTime="12/09/2019 12:52:52">
+    <Property Name="ElementName" Value="[dbo].[ClientExercise].[ExcerciseId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ClientExercise]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ExerciseId" />
+  </Operation>
 </Operations>
