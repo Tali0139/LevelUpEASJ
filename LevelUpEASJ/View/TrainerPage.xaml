@@ -151,10 +151,20 @@
                            HorizontalAlignment="Center"
                            Margin="0,60,0,0"/>
 
-                    <TextBlock Text="Velkommen tilbage, [?]"
+                    <TextBlock Text="Velkommen tilbage, "
                                Foreground="White"
-                               HorizontalAlignment="Center"
-                               FontSize="18"/>
+                               HorizontalAlignment="Left"
+                               FontSize="20"
+                               Margin="60,0,0,0"/>
+
+                    <TextBlock x:Name="TrainerNameBox"
+                                Margin="0,-30,0,0"
+                                HorizontalAlignment="Right"
+                               Text=""
+                                FontSize="20"
+                                Width="190"
+
+                               />
 
                     <TextBlock Text="Antal klienter: [?]"
                                Foreground="White"

@@ -17,6 +17,7 @@ namespace LevelUpEASJ.ViewModel
     public class LevelUpViewModel : INotifyPropertyChanged
     {
         public ClientCatalogSingleton clientSingleton { get; set; }
+        public TrainerCatalogSingleton trainerSigleton { get; set; }
         private ObservableCollection<Client> _clients;
         private TrainerCatalogSingleton trainerSingleton;
         private ObservableCollection<Trainer> _trainers;
@@ -68,6 +69,7 @@ namespace LevelUpEASJ.ViewModel
         }
 
         public ClientCatalogSingleton ClientCatalogSingleton { get; set; }
+        public TrainerCatalogSingleton TrainerCatalogSingleton { get; set; }
 
 
         public ObservableCollection<Client> all_Clients
