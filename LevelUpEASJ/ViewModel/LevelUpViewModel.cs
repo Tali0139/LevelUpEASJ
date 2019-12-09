@@ -126,6 +126,14 @@ namespace LevelUpEASJ.ViewModel
             }
         }
 
+        public string ClientXPtoNextLevel
+        {
+            get
+            {
+                return LevelCatalogSingleton.LevelInstance.XpToNextLevel(ClientCatalogSingleton.ClientInstance.NyClient).ToString();
+            }
+        }
+
         private int _id;
         public int UserID
         {
@@ -227,6 +235,16 @@ namespace LevelUpEASJ.ViewModel
             set { weight = value; OnPropertyChanged(); }
         }
 
+        public double BMI
+        {
+            get
+            {
+                double h = ClientCatalogSingleton.ClientInstance.NyClient.Height;
+                double w = ClientCatalogSingleton.ClientInstance.NyClient.Weight;
+                double bmi = w / Math.Pow(h/100,2);
+                return bmi;
+            }
+        }
 
         public double ArmSize
         {

@@ -51,11 +51,12 @@ namespace LevelUpEASJ.View
         {
             base.OnNavigatedTo(e);
             NavnBox.Text = luvm.clientSingleton.NyClient.FirstName.ToString();
-            WeightBox.Text = luvm.clientSingleton.NyClient.Weight.ToString();
+            WeightBox.Text = luvm.clientSingleton.NyClient.Weight.ToString() +"kg";
             XPBox.Text = "XP: " + luvm.clientSingleton.NyClient.TotalXP.ToString();
-            //LevelBox.Text = "level: " + luvm.clientSingleton.NyClient.Gender.ToString();
            LevelBox.Text = "level: " + luvm.ClientLevel.ToString();
-            //NavnBox.Text = lvm.FirstName.ToString();
+           XpToNextLevel.Text = luvm.ClientXPtoNextLevel.ToString();
+           BMIblock.Text = "BMI: " + luvm.BMI.ToString("0.##");
+
         }
     }
 }
