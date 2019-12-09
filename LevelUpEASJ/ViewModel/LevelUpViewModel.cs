@@ -17,6 +17,7 @@ namespace LevelUpEASJ.ViewModel
     public class LevelUpViewModel : INotifyPropertyChanged
     {
         public ClientCatalogSingleton clientSingleton { get; set; }
+        public TrainerCatalogSingleton trainerSigleton { get; set; }
         private ObservableCollection<Client> _clients;
         private TrainerCatalogSingleton trainerSingleton;
         private ObservableCollection<Trainer> _trainers;
@@ -69,6 +70,7 @@ namespace LevelUpEASJ.ViewModel
         }
 
         public ClientCatalogSingleton ClientCatalogSingleton { get; set; }
+        public TrainerCatalogSingleton TrainerCatalogSingleton { get; set; }
 
 
         public ObservableCollection<Client> all_Clients
@@ -115,6 +117,22 @@ namespace LevelUpEASJ.ViewModel
                 if (person.UserName == username && person.Password == password)
                 ClientCatalogSingleton.ClientInstance.NyClient = person;
                 _exist = true;
+            }
+
+            return _exist;
+        }
+
+        public bool DoesAdminExist(string username, string password)
+        {
+            List<Trainer> myListOfTrainers = trainerSingleton.ReadListTrainer().Result;
+
+            foreach (var trainer in myListOfTrainers)
+            {
+                if (trainer.UserName == username && trainer.Password == password)
+                {
+                    TrainerCatalogSingleton.TrainerInstance.NyTrainer = trainer;
+                    _exist = true;
+                }
             }
 
             return _exist;

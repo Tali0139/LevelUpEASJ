@@ -8,9 +8,7 @@
     mc:Ignorable="d"
     xmlns:lvm="using:LevelUpEASJ.ViewModel"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-<Page.DataContext>
-    <lvm:LevelUpViewModel></lvm:LevelUpViewModel>
-</Page.DataContext>
+
     <Page.Resources>
         <Style x:Key="ButtonStyle1" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
@@ -707,6 +705,7 @@
                         Foreground="white"
                         Background="Transparent"
                         BorderThickness="0" 
+                        Click="GotoAdminLogin_Click"
                 >
                     <Button.Resources>
                         <Style x:Key="ButtonStyle1" TargetType="Button">

@@ -65,5 +65,10 @@ namespace LevelUpEASJ.View
         {
             this.Frame.Navigate(typeof(CreateClient));
         }
+
+        private void GotoAdminLogin_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AdminLogin));
+        }
     }
 }
