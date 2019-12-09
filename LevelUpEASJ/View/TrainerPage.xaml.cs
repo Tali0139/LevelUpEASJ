@@ -62,11 +62,15 @@ namespace LevelUpEASJ.View
         {
             this.Frame.Navigate(typeof(AdminLogin));
         }
+        private void GoToCreateTraining_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(CreateClientGoal));
+        }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            TrainerNameBox.Text = luvm.trainerSigleton.NyTrainer.FirstName.ToString();
+            //TrainerNameBox.Text = luvm.trainerSigleton.NyTrainer.FirstName.ToString();
 
             //NavnBox.Text = luvm.clientSingleton.NyClient.FirstName.ToString() + " " + luvm.clientSingleton.NyClient.LastName;
             //WeightBox.Text = luvm.clientSingleton.NyClient.Weight.ToString() + "kg";
