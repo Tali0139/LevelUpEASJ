@@ -227,7 +227,8 @@
                                   Margin="25,10,0,0"
                                   HorizontalAlignment="left"/>
 
-                            <Button Style="{StaticResource ButtonStyle1}"
+                            <Button Click="GoToCreateTraining_Click"
+                                Style="{StaticResource ButtonStyle1}"
                                     Background="Transparent"
                                     Height="120"
                                     Width="162"
@@ -236,7 +237,7 @@
                                 <Image Source="../Assets/AddGoalForClientIconGennemsigtig.png"></Image>
                             </Button>
 
-                            <TextBlock Text="Opret mål for klient"
+                            <TextBlock Text="Opret træning for klient"
                                        Foreground="#66f1fc"
                                        HorizontalAlignment="Center"
                                        FontSize="18">

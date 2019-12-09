@@ -61,6 +61,7 @@ namespace LevelUpEASJ.ViewModel
             _selectedLevels = new Levels(levelValue, minXp, maxXp);
             //CheckCommand = new RelayCommand(DoesUserExist);
             AddCommand = new RelayCommand(ToAddNewClient);
+            CreateGoal = new RelayCommand(ToAddNewGoal);
             _køn = new List<string>();
             _køn.Add("Mand");
             _køn.Add("Kvinde");
@@ -94,6 +95,7 @@ namespace LevelUpEASJ.ViewModel
         public RelayCommand AddCommand { get; set; }
         public RelayCommand DeleteCommand { get; set; }
         public RelayCommand UpdateCommand { get; set; }
+        public RelayCommand CreateGoal { get; set; }
         //public RelayCommand CheckCommand { get; set; }
 
 
@@ -246,6 +248,19 @@ namespace LevelUpEASJ.ViewModel
             }
         }
 
+        public int sumOfExerXp
+        {
+            get
+            {
+                int exer1 = 10;
+                int exer2 = 20;
+                int exer3 = 30;
+                int sumOfExerXp = exer3 + exer2 + exer1;
+                return sumOfExerXp;
+            }
+
+        }
+
         public double ArmSize
         {
             get { return armSize; }
@@ -290,6 +305,12 @@ namespace LevelUpEASJ.ViewModel
         {
             get { return _selectedLevels; }
             set { _selectedLevels = value;OnPropertyChanged(); }
+        }
+
+
+        public void ToAddNewGoal()
+        {
+
         }
 
         public void ToAddNewClient()

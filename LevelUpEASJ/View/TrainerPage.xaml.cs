@@ -52,5 +52,10 @@ namespace LevelUpEASJ.View
         {
             this.Frame.Navigate(typeof(InventoryTrainerPage));
         }
+
+        private void GoToCreateTraining_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(CreateClientGoal));
+        }
     }
 }

@@ -55,7 +55,24 @@
                                   Margin="0,10,0,0"
                                   HorizontalAlignment="Center"/>
 
-                    <TextBlock Text="Vælg øvelse"
+                        <TextBlock Text="Vælg Client"
+                               Foreground="White"
+                               FontSize="18"
+                               Margin="30,10,0,0"/>
+
+                        <ComboBox Background="White" 
+                                  ItemsSource="{Binding all_Clients}"
+                                   DisplayMemberPath="UserName"
+                                  
+                                    SelectedValue="{Binding UserName}"
+                                  Margin="30,5,0,0" HorizontalAlignment="Left" 
+                                  VerticalAlignment="Top"
+                                  Width="211">
+                           
+                        </ComboBox>
+                  
+
+                        <TextBlock Text="Vælg øvelse 1"
                                    Foreground="White"
                                    FontSize="18"
                                    Margin="30,10,0,0"/>
@@ -71,27 +88,32 @@
                         <ComboBoxItem Content="Ryg"/>
 
                         </ComboBox>
-
-
-                        <TextBlock Text="Vælg Client"
+                    <TextBlock Text="Vælg øvelse 2"
                                Foreground="White"
                                FontSize="18"
                                Margin="30,10,0,0"/>
 
-                        <ComboBox Background="White" ItemsSource="{Binding all_Clients}"
+                    <ComboBox Background="White" 
+                             
                               SelectedItem="{Binding FirstName, Mode=TwoWay}"
                               Margin="30,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="211">
-                        </ComboBox>
-                        <TextBox 
-                                 Text="Xp for øvelse"
-                                 
+                        <ComboBoxItem Content="Armbøjninger"/>
+                        <ComboBoxItem Content="Løb"/>
+                        <ComboBoxItem Content="Bicieps"/>
+                        <ComboBoxItem Content="Triceps"/>
+                        <ComboBoxItem Content="Ryg"/>
+
+                    </ComboBox>
+
+                        <TextBox        
+                            IsEnabled="False"
                                  Background="White"
                                  Margin="0,10,0,0"
                                  Width="215"
                                  HorizontalAlignment="Center"
-                                 PlaceholderText="Indtast antal xp"
+                                 PlaceholderText="Samlet Xp"
                                  Height="35"
-                                 Foreground="black">
+                                 Foreground="White">
                             <TextBox.Resources>
                                 <Style x:Key="RundeKanter" TargetType="TextBox">
                                     <Setter Property="MinWidth" Value="{ThemeResource TextControlThemeMinWidth}"/>
@@ -268,17 +290,20 @@
 
 
 
-                                                   
-
-                
-
-             
 
 
 
 
 
-                    <Line X1="0"
+
+
+
+
+
+
+
+
+                        <Line X1="0"
                                   X2="250"
                                   Stroke="#66fcf1"
                                   Margin="0,25,0,0"
@@ -298,7 +323,7 @@
                         HorizontalAlignment="Center"
                         Margin="0,25,0,0"
                         Foreground="white" 
-                        Command="{Binding AddCommand}" 
+                        Command="{Binding CreateGoal}" 
                         BorderThickness="0" 
                         Click="Create_Client_Goal_Button_Click"
                         >
