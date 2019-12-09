@@ -118,6 +118,22 @@ namespace LevelUpEASJ.ViewModel
             return _exist;
         }
 
+        public bool DoesAdminExist(string username, string password)
+        {
+            List<Trainer> myListOfTrainers = trainerSingleton.ReadListTrainer().Result;
+
+            foreach (var trainer in myListOfTrainers)
+            {
+                if (trainer.UserName == username && trainer.Password == password)
+                {
+                    TrainerCatalogSingleton.TrainerInstance.NyTrainer = trainer;
+                    _exist = true;
+                }
+            }
+
+            return _exist;
+        }
+
         public string ClientLevel
         {
             get

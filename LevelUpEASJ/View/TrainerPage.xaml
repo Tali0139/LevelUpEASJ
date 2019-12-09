@@ -129,8 +129,10 @@
                             Margin="0,50,0,0"
                             HorizontalAlignment="Stretch"
                             Height="50"
-                            Content="Knap 1"
-                            Foreground="White">
+                            Content="Log ud"
+                            Foreground="White"
+                            Click="LogOutAdmin_Click"
+                            >
 
                     </Button>
 

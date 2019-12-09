@@ -14,6 +14,20 @@ namespace LevelUpEASJ.Model
         private Trainer _trainer;
         private string serverUrl = "http://localhost:53409";
         private LevelUpCRUD<Trainer> _levelUpCrudTrainer;
+        public Trainer t;
+
+        public Trainer NyTrainer
+        {
+            get
+            {
+                return t;
+            }
+            set
+            {
+                t = value;
+            }
+        }
+
 
         private TrainerCatalogSingleton()
         {
