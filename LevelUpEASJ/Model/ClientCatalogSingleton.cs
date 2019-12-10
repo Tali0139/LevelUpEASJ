@@ -18,14 +18,8 @@ namespace LevelUpEASJ.Model
 
         public Client NyClient
         {
-            get
-            {
-                return c;
-            }
-            set
-            {
-                c = value;
-            } }
+            get { return c; } set { c = value; }
+        }
 
 
         private ClientCatalogSingleton()
