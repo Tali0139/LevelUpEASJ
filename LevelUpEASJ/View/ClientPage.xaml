@@ -130,18 +130,11 @@
                             Background="Transparent"
                             HorizontalAlignment="Stretch"
                             VerticalAlignment="Stretch" >
+
+
                     <Button Style="{StaticResource ButtonStyle1}"
                             Background="Transparent"
                             Margin="0,50,0,0"
-                            HorizontalAlignment="Stretch"
-                            Height="50"
-                            Content="Knap 1"
-                            Foreground="#66f1fc"/>
-
-
-                    <Button Style="{StaticResource ButtonStyle1}"
-                            Background="Transparent"
-                            Margin="0,0,0,0"
                             HorizontalAlignment="Stretch"
                             VerticalAlignment="Bottom"
                             Content="Log ud"
@@ -233,7 +226,7 @@
                             <TextBlock x:Name="XpToNextLevel"
                                 Foreground="White"
                                    Text=""
-                                   FontSize="12"
+                                   FontSize="14"
                                    HorizontalAlignment="Center"
                                    Margin="0,0,0,0"
                                    />

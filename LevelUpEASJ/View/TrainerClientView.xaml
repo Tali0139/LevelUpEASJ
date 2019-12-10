@@ -121,8 +121,9 @@
                                 Margin="0,50,0,0"
                                 HorizontalAlignment="Stretch"
                                 Height="50"
-                                Content="Knap 1"
-                                Foreground="#66f1fc"/>
+                                Content="Min side"
+                                Foreground="#66f1fc" Click="Button_Click"
+                                />
 
 
                     <Button Style="{StaticResource ButtonStyle1}"

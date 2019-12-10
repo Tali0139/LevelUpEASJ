@@ -54,10 +54,6 @@ namespace LevelUpEASJ.View
             this.Frame.Navigate(typeof(CalenderTrainer));
         }
 
-        private void InventoryTrainerPage_Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(InventoryTrainerPage));
-        }
 
         private void LogOutAdmin_Click(object sender, RoutedEventArgs e)
         {

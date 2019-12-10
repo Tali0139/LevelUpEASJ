@@ -301,7 +301,8 @@
                                     Background="Transparent"
                                     Height="120"
                                     Width="162"
-                                    Margin="25,10,0,0" Click="InventoryTrainerPage_Button_Click">
+                                    Margin="25,10,0,0" 
+                                    >
 
                                 <Image Source="../Assets/GiftIconGennemsigitg.png"></Image>
                             </Button>

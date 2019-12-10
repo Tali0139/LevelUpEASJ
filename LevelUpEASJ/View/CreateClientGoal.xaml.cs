@@ -31,10 +31,23 @@ namespace LevelUpEASJ.View
             this.Frame.Navigate(typeof(TrainerClientView));
             
         }
-
-        private void Go_Back_Click(object sender, RoutedEventArgs e)
+        private void LogOutButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Login));
+            this.Frame.Navigate(typeof(AdminLogin));
+
         }
+
+        private void Hamburgerbutton_OnChecked(object sender, RoutedEventArgs e)
+        {
+            this.mySplitView.IsPaneOpen = !this.mySplitView.IsPaneOpen;
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(TrainerPage));
+        }
+
+
     }
 }
