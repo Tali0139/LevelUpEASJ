@@ -18,6 +18,8 @@ namespace LevelUpEASJ.Model
          
         }
 
+        public Trainer() { }
+
         public int YearsOfExperience
         {
             get { return _yearsOfExperience; }

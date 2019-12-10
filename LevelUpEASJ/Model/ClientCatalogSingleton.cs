@@ -25,7 +25,8 @@ namespace LevelUpEASJ.Model
             set
             {
                 c = value;
-            } }
+            }
+        }
 
 
         private ClientCatalogSingleton()

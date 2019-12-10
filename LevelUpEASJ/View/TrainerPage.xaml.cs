@@ -70,8 +70,8 @@ namespace LevelUpEASJ.View
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            //TrainerNameBox.Text = luvm.trainerSigleton.NyTrainer.FirstName.ToString();
-
+            TrainerNameBox.Text = luvm.trainerSingleton.NyTrainer.FirstName + " " + luvm.trainerSingleton.NyTrainer.LastName;
+            CountOfClientsBox.Text = luvm.clientSingleton.Clients.Count.ToString();
             //NavnBox.Text = luvm.clientSingleton.NyClient.FirstName.ToString() + " " + luvm.clientSingleton.NyClient.LastName;
             //WeightBox.Text = luvm.clientSingleton.NyClient.Weight.ToString() + "kg";
             //XPBox.Text = "XP: " + luvm.clientSingleton.NyClient.TotalXP.ToString();
