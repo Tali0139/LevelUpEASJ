@@ -161,6 +161,14 @@ namespace LevelUpEASJ.ViewModel
             }
         }
 
+        public int XPForTraining
+        {
+            get
+            {
+                return ExerciseCatalogSingleton.ExerciseInstance.XPForExercise(ClientCatalogSingleton.ClientInstance.NyClient);
+            }
+        }
+
         private int _cid;
         
 
@@ -298,19 +306,7 @@ namespace LevelUpEASJ.ViewModel
             }
         }
 
-        public int sumOfExerXp
-        {
-            get
-            {
-                int exer1 = 10;
-                int exer2 = 20;
-                int exer3 = 30;
-                int sumOfExerXp = exer3 + exer2 + exer1;
-                return sumOfExerXp;
-            }
-
-        }
-
+       
         public double ArmSize
         {
             get { return armSize; }

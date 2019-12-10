@@ -9,6 +9,12 @@ namespace LevelUpWebAPI
     [Table("Client")]
     public partial class Client
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Client()
+        {
+            ClientExercises = new HashSet<ClientExercise>();
+        }
+
         public int Id { get; set; }
 
         public int? Height { get; set; }
@@ -41,5 +47,8 @@ namespace LevelUpWebAPI
         public int? PhoneNumber { get; set; }
 
         public int? TotalXP { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ClientExercise> ClientExercises { get; set; }
     }
 }
