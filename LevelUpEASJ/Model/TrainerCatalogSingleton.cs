@@ -14,7 +14,7 @@ namespace LevelUpEASJ.Model
         private Trainer _trainer;
         private string serverUrl = "http://localhost:53409";
         private LevelUpCRUD<Trainer> _levelUpCrudTrainer;
-        public Trainer t;
+        private Trainer t;
 
         public Trainer NyTrainer
         {
@@ -33,6 +33,7 @@ namespace LevelUpEASJ.Model
         {
             _trainers = new List<Trainer>();
             _levelUpCrudTrainer = new LevelUpCRUD<Trainer>(serverUrl, apiId);
+            t = new Trainer();
         }
 
         public List<Trainer> Trainers

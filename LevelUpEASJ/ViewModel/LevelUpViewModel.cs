@@ -17,9 +17,9 @@ namespace LevelUpEASJ.ViewModel
     public class LevelUpViewModel : INotifyPropertyChanged
     {
         public ClientCatalogSingleton clientSingleton { get; set; }
-        public TrainerCatalogSingleton trainerSigleton { get; set; }
+        public TrainerCatalogSingleton trainerSingleton { get; set; }
         private ObservableCollection<Client> _clients;
-        private TrainerCatalogSingleton trainerSingleton;
+        private TrainerCatalogSingleton _trainerSingleton;
         private ObservableCollection<Trainer> _trainers;
         private ObservableCollection<Levels> _levels;
         private Client _selectedClient;
@@ -43,6 +43,7 @@ namespace LevelUpEASJ.ViewModel
         private bool _exist = false;
         private int waistSize;
         private double armSize;
+        private bool _trainerexist = false;
 
 
 
@@ -102,10 +103,16 @@ namespace LevelUpEASJ.ViewModel
 
 
 
-        public bool Exist
+        public bool ClientExist
         {
             get { return _exist; }
             set { _exist = value; }
+        }
+
+        public bool TrainerExist
+        {
+            get { return _trainerexist; }
+            set { _trainerexist = value; }
         }
 
         public bool DoesUserExist(string username, string password)
@@ -131,11 +138,11 @@ namespace LevelUpEASJ.ViewModel
                 if (trainer.UserName == username && trainer.Password == password)
                 {
                     TrainerCatalogSingleton.TrainerInstance.NyTrainer = trainer;
-                    _exist = true;
+                    _trainerexist = true;
                 }
             }
 
-            return _exist;
+            return _trainerexist;
         }
 
         public string ClientLevel
@@ -154,24 +161,49 @@ namespace LevelUpEASJ.ViewModel
             }
         }
 
-        private int _id;
+        private int _cid;
+        
+
         public int UserID
         {
             get
             {
-                List<Client> myList = clientSingleton.ReadList().Result;
-                foreach (var person in myList)
+                List<Client> myListOfClients = clientSingleton.ReadList().Result;
+               foreach (var person in myListOfClients)
                 {
-                    _id = person.UserID;
+                    _cid = person.UserID;
                 }
-                return _id;
+
+                return _cid;
             }
             set
             {
-                _id = value;
+                _cid = value;
                 OnPropertyChanged();
             }
         }
+
+        //private int _tid;
+        //public int TrainerID
+        //{
+        //    get
+        //    {
+        //      List<Trainer> myListOfTrainers = trainerSingleton.ReadListTrainer().Result;
+        //        foreach (var person in myListOfTrainers)
+        //        {
+        //            _tid = person.UserID;
+        //        }
+
+        //        return _tid;
+        //    }
+        //    set
+        //    {
+        //        _tid = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
+
+
 
         private string _firstName;
         public string FirstName

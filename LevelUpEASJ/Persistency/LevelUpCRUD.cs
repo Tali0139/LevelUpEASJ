@@ -22,6 +22,8 @@ namespace LevelUpEASJ.Persistency
         private HttpClient _HttpClient;
         private string url;
         private ClientCatalogSingleton _clientCatalogSingleton;
+        private TrainerCatalogSingleton _trainerCatalogSingleton;
+
         //public const string serverURL = "http://localhost:52352";
 
 
