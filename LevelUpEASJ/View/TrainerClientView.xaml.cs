@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using LevelUpEASJ.ViewModel;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -22,14 +23,27 @@ namespace LevelUpEASJ.View
     /// </summary>
     public sealed partial class TrainerClientView : Page
     {
+        LevelUpViewModel luvm = new LevelUpViewModel();
+
         public TrainerClientView()
         {
             this.InitializeComponent();
+            this.DataContext = luvm;
+
         }
         private void Hamburgerbutton_OnChecked(object sender, RoutedEventArgs e)
         {
             this.mySplitView.IsPaneOpen = !this.mySplitView.IsPaneOpen;
 
         }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            NameOfTrainer_Box.Text = luvm.trainerSingleton.NyTrainer.FirstName + " " + luvm.trainerSingleton.NyTrainer.LastName;
+           
+
+        }
+
     }
 }

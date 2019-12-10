@@ -167,7 +167,8 @@
                                     VerticalAlignment="Top"
                                     Margin="0,-200,0,0">
 
-                        <TextBlock Text="[Navn på træner]"
+                        <TextBlock x:Name="NameOfTrainer_Box"
+                            Text=""
                                    Foreground="White"
                                    FontSize="25"
                                    HorizontalAlignment="Left"
