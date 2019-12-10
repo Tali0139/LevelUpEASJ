@@ -12,44 +12,44 @@ using LevelUpWebAPI;
 
 namespace LevelUpWebAPI.Controllers
 {
-    public class TrainersController : ApiController
+    public class ClientExercisesController : ApiController
     {
         private LevelUpDBContext db = new LevelUpDBContext();
 
-        // GET: api/Trainers
-        public IQueryable<Trainer> GetTrainers()
+        // GET: api/ClientExercises
+        public IQueryable<ClientExercise> GetClientExercises()
         {
-            return db.Trainers;
+            return db.ClientExercises;
         }
 
-        // GET: api/Trainers/5
-        [ResponseType(typeof(Trainer))]
-        public IHttpActionResult GetTrainer(int id)
+        // GET: api/ClientExercises/5
+        [ResponseType(typeof(ClientExercise))]
+        public IHttpActionResult GetClientExercise(int id)
         {
-            Trainer trainer = db.Trainers.Find(id);
-            if (trainer == null)
+            ClientExercise clientExercise = db.ClientExercises.Find(id);
+            if (clientExercise == null)
             {
                 return NotFound();
             }
 
-            return Ok(trainer);
+            return Ok(clientExercise);
         }
 
-        // PUT: api/Trainers/5
+        // PUT: api/ClientExercises/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutTrainer(int id, Trainer trainer)
+        public IHttpActionResult PutClientExercise(int id, ClientExercise clientExercise)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != trainer.Id)
+            if (id != clientExercise.ClientExerciseId)
             {
                 return BadRequest();
             }
 
-            db.Entry(trainer).State = EntityState.Modified;
+            db.Entry(clientExercise).State = EntityState.Modified;
 
             try
             {
@@ -57,7 +57,7 @@ namespace LevelUpWebAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!TrainerExists(id))
+                if (!ClientExerciseExists(id))
                 {
                     return NotFound();
                 }
@@ -70,35 +70,35 @@ namespace LevelUpWebAPI.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Trainers
-        [ResponseType(typeof(Trainer))]
-        public IHttpActionResult PostTrainer(Trainer trainer)
+        // POST: api/ClientExercises
+        [ResponseType(typeof(ClientExercise))]
+        public IHttpActionResult PostClientExercise(ClientExercise clientExercise)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Trainers.Add(trainer);
+            db.ClientExercises.Add(clientExercise);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = trainer.Id }, trainer);
+            return CreatedAtRoute("DefaultApi", new { id = clientExercise.ClientExerciseId }, clientExercise);
         }
 
-        // DELETE: api/Trainers/5
-        [ResponseType(typeof(Trainer))]
-        public IHttpActionResult DeleteTrainer(int id)
+        // DELETE: api/ClientExercises/5
+        [ResponseType(typeof(ClientExercise))]
+        public IHttpActionResult DeleteClientExercise(int id)
         {
-            Trainer trainer = db.Trainers.Find(id);
-            if (trainer == null)
+            ClientExercise clientExercise = db.ClientExercises.Find(id);
+            if (clientExercise == null)
             {
                 return NotFound();
             }
 
-            db.Trainers.Remove(trainer);
+            db.ClientExercises.Remove(clientExercise);
             db.SaveChanges();
 
-            return Ok(trainer);
+            return Ok(clientExercise);
         }
 
         protected override void Dispose(bool disposing)
@@ -110,9 +110,9 @@ namespace LevelUpWebAPI.Controllers
             base.Dispose(disposing);
         }
 
-        private bool TrainerExists(int id)
+        private bool ClientExerciseExists(int id)
         {
-            return db.Trainers.Count(e => e.Id == id) > 0;
+            return db.ClientExercises.Count(e => e.ClientExerciseId == id) > 0;
         }
     }
 }
