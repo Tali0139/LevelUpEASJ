@@ -31,4 +31,4 @@ INSERT INTO [dbo].[Exercises] ([ExerciseName], [XpForExercise]) VALUES (N'Løb',
 INSERT INTO [dbo].[Exercises] ([ExerciseName], [XpForExercise]) VALUES (N'Biceps', 50)
 INSERT INTO [dbo].[Exercises] ([ExerciseName], [XpForExercise]) VALUES (N'Triceps', 50)
 INSERT INTO [dbo].[Exercises] ([ExerciseName], [XpForExercise]) VALUES (N'Squat', 70)
-INSERT INTO [dbo].Trainer ([FirstName], [LastName],[Password],[PhoneNumber],[Username],[YearsOfExpericence]) VALUES ('Trainer', 'Trainersen', 'admin', 12345678, 'admin',5)
+INSERT INTO [dbo].[Trainer] ([FirstName], [LastName],[Password],[PhoneNumber],[Username],[YearsOfExpericence]) VALUES ('Trainer', 'Trainersen', 'admin', 12345678, 'admin',5)

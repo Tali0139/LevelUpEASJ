@@ -18,15 +18,7 @@ namespace LevelUpEASJ.Model
 
         public Trainer NyTrainer
         {
-            get
-            {
-                return t;
-            }
-            set
-            {
-                t = value;
-            }
-        }
+            get { return t; } set { t = value; } }
 
 
         private TrainerCatalogSingleton()
