@@ -202,49 +202,113 @@
 
                             <ListView.ItemTemplate>
                                 <DataTemplate>
-                                    <StackPanel Orientation="Vertical"
+                                    <StackPanel 
+                                                Orientation="Vertical"
                                                 HorizontalAlignment="Stretch"
                                                 Height="100"
                                                 Width="432"
                                                 Margin="-12,0,0,0"
                                                 >
+                                        <StackPanel Orientation="Horizontal ">
+                                            <StackPanel Height="100"
+                                                    Width="150">
+                                                <Image Width="75" 
+                                                       Height="75"
+                                                       Source="{Binding Image}"
+                                                       Margin="-42,11,0,0"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Vertical">
 
-                                        <StackPanel Orientation="Horizontal"
-                                                    Height="75"
-                                                    Width="432">
+                                             <StackPanel Orientation="Horizontal" 
+                                                         Height="45"
+                                                         VerticalAlignment="Top">
+                                                  <TextBlock Height="50"
+                                                            Text="{Binding FirstName}"
+                                                            Margin="-25,15,0,0"
+                                                            Foreground="White"
+                                                            FontSize="18"/>
 
-                                            <Image Width="150" Source="{Binding Image}">
-
-                                            </Image>
-
-                                            <TextBlock Height="50"
-                                                        Width="150"
-                                                        
-                                                Text="{Binding FirstName}"
-                                                     Foreground="White"
-                                                     FontSize="20">
-
-
-                                            </TextBlock>
-
-                                            <TextBlock Height="50"
-                                                       Width="150"
-                                                        
-                                                       Text="{Binding Level }"
-                                                       Foreground="White"
-                                                       FontSize="20">
+                                                    <TextBlock Height="50"
+                                                           Text="{Binding LastName}"
+                                                           Margin="7,15,0,0"
+                                                           Foreground="White"
+                                                           FontSize="18"/>
 
 
-                                            </TextBlock>
+                                                    <TextBlock Height="50"
+                                                           Text="   -   "
+                                                           Margin="-10,15,0,0"
+                                                           Foreground="White"
+                                                           FontSize="18"/>
 
-                                            <Line X1="0"
-                                                  X2="400"
-                                                  Stroke="#66fcf1"
-                                                  Margin="-135,0,0,0"
-                                                  VerticalAlignment="Bottom"
-                                                  HorizontalAlignment="Center"/>
+                                                    <TextBlock Height="50"
+                                                           Text="{Binding Age}"
+                                                           Margin="5,15,0,0"
+                                                           Foreground="White"
+                                                           FontSize="18"/>
+
+                                                    <TextBlock Height="50"
+                                                           Text=" år "
+                                                           Margin="0,15,0,0"
+                                                           Foreground="White"
+                                                           HorizontalAlignment="Right"
+                                                           FontSize="18"/>
+                                            </StackPanel> 
+                                            <StackPanel Orientation="Horizontal"
+                                                        Height="55"
+                                                        VerticalAlignment="Bottom">
+
+                                                <TextBlock Height="50"
+                                                           Text="{Binding Weight}"
+                                                           Margin="-25,15,0,0"
+                                                           Foreground="White"
+                                                           FontSize="18"/>
+
+                                                <TextBlock Height="50"
+                                                           Text="kg"
+                                                           Margin="0,15,0,0"
+                                                           Foreground="White"
+                                                           FontSize="18"/>
+
+                                                <TextBlock
+                                                    Height="50"
+                                                    Text="{Binding TotalXP}"
+                                                    Margin="50,15,0,0"
+                                                    Foreground="White"
+                                                    FontSize="18"/>
+                                                
+                                                <TextBlock
+                                                    Height="50"
+                                                    Text="XP"
+                                                    Margin="5,15,0,0"
+                                                    Foreground="White"
+                                                    FontSize="18"/>
+                                                
+                                                <TextBlock
+                                                    Height="50"
+                                                    Text="{Binding PhoneNumber}"
+                                                    Margin="50,15,0,0"
+                                                    Foreground="White"
+                                                    FontSize="18"/>
+                                                
+                                              
+
+                                                <Line X1="0"
+                                                      X2="400"
+                                                      Stroke="#66fcf1"
+                                                      Margin="-390,48,0,0"
+                                                      VerticalAlignment="Bottom"
+                                                      HorizontalAlignment="Center"/>
+
+
+                                              </StackPanel>
+                                                </StackPanel>
 
                                         </StackPanel>
+
+
+                                       
+
 
 
 
