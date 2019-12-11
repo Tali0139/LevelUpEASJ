@@ -8,7 +8,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{50AD2335-54C6-4ECF-AF5B-6B6AD1CC0FFA}</ProjectGuid>
+    <ProjectGuid>{0F60C816-7FA3-41EE-88EA-EBC1CD3F1D38}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -166,17 +166,17 @@
     <Compile Include="ClientExercise.cs" />
     <Compile Include="Controllers\ClientExercisesController.cs" />
     <Compile Include="Controllers\ClientsController.cs" />
-    <Compile Include="Controllers\ExercisController.cs" />
+    <Compile Include="Controllers\ExercisesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LevelsController.cs" />
     <Compile Include="Controllers\TrainersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="C__RefactorLog.cs" />
-    <Compile Include="Exercis.cs" />
+    <Compile Include="Exercises.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Level.cs" />
+    <Compile Include="Levels.cs" />
     <Compile Include="LevelUpDBContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Trainer.cs" />
@@ -281,7 +281,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>60764</DevelopmentServerPort>
+          <DevelopmentServerPort>62869</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:53409/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

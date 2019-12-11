@@ -13,6 +13,7 @@
     [Password]      VARCHAR (50)  NULL,
     [PhoneNumber]   INT           NULL,
 	[TotalXP]		INT			NULL,
+	[Image]			NVARCHAR (50) NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 

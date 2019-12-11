@@ -11,7 +11,8 @@ namespace LevelUpEASJ.Model
 
         private int _yearsOfExperience;
 
-        public Trainer(int id, string firstName, string lastName, int phoneNumber, string username, string password, int yearsOfExperience) : base(id, firstName, lastName, phoneNumber, username, password)
+        public Trainer(int id, string firstName, string lastName, int phoneNumber, string username, string password, string image, int yearsOfExperience) 
+            : base(id, firstName, lastName, phoneNumber, username, password, image)
 
         {
             _yearsOfExperience = yearsOfExperience;

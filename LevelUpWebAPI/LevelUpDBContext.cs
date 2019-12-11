@@ -15,11 +15,11 @@ namespace LevelUpWebAPI
         }
 
         public virtual DbSet<C__RefactorLog> C__RefactorLog { get; set; }
-        public virtual DbSet<Client> Clients { get; set; }
-        public virtual DbSet<ClientExercise> ClientExercises { get; set; }
-        public virtual DbSet<Exercis> Exercises { get; set; }
-        public virtual DbSet<Level> Levels { get; set; }
-        public virtual DbSet<Trainer> Trainers { get; set; }
+        public virtual DbSet<Client> Client { get; set; }
+        public virtual DbSet<ClientExercise> ClientExercise { get; set; }
+        public virtual DbSet<Exercises> Exercises { get; set; }
+        public virtual DbSet<Levels> Levels { get; set; }
+        public virtual DbSet<Trainer> Trainer { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

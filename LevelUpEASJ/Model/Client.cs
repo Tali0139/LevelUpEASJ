@@ -22,7 +22,9 @@ namespace LevelUpEASJ.Model
 
         public Client() { }
 
-        public Client(int id, string firstName, string lastName, int phoneNumber,string username, string password, int Age, double Weight, int Height, double FatPercent, string Gender, int WaistSize, double ArmSize, int TotalXP) : base(id, firstName, lastName, phoneNumber, username, password)
+        public Client(int id, string firstName, string lastName, int phoneNumber,string username, string password, string image, 
+                      int Age, double Weight, int Height, double FatPercent, string Gender, int WaistSize, double ArmSize, int TotalXP) 
+            : base(id, firstName, lastName, phoneNumber, username, password, image)
         {
             _weight = Weight;
             _height = Height;
