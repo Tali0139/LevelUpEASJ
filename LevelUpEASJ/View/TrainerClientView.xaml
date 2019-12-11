@@ -212,6 +212,7 @@
                                         <StackPanel Orientation="Horizontal"
                                                     Height="75"
                                                     Width="432">
+
                                             <Image Width="150" Source="{Binding Image}">
 
                                             </Image>
