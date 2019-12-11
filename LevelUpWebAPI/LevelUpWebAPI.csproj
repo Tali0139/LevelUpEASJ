@@ -169,6 +169,7 @@
     <Compile Include="Controllers\ExercisController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LevelsController.cs" />
+    <Compile Include="Controllers\TrainersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="C__RefactorLog.cs" />
     <Compile Include="Exercis.cs" />
