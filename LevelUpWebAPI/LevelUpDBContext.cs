@@ -10,6 +10,8 @@ namespace LevelUpWebAPI
         public LevelUpDBContext()
             : base("name=LevelUpDBContext")
         {
+            base.Configuration.LazyLoadingEnabled = false;
+            base.Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual DbSet<C__RefactorLog> C__RefactorLog { get; set; }
