@@ -12,44 +12,44 @@ using LevelUpWebAPI;
 
 namespace LevelUpWebAPI.Controllers
 {
-    public class ExercisController : ApiController
+    public class ExercisesController : ApiController
     {
         private LevelUpDBContext db = new LevelUpDBContext();
 
-        // GET: api/Exercis
-        public IQueryable<Exercis> GetExercises()
+        // GET: api/Exercises
+        public IQueryable<Exercises> GetExercises()
         {
             return db.Exercises;
         }
 
-        // GET: api/Exercis/5
-        [ResponseType(typeof(Exercis))]
-        public IHttpActionResult GetExercis(int id)
+        // GET: api/Exercises/5
+        [ResponseType(typeof(Exercises))]
+        public IHttpActionResult GetExercises(int id)
         {
-            Exercis exercis = db.Exercises.Find(id);
-            if (exercis == null)
+            Exercises exercises = db.Exercises.Find(id);
+            if (exercises == null)
             {
                 return NotFound();
             }
 
-            return Ok(exercis);
+            return Ok(exercises);
         }
 
-        // PUT: api/Exercis/5
+        // PUT: api/Exercises/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutExercis(int id, Exercis exercis)
+        public IHttpActionResult PutExercises(int id, Exercises exercises)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != exercis.ExerciseId)
+            if (id != exercises.ExerciseId)
             {
                 return BadRequest();
             }
 
-            db.Entry(exercis).State = EntityState.Modified;
+            db.Entry(exercises).State = EntityState.Modified;
 
             try
             {
@@ -57,7 +57,7 @@ namespace LevelUpWebAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ExercisExists(id))
+                if (!ExercisesExists(id))
                 {
                     return NotFound();
                 }
@@ -70,35 +70,35 @@ namespace LevelUpWebAPI.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Exercis
-        [ResponseType(typeof(Exercis))]
-        public IHttpActionResult PostExercis(Exercis exercis)
+        // POST: api/Exercises
+        [ResponseType(typeof(Exercises))]
+        public IHttpActionResult PostExercises(Exercises exercises)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Exercises.Add(exercis);
+            db.Exercises.Add(exercises);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = exercis.ExerciseId }, exercis);
+            return CreatedAtRoute("DefaultApi", new { id = exercises.ExerciseId }, exercises);
         }
 
-        // DELETE: api/Exercis/5
-        [ResponseType(typeof(Exercis))]
-        public IHttpActionResult DeleteExercis(int id)
+        // DELETE: api/Exercises/5
+        [ResponseType(typeof(Exercises))]
+        public IHttpActionResult DeleteExercises(int id)
         {
-            Exercis exercis = db.Exercises.Find(id);
-            if (exercis == null)
+            Exercises exercises = db.Exercises.Find(id);
+            if (exercises == null)
             {
                 return NotFound();
             }
 
-            db.Exercises.Remove(exercis);
+            db.Exercises.Remove(exercises);
             db.SaveChanges();
 
-            return Ok(exercis);
+            return Ok(exercises);
         }
 
         protected override void Dispose(bool disposing)
@@ -110,7 +110,7 @@ namespace LevelUpWebAPI.Controllers
             base.Dispose(disposing);
         }
 
-        private bool ExercisExists(int id)
+        private bool ExercisesExists(int id)
         {
             return db.Exercises.Count(e => e.ExerciseId == id) > 0;
         }

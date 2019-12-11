@@ -17,16 +17,16 @@ namespace LevelUpWebAPI.Controllers
         private LevelUpDBContext db = new LevelUpDBContext();
 
         // GET: api/Trainers
-        public IQueryable<Trainer> GetTrainers()
+        public IQueryable<Trainer> GetTrainer()
         {
-            return db.Trainers;
+            return db.Trainer;
         }
 
         // GET: api/Trainers/5
         [ResponseType(typeof(Trainer))]
         public IHttpActionResult GetTrainer(int id)
         {
-            Trainer trainer = db.Trainers.Find(id);
+            Trainer trainer = db.Trainer.Find(id);
             if (trainer == null)
             {
                 return NotFound();
@@ -79,7 +79,7 @@ namespace LevelUpWebAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.Trainers.Add(trainer);
+            db.Trainer.Add(trainer);
             db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = trainer.Id }, trainer);
@@ -89,13 +89,13 @@ namespace LevelUpWebAPI.Controllers
         [ResponseType(typeof(Trainer))]
         public IHttpActionResult DeleteTrainer(int id)
         {
-            Trainer trainer = db.Trainers.Find(id);
+            Trainer trainer = db.Trainer.Find(id);
             if (trainer == null)
             {
                 return NotFound();
             }
 
-            db.Trainers.Remove(trainer);
+            db.Trainer.Remove(trainer);
             db.SaveChanges();
 
             return Ok(trainer);
@@ -112,7 +112,7 @@ namespace LevelUpWebAPI.Controllers
 
         private bool TrainerExists(int id)
         {
-            return db.Trainers.Count(e => e.Id == id) > 0;
+            return db.Trainer.Count(e => e.Id == id) > 0;
         }
     }
 }

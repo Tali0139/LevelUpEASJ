@@ -17,39 +17,39 @@ namespace LevelUpWebAPI.Controllers
         private LevelUpDBContext db = new LevelUpDBContext();
 
         // GET: api/Levels
-        public IQueryable<Level> GetLevels()
+        public IQueryable<Levels> GetLevels()
         {
             return db.Levels;
         }
 
         // GET: api/Levels/5
-        [ResponseType(typeof(Level))]
-        public IHttpActionResult GetLevel(int id)
+        [ResponseType(typeof(Levels))]
+        public IHttpActionResult GetLevels(int id)
         {
-            Level level = db.Levels.Find(id);
-            if (level == null)
+            Levels levels = db.Levels.Find(id);
+            if (levels == null)
             {
                 return NotFound();
             }
 
-            return Ok(level);
+            return Ok(levels);
         }
 
         // PUT: api/Levels/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutLevel(int id, Level level)
+        public IHttpActionResult PutLevels(int id, Levels levels)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != level.LevelValue)
+            if (id != levels.LevelValue)
             {
                 return BadRequest();
             }
 
-            db.Entry(level).State = EntityState.Modified;
+            db.Entry(levels).State = EntityState.Modified;
 
             try
             {
@@ -57,7 +57,7 @@ namespace LevelUpWebAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!LevelExists(id))
+                if (!LevelsExists(id))
                 {
                     return NotFound();
                 }
@@ -71,15 +71,15 @@ namespace LevelUpWebAPI.Controllers
         }
 
         // POST: api/Levels
-        [ResponseType(typeof(Level))]
-        public IHttpActionResult PostLevel(Level level)
+        [ResponseType(typeof(Levels))]
+        public IHttpActionResult PostLevels(Levels levels)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Levels.Add(level);
+            db.Levels.Add(levels);
 
             try
             {
@@ -87,7 +87,7 @@ namespace LevelUpWebAPI.Controllers
             }
             catch (DbUpdateException)
             {
-                if (LevelExists(level.LevelValue))
+                if (LevelsExists(levels.LevelValue))
                 {
                     return Conflict();
                 }
@@ -97,23 +97,23 @@ namespace LevelUpWebAPI.Controllers
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = level.LevelValue }, level);
+            return CreatedAtRoute("DefaultApi", new { id = levels.LevelValue }, levels);
         }
 
         // DELETE: api/Levels/5
-        [ResponseType(typeof(Level))]
-        public IHttpActionResult DeleteLevel(int id)
+        [ResponseType(typeof(Levels))]
+        public IHttpActionResult DeleteLevels(int id)
         {
-            Level level = db.Levels.Find(id);
-            if (level == null)
+            Levels levels = db.Levels.Find(id);
+            if (levels == null)
             {
                 return NotFound();
             }
 
-            db.Levels.Remove(level);
+            db.Levels.Remove(levels);
             db.SaveChanges();
 
-            return Ok(level);
+            return Ok(levels);
         }
 
         protected override void Dispose(bool disposing)
@@ -125,7 +125,7 @@ namespace LevelUpWebAPI.Controllers
             base.Dispose(disposing);
         }
 
-        private bool LevelExists(int id)
+        private bool LevelsExists(int id)
         {
             return db.Levels.Count(e => e.LevelValue == id) > 0;
         }

@@ -6,7 +6,7 @@ namespace LevelUpWebAPI
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Level
+    public partial class Levels
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
