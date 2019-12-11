@@ -220,7 +220,6 @@
 
                         <TextBox        
                                  IsEnabled="False"
-                                 Background=""
                                  Margin="0,20,0,0"
                                  Width="215"
                                  HorizontalAlignment="Center"

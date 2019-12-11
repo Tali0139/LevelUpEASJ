@@ -173,16 +173,18 @@
   <ItemGroup>
     <Content Include="Assets\AddGoalForClientIconGennemsigtig.png" />
     <Content Include="Assets\BrugerIconGennemsigitg.png" />
-    <Content Include="Assets\CalenderIcon.PNG" />
     <Content Include="Assets\CalenderIconGennemsigtig.png" />
-    <Content Include="Assets\ClockIcon.PNG" />
     <Content Include="Assets\ClockIconGennemsigtig.png" />
     <Content Include="Assets\DailyCalenderIconGennemsigitg.png" />
-    <Content Include="Assets\DumbBellIcon.PNG" />
     <Content Include="Assets\DumbBellIconGennemsigtig.png" />
-    <Content Include="Assets\GiftIcon.PNG" />
     <Content Include="Assets\GiftIconGennemsigitg.png" />
-    <Content Include="Assets\MedalIcon.PNG" />
+    <Content Include="Assets\kvinde1.png" />
+    <Content Include="Assets\Kvinde2.png" />
+    <Content Include="Assets\mand1.png" />
+    <Content Include="Assets\Mand2.png" />
+    <Content Include="Assets\Mand3.png" />
+    <Content Include="Assets\Mand4.png" />
+    <Content Include="Assets\Mand5.png" />
     <Content Include="Assets\MedalIconGennemsigtig.png" />
     <Content Include="Assets\OversigtOverKlienterIconGennemsigtig.png" />
     <Content Include="Assets\PhoneIconTransparent.PNG" />

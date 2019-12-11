@@ -6,6 +6,8 @@
     [LastName]           NVARCHAR (50) NULL,
     [Password]           NVARCHAR (50) NULL,
     [PhoneNumber]        INT           NULL,
+    [Image]			NVARCHAR (50) NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
+
 );
 

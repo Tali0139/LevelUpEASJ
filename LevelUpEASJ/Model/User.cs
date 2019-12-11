@@ -15,13 +15,14 @@ namespace LevelUpEASJ.Model
         private string _lastName;
         private string _password;
         private int _phoneNumber;
+        private string _image;
 
         public User()
         {
 
         }
 
-        public User(int id, string firstName, string lastName, int phoneNumber, string username, string password)
+        public User(int id, string firstName, string lastName, int phoneNumber, string username, string password, string image)
         {
             _id = id;
             _firstName = firstName;
@@ -29,6 +30,7 @@ namespace LevelUpEASJ.Model
             _phoneNumber = phoneNumber;
             _username = username;
             _password = password;
+            _image = image;
         }
 
 
@@ -70,6 +72,11 @@ namespace LevelUpEASJ.Model
             set { _password = value; }
         }
 
+        public string Image
+        {
+            get { return _image; }
+            set { _image = value; }
+        }
 
 
 
