@@ -26,5 +26,8 @@ namespace LevelUpWebAPI
         public string Password { get; set; }
 
         public int? PhoneNumber { get; set; }
+
+        [StringLength(50)]
+        public string Image { get; set; }
     }
 }

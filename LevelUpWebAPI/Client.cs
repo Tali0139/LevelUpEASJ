@@ -12,7 +12,7 @@ namespace LevelUpWebAPI
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Client()
         {
-            ClientExercises = new HashSet<ClientExercise>();
+            ClientExercise = new HashSet<ClientExercise>();
         }
 
         public int Id { get; set; }
@@ -48,7 +48,10 @@ namespace LevelUpWebAPI
 
         public int? TotalXP { get; set; }
 
+        [StringLength(50)]
+        public string Image { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ClientExercise> ClientExercises { get; set; }
+        public virtual ICollection<ClientExercise> ClientExercise { get; set; }
     }
 }

@@ -17,6 +17,6 @@ namespace LevelUpWebAPI
 
         public virtual Client Client { get; set; }
 
-        public virtual Exercis Exercis { get; set; }
+        public virtual Exercises Exercises { get; set; }
     }
 }

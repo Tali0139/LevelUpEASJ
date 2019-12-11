@@ -35,7 +35,7 @@ namespace UnitTestLevelUpEASJ
 
 
             Client c1 = new Client(99, "Kon", "test", 22334455, "test",
-                "1234", 10, 10.2, 10, 10.8, "mand", 10, 60,870);
+                "1234","../Assets/mand1.png", 10, 10.2, 10, 10.8, "mand", 10, 60,870);
             ClientCatalogSingleton.ClientInstance.AddClient(c1);
 
             Assert.AreEqual(8, luvm.ClientCount);
@@ -50,7 +50,7 @@ namespace UnitTestLevelUpEASJ
         //{
 
 
-        //    Client c2 = new Client(98, "delete", "test", 22334445, "delete", "12345", 10, 10.2, 10, 10.8, "mand", 10, 60);
+        //    Client c2 = new Client(98, "delete", "test", 22334445, "delete", "12345","picture", 10, 10.2, 10, 10.8, "mand", 10, 60);
         //    ClientCatalogSingleton.ClientInstance.AddClient(c2);
         //    ClientCatalogSingleton.ClientInstance.DeleteClient(c2);
 
@@ -62,7 +62,7 @@ namespace UnitTestLevelUpEASJ
         //[TestMethod]
         //public void TestUpdateClient()
         //{
-        //    Client client = new Client(2,"OwnsaBeach", "Eierstrand", 12345678, "oliver", "1234", 24, 70, 196, 15.9, "mand", 30,45);
+        //    Client client = new Client(2,"OwnsaBeach", "Eierstrand", 12345678, "oliver", "1234","picture", 24, 70, 196, 15.9, "mand", 30,45);
         //    string s = lv.all_Clients[1].FirstName;
         //    lv.ToUpdateClient();
         //    Assert.AreEqual("OwnsaBeach", s);
@@ -74,7 +74,7 @@ namespace UnitTestLevelUpEASJ
         [TestMethod]
         public void TestCountOfTrainers()
         {
-            Trainer t1 = new Trainer(1, "Træner", "trænersen", 12345678, "træner", "1234", 8);
+            Trainer t1 = new Trainer(1, "Træner", "trænersen", 12345678, "træner", "1234","picture", 8);
             TrainerCatalogSingleton.TrainerInstance.AddTrainer(t1);
             Assert.AreEqual(2, luvm.TrainerCount);
         }
@@ -94,7 +94,7 @@ namespace UnitTestLevelUpEASJ
         {
 
 
-            Trainer t2 = new Trainer(2, "Træner2", "trænersen2", 45678932, "træner2", "1234", 44);
+            Trainer t2 = new Trainer(2, "Træner2", "trænersen2", 45678932, "træner2", "1234","picture" ,44);
             TrainerCatalogSingleton.TrainerInstance.AddTrainer(t2);
 
             Assert.AreEqual(2, luvm.TrainerCount);

@@ -17,16 +17,16 @@ namespace LevelUpWebAPI.Controllers
         private LevelUpDBContext db = new LevelUpDBContext();
 
         // GET: api/Clients
-        public IQueryable<Client> GetClients()
+        public IQueryable<Client> GetClient()
         {
-            return db.Clients;
+            return db.Client;
         }
 
         // GET: api/Clients/5
         [ResponseType(typeof(Client))]
         public IHttpActionResult GetClient(int id)
         {
-            Client client = db.Clients.Find(id);
+            Client client = db.Client.Find(id);
             if (client == null)
             {
                 return NotFound();
@@ -79,7 +79,7 @@ namespace LevelUpWebAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.Clients.Add(client);
+            db.Client.Add(client);
             db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = client.Id }, client);
@@ -89,13 +89,13 @@ namespace LevelUpWebAPI.Controllers
         [ResponseType(typeof(Client))]
         public IHttpActionResult DeleteClient(int id)
         {
-            Client client = db.Clients.Find(id);
+            Client client = db.Client.Find(id);
             if (client == null)
             {
                 return NotFound();
             }
 
-            db.Clients.Remove(client);
+            db.Client.Remove(client);
             db.SaveChanges();
 
             return Ok(client);
@@ -112,7 +112,7 @@ namespace LevelUpWebAPI.Controllers
 
         private bool ClientExists(int id)
         {
-            return db.Clients.Count(e => e.Id == id) > 0;
+            return db.Client.Count(e => e.Id == id) > 0;
         }
     }
 }
