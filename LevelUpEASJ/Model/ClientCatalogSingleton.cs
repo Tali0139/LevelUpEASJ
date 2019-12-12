@@ -91,9 +91,17 @@ namespace LevelUpEASJ.Model
 
         public string ImageViewTraining
         {
-            get { return NyClient.Image; }
-            set { NyClient.Image = value; }
+            get
+            {
+                if (NyClient.Image != null)
+                {
+                    return NyClient.Image;
+                }
+                else return "../Assets/BrugerIconGennemsigitg.png";
+            }
         }
+
+        
        
         public void DeleteClient(Client newClient)
         {
