@@ -166,7 +166,7 @@
 
                         <ComboBox Background="White" 
                                   ItemsSource="{Binding all_Clients}"
-                                  DisplayMemberPath="UserName"
+                                  DisplayMemberPath="TotalXP"
                                   SelectedValue="{Binding UserName}"
                                   Margin="30,5,0,0" HorizontalAlignment="Left" 
                                   VerticalAlignment="Top"
@@ -178,14 +178,13 @@
                                    FontSize="18"
                                    Margin="30,10,0,0"/>
 
-                        <ComboBox Background="White" 
-                              SelectedItem="{Binding FirstName, Mode=TwoWay}"
-                              Margin="30,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="211">
-                            <ComboBoxItem Content="Armbøjninger"/>
-                            <ComboBoxItem Content="Løb"/>
-                            <ComboBoxItem Content="Bicieps"/>
-                            <ComboBoxItem Content="Triceps"/>
-                            <ComboBoxItem Content="Ryg"/>
+                        <ComboBox Background="White"
+                                  ItemsSource="{Binding all_Exercises}"
+                              SelectedItem="{Binding ExerciseName}"
+                              Margin="30,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="211"
+                              DisplayMemberPath="ExerciseName"
+                              >
+                            
                         </ComboBox>
 
                         <TextBlock Text="Vælg træningsøvelse 2"
@@ -220,7 +219,7 @@
 
                         <TextBox        
                                  IsEnabled="False"
-                                 Background=""
+                               
                                  Margin="0,20,0,0"
                                  Width="215"
                                  HorizontalAlignment="Center"
