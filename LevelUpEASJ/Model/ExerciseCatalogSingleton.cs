@@ -11,14 +11,15 @@ namespace LevelUpEASJ.Model
 {
     public class ExerciseCatalogSingleton
     {
-        private const string apiId = "api/Exercise/";
-        private Exercise _exerciseType;
+        private const string apiId = "api/Exercises/";
+        private Exercise _exercise;
         private List<Exercise> _exercises;
         private string serverUrl = "http://localhost:53409";
         private LevelUpCRUD<Exercise> _levelUpCrudExercise;
         private LevelUpCRUD<ClientExercise> _levelUpCRUDClientExercise;
         private Exercise e;
         private ClientExercise _clientExercise;
+       
 
         public Exercise NyExercise
         {
@@ -26,9 +27,50 @@ namespace LevelUpEASJ.Model
             set { e = value; }
         }
 
+        public ExerciseCatalogSingleton()
+        {
+            _exercises = new List<Exercise>();
+            _levelUpCrudExercise = new LevelUpCRUD<Exercise>(serverUrl, apiId);
+            e = new Exercise();
+        }
+
+        private static ExerciseCatalogSingleton _exerciseInstance;
+        public static ExerciseCatalogSingleton ExerciseInstance
+        {
+            get
+            {
+                if (_exerciseInstance == null)
+                {
+                    _exerciseInstance = new ExerciseCatalogSingleton();
+                }
+                return _exerciseInstance;
+            }
+        }
+
+      
+        public async Task<List<Exercise>> ReadList()
+        {
+            return await _levelUpCrudExercise.Load();
+        }
+
+       
+
         public List<Exercise> Exercises
         {
             get { return _levelUpCrudExercise.Load().Result; }
+        }
+
+        public async Task<List<Exercise>> ReadListExercise()
+        {
+            return await _levelUpCrudExercise.Load();
+        }
+
+        private int _count;
+
+        public int Count
+        {
+            get { return Exercises.Count; }
+            set { _count = value; }
         }
 
         public List<ClientExercise> ClientExercises
@@ -63,29 +105,8 @@ namespace LevelUpEASJ.Model
         }
 
 
-        private ExerciseCatalogSingleton()
-        {
-            _exercises = new List<Exercise>();
-            _levelUpCrudExercise = new LevelUpCRUD<Exercise>(serverUrl, apiId);
-        }
 
-        private static ExerciseCatalogSingleton _exerciseInstance;
-        public static ExerciseCatalogSingleton ExerciseInstance
-        {
-            get
-            {
-                if (_exerciseInstance == null)
-                {
-                    _exerciseInstance = new ExerciseCatalogSingleton();
-                }
-                return _exerciseInstance;
-            }
-        }
 
-        public List<Exercise> ExercisesList
-        {
-            get { return _levelUpCrudExercise.Load().Result; }
-        }
 
     }
 }

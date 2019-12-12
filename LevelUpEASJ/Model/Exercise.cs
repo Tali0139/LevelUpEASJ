@@ -6,13 +6,18 @@ using System.Threading.Tasks;
 
 namespace LevelUpEASJ.Model
 {
-    public class Exercise
+    public class Exercise : User
     {
         private string _exerciseName;
         private int _xpForExercise;
         private int _exerciseId;
-        
-        public Exercise() { }
+
+
+        public Exercise()
+        {
+
+        }
+
 
         public Exercise(string exerciseName, int xpForExercise, int exerciseId)
         {
