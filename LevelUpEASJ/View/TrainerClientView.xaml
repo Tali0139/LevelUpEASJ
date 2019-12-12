@@ -133,7 +133,8 @@
                                 VerticalAlignment="Bottom"
                                 Content="Log ud"
                                 Foreground="#66f1fc"
-                                Height="50"/>
+                                Height="50"
+                                Click="Logout_Click"/>
 
 
                 </StackPanel>
@@ -219,10 +220,10 @@
                                             </StackPanel>
                                             <StackPanel Orientation="Vertical">
 
-                                             <StackPanel Orientation="Horizontal" 
+                                                <StackPanel Orientation="Horizontal" 
                                                          Height="45"
                                                          VerticalAlignment="Top">
-                                                  <TextBlock Height="50"
+                                                    <TextBlock Height="50"
                                                             Text="{Binding FirstName}"
                                                             Margin="-25,15,0,0"
                                                             Foreground="White"
@@ -253,47 +254,55 @@
                                                            Foreground="White"
                                                            HorizontalAlignment="Right"
                                                            FontSize="18"/>
-                                            </StackPanel> 
-                                            <StackPanel Orientation="Horizontal"
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal"
                                                         Height="55"
                                                         VerticalAlignment="Bottom">
 
-                                                <TextBlock Height="50"
+                                                    <TextBlock Height="50"
                                                            Text="{Binding Weight}"
                                                            Margin="-25,15,0,0"
                                                            Foreground="White"
                                                            FontSize="18"/>
 
-                                                <TextBlock Height="50"
+                                                    <TextBlock Height="50"
                                                            Text="kg"
                                                            Margin="0,15,0,0"
                                                            Foreground="White"
                                                            FontSize="18"/>
 
-                                                <TextBlock
+                                                    <TextBlock
                                                     Height="50"
                                                     Text="{Binding TotalXP}"
                                                     Margin="50,15,0,0"
                                                     Foreground="White"
                                                     FontSize="18"/>
-                                                
-                                                <TextBlock
+
+                                                    <TextBlock
                                                     Height="50"
                                                     Text="XP"
                                                     Margin="5,15,0,0"
                                                     Foreground="White"
                                                     FontSize="18"/>
-                                                
-                                                <TextBlock
+
+                                                    <TextBlock
                                                     Height="50"
-                                                    Text="{Binding PhoneNumber}"
-                                                    Margin="50,15,0,0"
+                                                    FontFamily="Segoe MDL2 Assets"
+                                                    Text="&#xE717;"
+                                                    Margin="42,18,0,0"
                                                     Foreground="White"
                                                     FontSize="18"/>
-                                                
-                                              
 
-                                                <Line X1="0"
+                                                    <TextBlock HorizontalAlignment="Left"
+                                                    Height="50"
+                                                    Text="{Binding PhoneNumber}"
+                                                    Margin="0,15,0,5"
+                                                    Foreground="White"
+                                                    FontSize="18"/>
+
+
+
+                                                    <Line X1="0"
                                                       X2="400"
                                                       Stroke="#66fcf1"
                                                       Margin="-390,48,0,0"
@@ -301,13 +310,13 @@
                                                       HorizontalAlignment="Center"/>
 
 
-                                              </StackPanel>
                                                 </StackPanel>
+                                            </StackPanel>
 
                                         </StackPanel>
 
 
-                                       
+
 
 
 
