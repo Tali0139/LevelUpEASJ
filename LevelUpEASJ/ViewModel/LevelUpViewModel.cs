@@ -30,6 +30,7 @@ namespace LevelUpEASJ.ViewModel
         private Levels _selectedLevels;
         private Exercise _selectedExercise;
         private int id;
+        private string image;
         private string firstName;
         private string lastName;
         private string username;
@@ -65,8 +66,8 @@ namespace LevelUpEASJ.ViewModel
             _clients = new ObservableCollection<Client>();
             _levels = new ObservableCollection<Levels>();
             _selectedExercise = new Exercise(ExerciseName, XpForExercise, ExerciseId);
-            _selectedClient = new Client(UserID, FirstName, LastName, PhoneNumber, UserName, Password, Age, Weight, Height, Fatpercent, Gender, WaistSize, ArmSize, TotalXP);
-            _selectedTrainer = new Trainer(UserID, FirstName, LastName, PhoneNumber, UserName, Password, YearsOfExperience);
+            _selectedClient = new Client(UserID, FirstName, LastName, PhoneNumber, UserName, Password,image, Age, Weight, Height, Fatpercent, Gender, WaistSize, ArmSize, TotalXP);
+            _selectedTrainer = new Trainer(UserID, FirstName, LastName, PhoneNumber, UserName, Password,image, YearsOfExperience);
             _selectedLevels = new Levels(levelValue, minXp, maxXp);
            
             //CheckCommand = new RelayCommand(DoesUserExist);
@@ -399,7 +400,7 @@ namespace LevelUpEASJ.ViewModel
 
         public void ToAddNewClient()
         {
-            Client NewClient = new Client(id, FirstName, LastName, PhoneNumber, UserName, Password, age, weight, height, fatPercent,
+            Client NewClient = new Client(id, FirstName, LastName, PhoneNumber, UserName, Password, image, age, weight, height, fatPercent,
                 gender, WaistSize, ArmSize, TotalXP);
             clientSingleton.AddClient(NewClient);
             OnPropertyChanged(nameof(all_Clients));
@@ -426,7 +427,7 @@ namespace LevelUpEASJ.ViewModel
 
         public void ToAddNewTrainer()
         {
-            Trainer newLevels = new Trainer(id, firstName, lastName, PhoneNumber, username, Password, yearsOfExperience);
+            Trainer newLevels = new Trainer(id, firstName, lastName, PhoneNumber, username, Password,image, yearsOfExperience);
             trainerSingleton.AddTrainer(newLevels);
             OnPropertyChanged(nameof(all_Trainers));
             OnPropertyChanged(nameof(TrainerCount));
