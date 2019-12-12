@@ -42,7 +42,7 @@ namespace LevelUpEASJ.View
         {
             base.OnNavigatedTo(e);
             NameOfUser_Box.Text = luvm.clientSingleton.NyClient.FirstName + " " + luvm.clientSingleton.NyClient.LastName;
-            billedbox.Source = luvm.clientSingleton.GetImageSource(luvm.clientSingleton.NyClient.Image);
+           // billedbox.Source = luvm.clientSingleton.GetImageSource(luvm.clientSingleton.NyClient.Image);
 
 
         }

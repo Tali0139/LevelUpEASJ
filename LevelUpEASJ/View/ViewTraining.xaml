@@ -157,16 +157,13 @@
 
                         <Image x:Name="billedbox"
                                      
-                              
+                                    Source="{Binding clientSingleton.ImageViewTraining }"
                                    Height="130"
                                    Width="130"
                                    HorizontalAlignment="Left"
                                    VerticalAlignment="Top"
                                    Margin="50,50,0,0">
-                            <Image.Source>
-                                <BitmapImage UriSource="../Assets/mand1.png"></BitmapImage>
-                            </Image.Source>
-
+                           
                         </Image>
 
                     </StackPanel>

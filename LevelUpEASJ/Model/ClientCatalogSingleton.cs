@@ -88,16 +88,13 @@ namespace LevelUpEASJ.Model
 
             }
         }
-        public ImageSource GetImageSource(string myimage)
+
+        public string ImageViewTraining
         {
-
-            string image = myimage;
-           // myimage = image;
-            BitmapImage bitmapImage = new BitmapImage();
-            bitmapImage.UriSource = new Uri(myimage);
-            return bitmapImage;
+            get { return NyClient.Image; }
+            set { NyClient.Image = value; }
         }
-
+       
         public void DeleteClient(Client newClient)
         {
             _levelUpCrud.Delete(_client.UserID);
