@@ -133,7 +133,8 @@
                                 VerticalAlignment="Bottom"
                                 Content="Log ud"
                                 Foreground="#66f1fc"
-                                Height="50"/>
+                                Height="50"
+                                Click="Logout_Click"/>
 
 
                 </StackPanel>
@@ -292,10 +293,10 @@
                                                     Foreground="White"
                                                     FontSize="18"/>
                                                 
-                                              <TextBlock
+                                              <TextBlock HorizontalAlignment="Left"
                                                     Height="50"
                                                     Text="{Binding PhoneNumber}"
-                                                    Margin="5,15,0,0"
+                                                    Margin="0,15,0,5"
                                                     Foreground="White"
                                                     FontSize="18"/>
                                                 
