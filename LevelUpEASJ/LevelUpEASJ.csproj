@@ -164,6 +164,9 @@
     <Compile Include="View\TrainerPage.xaml.cs">
       <DependentUpon>TrainerPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ViewTraining.xaml.cs">
+      <DependentUpon>ViewTraining.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

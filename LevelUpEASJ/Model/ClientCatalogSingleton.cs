@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LevelUpEASJ.Persistency;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace LevelUpEASJ.Model
 {
@@ -42,6 +44,7 @@ namespace LevelUpEASJ.Model
                 return _clientInstance;
             }
         }
+
 
         public List<Client> Clients
         {
@@ -84,6 +87,15 @@ namespace LevelUpEASJ.Model
                 }
 
             }
+        }
+        public ImageSource GetImageSource(string myimage)
+        {
+
+            string image = myimage;
+           // myimage = image;
+            BitmapImage bitmapImage = new BitmapImage();
+            bitmapImage.UriSource = new Uri(myimage);
+            return bitmapImage;
         }
 
         public void DeleteClient(Client newClient)

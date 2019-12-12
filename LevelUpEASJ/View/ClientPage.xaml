@@ -256,7 +256,7 @@
                                     Height="120" 
                                     VerticalAlignment="Center" 
                                     Width="162"
-                                    Margin="25,0,0,0">
+                                    Margin="25,0,0,0" Click="Button_Click">
                                 <Image Source="../../Assets/DumbBellIconGennemsigtig.png"/>
                             </Button>
 

@@ -172,6 +172,12 @@ namespace LevelUpEASJ.ViewModel
             return _trainerexist;
         }
 
+        public string Image
+        {
+            get { return image; }
+            set { image = value; OnPropertyChanged(); }
+        }
+
         public string ClientLevel
         {
             get
