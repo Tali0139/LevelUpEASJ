@@ -11,7 +11,7 @@ namespace LevelUpEASJ.Model
 {
     public class ExerciseCatalogSingleton
     {
-        private const string apiId = "api/Exercis/";
+        private const string apiId = "api/Exercises/";
         private Exercise _exercise;
         private List<Exercise> _exercises;
         private string serverUrl = "http://localhost:53409";
@@ -31,7 +31,7 @@ namespace LevelUpEASJ.Model
         {
             _exercises = new List<Exercise>();
             _levelUpCrudExercise = new LevelUpCRUD<Exercise>(serverUrl, apiId);
-            
+            e = new Exercise();
         }
 
         private static ExerciseCatalogSingleton _exerciseInstance;
@@ -78,34 +78,34 @@ namespace LevelUpEASJ.Model
             get { return _levelUpCRUDClientExercise.Load().Result; }
         }
 
-        //public int XPForExercise(Client nc)
-        //{
-        //    int cid = nc.UserID;
-        //    var Query = from exer in Exercises
-        //                join clientExercise in ClientExercises on exer.ExerciseId equals clientExercise.ExerciseId
-        //                select new
-        //                {
-        //                    XpFortraining = exer.XpForExercise,
-        //                    clientIdentification = clientExercise.ClientId,
-        //                    ExerciseIdentification = clientExercise.ExerciseId,
-        //                };
+        public int XPForExercise(Client nc)
+        {
+            int cid = nc.UserID;
+            var Query = from exer in Exercises
+                        join clientExercise in ClientExercises on exer.ExerciseId equals clientExercise.ExerciseId
+                        select new
+                        {
+                            XpFortraining = exer.XpForExercise,
+                            clientIdentification = clientExercise.ClientId,
+                            ExerciseIdentification = clientExercise.ExerciseId,
+                        };
 
-        //    foreach (var result in Query)
-        //    {
-        //        if (cid == result.clientIdentification)
-        //        {
-        //            int _ex1 = result.XpFortraining;
-        //            int _ex2 = result.XpFortraining;
-        //            int _ex3 = result.XpFortraining;
-        //            int sumOfXP = _ex1 + _ex2 + _ex3;
-        //            return sumOfXP;
-        //        }
-        //    }
-        //    return 0;
-        //}
+            foreach (var result in Query)
+            {
+                if (cid == result.clientIdentification)
+                {
+                    int _ex1 = result.XpFortraining;
+                    int _ex2 = result.XpFortraining;
+                    int _ex3 = result.XpFortraining;
+                    int sumOfXP = _ex1 + _ex2 + _ex3;
+                    return sumOfXP;
+                }
+            }
+            return 0;
+        }
 
 
-       
+
 
 
     }

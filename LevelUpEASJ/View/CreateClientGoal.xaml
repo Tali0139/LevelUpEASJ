@@ -166,7 +166,7 @@
 
                         <ComboBox Background="White" 
                                   ItemsSource="{Binding all_Clients}"
-                                  DisplayMemberPath="TotalXP"
+                                  DisplayMemberPath="UserName"
                                   SelectedValue="{Binding UserName}"
                                   Margin="30,5,0,0" HorizontalAlignment="Left" 
                                   VerticalAlignment="Top"
