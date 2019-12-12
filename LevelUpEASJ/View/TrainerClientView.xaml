@@ -286,8 +286,16 @@
                                                 
                                                 <TextBlock
                                                     Height="50"
+                                                    FontFamily="Segoe MDL2 Assets"
+                                                    Text="&#xE717;"
+                                                    Margin="42,18,0,0"
+                                                    Foreground="White"
+                                                    FontSize="18"/>
+                                                
+                                              <TextBlock
+                                                    Height="50"
                                                     Text="{Binding PhoneNumber}"
-                                                    Margin="50,15,0,0"
+                                                    Margin="5,15,0,0"
                                                     Foreground="White"
                                                     FontSize="18"/>
                                                 
