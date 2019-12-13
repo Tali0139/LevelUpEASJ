@@ -341,6 +341,12 @@ namespace LevelUpEASJ.ViewModel
             set { height = value; OnPropertyChanged(); }
         }
 
+        public double FatPercent
+        {
+            get { return fatPercent; }
+            set { fatPercent = value; OnPropertyChanged(); }
+        }
+
         public double Weight
         {
             get { return weight; }
