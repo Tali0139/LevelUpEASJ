@@ -55,11 +55,7 @@ namespace LevelUpEASJ.View
         //    return bitmapImage;
         //}
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(CreateClientGoal));
-
-        }
+      
         private void GoToUserLogin_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Login));

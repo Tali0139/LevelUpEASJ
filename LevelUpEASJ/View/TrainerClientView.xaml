@@ -117,14 +117,14 @@
                         VerticalAlignment="Stretch">
 
                     <Button Style="{StaticResource ButtonStyle1}"
-                                Background="Transparent"
-                                Margin="0,50,0,0"
-                                HorizontalAlignment="Stretch"
-                                Height="50"
-                                Content="Min side"
-                                Foreground="#66f1fc" Click="Button_Click"
-                                />
-
+                            Background="Transparent"
+                            Margin="0,50,0,0"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Bottom"
+                            Content="Min side"
+                            Foreground="#66f1fc"
+                            Height="50"
+                            Click="Trainer_Page_Click"/>
 
                     <Button Style="{StaticResource ButtonStyle1}"
                                 Background="Transparent"
