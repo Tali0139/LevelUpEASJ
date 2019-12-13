@@ -505,7 +505,7 @@
                                   HorizontalAlignment="Center"/>
 
                         <Button 
-                        Content="Opret træning til klient"
+                        Content="{Binding }"
                         FontSize="14"
                         Height="35"
                         Width="215"
@@ -516,6 +516,7 @@
                         Command="{Binding CreateGoal}" 
                         BorderThickness="0" 
                         Click="Create_Client_Goal_Button_Click"
+                        
                         >
                             <Button.Resources>
                                 <Style x:Key="ButtonStyle1" TargetType="Button">
