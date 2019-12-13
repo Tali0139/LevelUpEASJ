@@ -117,19 +117,11 @@
                         HorizontalAlignment="Stretch"
                         VerticalAlignment="Stretch">
 
+
+
                     <Button Style="{StaticResource ButtonStyle1}"
                                 Background="Transparent"
                                 Margin="0,50,0,0"
-                                HorizontalAlignment="Stretch"
-                                Height="50"
-                                Content="Opret Træning"
-                                Foreground="#66f1fc" Click="Button_Click"
-                                />
-
-
-                    <Button Style="{StaticResource ButtonStyle1}"
-                                Background="Transparent"
-                                Margin="0,0,0,0"
                                 HorizontalAlignment="Stretch"
                                 VerticalAlignment="Bottom"
                                 Content="Log ud"
