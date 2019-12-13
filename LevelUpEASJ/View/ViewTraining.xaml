@@ -178,7 +178,7 @@
                                        Height="50"
                                        Width="200"
 
-                                       HorizontalAlignment="Right"
+                                       HorizontalAlignment="Left"
                                        FontSize="20"
                                        Foreground="White"
                                        Margin="0,0,0,0">
@@ -187,7 +187,7 @@
                                    Foreground="White"
                                    FontSize="20"
                                    Width="45"
-                                   Margin="170,-50,0,0"
+                                   Margin="120,-50,0,0"
                             />
                     </StackPanel>
 
@@ -195,7 +195,7 @@
                                 Height="568"
                                 Width="432">
 
-                        <ListView x:Name="ListView_Trainings" ItemsSource="{Binding all}">
+                        <ListView x:Name="ListView_Trainings" ItemsSource="{Binding all_Clients}">
 
 
 
@@ -289,8 +289,6 @@
                                                     Margin="50,15,0,0"
                                                     Foreground="White"
                                                     FontSize="18"/>
-
-
 
                                                     <Line X1="0"
                                                       X2="400"

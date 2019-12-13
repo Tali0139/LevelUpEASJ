@@ -341,6 +341,12 @@ namespace LevelUpEASJ.ViewModel
             set { height = value; OnPropertyChanged(); }
         }
 
+        public double FatPercent
+        {
+            get { return fatPercent; }
+            set { fatPercent = value; OnPropertyChanged(); }
+        }
+
         public double Weight
         {
             get { return weight; }
@@ -484,6 +490,11 @@ namespace LevelUpEASJ.ViewModel
                       exerciseSingleton.ReadList().Result.Find(e => e.ExerciseName == SelectedExercise2.ExerciseName)
                           .XpForExercise + exerciseSingleton.ReadList().Result.Find(e => e.ExerciseName == SelectedExercise3.ExerciseName)
                           .XpForExercise;
+                //Client cn = clientSingleton.ReadList().Result.Find(c => c.UserName == SelectedClient.UserName);
+                //cn.TotalXP = cn.TotalXP + Tot;
+                //clientSingleton.UpdateClient(cn);
+
+
         }
 
         public async Task<int> ToAddNewXPToTotalXP(Client nc)
