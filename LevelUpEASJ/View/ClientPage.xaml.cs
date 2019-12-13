@@ -56,8 +56,8 @@ namespace LevelUpEASJ.View
            LevelBox.Text = "Level " + luvm.ClientLevel.ToString();
            XpToNextLevel.Text = luvm.ClientXPtoNextLevel.ToString();
            BMIblock.Text = "BMI: " + luvm.BMI.ToString("0.##");
+           FedtBox.Text = "Fedt: " + luvm.clientSingleton.NyClient.FatPercent.ToString() + "%";
 
-          
 
         }
 

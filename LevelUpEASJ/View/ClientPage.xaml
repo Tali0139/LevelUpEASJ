@@ -197,6 +197,18 @@
                                        FontSize="18"
                                        Margin="10,0,0,0"/>
 
+                            <Line X1="0"
+                                  X2="0"
+                                  Y1="23"
+                                  Stroke="#66fcf1"
+                                  HorizontalAlignment="Center"
+                                  Margin="10,0,0,0"/>
+
+                            <TextBlock x:Name="FedtBox"
+                                       Text=""
+                                       Foreground="White"
+                                       FontSize="18"
+                                       Margin="10,0,0,0"/>
                         </StackPanel>
 
 
