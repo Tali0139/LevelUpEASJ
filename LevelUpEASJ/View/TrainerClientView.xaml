@@ -154,7 +154,7 @@
                                     HorizontalAlignment="Left"
                                     >
 
-                        <Image Source="../Assets/BrugerIconGennemsigitg.png"
+                        <Image Source="{Binding trainerSingleton.NyTrainer.Image}"
                                    Height="130"
                                    Width="130"
                                    HorizontalAlignment="Left"
