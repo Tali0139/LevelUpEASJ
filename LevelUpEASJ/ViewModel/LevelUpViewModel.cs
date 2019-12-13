@@ -172,11 +172,7 @@ namespace LevelUpEASJ.ViewModel
             return _trainerexist;
         }
 
-        public string Image
-        {
-            get { return image; }
-            set { image = value; OnPropertyChanged(); }
-        }
+       
 
         public string ClientLevel
         {
@@ -308,6 +304,11 @@ namespace LevelUpEASJ.ViewModel
             set { age = value; OnPropertyChanged(); }
         }
 
+        public string Image
+        {
+            get { return image; }
+            set { image = value; OnPropertyChanged(); }
+        }
 
         private string _password;
         public string Password
@@ -341,11 +342,11 @@ namespace LevelUpEASJ.ViewModel
             set { height = value; OnPropertyChanged(); }
         }
 
-        public double FatPercent
-        {
-            get { return fatPercent; }
-            set { fatPercent = value; OnPropertyChanged(); }
-        }
+        //public double FatPercent
+        //{
+        //    get { return fatPercent; }
+        //    set { fatPercent = value; OnPropertyChanged(); }
+        //}
 
         public double Weight
         {
