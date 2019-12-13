@@ -483,6 +483,11 @@ namespace LevelUpEASJ.ViewModel
                       exerciseSingleton.ReadList().Result.Find(e => e.ExerciseName == SelectedExercise2.ExerciseName)
                           .XpForExercise + exerciseSingleton.ReadList().Result.Find(e => e.ExerciseName == SelectedExercise3.ExerciseName)
                           .XpForExercise;
+                //Client cn = clientSingleton.ReadList().Result.Find(c => c.UserName == SelectedClient.UserName);
+                //cn.TotalXP = cn.TotalXP + Tot;
+                //clientSingleton.UpdateClient(cn);
+
+
         }
 
         public void ToAddNewClient()
