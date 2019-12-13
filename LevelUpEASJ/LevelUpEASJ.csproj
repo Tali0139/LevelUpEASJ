@@ -140,6 +140,9 @@
     <Compile Include="View\CalenderTrainer.xaml.cs">
       <DependentUpon>CalenderTrainer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ClientGiftPage.xaml.cs">
+      <DependentUpon>ClientGiftPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ClientPage.xaml.cs">
       <DependentUpon>ClientPage.xaml</DependentUpon>
     </Compile>
@@ -194,6 +197,16 @@
     <Content Include="Assets\Omar.png" />
     <Content Include="Assets\OversigtOverKlienterIconGennemsigtig.png" />
     <Content Include="Assets\PhoneIconTransparent.PNG" />
+    <Content Include="Assets\sportsbar1 .png" />
+    <Content Include="Assets\sportsbar2.png" />
+    <Content Include="Assets\sportsbar3.png" />
+    <Content Include="Assets\sportsbar4.png" />
+    <Content Include="Assets\Sportsdrik1.png" />
+    <Content Include="Assets\sportsdrik2.png" />
+    <Content Include="Assets\sportsdrik3.png" />
+    <Content Include="Assets\sportsprotein1.png" />
+    <Content Include="Assets\sportstaske1.png" />
+    <Content Include="Assets\sportsudstyr.png" />
     <Content Include="Assets\Talia.png" />
     <Content Include="Assets\Trainer.png" />
     <Content Include="Properties\Default.rd.xml" />
@@ -215,6 +228,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\CalenderTrainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ClientGiftPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
