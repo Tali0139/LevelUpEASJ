@@ -17,16 +17,16 @@ namespace LevelUpWebAPI.Controllers
         private LevelUpDBContext db = new LevelUpDBContext();
 
         // GET: api/ClientExercises
-        public IQueryable<ClientExercise> GetClientExercise()
+        public IQueryable<ClientExercise> GetClientExercises()
         {
-            return db.ClientExercise;
+            return db.ClientExercises;
         }
 
         // GET: api/ClientExercises/5
         [ResponseType(typeof(ClientExercise))]
         public IHttpActionResult GetClientExercise(int id)
         {
-            ClientExercise clientExercise = db.ClientExercise.Find(id);
+            ClientExercise clientExercise = db.ClientExercises.Find(id);
             if (clientExercise == null)
             {
                 return NotFound();
@@ -79,7 +79,7 @@ namespace LevelUpWebAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.ClientExercise.Add(clientExercise);
+            db.ClientExercises.Add(clientExercise);
             db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = clientExercise.ClientExerciseId }, clientExercise);
@@ -89,13 +89,13 @@ namespace LevelUpWebAPI.Controllers
         [ResponseType(typeof(ClientExercise))]
         public IHttpActionResult DeleteClientExercise(int id)
         {
-            ClientExercise clientExercise = db.ClientExercise.Find(id);
+            ClientExercise clientExercise = db.ClientExercises.Find(id);
             if (clientExercise == null)
             {
                 return NotFound();
             }
 
-            db.ClientExercise.Remove(clientExercise);
+            db.ClientExercises.Remove(clientExercise);
             db.SaveChanges();
 
             return Ok(clientExercise);
@@ -112,7 +112,7 @@ namespace LevelUpWebAPI.Controllers
 
         private bool ClientExerciseExists(int id)
         {
-            return db.ClientExercise.Count(e => e.ClientExerciseId == id) > 0;
+            return db.ClientExercises.Count(e => e.ClientExerciseId == id) > 0;
         }
     }
 }
