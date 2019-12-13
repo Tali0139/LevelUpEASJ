@@ -161,7 +161,7 @@
                                Foreground="White"
                                FontSize="30"
                                HorizontalAlignment="Center"
-                               Margin ="0,0,0,0"/>
+                               Margin ="0,-25,0,0"/>
                         
                         <StackPanel Orientation="Horizontal"
                                     HorizontalAlignment="Center">
@@ -203,11 +203,22 @@
                         <StackPanel Orientation="Vertical"
                                     Height="Auto">
 
+                            <Image x:Name="billedbox"
+                                     
+                                   Source="{Binding clientSingleton.ImageViewTraining }"
+                                   Height="130"
+                                   Width="130"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Top"
+                                   Margin="0,0,0,0">
+
+                            </Image>
+
 
                             <Line X1="0"
                                   X2="162"
                                   Stroke="#66fcf1"
-                                  Margin="0,100,0,0"
+                                  Margin="0,0,0,0"
                                   HorizontalAlignment="Center"/>
 
                             <TextBlock x:Name="LevelBox"
@@ -260,7 +271,7 @@
                                 <Image Source="../../Assets/DumbBellIconGennemsigtig.png"/>
                             </Button>
 
-                            <TextBlock Text="Se træninger"
+                            <TextBlock Text="Træninger"
                                        Foreground="#66f1fc"
                                        HorizontalAlignment="Center"
                                        FontSize="18">
@@ -354,7 +365,7 @@
                                 <Image Source="../Assets/GiftIconGennemsigitg.png"></Image>
                             </Button>
 
-                            <TextBlock Text="Rediger data"
+                            <TextBlock Text="Præmier"
                                        Foreground="#66f1fc"
                                        HorizontalAlignment="Center"
                                        FontSize="18">
