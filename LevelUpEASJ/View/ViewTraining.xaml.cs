@@ -11,6 +11,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using LevelUpEASJ.ViewModel;
 
@@ -21,49 +22,47 @@ namespace LevelUpEASJ.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class ClientPage : Page
+    public sealed partial class ViewTraining : Page
     {
+
         LevelUpViewModel luvm = new LevelUpViewModel();
-        public ClientPage()
+        public ViewTraining()
         {
             this.InitializeComponent();
             this.DataContext = luvm;
+
         }
-
-
         private void Hamburgerbutton_OnChecked(object sender, RoutedEventArgs e)
         {
             this.mySplitView.IsPaneOpen = !this.mySplitView.IsPaneOpen;
 
         }
 
-        private void LogOutButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(Login));
-        }
-
-        private void Edit_Client_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(EditClientPage));
-        }
-
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            NavnBox.Text = luvm.clientSingleton.NyClient.FirstName.ToString() + " " + luvm.clientSingleton.NyClient.LastName;
-            WeightBox.Text = luvm.clientSingleton.NyClient.Weight.ToString() +"kg";
-            XPBox.Text = "XP: " + luvm.clientSingleton.NyClient.TotalXP.ToString();
-           LevelBox.Text = "Level " + luvm.ClientLevel.ToString();
-           XpToNextLevel.Text = luvm.ClientXPtoNextLevel.ToString();
-           BMIblock.Text = "BMI: " + luvm.BMI.ToString("0.##");
+            NameOfUser_Box.Text = luvm.clientSingleton.NyClient.FirstName + " " + luvm.clientSingleton.NyClient.LastName;
+           // billedbox.Source = luvm.clientSingleton.GetImageSource(luvm.clientSingleton.NyClient.Image);
 
-          
 
         }
 
+        //public ImageSource GetImageSource(string myimage)
+        //{
+        //    string image = myimage;
+        //    BitmapImage bitmapImage = new BitmapImage();
+        //    bitmapImage.UriSource = new Uri(image);
+        //    return bitmapImage;
+        //}
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(ViewTraining));
+            this.Frame.Navigate(typeof(CreateClientGoal));
+
+        }
+        private void GoToUserLogin_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Login));
         }
     }
 }

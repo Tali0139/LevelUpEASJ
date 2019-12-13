@@ -424,8 +424,11 @@
                                    FontSize="18"
                                    Margin="30,10,0,0"/>
 
+            
+
                     <TextBox x:Name="PhoneNumberBox" 
                                  Background="White"
+                                 Text ="{Binding PhoneNumber, Mode= TwoWay}"
                                  Margin="0,5,0,0"
                                  Width="215"
                                  HorizontalAlignment="Center"
@@ -788,7 +791,7 @@
                                    FontSize="18"
                                    Margin="30,10,0,0"/>
 
-                    <ComboBox Background="White" ItemsSource="{Binding Køn}"
+                    <ComboBox Background="White" ItemsSource="{Binding Køn, Mode = TwoWay}"
                              SelectedItem="{Binding Gender, Mode=TwoWay}"
                               Margin="30,5,0,0">
                         <!--<ComboBoxItem Content="Mand"/>

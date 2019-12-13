@@ -164,6 +164,9 @@
     <Compile Include="View\TrainerPage.xaml.cs">
       <DependentUpon>TrainerPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ViewTraining.xaml.cs">
+      <DependentUpon>ViewTraining.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -239,6 +242,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\TrainerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ViewTraining.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

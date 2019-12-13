@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LevelUpEASJ.Persistency;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace LevelUpEASJ.Model
 {
@@ -42,6 +44,7 @@ namespace LevelUpEASJ.Model
                 return _clientInstance;
             }
         }
+
 
         public List<Client> Clients
         {
@@ -86,6 +89,20 @@ namespace LevelUpEASJ.Model
             }
         }
 
+        public string ImageViewTraining
+        {
+            get
+            {
+                if (NyClient.Image != null)
+                {
+                    return NyClient.Image;
+                }
+                else return "../Assets/BrugerIconGennemsigitg.png";
+            }
+        }
+
+        
+       
         public void DeleteClient(Client newClient)
         {
             _levelUpCrud.Delete(_client.UserID);

@@ -307,7 +307,7 @@
                                 <Image Source="../Assets/GiftIconGennemsigitg.png"></Image>
                             </Button>
 
-                            <TextBlock Text="Oversigt over inventar"
+                            <TextBlock Text="Oversigt over præmier"
                                        Foreground="#66f1fc"
                                        HorizontalAlignment="Center"
                                        FontSize="18">
