@@ -29,13 +29,23 @@ namespace LevelUpEASJ.View
             this.InitializeComponent();
             this.DataContext = luvm;
         }
+        private void Hamburgerbutton_OnChecked(object sender, RoutedEventArgs e)
+        {
+            this.mySplitView.IsPaneOpen = !this.mySplitView.IsPaneOpen;
+
+        }
+
+
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
             NameOfUser_Box.Text = luvm.clientSingleton.NyClient.FirstName + " " + luvm.clientSingleton.NyClient.LastName;
-            // billedbox.Source = luvm.clientSingleton.GetImageSource(luvm.clientSingleton.NyClient.Image);
+           
 
-
+        }
+        private void GoToUserLogin_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Login));
         }
 
     }

@@ -57,20 +57,7 @@ namespace LevelUpEASJ.Model
             return "Level not detected";
          }
 
-         public string GetGiftForClient(Client nc)
-        {
-            int input = nc.TotalXP;
-            var query = from level in Levels
-                        where level.MaxXP >= input && level.MinXP <= input
-                        select level;
-
-            foreach (var result in query)
-            {
-                return result.Gave.ToString();
-            }
-            return "No gift detected";
-        }
-
+      
         public string XpToNextLevel(Client nc)
         {
             int input = nc.TotalXP;

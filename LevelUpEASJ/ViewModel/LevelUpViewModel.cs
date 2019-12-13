@@ -194,14 +194,7 @@ namespace LevelUpEASJ.ViewModel
             }
         }
 
-        public string ClientGift
-        {
-            get
-            {
-                return LevelCatalogSingleton.LevelInstance.GetGiftForClient(ClientCatalogSingleton.ClientInstance.NyClient).ToString();
-            }
-        }
-
+       
         //public int XPForTraining
         //{
         //    get

@@ -127,7 +127,7 @@
                                 Content="Log ud"
                                 Foreground="#66f1fc"
                                 Height="50"
-                                />
+                                Click="GoToUserLogin_Click"/>
 
 
                 </StackPanel>
@@ -218,9 +218,11 @@
                                        Margin="0,70,0,0"
                                        TextAlignment="Center"></TextBlock>
                             <Image Height="200"
+                                   Width="200"
                                    HorizontalAlignment="Center"
-                                   Source="{Binding ClientGift}"></Image>
+                                   Source="{Binding clientSingleton.GetGiftForClient}"></Image>
                             <TextBlock Height="100"
+                                       FontSize="18"
                                        Text="Gaven kan hentes til din næste træningsaftale"
                                        Foreground="#66f1fc"
                                        TextAlignment="Center"
@@ -260,7 +262,8 @@
             <ToggleButton x:Name="HamburgerButton" 
                           FontFamily="Segoe MDL2 Assets" 
                           Background="Transparent"  
-                          Content="&#xE700;"  
+                          Content="&#xE700;" 
+                          Checked="Hamburgerbutton_OnChecked" 
                           HorizontalAlignment="Left" 
                           VerticalAlignment="Stretch" 
                           Width="50" Height="50" 

@@ -47,14 +47,6 @@ namespace LevelUpEASJ.View
 
         }
 
-        //public ImageSource GetImageSource(string myimage)
-        //{
-        //    string image = myimage;
-        //    BitmapImage bitmapImage = new BitmapImage();
-        //    bitmapImage.UriSource = new Uri(image);
-        //    return bitmapImage;
-        //}
-
       
         private void GoToUserLogin_Click(object sender, RoutedEventArgs e)
         {
