@@ -509,6 +509,41 @@ namespace LevelUpEASJ.ViewModel
             else return nc.TotalXP;
         }
 
+        public Exercise ShowSelectedExercise1
+        {
+            get
+            {
+                if (clientSingleton.NyClient.UserID == SelectedClient.UserID) { return SelectedExercise1; }
+                else return null;
+            }
+        }
+
+        public Exercise ShowSelectedExercise2
+        {
+            get
+            {
+                if (clientSingleton.NyClient.UserID == SelectedClient.UserID) { return SelectedExercise2; }
+                else return null;
+            }
+        }
+
+        public Exercise ShowSelectedExercise3
+        {
+            get
+            {
+                if (clientSingleton.NyClient.UserID == SelectedClient.UserID) { return SelectedExercise3; }
+                else return null;
+            }
+        }
+        
+
+        public int ToAddXPAfterTraining
+        {
+            get { return ToAddNewXPToTotalXP(SelectedClient).Result; }
+        }
+
+
+
         public void ToAddNewClient()
         {
             Client NewClient = new Client(id, FirstName, LastName, PhoneNumber, UserName, Password, image, age, weight, height, fatPercent,
