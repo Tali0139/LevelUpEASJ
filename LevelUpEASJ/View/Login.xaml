@@ -130,6 +130,7 @@
             <StackPanel Orientation="Vertical"
                         Margin="0,-50,0,0"
                                HorizontalAlignment="Center">
+
                 <TextBox x:Name="UsernameBox"
                                      Background="White"
                                      Foreground="Black"
@@ -138,7 +139,8 @@
                                      Margin="0,130,0,0"
                                      PlaceholderText="              Brugernavn"
                                      Text="{Binding UserName, Mode=TwoWay}"
-                                     HorizontalAlignment="Center" BorderThickness="0"
+                                     HorizontalAlignment="Center" 
+                                     BorderThickness="0"
                                      >
                     <TextBox.Resources>
                         <Style x:Key="RundeKanter" TargetType="TextBox">
@@ -302,10 +304,14 @@
                             </Setter>
                         </Style>
                     </TextBox.Resources>
+
+
                     <TextBox.Style>
                         <StaticResource ResourceKey="RundeKanter"/>
                     </TextBox.Style>
                 </TextBox>
+
+
                 <PasswordBox x:Name="PasswordBox"
                              Background="White"
                              Height="35"
