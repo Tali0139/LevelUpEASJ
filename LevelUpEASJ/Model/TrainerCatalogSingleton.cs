@@ -75,6 +75,17 @@ namespace LevelUpEASJ.Model
             return await _levelUpCrudTrainer.Update(_trainer.UserID, _trainer);
         }
 
+        public string TrainerImageViewTraining
+        {
+            get
+            {
+                if (NyTrainer.Image != null)
+                {
+                    return NyTrainer.Image;
+                }
+                else return "../Assets/BrugerIconGennemsigitg.png";
+            }
+        }
 
         public async void AddTrainer(Trainer nt)
         {
@@ -94,6 +105,8 @@ namespace LevelUpEASJ.Model
 
             }
         }
+
+
 
 
     }

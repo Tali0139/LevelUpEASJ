@@ -32,4 +32,4 @@ INSERT INTO [dbo].[Exercises] ([ExerciseName], [XpForExercise]) VALUES (N'Biceps
 INSERT INTO [dbo].[Exercises] ([ExerciseName], [XpForExercise]) VALUES (N'Triceps', 50)
 INSERT INTO [dbo].[Exercises] ([ExerciseName], [XpForExercise]) VALUES (N'Squats', 70)
 INSERT INTO [dbo].[Exercises] ([ExerciseName], [XpForExercise]) VALUES (N'Ingen øvelse', 0)
-INSERT INTO [dbo].[Trainer] ([FirstName], [LastName],[Password],[PhoneNumber],[Username],[YearsOfExpericence], [Image]) VALUES ('Trainer', 'Trainersen', 'admin', 12345678, 'admin',5,'../Assets/Træner.png')
+INSERT INTO [dbo].[Trainer] ([FirstName], [LastName],[Password],[PhoneNumber],[Username],[YearsOfExpericence], [Image]) VALUES ('Trainer', 'Trainersen', 'admin', 12345678, 'admin',5,'../Assets/Trainer.png')
