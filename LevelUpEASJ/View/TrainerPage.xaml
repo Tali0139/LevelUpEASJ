@@ -130,7 +130,7 @@
                             HorizontalAlignment="Stretch"
                             Height="50"
                             Content="Log ud"
-                            Foreground="White"
+                            Foreground="#66fcf1"
                             Click="LogOutAdmin_Click"
                             >
 
