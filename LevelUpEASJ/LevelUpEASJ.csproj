@@ -181,6 +181,7 @@
     <Content Include="Assets\DailyCalenderIconGennemsigitg.png" />
     <Content Include="Assets\DumbBellIconGennemsigtig.png" />
     <Content Include="Assets\GiftIconGennemsigitg.png" />
+    <Content Include="Assets\Konrad.png" />
     <Content Include="Assets\kvinde1.png" />
     <Content Include="Assets\Kvinde2.png" />
     <Content Include="Assets\mand1.png" />
@@ -189,8 +190,11 @@
     <Content Include="Assets\Mand4.png" />
     <Content Include="Assets\Mand5.png" />
     <Content Include="Assets\MedalIconGennemsigtig.png" />
+    <Content Include="Assets\Oliver.png" />
+    <Content Include="Assets\Omar.png" />
     <Content Include="Assets\OversigtOverKlienterIconGennemsigtig.png" />
     <Content Include="Assets\PhoneIconTransparent.PNG" />
+    <Content Include="Assets\Talia.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
