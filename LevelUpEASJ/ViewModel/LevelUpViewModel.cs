@@ -423,6 +423,7 @@ namespace LevelUpEASJ.ViewModel
             set { _selectedExercise3 = value; OnPropertyChanged(); }
         }
 
+       
         //public int TotalXpOfExercise
         //{
 
@@ -483,6 +484,18 @@ namespace LevelUpEASJ.ViewModel
                       exerciseSingleton.ReadList().Result.Find(e => e.ExerciseName == SelectedExercise2.ExerciseName)
                           .XpForExercise + exerciseSingleton.ReadList().Result.Find(e => e.ExerciseName == SelectedExercise3.ExerciseName)
                           .XpForExercise;
+        }
+
+        public async Task<int> ToAddNewXPToTotalXP(Client nc)
+        {
+            if (SelectedClient.UserID == nc.UserID)
+            {
+                int initialXP = nc.TotalXP;
+                int XPafterTraining = initialXP + Tot;
+                await ClientCatalogSingleton.UpdateClient(nc);
+                return XPafterTraining;
+            }
+            else return nc.TotalXP;
         }
 
         public void ToAddNewClient()
