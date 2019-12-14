@@ -78,6 +78,6 @@ namespace LevelUpEASJ.Model
             return "Du har nået det højeste level";
         }
 
-    }
+          }
 }
 

@@ -211,19 +211,19 @@
                                  Margin="0,0,-430,0" 
                                  HorizontalAlignment="Stretch">
 
-                            <TextBlock Text="Som belønning får du denne gave:"
-                                       Height="100"
+                            <TextBlock Text="Din præmie er:"
+                                       Height="50"
                                        Foreground="#66f1fc"
                                        FontSize="20"
-                                       Margin="0,70,0,0"
+                                       Margin="0,120,0,0"
                                        TextAlignment="Center"></TextBlock>
                             <Image Height="200"
                                    Width="200"
                                    HorizontalAlignment="Center"
-                                   Source="{Binding clientSingleton.GetGiftForClient}"></Image>
+                                   Source="{Binding clientSingleton.ClientGift}"></Image>
                             <TextBlock Height="100"
                                        FontSize="18"
-                                       Text="Gaven kan hentes til din næste træningsaftale"
+                                       Text="Præmien kan hentes til din næste træningsaftale"
                                        Foreground="#66f1fc"
                                        TextAlignment="Center"
                                        Margin="0,20,0,0"></TextBlock>

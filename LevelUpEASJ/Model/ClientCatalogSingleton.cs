@@ -102,22 +102,25 @@ namespace LevelUpEASJ.Model
             }
         }
 
+        public async Task<string> GetGiftForClient(Client nc)
+        {
+            int input = nc.TotalXP;
+            var query = from level in LevelCatalogSingleton.LevelInstance.Levels
+                where level.MaxXP >= input && level.MinXP <= input
+                select level;
 
-        public string GetGiftForClient
+            foreach (var result in query)
+            {
+                return result.Gave.ToString();
+            }
+            return "../Assets/mand1.png";
+        }
+
+        public string ClientGift
         {
             get
             {
-                int input = NyClient.TotalXP;
-                var query = from level in LevelCatalogSingleton.LevelInstance.Levels
-                    where level.MaxXP >= input && level.MinXP <= input
-                    select level;
-
-                foreach (var result in query)
-                {
-                    return result.Gave.ToString();
-                }
-
-                return "../Assets/mand1.png";
+                return ClientCatalogSingleton.ClientInstance.GetGiftForClient(ClientCatalogSingleton.ClientInstance.NyClient).Result.ToString();
             }
         }
 
