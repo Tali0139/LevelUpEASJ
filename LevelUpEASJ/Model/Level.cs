@@ -17,17 +17,19 @@ namespace LevelUpEASJ.Model
         private int _maxXP;
         private int _levelValue;
         private int _totalXP;
+        private string _gave;
         private ClientCatalogSingleton _clientCatalog;
         private LevelUpCRUD<Levels> _levelUpCrud;
         private List<Levels> _allLevels;
         private LevelUpCRUD<Client> _levelUpCrudClient;
         private List<Client> _allClients;
 
-        public Levels(int LevelValue, int MinXP, int MaxXP)
+        public Levels(int LevelValue, int MinXP, int MaxXP,string Gave)
         {
             _levelValue = LevelValue;
             _maxXP = MaxXP;
             _minXP = MinXP;
+            _gave = Gave;
         }
         
         public int LevelValue
@@ -48,6 +50,11 @@ namespace LevelUpEASJ.Model
             set { _minXP = value; }
         }
 
+        public string Gave
+        {
+            get { return _gave; }
+            set { _gave = value; }
+        }
 
         
     }

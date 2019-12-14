@@ -135,7 +135,7 @@
     <RefactorLog Include="LevelUpDB.refactorlog" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="InsertLevelsAndClientData.sql" />
     <None Include="Security\InsertClientDataScript.sql" />
+    <None Include="InsertDataIntoDB.sql" />
   </ItemGroup>
 </Project>
