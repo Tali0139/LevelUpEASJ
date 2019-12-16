@@ -52,5 +52,10 @@ namespace LevelUpEASJ.View
         {
             this.Frame.Navigate(typeof(Login));
         }
+
+        private void MinSide_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(ClientPage));
+        }
     }
 }
