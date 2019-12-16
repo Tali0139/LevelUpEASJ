@@ -178,9 +178,9 @@
                                     Margin="0,-200,0,0">
 
 
-                        <TextBlock Text="Tillykke"
+                        <TextBlock Text="Tillykke!"
                                    Height="50"
-                                   Width="100"
+                                   Width="105"
                                    HorizontalAlignment="Center"
                                    FontSize="30"
                                    Foreground="White"
