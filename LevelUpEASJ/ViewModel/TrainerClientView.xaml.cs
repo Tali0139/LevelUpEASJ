@@ -11,7 +11,6 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using LevelUpEASJ.ViewModel;
 
@@ -22,11 +21,11 @@ namespace LevelUpEASJ.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class ViewTraining : Page
+    public sealed partial class TrainerClientView : Page
     {
-
         LevelUpViewModel luvm = new LevelUpViewModel();
-        public ViewTraining()
+
+        public TrainerClientView()
         {
             this.InitializeComponent();
             this.DataContext = luvm;
@@ -41,16 +40,19 @@ namespace LevelUpEASJ.View
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            NameOfUser_Box.Text = luvm.clientSingleton.NyClient.FirstName + " " + luvm.clientSingleton.NyClient.LastName;
-           // billedbox.Source = luvm.clientSingleton.GetImageSource(luvm.clientSingleton.NyClient.Image);
-
+            NameOfTrainer_Box.Text = luvm.trainerSingleton.NyTrainer.FirstName + " " + luvm.trainerSingleton.NyTrainer.LastName;
+           
 
         }
 
-      
-        private void GoToUserLogin_Click(object sender, RoutedEventArgs e)
+        private void Trainer_Page_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Login));
+            this.Frame.Navigate(typeof(TrainerPage));
+        }
+
+        private void Logout_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AdminLogin));
         }
     }
 }

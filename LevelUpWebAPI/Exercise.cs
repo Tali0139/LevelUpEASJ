@@ -6,12 +6,13 @@ namespace LevelUpWebAPI
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Exercises
+    [Table("Exercises")]
+    public partial class Exercise
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Exercises()
+        public Exercise()
         {
-            ClientExercise = new HashSet<ClientExercise>();
+            ClientExercises = new HashSet<ClientExercise>();
         }
 
         [Required]
@@ -24,6 +25,6 @@ namespace LevelUpWebAPI
         public int ExerciseId { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ClientExercise> ClientExercise { get; set; }
+        public virtual ICollection<ClientExercise> ClientExercises { get; set; }
     }
 }

@@ -2,5 +2,6 @@
 (
 	[LevelValue] INT NOT NULL PRIMARY KEY,
 	[MinXP] INT NOT NULL,
-	[MaxXP] INT NOT NULL
+	[MaxXP] INT NOT NULL,
+	[Gave] NVARCHAR (50) NOT NULL
 )

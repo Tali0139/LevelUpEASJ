@@ -47,20 +47,17 @@ namespace LevelUpEASJ.Model
         public string GetLevelForClient(Client nc)
         {
             int input = nc.TotalXP;
-
             var query = from level in Levels
                         where level.MaxXP >= input && level.MinXP <= input
                         select level;
-
             foreach (var result in query)
             {
                 return result.LevelValue.ToString();
             }
-
             return "Level not detected";
+         }
 
-        }
-
+      
         public string XpToNextLevel(Client nc)
         {
             int input = nc.TotalXP;
@@ -78,11 +75,9 @@ namespace LevelUpEASJ.Model
                     return $"Tjen {1 + diff}xp for at nå level {1 + result.LevelValue}";
                 }
             }
-
             return "Du har nået det højeste level";
-
         }
 
-    }
+          }
 }
 
