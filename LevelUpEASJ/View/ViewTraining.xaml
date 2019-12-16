@@ -193,7 +193,7 @@
                                        Foreground="White"
                                        Margin="0,0,0,0">
                         </TextBlock>
-                        <TextBlock Text="{Binding NumberOfTraining}"
+                        <TextBlock Text="{Binding ExerciseCatalogSingleton.ClientExercises.Count}"
                                    Foreground="White"
                                    FontSize="20"
                                    Width="45"
@@ -209,11 +209,17 @@
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Width="432"
-                                                Height="568">
+                                                Height="100">
 
-                            <TextBlock Text="{Binding ClientExerciseId }"
+                                      
+
+
+
+                                        <TextBlock Text="{Binding ClientExerciseId }"
                                        Foreground="White"
                                        FontSize="18"></TextBlock>
+
+
 
                                     </StackPanel>
                                 </DataTemplate>
