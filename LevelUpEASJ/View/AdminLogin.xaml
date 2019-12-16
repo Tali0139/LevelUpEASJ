@@ -112,7 +112,7 @@
         <StackPanel Orientation="Vertical"
                             Margin="0,0,0,0">
 
-            <TextBlock Text="Administrator login"
+            <TextBlock Text="Administrator Login"
                        Foreground="White"
                        FontSize="30"
                        FontFamily="Calibri Light"

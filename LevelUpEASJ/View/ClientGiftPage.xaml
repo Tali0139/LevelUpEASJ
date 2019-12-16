@@ -178,10 +178,10 @@
                                     Margin="0,-200,0,0">
 
 
-                        <TextBlock Text="Tillykke"
+                        <TextBlock Text="Tillykke!"
                                    Height="50"
-                                   Width="200"
-                                   HorizontalAlignment="Left"
+                                   Width="105"
+                                   HorizontalAlignment="Center"
                                    FontSize="30"
                                    Foreground="White"
                                    Margin="0,75,0,0"/>
@@ -191,8 +191,8 @@
                             Text=""
                                    Foreground="White"
                                    FontSize="25"
-                                   HorizontalAlignment="Left"
-                                   Margin="0,15,0,0"/>
+                                   HorizontalAlignment="Center"
+                                   Margin="0,0,0,0"/>
 
                        
                         <TextBlock Text="Du er nu level:"
@@ -201,13 +201,13 @@
                                        HorizontalAlignment="Left"
                                        FontSize="20"
                                        Foreground="White"
-                                       Margin="0,0,0,0">
+                                       Margin="25,10,0,0">
                         </TextBlock>
                         <TextBlock Text="{Binding ClientLevel}"
                                    Foreground="White"
                                    FontSize="20"
                                    Width="45"
-                                   Margin="120,-50,0,0"
+                                   Margin="150,-50,0,0"
                             />
                     </StackPanel>
 
@@ -223,9 +223,9 @@
 
                             <TextBlock Text="Din præmie er:"
                                        Height="50"
-                                       Foreground="#66f1fc"
+                                       Foreground="White"
                                        FontSize="20"
-                                       Margin="0,120,0,0"
+                                       Margin="0,75,0,0"
                                        TextAlignment="Center"></TextBlock>
                             <Image MaxHeight="300"
                                    MaxWidth="300"
@@ -234,7 +234,7 @@
                             <TextBlock Height="100"
                                        FontSize="18"
                                        Text="Præmien kan hentes til din næste træningsaftale"
-                                       Foreground="#66f1fc"
+                                       Foreground="White"
                                        TextAlignment="Center"
                                        Margin="0,20,0,0"></TextBlock>
                             

@@ -121,7 +121,7 @@
                             Margin="0,50,0,0"
                             HorizontalAlignment="Stretch"
                             VerticalAlignment="Bottom"
-                            Content="Min side"
+                            Content="Min Side"
                             Foreground="#66f1fc"
                             Height="50"
                             Click="Trainer_Page_Click"/>
