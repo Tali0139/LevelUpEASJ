@@ -18,6 +18,7 @@ namespace LevelUpEASJ.Model
         private int _waistSize;
         private double _armSize;
         private int _age;
+        private int _id;
 
 
         public Client() { }
@@ -34,10 +35,15 @@ namespace LevelUpEASJ.Model
             _waistSize = WaistSize;
             _age = Age;
             _totalXp = TotalXP;
-            
+            _id = id;
+
         }
 
-        
+        public int Id
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
         public double Weight
         {
             get { return _weight; }

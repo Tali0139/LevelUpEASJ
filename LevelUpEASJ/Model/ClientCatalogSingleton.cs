@@ -113,7 +113,7 @@ namespace LevelUpEASJ.Model
             {
                 return result.Gave.ToString();
             }
-            return "../Assets/mand1.png";
+            return null;
         }
 
         public string ClientGift

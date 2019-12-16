@@ -168,8 +168,8 @@
 
                         <ComboBox Background="White" 
                                   ItemsSource="{Binding all_Clients}"
-                                  DisplayMemberPath="UserName"
-                                  SelectedValue="{Binding SelectedClient.UserName, Mode=TwoWay}"
+                                  DisplayMemberPath="FirstName"
+                                  SelectedItem="{Binding SelectedClient, Mode=TwoWay}"
                                   Margin="30,5,0,0" HorizontalAlignment="Left" 
                                   VerticalAlignment="Top"
                                   Width="211">
@@ -224,7 +224,7 @@
                         HorizontalAlignment="Center"
                         Margin="0,25,0,0"
                         Foreground="white" 
-                        Command="{Binding CreateGoal}" 
+                        Command="{Binding CalculateXP}" 
                         BorderThickness="0" 
                         
                         >
@@ -505,7 +505,7 @@
                                   HorizontalAlignment="Center"/>
 
                         <Button 
-                        Content="{Binding }"
+                        Content="Opret træning"
                         FontSize="14"
                         Height="35"
                         Width="215"
@@ -513,7 +513,7 @@
                         HorizontalAlignment="Center"
                         Margin="0,25,0,0"
                         Foreground="white" 
-                        Command="{Binding CreateGoal}" 
+                        Command="{Binding CreateGoalForClient}" 
                         BorderThickness="0" 
                         Click="Create_Client_Goal_Button_Click"
                         

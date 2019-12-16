@@ -204,11 +204,26 @@
                     <StackPanel Orientation="Horizontal"
                                 Height="568"
                                 Width="432">
+                        <ListView ItemsSource="{Binding all_ClientExercises}"
+                                  >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Width="432"
+                                                Height="568">
+
+                            <TextBlock Text="{Binding ClientExerciseId }"
+                                       Foreground="White"
+                                       FontSize="18"></TextBlock>
+
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
 
 
 
 
-                        <StackPanel 
+                        <!--<StackPanel 
                                                 Orientation="Vertical"
                                                 Height="568"
                                                 Margin="0,0,-430,0" HorizontalAlignment="Stretch"
@@ -229,7 +244,7 @@
                                                             FontSize="18"/>
 
                                         <TextBlock Height="50"
-                                                           Text="{Binding ShowSelectedExercise1 }"
+                                                           Text="{Binding ShowSelectedExercise1.ExerciseName}"
                                                            Margin="25,15,0,0"
                                                            Foreground="White"
                                                            FontSize="18"/>
@@ -250,7 +265,7 @@
                                                            FontSize="18"/>
 
                                         <TextBlock Height="50"
-                                                           Text="{Binding ShowSelectedExercise2}"
+                                                           Text="{Binding ShowSelectedExercise2.ExerciseName}"
                                                            Margin="25,15,0,0"
                                                            Foreground="White"
                                                            FontSize="18"/>
@@ -271,7 +286,7 @@
                                                            Foreground="White"
                                                            FontSize="18"/>
                                         <TextBlock Height="50"
-                                                               Text="{Binding ShowSelectedExercise3}"
+                                                               Text="{Binding ShowSelectedExercise3.ExerciseName}"
                                                                Margin="25,15,0,0"
                                                                Foreground="White"
                                                                FontSize="18"/>
@@ -310,7 +325,7 @@
                             </StackPanel>
 
 
-                        </StackPanel>
+                        </StackPanel>-->
 
 
 

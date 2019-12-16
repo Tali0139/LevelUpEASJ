@@ -49,10 +49,7 @@ namespace LevelUpEASJ.View
             this.Frame.Navigate(typeof(DailyCalenderTrainer));
         }
 
-        private void CalenderTrainer_Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(CalenderTrainer));
-        }
+       
 
 
         private void LogOutAdmin_Click(object sender, RoutedEventArgs e)
