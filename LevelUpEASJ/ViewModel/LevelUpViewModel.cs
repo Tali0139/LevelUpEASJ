@@ -604,15 +604,15 @@ namespace LevelUpEASJ.ViewModel
             ClientExercise ce1 = new ClientExercise(p.Id+E1ID+100, p.Id, E1ID);
             ClientExerciseCatalogSingleton.AddClientExercise(ce1);
 
-            int E2ID = exerciseSingleton.Exercises.Find(e => e.ExerciseName == SelectedExercise1.ExerciseName)
+            int E2ID = exerciseSingleton.Exercises.Find(e => e.ExerciseName == SelectedExercise2.ExerciseName)
                 .ExerciseId;
 
-            ClientExercise ce2 = new ClientExercise(p.Id+E2ID+200, p.Id, E2ID);
+            ClientExercise ce2 = new ClientExercise(p.Id + E2ID + 200, p.Id, E2ID);
             ClientExerciseCatalogSingleton.AddClientExercise(ce2);
 
-            int E3ID = exerciseSingleton.Exercises.Find(e => e.ExerciseName == SelectedExercise1.ExerciseName)
+            int E3ID = exerciseSingleton.Exercises.Find(e => e.ExerciseName == SelectedExercise3.ExerciseName)
                 .ExerciseId;
-            ClientExercise ce3 = new ClientExercise(p.Id+E3ID+300, p.Id, E3ID);
+            ClientExercise ce3 = new ClientExercise(p.Id + E3ID + 300, p.Id, E3ID);
             ClientExerciseCatalogSingleton.AddClientExercise(ce3);
             OnPropertyChanged(nameof(all_ClientExercises));
         }
