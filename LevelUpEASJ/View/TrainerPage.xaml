@@ -237,11 +237,12 @@
                                     VerticalAlignment="Center"
                                     Width="162"
                                     Margin="25,10,0,0" 
+                                    Click="GoToLevelPage_Click"
                                     >
-                                <Image Source="../Assets/CalenderIconGennemsigtig.png"></Image>
+                                <Image Source="../Assets/LevelUpIcon.PNG"></Image>
                             </Button>
 
-                            <TextBlock Text="Kalender"
+                            <TextBlock Text="Levels / præmier"
                                        Foreground="#66f1fc"
                                        HorizontalAlignment="Center"
                                        FontSize="18">
@@ -284,12 +285,15 @@
                                     Background="Transparent"
                                     Height="120"
                                     Width="162"
-                                    Margin="25,0,0,0" >
+                                    Margin="25,0,0,0" 
+                                  
+                                    >
 
                                 <Image Source="../Assets/CalenderIconGennemsigtig.png"></Image>
                             </Button>
 
-                            <TextBlock Text="Kalender"
+                            <TextBlock 
+                                        Text="Kalender"
                                        Foreground="#66f1fc"
                                        HorizontalAlignment="Center"
                                        FontSize="18">
