@@ -15,10 +15,11 @@ namespace LevelUpEASJ.Model
 
 
         public ClientExercise() { }
-        public ClientExercise(int clientId, int exerciseId)
+        public ClientExercise(int clientExerciseId, int clientId, int exerciseId)
         {
             _clientId = clientId;
             _exerciseId = exerciseId;
+            _clientExerciseId = ClientExerciseId;
         }
 
         public int ClientExerciseId

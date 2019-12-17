@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Windows.Foundation.Collections;
 using Windows.UI.Core;
 using LevelUpEASJ.Persistency;
+using Microsoft.EntityFrameworkCore.Query.Expressions;
 using Remotion.Linq.Clauses;
 
 namespace LevelUpEASJ.Model
@@ -82,11 +83,13 @@ namespace LevelUpEASJ.Model
                         exist = true;
                 }
 
-                if (exist == false)
+                if(exist ==false)
                 {
                     cex.ClientExerciseId = Count++;
                     await _levelUpCrud.Create(cex.ClientExerciseId, cex);
+                    
                 }
+
 
             }
         }
