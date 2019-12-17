@@ -179,10 +179,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\AddGoalForClientIconGennemsigtig.png" />
+    <Content Include="Assets\AddUserBotton.png" />
     <Content Include="Assets\BrugerIconGennemsigitg.png" />
     <Content Include="Assets\CalenderIconGennemsigtig.png" />
     <Content Include="Assets\ClockIconGennemsigtig.png" />
     <Content Include="Assets\DailyCalenderIconGennemsigitg.png" />
+    <Content Include="Assets\DeleteUserButton.png" />
     <Content Include="Assets\DumbBellIconGennemsigtig.png" />
     <Content Include="Assets\GiftIconGennemsigitg.png" />
     <Content Include="Assets\Konrad.png" />
