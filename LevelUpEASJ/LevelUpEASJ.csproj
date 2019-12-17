@@ -153,8 +153,8 @@
     <Compile Include="View\CreateClientGoal.xaml.cs">
       <DependentUpon>CreateClientGoal.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\DailyCalenderTrainer.xaml.cs">
-      <DependentUpon>DailyCalenderTrainer.xaml</DependentUpon>
+    <Compile Include="View\SeeLevels.xaml.cs">
+      <DependentUpon>SeeLevels.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\EditClientPage.xaml.cs">
       <DependentUpon>EditClientPage.xaml</DependentUpon>
@@ -190,6 +190,7 @@
     <Content Include="Assets\Konrad.png" />
     <Content Include="Assets\kvinde1.png" />
     <Content Include="Assets\Kvinde2.png" />
+    <Content Include="Assets\LevelUpIcon.PNG" />
     <Content Include="Assets\mand1.png" />
     <Content Include="Assets\Mand2.png" />
     <Content Include="Assets\Mand3.png" />
@@ -260,7 +261,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\DailyCalenderTrainer.xaml">
+    <Page Include="View\SeeLevels.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

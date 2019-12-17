@@ -154,6 +154,15 @@ namespace LevelUpEASJ.ViewModel
             }
         }
 
+        public ObservableCollection<Levels> all_Levels
+        {
+            get
+            {
+                _levels = new ObservableCollection<Levels>(LevelCatalogSingleton.LevelInstance.Levels);
+                return _levels;
+            }
+        }
+
       
         public RelayCommand AddCommand { get; set; }
         public RelayCommand DeleteCommand { get; set; }
