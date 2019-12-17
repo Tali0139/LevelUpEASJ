@@ -93,6 +93,12 @@ namespace LevelUpEASJ.Model
 
             }
         }
+        public void DeleteClientExercise(ClientExercise delClientExercise)
+        {
+            _levelUpCrud.Delete(delClientExercise.ClientExerciseId, delClientExercise);
+        }
+
+
 
 
 
