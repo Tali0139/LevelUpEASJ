@@ -63,7 +63,7 @@ namespace LevelUpEASJ.Persistency
             }
         }
 
-        public void Delete(int key)
+        public void Delete(int key, T obj)
         {
             string urlNew = url + "/" + key;
             HttpResponseMessage response = _HttpClient.DeleteAsync(urlNew).Result;
