@@ -270,7 +270,7 @@
 
 
                     <StackPanel Orientation="Horizontal"
-                                Height="568"
+                                Height="558"
                                 Width="432">
 
                         <ListView x:Name="ListView_All_Clients" ItemsSource="{Binding all_Clients}" SelectedItem="{Binding SelectedClient, Mode=TwoWay}">
@@ -369,10 +369,12 @@
                                                     Foreground="White"
                                                     FontSize="18"/>
 
-                                                    <TextBlock HorizontalAlignment="Left"
+                                                    <TextBlock 
+                                                        HorizontalAlignment="Right"
                                                     Height="50"
                                                     Text="{Binding PhoneNumber}"
                                                     Margin="0,15,0,5"
+
                                                     Foreground="White"
                                                     FontSize="18"/>
 
