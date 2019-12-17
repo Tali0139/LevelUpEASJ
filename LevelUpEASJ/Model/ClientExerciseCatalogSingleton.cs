@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Foundation.Collections;
+using Windows.UI.Core;
 using LevelUpEASJ.Persistency;
+using Remotion.Linq.Clauses;
 
 namespace LevelUpEASJ.Model
 {
@@ -87,6 +90,8 @@ namespace LevelUpEASJ.Model
 
             }
         }
+
+
 
     }
 }
