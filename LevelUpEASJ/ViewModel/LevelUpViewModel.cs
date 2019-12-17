@@ -18,27 +18,28 @@ namespace LevelUpEASJ.ViewModel
 {
     public class LevelUpViewModel : INotifyPropertyChanged
     {
-      
+
         public ClientCatalogSingleton clientSingleton { get; set; }
         public TrainerCatalogSingleton trainerSingleton { get; set; }
         public ClientExerciseCatalogSingleton clientExercises { get; set; }
         public ExerciseCatalogSingleton exerciseSingleton { get; set; }
 
         private ObservableCollection<Exercise> _exercises;
-        private ObservableCollection<Client> _clients; 
-        private ObservableCollection<ClientExercise> _clientExercises; 
+        private ObservableCollection<Client> _clients;
+        private ObservableCollection<ClientExercise> _clientExercises;
         private TrainerCatalogSingleton _trainerSingleton;
         private ObservableCollection<Trainer> _trainers;
         private ObservableCollection<Levels> _levels;
+        private ObservableCollection<Exercise> _chosenE;
 
-      
+
         private Client _selectedClient;
         private Trainer _selectedTrainer;
         private Levels _selectedLevels;
         private Exercise _selectedExercise1;
         private Exercise _selectedExercise2;
         private Exercise _selectedExercise3;
-
+       
         private int id;
         private string image;
         private string firstName;
@@ -78,9 +79,12 @@ namespace LevelUpEASJ.ViewModel
             _clients = new ObservableCollection<Client>();
             _levels = new ObservableCollection<Levels>();
             _clientExercises = new ObservableCollection<ClientExercise>();
+            _chosenE = new ObservableCollection<Exercise>();
             //_selectedExercise = new Exercise(ExerciseName, XpForExercise, ExerciseId);
-            _selectedClient = new Client(UserID, FirstName, LastName, PhoneNumber, UserName, Password, image, Age, Weight, Height, Fatpercent, Gender, WaistSize, ArmSize, TotalXP);
-            _selectedTrainer = new Trainer(UserID, FirstName, LastName, PhoneNumber, UserName, Password, image, YearsOfExperience);
+            _selectedClient = new Client(UserID, FirstName, LastName, PhoneNumber, UserName, Password, image, Age,
+                Weight, Height, Fatpercent, Gender, WaistSize, ArmSize, TotalXP);
+            _selectedTrainer = new Trainer(UserID, FirstName, LastName, PhoneNumber, UserName, Password, image,
+                YearsOfExperience);
             _selectedLevels = new Levels(levelValue, minXp, maxXp, gave);
 
             _selectedExercise1 = new Exercise();
@@ -116,7 +120,8 @@ namespace LevelUpEASJ.ViewModel
         {
             get
             {
-                _clientExercises = new ObservableCollection<ClientExercise>(ClientExerciseCatalogSingleton.ClientExercises);
+                _clientExercises =
+                    new ObservableCollection<ClientExercise>(ClientExerciseCatalogSingleton.ClientExercises);
                 return _clientExercises;
             }
         }
@@ -140,14 +145,21 @@ namespace LevelUpEASJ.ViewModel
             }
         }
 
+        public ObservableCollection<Exercise> all_ChosenExercises
+        {
+            get
+            {
+                _chosenE = new ObservableCollection<Exercise>(ChosenExercises);
+                return _chosenE;
+            }
+        }
 
-
-
-
+      
         public RelayCommand AddCommand { get; set; }
         public RelayCommand DeleteCommand { get; set; }
         public RelayCommand UpdateCommand { get; set; }
         public RelayCommand CalculateXP { get; set; }
+
         public RelayCommand CreateGoalForClient { get; set; }
         //public RelayCommand CheckCommand { get; set; }
 
@@ -191,16 +203,18 @@ namespace LevelUpEASJ.ViewModel
                     _trainerexist = true;
                 }
             }
+
             return _trainerexist;
         }
 
-       
+
 
         public string ClientLevel
         {
             get
             {
-                return LevelCatalogSingleton.LevelInstance.GetLevelForClient(ClientCatalogSingleton.ClientInstance.NyClient).ToString();
+                return LevelCatalogSingleton.LevelInstance
+                    .GetLevelForClient(ClientCatalogSingleton.ClientInstance.NyClient).ToString();
             }
         }
 
@@ -208,11 +222,16 @@ namespace LevelUpEASJ.ViewModel
         {
             get
             {
-                return LevelCatalogSingleton.LevelInstance.XpToNextLevel(ClientCatalogSingleton.ClientInstance.NyClient).ToString();
+                return LevelCatalogSingleton.LevelInstance.XpToNextLevel(ClientCatalogSingleton.ClientInstance.NyClient)
+                    .ToString();
             }
         }
 
-       
+        public List<Exercise> ChosenExercises
+        {
+            get { return TrainingForClient(ClientCatalogSingleton.ClientInstance.NyClient); }
+        }
+
         private int _cid;
 
 
@@ -235,119 +254,196 @@ namespace LevelUpEASJ.ViewModel
             }
         }
 
-       
+
         private string _exerciseName;
+
         public string ExerciseName
         {
             get { return _exerciseName; }
-            set { _exerciseName = value; OnPropertyChanged(); }
+            set
+            {
+                _exerciseName = value;
+                OnPropertyChanged();
+            }
         }
 
         private int _xpForExercise;
+
         public int XpForExercise
         {
             get { return _xpForExercise; }
-            set { _xpForExercise = value; OnPropertyChanged(); }
+            set
+            {
+                _xpForExercise = value;
+                OnPropertyChanged();
+            }
         }
 
         private int _exerciseId;
+
         public int ExerciseId
         {
             get { return _exerciseId; }
-            set { _exerciseId = value; OnPropertyChanged(); }
+            set
+            {
+                _exerciseId = value;
+                OnPropertyChanged();
+            }
         }
 
         private string _firstName;
+
         public string FirstName
         {
             get { return _firstName; }
-            set { _firstName = value; OnPropertyChanged(); }
+            set
+            {
+                _firstName = value;
+                OnPropertyChanged();
+            }
         }
 
         private string _lastName;
+
         public string LastName
         {
             get { return _lastName; }
-            set { _lastName = value; OnPropertyChanged(); }
+            set
+            {
+                _lastName = value;
+                OnPropertyChanged();
+            }
         }
 
         private int _phoneNumber;
+
         public int PhoneNumber
         {
             get { return _phoneNumber; }
-            set { _phoneNumber = value; OnPropertyChanged(); }
+            set
+            {
+                _phoneNumber = value;
+                OnPropertyChanged();
+            }
         }
 
 
         private string _userName;
+
         public string UserName
         {
             get { return _userName; }
-            set { _userName = value; OnPropertyChanged(); }
+            set
+            {
+                _userName = value;
+                OnPropertyChanged();
+            }
         }
 
-        
+
         public string Gender
         {
             get { return gender; }
-            set { gender = value; OnPropertyChanged(); }
+            set
+            {
+                gender = value;
+                OnPropertyChanged();
+            }
         }
 
 
         public int Age
         {
             get { return age; }
-            set { age = value; OnPropertyChanged(); }
+            set
+            {
+                age = value;
+                OnPropertyChanged();
+            }
         }
 
         public string Image
         {
             get { return image; }
-            set { image = value; OnPropertyChanged(); }
+            set
+            {
+                image = value;
+                OnPropertyChanged();
+            }
         }
 
         private string _password;
+
         public string Password
         {
             get { return _password; }
-            set { _password = value; OnPropertyChanged(); }
+            set
+            {
+                _password = value;
+                OnPropertyChanged();
+            }
         }
 
         private List<string> _køn;
+
         public List<string> Køn
         {
             get { return _køn; }
-            set { _køn = value; OnPropertyChanged(); }
+            set
+            {
+                _køn = value;
+                OnPropertyChanged();
+            }
         }
 
         public double Fatpercent
         {
             get { return fatPercent; }
-            set { fatPercent = value; OnPropertyChanged(); }
+            set
+            {
+                fatPercent = value;
+                OnPropertyChanged();
+            }
         }
 
         public int WaistSize
         {
             get { return waistSize; }
-            set { waistSize = value; OnPropertyChanged(); }
+            set
+            {
+                waistSize = value;
+                OnPropertyChanged();
+            }
         }
 
         public int Height
         {
             get { return height; }
-            set { height = value; OnPropertyChanged(); }
+            set
+            {
+                height = value;
+                OnPropertyChanged();
+            }
         }
 
         public double FatPercent
         {
             get { return fatPercent; }
-            set { fatPercent = value; OnPropertyChanged(); }
+            set
+            {
+                fatPercent = value;
+                OnPropertyChanged();
+            }
         }
 
         public double Weight
         {
             get { return weight; }
-            set { weight = value; OnPropertyChanged(); }
+            set
+            {
+                weight = value;
+                OnPropertyChanged();
+            }
         }
 
         public double BMI
@@ -365,19 +461,31 @@ namespace LevelUpEASJ.ViewModel
         public double ArmSize
         {
             get { return armSize; }
-            set { armSize = value; OnPropertyChanged(); }
+            set
+            {
+                armSize = value;
+                OnPropertyChanged();
+            }
         }
 
         public int TotalXP
         {
             get { return totalXp; }
-            set { totalXp = value; OnPropertyChanged(); }
+            set
+            {
+                totalXp = value;
+                OnPropertyChanged();
+            }
         }
 
         public int YearsOfExperience
         {
             get { return yearsOfExperience; }
-            set { yearsOfExperience = value; OnPropertyChanged(); }
+            set
+            {
+                yearsOfExperience = value;
+                OnPropertyChanged();
+            }
         }
 
         public int ClientCount
@@ -393,43 +501,69 @@ namespace LevelUpEASJ.ViewModel
         public Client SelectedClient
         {
             get { return _selectedClient; }
-            set { _selectedClient = value; OnPropertyChanged(); }
+            set
+            {
+                _selectedClient = value;
+                OnPropertyChanged();
+            }
         }
 
         public Trainer SelectedTrainer
         {
             get { return _selectedTrainer; }
-            set { _selectedTrainer = value; OnPropertyChanged(); }
+            set
+            {
+                _selectedTrainer = value;
+                OnPropertyChanged();
+            }
         }
 
         public Levels SelectedLevel
         {
             get { return _selectedLevels; }
-            set { _selectedLevels = value; OnPropertyChanged(); }
+            set
+            {
+                _selectedLevels = value;
+                OnPropertyChanged();
+            }
         }
 
 
         public Exercise SelectedExercise1
         {
             get { return _selectedExercise1; }
-            set { _selectedExercise1 = value; OnPropertyChanged(); }
+            set
+            {
+                _selectedExercise1 = value;
+                OnPropertyChanged();
+            }
         }
+
         public Exercise SelectedExercise2
         {
             get { return _selectedExercise2; }
-            set { _selectedExercise2 = value; OnPropertyChanged(); }
+            set
+            {
+                _selectedExercise2 = value;
+                OnPropertyChanged();
+            }
         }
 
         public Exercise SelectedExercise3
         {
             get { return _selectedExercise3; }
-            set { _selectedExercise3 = value; OnPropertyChanged(); }
+            set
+            {
+                _selectedExercise3 = value;
+                OnPropertyChanged();
+            }
         }
 
-        
+
 
 
         private int _tot;
+
         public int Tot
         {
             get { return _tot; }
@@ -439,52 +573,66 @@ namespace LevelUpEASJ.ViewModel
                 OnPropertyChanged(nameof(Tot));
             }
         }
-     
-       
+
+
         public void ToCalculateXPForTraining()
         {
             Tot = exerciseSingleton.ReadList().Result.Find(e => e.ExerciseName == SelectedExercise1.ExerciseName)
                       .XpForExercise +
                   exerciseSingleton.ReadList().Result.Find(e => e.ExerciseName == SelectedExercise2.ExerciseName)
-                      .XpForExercise + exerciseSingleton.ReadList().Result.Find(e => e.ExerciseName == SelectedExercise3.ExerciseName)
+                      .XpForExercise + exerciseSingleton.ReadList().Result
+                      .Find(e => e.ExerciseName == SelectedExercise3.ExerciseName)
                       .XpForExercise;
-          
+
         }
 
         public void ToCreateClientExercise()
         {
-           Client p = clientSingleton.Clients.Find(c =>c.UserName == SelectedClient.UserName);
+            Client p = clientSingleton.Clients.Find(c => c.UserName == SelectedClient.UserName);
 
-           int E1ID = exerciseSingleton.Exercises.Find(e => e.ExerciseName == SelectedExercise1.ExerciseName).ExerciseId;
-           ClientExercise ce1 = new ClientExercise(p.Id, E1ID);
-           ClientExerciseCatalogSingleton.AddClientExercise(ce1);
-           
-           int E2ID = exerciseSingleton.Exercises.Find(e => e.ExerciseName == SelectedExercise1.ExerciseName).ExerciseId;
-           ClientExercise ce2 = new ClientExercise(p.Id, E2ID);
-           ClientExerciseCatalogSingleton.AddClientExercise(ce2);
+            int E1ID = exerciseSingleton.Exercises.Find(e => e.ExerciseName == SelectedExercise1.ExerciseName)
+                .ExerciseId;
+            ClientExercise ce1 = new ClientExercise(p.Id, E1ID);
+            ClientExerciseCatalogSingleton.AddClientExercise(ce1);
 
-            int E3ID = exerciseSingleton.Exercises.Find(e => e.ExerciseName == SelectedExercise1.ExerciseName).ExerciseId;
-           ClientExercise ce3 = new ClientExercise(p.Id, E3ID);
-           ClientExerciseCatalogSingleton.AddClientExercise(ce3);
-           OnPropertyChanged(nameof(all_ClientExercises));
+            int E2ID = exerciseSingleton.Exercises.Find(e => e.ExerciseName == SelectedExercise1.ExerciseName)
+                .ExerciseId;
+            ClientExercise ce2 = new ClientExercise(p.Id, E2ID);
+            ClientExerciseCatalogSingleton.AddClientExercise(ce2);
+
+            int E3ID = exerciseSingleton.Exercises.Find(e => e.ExerciseName == SelectedExercise1.ExerciseName)
+                .ExerciseId;
+            ClientExercise ce3 = new ClientExercise(p.Id, E3ID);
+            ClientExerciseCatalogSingleton.AddClientExercise(ce3);
+            OnPropertyChanged(nameof(all_ClientExercises));
         }
 
 
-        //Client cn = clientSingleton.ReadList().Result.Find(c => c.UserName == SelectedClient.UserName);
-        //cn.TotalXP = cn.TotalXP + Tot;
-        //clientSingleton.UpdateClient(cn);
+        public List<Exercise> TrainingForClient(Client nc)
+        {
+            List<Exercise>myEList = new List<Exercise>();
+            int input = nc.Id;
+            var query =
+                from item in all_ClientExercises
+                where item.ClientId == input
+                join exerciseItem in all_Exercises on item.ExerciseId equals exerciseItem.ExerciseId
+                select exerciseItem;
+            foreach (var result in query)
+            {
+                myEList.Add(result);
+            }
+            return myEList;
+        }
 
-
-
-
-        public async Task<int> ToAddNewXPToTotalXP(Client nc)
+    
+    public async Task<int> ToAddNewXPToTotalXP(Client nc)
     {
         if (SelectedClient.UserID == nc.UserID)
         {
             int initialXP = nc.TotalXP;
-            int XPafterTraining = initialXP + Tot;
+            nc.TotalXP= initialXP + Tot;
             await ClientCatalogSingleton.UpdateClient(nc);
-            return XPafterTraining;
+            return nc.TotalXP;
         }
         else return nc.TotalXP;
     }
