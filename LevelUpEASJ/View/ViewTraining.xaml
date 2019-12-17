@@ -199,75 +199,122 @@
                                    Width="45"
                                    Margin="120,-50,0,0"/>
                     </StackPanel>
+                   
+                    <StackPanel
+                        HorizontalAlignment="Left"
+                        Orientation="Horizontal"
+                        Height="60"
+                        Width="432"
+                        Margin="0,0,0,0">
+                          
+                        <TextBlock
+                                
+                                Width="50"                           
+                                Height="50"
+                                FontFamily="Segoe MDL2 Assets"
+                                Text="&#xE762;"
+                                 Margin="10,10,0,0"
+                                Foreground="#66fcf1"
+                                  FontSize="30"/>
+
+                        <TextBlock 
+                            
+                            Text="Liste over øvelser"
+                                   Height="45"
+                                   Width="200"
+                                   
+                                   FontSize="20"
+                                   Foreground="White"
+                                   Margin="10,0,0,0">
+                        </TextBlock>
+
+                    </StackPanel>
 
                     <StackPanel Orientation="Horizontal"
-                                Height="568"
-                                Width="432">
+                                Height="700"
+                                Width="432"
+                                Margin="0,0,0,0">
                         <ListView x:Name="ListView_All_ChosenExercises" ItemsSource="{Binding all_ChosenExercises}">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel 
+                                                
+                                                BorderBrush="#66fcf1"
                                                 Orientation="Vertical"
                                                 HorizontalAlignment="Stretch"
-                                                Height="100"
+                                                Height="50"
                                                 Width="432"
-                                                Margin="-12,0,0,0"
+                                                Margin="0,0,0,10"
                                                 >
-                                  
-                                        
-                                        <Line X1="0"
-                                              X2="400"
-                                              Stroke="#66fcf1"
-                                              Margin="-390,48,0,0"
-                                              VerticalAlignment="Bottom"
-                                              HorizontalAlignment="Center"/>
+
+
 
                                         <StackPanel Orientation="Horizontal" 
                                                          Height="45"
-                                                         VerticalAlignment="Top">
-                                           
-                                                <TextBlock Height="50"
+                                                         VerticalAlignment="Top"
+                                                         Margin="0,0,0,0">
+
+                                            <TextBlock Height="50"
                                                             Text="{Binding ExerciseName}"
-                                                            Margin="25,15,0,0"
+                                                            Margin="5,15,0,0"
                                                             Foreground="White"
                                                             FontSize="18"/>
+
                                             
+
                                             <TextBlock Height="50"
                                                            Text="{Binding XpForExercise}"
-                                                           Margin="10,15,0,0"
+                                                           Margin="5,15,0,0"
                                                            Foreground="White"
                                                            FontSize="18"
                                                            />
 
+                                            <TextBlock
+                                                Height="50"
+                                               
+                                                Text="XP"
+                                                Margin="5,15,0,0"
+                                                Foreground="White"
+                                                FontSize="18"/>
+
+                                            <TextBlock
+                                                    Height="50"
+                                                    FontFamily="Segoe MDL2 Assets"
+                                                    Text="&#xF0AD;"
+                                                    Margin="5,15,0,0"
+                                                    Foreground="White"
+                                                    FontSize="18"/>
+
 
                                            
+
                                         </StackPanel>
 
+
                                         <Line X1="0"
-                                                      X2="400"
-                                                      Stroke="#66fcf1"
-                                                      Margin="-390,48,0,0"
-                                                      VerticalAlignment="Bottom"
-                                                      HorizontalAlignment="Center"/>
-
-
+                                              X2="400"
+                                              Stroke="#66fcf1"
+                                              Margin="0,5,0,0"
+                                              VerticalAlignment="Bottom"
+                                              HorizontalAlignment="Left"/>
 
                                     </StackPanel>
+
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
 
 
+                        
 
 
-                      
 
 
 
 
                     </StackPanel>
 
-
+                   
 
 
 
@@ -278,7 +325,7 @@
             </SplitView.Content>
         </SplitView>
 
-        <RelativePanel Margin="0,0,0,0">
+        <RelativePanel Margin="10,0,-10,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <ToggleButton x:Name="HamburgerButton" 
                           FontFamily="Segoe MDL2 Assets" 
                           Background="Transparent"  
