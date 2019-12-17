@@ -54,5 +54,21 @@ namespace LevelUpEASJ.View
         {
             this.Frame.Navigate(typeof(AdminLogin));
         }
+
+        private void AddUser_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(CreateClient));
+        }
+
+        private void CloseFlyout_Click_1(object sender, RoutedEventArgs e)
+        {
+            MyFlyout.Hide();
+        }
+
+        private void CloseFlyout_Click_2(object sender, RoutedEventArgs e)
+        {
+            MyFlyout.Hide();
+        }
+
     }
 }

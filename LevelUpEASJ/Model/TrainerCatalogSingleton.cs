@@ -65,9 +65,9 @@ namespace LevelUpEASJ.Model
             _levelUpCrudTrainer.Read(_trainer.UserID);
         }
 
-        public void DeleteTrainer(Trainer newLevels)
+        public void DeleteTrainer(Trainer delTrainer)
         {
-            _levelUpCrudTrainer.Delete(_trainer.UserID);
+            _levelUpCrudTrainer.Delete(delTrainer.UserID, delTrainer);
         }
 
         public async Task<string> UpdateTrainer(Trainer selectedLevels)

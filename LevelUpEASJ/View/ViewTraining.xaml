@@ -12,9 +12,9 @@
     <Page.DataContext>
         <lvm:LevelUpViewModel></lvm:LevelUpViewModel>
     </Page.DataContext>
+  
 
-
-    <Page.Resources>
+        <Page.Resources>
         <Style x:Key="ButtonStyle1" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Foreground" Value="{ThemeResource ButtonForeground}"/>
@@ -90,8 +90,13 @@
 
         </Style>
     </Page.Resources>
-
-    <Grid Height="768px" Width="432px">
+    <ScrollViewer Height="Auto"
+                  VerticalScrollBarVisibility="Auto"
+                  VerticalScrollMode="Enabled"
+                  IsVerticalScrollChainingEnabled="True"
+                  HorizontalScrollMode="Disabled"
+    >
+        <Grid Height="768px" Width="432px">
         <Grid.Background>
             <LinearGradientBrush EndPoint="1.5,1" StartPoint="0.02,0" SpreadMethod="Pad" Opacity="1" MappingMode="RelativeToBoundingBox">
                 <GradientStop Color="#FF1F2833" Offset="0.137"/>
@@ -199,77 +204,243 @@
                                    Width="45"
                                    Margin="120,-50,0,0"/>
                     </StackPanel>
+                   
+                    <StackPanel
+                        HorizontalAlignment="Left"
+                        Orientation="Horizontal"
+                        Height="60"
+                        Width="432"
+                        Margin="0,0,0,0">
+                          
+                        <TextBlock
+                                
+                                Width="50"                           
+                                Height="50"
+                                FontFamily="Segoe MDL2 Assets"
+                                Text="&#xE762;"
+                                 Margin="10,10,0,0"
+                                Foreground="#66fcf1"
+                                  FontSize="30"/>
 
-                    <StackPanel Orientation="Horizontal"
-                                Height="568"
-                                Width="432">
+                        <TextBlock 
+                            
+                            Text="Liste over træninger"
+                                   Height="50"
+                                   Width="200"
+                                   
+                                   FontSize="20"
+                                   Foreground="White"
+                                   Margin="10,10,0,0">
+                        </TextBlock>
+                        <Button 
+                                                    Content="Opdater"
+                                                        FontSize="18"
+                                                         Height="40"
+                                                         Width="100"
+                                                        BorderBrush="#66fcf1"
+                                                         HorizontalAlignment="Right"
+                                                     Margin="40,0,0,6"
+                                                      Foreground="white" Background="{x:Null}" BorderThickness="0" 
+                                                                                                                  >
+                            <Button.Resources>
+                                <Style x:Key="ButtonStyle1" TargetType="Button">
+                                    <Setter Property="Background" Value="{ThemeResource ButtonBackground}"/>
+                                    <Setter Property="Foreground" Value="{ThemeResource ButtonForeground}"/>
+                                    <Setter Property="BorderBrush" Value="{ThemeResource ButtonBorderBrush}"/>
+                                    <Setter Property="BorderThickness" Value="{ThemeResource ButtonBorderThemeThickness}"/>
+                                    <Setter Property="Padding" Value="8,4,8,4"/>
+                                    <Setter Property="HorizontalAlignment" Value="Left"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                    <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+                                    <Setter Property="FontWeight" Value="Normal"/>
+                                    <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+                                    <Setter Property="UseSystemFocusVisuals" Value="True"/>
+                                    <Setter Property="FocusVisualMargin" Value="-3"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Grid x:Name="RootGrid" Background="{TemplateBinding Background}" CornerRadius="17" BorderThickness="2" BorderBrush="#66fcf1">
+                                                    <VisualStateManager.VisualStateGroups>
+                                                        <VisualStateGroup x:Name="CommonStates">
+                                                            <VisualState x:Name="Normal">
+                                                                <Storyboard>
+                                                                    <PointerUpThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                                                </Storyboard>
+                                                            </VisualState>
+                                                            <VisualState x:Name="PointerOver">
+                                                                <Storyboard>
+                                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="RootGrid">
+                                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundPointerOver}"/>
+                                                                    </ObjectAnimationUsingKeyFrames>
+                                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
+                                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBorderBrushPointerOver}"/>
+                                                                    </ObjectAnimationUsingKeyFrames>
+                                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonForegroundPointerOver}"/>
+                                                                    </ObjectAnimationUsingKeyFrames>
+                                                                    <PointerUpThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                                                </Storyboard>
+                                                            </VisualState>
+                                                            <VisualState x:Name="Pressed">
+                                                                <Storyboard>
+                                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="RootGrid">
+                                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundPressed}"/>
+                                                                    </ObjectAnimationUsingKeyFrames>
+                                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
+                                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBorderBrushPressed}"/>
+                                                                    </ObjectAnimationUsingKeyFrames>
+                                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonForegroundPressed}"/>
+                                                                    </ObjectAnimationUsingKeyFrames>
+                                                                    <PointerDownThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                                                </Storyboard>
+                                                            </VisualState>
+                                                            <VisualState x:Name="Disabled">
+                                                                <Storyboard>
+                                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="RootGrid">
+                                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundDisabled}"/>
+                                                                    </ObjectAnimationUsingKeyFrames>
+                                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
+                                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBorderBrushDisabled}"/>
+                                                                    </ObjectAnimationUsingKeyFrames>
+                                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonForegroundDisabled}"/>
+                                                                    </ObjectAnimationUsingKeyFrames>
+                                                                </Storyboard>
+                                                            </VisualState>
+                                                        </VisualStateGroup>
+                                                    </VisualStateManager.VisualStateGroups>
+                                                    <ContentPresenter x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTransitions="{TemplateBinding ContentTransitions}" Content="{TemplateBinding Content}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                                </Grid>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+
+                    </StackPanel>
+             
+                            <StackPanel
+                        HorizontalAlignment="Center"
+                        Orientation="Horizontal"
+                                Height="700"
+                                Width="432"
+                                Margin="0,0,0,0">
                         <ListView x:Name="ListView_All_ChosenExercises" ItemsSource="{Binding all_ChosenExercises}">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
-                                    <StackPanel 
+                                    
+                                            <StackPanel 
+                                                
+                                                BorderBrush="#66fcf1"
                                                 Orientation="Vertical"
                                                 HorizontalAlignment="Stretch"
-                                                Height="100"
+                                                Height="50"
                                                 Width="432"
-                                                Margin="-12,0,0,0"
+                                                Margin="0,0,0,10"
                                                 >
-                                  
-                                        
-                                        <Line X1="0"
-                                              X2="400"
-                                              Stroke="#66fcf1"
-                                              Margin="-390,48,0,0"
-                                              VerticalAlignment="Bottom"
-                                              HorizontalAlignment="Center"/>
 
-                                        <StackPanel Orientation="Horizontal" 
+
+                                                <ScrollViewer Height="Auto"
+                                                              VerticalScrollBarVisibility="Auto"
+                                                              VerticalScrollMode="Enabled"
+                                                              IsVerticalScrollChainingEnabled="True"
+                                                              HorizontalScrollMode="Disabled"
+                                                >
+                                                <StackPanel Orientation="Horizontal" 
                                                          Height="45"
-                                                         VerticalAlignment="Top">
-                                           
-                                                <TextBlock Height="50"
+                                                         VerticalAlignment="Top"
+                                                         Margin="0,0,0,0">
+
+                                            <TextBlock Height="50"
                                                             Text="{Binding ExerciseName}"
-                                                            Margin="25,15,0,0"
+                                                            Margin="5,15,0,0"
                                                             Foreground="White"
                                                             FontSize="18"/>
-                                            
+
+                                            <Line X1="0"
+                                                  X2="0"
+                                                  Y1="23"
+                                                  Stroke="#66fcf1"
+                                                  HorizontalAlignment="Center"
+                                                  Margin="10,15,10,0"/>
+
                                             <TextBlock Height="50"
                                                            Text="{Binding XpForExercise}"
-                                                           Margin="10,15,0,0"
+                                                           Margin="5,15,0,0"
                                                            Foreground="White"
                                                            FontSize="18"
                                                            />
 
+                                            <TextBlock
+                                                Height="50"
+                                               
+                                                Text="XP"
+                                                Margin="5,15,0,0"
+                                                Foreground="White"
+                                                FontSize="18"/>
 
-                                           
+                                            <TextBlock
+                                                    Height="50"
+                                                    FontFamily="Segoe MDL2 Assets"
+                                                    Text="&#xF0AD;"
+                                                    Margin="5,15,0,0"
+                                                    Foreground="#66fcf1"
+                                                    FontSize="18"/>
+
+                                            <Line X1="0"
+                                                  X2="0"
+                                                  Y1="23"
+                                                  Stroke="#66fcf1"
+                                                  HorizontalAlignment="Center"
+                                                  Margin="10,15,10,0"/>
+
+                                            <CheckBox x:Name="ExerciseDone" 
+                              
+                                                      HorizontalAlignment="Center"
+                                                      Margin="5,15,0,0"    >
+
+                                                <CheckBox.Content>
+                                                             <TextBlock Text="Udført?"
+                                                               Foreground="#66fcf1"></TextBlock>
+                                                </CheckBox.Content>
+
+                                            </CheckBox>
+
+
+                                         
+
+
                                         </StackPanel>
+                                                </ScrollViewer>
 
-                                        <Line X1="0"
-                                                      X2="400"
-                                                      Stroke="#66fcf1"
-                                                      Margin="-390,48,0,0"
-                                                      VerticalAlignment="Bottom"
-                                                      HorizontalAlignment="Center"/>
-
-
+                                            <Line X1="0"
+                                              X2="400"
+                                              Stroke="#66fcf1"
+                                              Margin="0,5,0,0"
+                                              VerticalAlignment="Bottom"
+                                              HorizontalAlignment="Left"/>
 
                                     </StackPanel>
-                                </DataTemplate>
+                                  
+                                    </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
 
 
+                        
 
 
-                      
 
 
 
 
                     </StackPanel>
 
+                   
 
-
-
+            
 
 
                 </StackPanel>
@@ -278,7 +449,7 @@
             </SplitView.Content>
         </SplitView>
 
-        <RelativePanel Margin="0,0,0,0">
+        <RelativePanel Margin="10,0,-10,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <ToggleButton x:Name="HamburgerButton" 
                           FontFamily="Segoe MDL2 Assets" 
                           Background="Transparent"  
@@ -290,4 +461,5 @@
                           Foreground="#66fcf1" />
         </RelativePanel>
     </Grid>
+        </ScrollViewer>
 </Page>

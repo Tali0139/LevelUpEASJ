@@ -44,11 +44,7 @@ namespace LevelUpEASJ.View
             this.Frame.Navigate(typeof(TrainerClientView));
         }
 
-        private void DailyCalenderTrainer_Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(DailyCalenderTrainer));
-        }
-
+        
        
 
 
@@ -75,5 +71,10 @@ namespace LevelUpEASJ.View
 
         }
 
+
+        private void GoToLevelPage_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(SeeLevels));
+        }
     }
 }

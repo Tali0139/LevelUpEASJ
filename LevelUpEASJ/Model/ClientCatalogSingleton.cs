@@ -126,9 +126,9 @@ namespace LevelUpEASJ.Model
 
 
 
-        public void DeleteClient(Client newClient)
+        public void DeleteClient(Client delClient)
         {
-            _levelUpCrud.Delete(_client.UserID);
+            _levelUpCrud.Delete(delClient.Id, delClient);
         }
 
         public async Task<string> UpdateClient(Client selectedClient)
