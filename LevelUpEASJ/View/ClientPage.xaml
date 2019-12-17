@@ -309,7 +309,7 @@
                                     >
                                 <Image Source="../Assets/LevelUpIcon.PNG"></Image>
                             </Button>
-                            <TextBlock Text="Levels"
+                            <TextBlock Text="Levels / præmier"
                                        Foreground="#66f1fc"
                                        HorizontalAlignment="Center"
                                        FontSize="18">
@@ -375,10 +375,10 @@
                                     Width="162"
                                     Margin="25,10,0,0" Click="Button_Click_1">
 
-                                <Image Source="../Assets/GiftIconGennemsigitg.png"></Image>
+                                <Image Source="../Assets/CalenderIconGennemsigtig.png"></Image>
                             </Button>
 
-                            <TextBlock Text="Præmier"
+                            <TextBlock Text="Kalender"
                                        Foreground="#66f1fc"
                                        HorizontalAlignment="Center"
                                        FontSize="18">

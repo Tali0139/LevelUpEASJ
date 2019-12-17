@@ -313,10 +313,10 @@
                                     Margin="25,10,0,0" 
                                     >
 
-                                <Image Source="../Assets/GiftIconGennemsigitg.png"></Image>
+                                <Image Source="../Assets/DumbBellIconGennemsigtig.png"></Image>
                             </Button>
 
-                            <TextBlock Text="Oversigt over præmier"
+                            <TextBlock Text="Oversigt over træninger"
                                        Foreground="#66f1fc"
                                        HorizontalAlignment="Center"
                                        FontSize="18">
