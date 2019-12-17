@@ -1,18 +1,16 @@
 ﻿<Page
-    x:Class="LevelUpEASJ.View.ViewTraining"
+    x:Class="LevelUpEASJ.View.SeeLevels"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:LevelUpEASJ.View"
+    xmlns:luvm="using:LevelUpEASJ.ViewModel"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    xmlns:lvm="using:LevelUpEASJ.ViewModel"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
     <Page.DataContext>
-        <lvm:LevelUpViewModel></lvm:LevelUpViewModel>
+        <luvm:LevelUpViewModel></luvm:LevelUpViewModel>
     </Page.DataContext>
-
 
     <Page.Resources>
         <Style x:Key="ButtonStyle1" TargetType="Button">
@@ -92,12 +90,25 @@
     </Page.Resources>
 
     <Grid Height="768px" Width="432px">
+
         <Grid.Background>
-            <LinearGradientBrush EndPoint="1.5,1" StartPoint="0.02,0" SpreadMethod="Pad" Opacity="1" MappingMode="RelativeToBoundingBox">
-                <GradientStop Color="#FF1F2833" Offset="0.137"/>
-                <GradientStop Color="#FFE91EAD" Offset="0.98"/>
-                <GradientStop Color="#FFE91EAD" Offset="0"/>
-                <GradientStop Color="#FF1F2833" Offset="0.686"/>
+            <LinearGradientBrush EndPoint="1.5,1"
+                                 StartPoint="0.02,0"
+                                 SpreadMethod="Pad"
+                                 Opacity="1"
+                                 MappingMode="RelativeToBoundingBox">
+
+                <GradientStop Color="#FF1F2833"
+                              Offset="0.137"/>
+
+                <GradientStop Color="#FFE91EAD"
+                              Offset="0.98"/>
+
+                <GradientStop Color="#FFE91EAD"
+                              Offset="0"/>
+
+                <GradientStop Color="#FF1F2833"
+                              Offset="0.686"/>
             </LinearGradientBrush>
         </Grid.Background>
 
@@ -117,17 +128,15 @@
                         HorizontalAlignment="Stretch"
                         VerticalAlignment="Stretch">
 
-
-
                     <Button Style="{StaticResource ButtonStyle1}"
-                                Background="Transparent"
-                                Margin="0,50,0,0"
-                                HorizontalAlignment="Stretch"
-                                VerticalAlignment="Bottom"
-                                Content="Min Side"
-                                Foreground="#66f1fc"
-                                Height="50"
-                                Click="MinSide_Click"/>
+                            Background="Transparent"
+                            Margin="0,50,0,0"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Bottom"
+                            Content="Min Side"
+                            Foreground="#66f1fc"
+                            Height="50"
+                            Click="Client_Page_Click"/>
 
                     <Button Style="{StaticResource ButtonStyle1}"
                                 Background="Transparent"
@@ -137,7 +146,7 @@
                                 Content="Log ud"
                                 Foreground="#66f1fc"
                                 Height="50"
-                                Click="GoToUserLogin_Click"/>
+                                Click="Logout_Click"/>
 
 
                 </StackPanel>
@@ -145,176 +154,129 @@
 
             <SplitView.Content>
 
+                <StackPanel Height="762"
+                            Width="432">
 
-                <StackPanel Orientation="Vertical"
-                            Height="768"
-                            VerticalAlignment="Top">
+                    <TextBlock Height="70"
+                               FontSize="35"
+                               Foreground="White"
+                               Text="Levels / præmier"
+                               Margin="0,50,0,0"
+                               TextAlignment="Center"></TextBlock>
 
-                    <StackPanel Orientation="Horizontal"
-                                    Height="200"
-                                    Width="216"
-                                    VerticalAlignment="Top"
-                                    HorizontalAlignment="Left"
-                                    >
-
-                        <Image x:Name="billedbox"
-                                     
-                                    Source="{Binding clientSingleton.ImageViewTraining }"
-                                   Height="130"
-                                   Width="130"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Margin="50,50,0,0">
-
-                        </Image>
-
-                    </StackPanel>
-
-                    <StackPanel Orientation="Vertical"
-                                    Height="200"
-                                    Width="216"
-                                    HorizontalAlignment="Right"
-                                    VerticalAlignment="Top"
-                                    Margin="0,-200,0,0">
-
-                        <TextBlock x:Name="NameOfUser_Box"
-                            Text=""
-                                   Foreground="White"
-                                   FontSize="25"
-                                   HorizontalAlignment="Left"
-                                   Margin="0,75,0,0"/>
-
-                        <TextBlock Text="Antal træninger:"
-                                       Height="50"
-                                       Width="200"
-
-                                       HorizontalAlignment="Left"
-                                       FontSize="20"
-                                       Foreground="White"
-                                       Margin="0,0,0,0">
-                        </TextBlock>
-                        <TextBlock Text="{Binding ChosenExercises.Count}"
-                                   Foreground="White"
-                                   FontSize="20"
-                                   Width="45"
-                                   Margin="120,-50,0,0"/>
-                    </StackPanel>
-                   
-                    <StackPanel
-                        HorizontalAlignment="Left"
-                        Orientation="Horizontal"
-                        Height="60"
-                        Width="432"
-                        Margin="0,0,0,0">
-                          
-                        <TextBlock
-                                
-                                Width="50"                           
-                                Height="50"
-                                FontFamily="Segoe MDL2 Assets"
-                                Text="&#xE762;"
-                                 Margin="10,10,0,0"
-                                Foreground="#66fcf1"
-                                  FontSize="30"/>
-
-                        <TextBlock 
-                            
-                            Text="Liste over øvelser"
-                                   Height="45"
-                                   Width="200"
-                                   
-                                   FontSize="20"
-                                   Foreground="White"
-                                   Margin="10,0,0,0">
-                        </TextBlock>
-
-                    </StackPanel>
 
                     <StackPanel Orientation="Horizontal"
-                                Height="700"
+                                Height="642"
                                 Width="432"
-                                Margin="0,0,0,0">
-                        <ListView x:Name="ListView_All_ChosenExercises" ItemsSource="{Binding all_ChosenExercises}">
+                                VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="0,0,0,0">
+
+                        <ListView x:Name="ListView_All_Levels" ItemsSource="{Binding all_Levels}">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
-                                    <StackPanel 
-                                                
-                                                BorderBrush="#66fcf1"
+                                    <StackPanel>
+                                        <StackPanel 
                                                 Orientation="Vertical"
                                                 HorizontalAlignment="Stretch"
-                                                Height="50"
+                                                Height="100"
                                                 Width="432"
-                                                Margin="0,0,0,10"
+                                                Margin="-12,0,0,0"
                                                 >
+                                            <StackPanel Orientation="Horizontal ">
+                                                <StackPanel Height="100"
+                                                    Width="100">
+                                                    <Image MaxWidth="75" 
+                                                       MaxHeight="75"
+                                                       Source="{Binding Gave}"
+                                                       VerticalAlignment="Center"
+                                                       HorizontalAlignment="Center"
+                                                       Margin="0,10,10,0"/>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Vertical"
+                                                        >
 
+                                                    <StackPanel Orientation="Horizontal" 
+                                                         Height="100"
+                                                         VerticalAlignment="Top">
 
-
-                                        <StackPanel Orientation="Horizontal" 
-                                                         Height="45"
-                                                         VerticalAlignment="Top"
-                                                         Margin="0,0,0,0">
-
-                                            <TextBlock Height="50"
-                                                            Text="{Binding ExerciseName}"
-                                                            Margin="5,15,0,0"
+                                                        <StackPanel Orientation="Vertical"
+                                                                Height="100"
+                                                                Width="110">
+                                                            <TextBlock Height="20"
+                                                               Text="Level"
+                                                               Foreground="#66fcf1"
+                                                               FontSize="18"
+                                                               Margin="0,10,0,0"
+                                                               />
+                                                            <TextBlock Height="50"
+                                                            Text="{Binding LevelValue}"
                                                             Foreground="White"
-                                                            FontSize="18"/>
+                                                            FontSize="18"
+                                                            Margin="0,10,0,0"
+                                                            />
 
-                                            
+                                                        </StackPanel>
 
-                                            <TextBlock Height="50"
-                                                           Text="{Binding XpForExercise}"
-                                                           Margin="5,15,0,0"
+                                                        <StackPanel Orientation="Vertical"
+                                                                Height="100"
+                                                                Width="110">
+                                                            <TextBlock Height="20"
+                                                               Text="Min XP"
+                                                               Foreground="#66fcf1"
+                                                               FontSize="18"
+                                                               Margin="0,10,0,0"
+                                                               VerticalAlignment="Center"/>
+                                                            <TextBlock Height="50"
+                                                           Text="{Binding MinXP}"
+                                                           Margin="0,10,0,0"
                                                            Foreground="White"
                                                            FontSize="18"
-                                                           />
+                                                           VerticalAlignment="Center"/>
 
-                                            <TextBlock
-                                                Height="50"
-                                               
-                                                Text="XP"
-                                                Margin="5,15,0,0"
-                                                Foreground="White"
-                                                FontSize="18"/>
+                                                        </StackPanel>
 
-                                            <TextBlock
-                                                    Height="50"
-                                                    FontFamily="Segoe MDL2 Assets"
-                                                    Text="&#xF0AD;"
-                                                    Margin="5,15,0,0"
-                                                    Foreground="White"
-                                                    FontSize="18"/>
+                                                        <StackPanel Orientation="Vertical"
+                                                                    Height="100"
+                                                                    Width="110">
 
 
-                                           
+                                                            <TextBlock Height="20"
+                                                               Text="Max XP"
+                                                               Margin="0,10,0,0"
+                                                               Foreground="#66fcf1"
+                                                               FontSize="18"
+
+                                                               VerticalAlignment="Center"/>
+                                                            <TextBlock Height="50"
+                                                           Text="{Binding MaxXP}"
+                                                           Margin="0,10,0,0"
+                                                           Foreground="White"
+                                                           FontSize="18"
+                                                           VerticalAlignment="Center"/>
+
+                                                        </StackPanel>
+                                                        <Line X1="0"
+                                                          X2="400"
+                                                          Stroke="#66fcf1"
+                                                          Margin="-420,48,0,0"
+                                                          VerticalAlignment="Bottom"
+                                                          HorizontalAlignment="Center"/>
+
+                                                    </StackPanel>
+
+
+                                                </StackPanel>
+                                            </StackPanel>
 
                                         </StackPanel>
-
-
-                                        <Line X1="0"
-                                              X2="400"
-                                              Stroke="#66fcf1"
-                                              Margin="0,5,0,0"
-                                              VerticalAlignment="Bottom"
-                                              HorizontalAlignment="Left"/>
-
                                     </StackPanel>
 
                                 </DataTemplate>
+
                             </ListView.ItemTemplate>
+
                         </ListView>
-
-
-                        
-
-
-
-
-
-
                     </StackPanel>
 
-                   
 
 
 
@@ -322,10 +284,11 @@
                 </StackPanel>
 
 
+
             </SplitView.Content>
         </SplitView>
 
-        <RelativePanel Margin="10,0,-10,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <RelativePanel Margin="0,0,0,0">
             <ToggleButton x:Name="HamburgerButton" 
                           FontFamily="Segoe MDL2 Assets" 
                           Background="Transparent"  
@@ -336,5 +299,7 @@
                           Width="50" Height="50" 
                           Foreground="#66fcf1" />
         </RelativePanel>
+
+
     </Grid>
 </Page>
