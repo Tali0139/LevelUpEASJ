@@ -93,6 +93,7 @@ namespace LevelUpEASJ.ViewModel
 
             //CheckCommand = new RelayCommand(DoesUserExist);
             AddCommand = new RelayCommand(ToAddNewClient);
+            DeleteCommand = new RelayCommand(ToDeleteClient);
             CalculateXP = new RelayCommand(ToCalculateXPForTraining);
             CreateGoalForClient = new RelayCommand(ToCreateClientExercise);
             _køn = new List<string>();

@@ -163,18 +163,18 @@
                     </StackPanel>
 
                     <StackPanel Orientation="Vertical"
-                                    Height="200"
+                                    Height="125"
                                     Width="216"
                                     HorizontalAlignment="Right"
                                     VerticalAlignment="Top"
-                                    Margin="0,-200,0,0">
+                                    Margin="0,-120,0,0">
 
                         <TextBlock x:Name="NameOfTrainer_Box"
                             Text=""
                                    Foreground="White"
                                    FontSize="25"
                                    HorizontalAlignment="Left"
-                                   Margin="0,75,0,0"/>
+                                   Margin="0,0,0,0"/>
 
                         <TextBlock Text="Antal af Klienter:"
                                        Height="50"
@@ -191,13 +191,87 @@
                                    Width="45"
                                    Margin="170,-50,0,0"
                             />
+
+                        <StackPanel
+                            Orientation="Horizontal"
+                            >
+
+                            <Button Style="{StaticResource ButtonStyle1}"
+                                    Background="Transparent"
+                                    HorizontalAlignment="Left"
+                                    Height="40"
+                                    Width="48"
+                                    VerticalAlignment="Center"
+                                    Margin="80,0,0,0"
+                            >
+                                <Image Source="../Assets/DeleteUserButton.png" HorizontalAlignment="Stretch" Margin="0,-1,-10,0" VerticalAlignment="Stretch"></Image>
+                                <Button.Flyout>
+                                    <Flyout x:Name="MyFlyout">
+                                        <StackPanel>
+                                            <TextBlock
+                                                Text="Bekræft sletning" 
+                                            />
+
+                                            <Button
+                                                Width="95"
+                                                Content="Annuller"
+                                                Style="{StaticResource ButtonStyle1}"
+                                                Margin="0,10,0,0"
+                                                Click ="CloseFlyout_Click_1"
+                                            />
+
+                                            <Button
+                                                Width="95"
+                                                Content="OK"
+                                                Command="{Binding DeleteCommand}"
+                                                Click ="CloseFlyout_Click_2"
+                                                Style="{StaticResource ButtonStyle1}"
+
+                                                
+                                            />
+
+                                        </StackPanel>
+
+                                    </Flyout>
+                                </Button.Flyout>
+                            </Button>
+
+                            <Line X1="0" 
+                                  X2 ="0"
+                                  Y1 ="30"
+                                  Margin="10,5,0,0"
+                                  HorizontalAlignment="Left" 
+                                  VerticalAlignment="Stretch" 
+                                  Width="8" 
+                                  Stroke="#66fcf1"></Line>
+
+                            <Button Style="{StaticResource ButtonStyle1}"
+                                    Background="Transparent"
+                                    HorizontalAlignment="Left"
+                                    Height="40"
+                                    Width="48"
+                                    VerticalAlignment="Center"
+                                
+                                    Margin= "-5,0,0,0"
+                                    Click="AddUser_Click"
+                            >
+                                <Image Source="../Assets/AddUserBotton.png" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="28"></Image>
+                            </Button>
+
+
+                        </StackPanel>
+
+
+
+
                     </StackPanel>
+
 
                     <StackPanel Orientation="Horizontal"
                                 Height="568"
                                 Width="432">
 
-                        <ListView x:Name="ListView_All_Clients" ItemsSource="{Binding all_Clients}">
+                        <ListView x:Name="ListView_All_Clients" ItemsSource="{Binding all_Clients}" SelectedItem="{Binding SelectedClient, Mode=TwoWay}">
 
 
 
