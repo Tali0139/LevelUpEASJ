@@ -712,6 +712,12 @@ namespace LevelUpEASJ.ViewModel
             OnPropertyChanged(nameof(ClientCount));
         }
 
+        public void ToUpdateClient()
+        {
+            clientSingleton.UpdateClient(SelectedClient);
+            OnPropertyChanged(nameof(all_Clients));
+            OnPropertyChanged(nameof(ClientCount));
+        }
 
         public void ToUpdateClientXP()
         {
@@ -734,8 +740,7 @@ namespace LevelUpEASJ.ViewModel
                     ClientExerciseCatalogSingleton.DeleteClientExercise(ce);
                 }
             }
-         
-        }
+         }
 
 
         public void ToAddNewTrainer()
