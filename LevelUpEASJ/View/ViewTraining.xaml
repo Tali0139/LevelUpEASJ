@@ -230,13 +230,16 @@
                             </TextBlock>
                             <Button 
                                                     Content="Opdater"
+                                                    x:Name="Opdater_Button"
+                                                    Command="{Binding AddXPToClient}"
                                                         FontSize="18"
                                                          Height="40"
                                                          Width="100"
                                                         BorderBrush="#66fcf1"
                                                          HorizontalAlignment="Right"
-                                                     Margin="40,0,0,6"
-                                                      Foreground="white" Background="{x:Null}" BorderThickness="0" 
+                                                       Margin="40,0,0,6"
+                                                      Foreground="white" Background="{x:Null}" 
+                                                    BorderThickness="0" Click="Opdater_Button_Click" 
                                                                                                                   >
                                 <Button.Resources>
                                     <Style x:Key="ButtonStyle1" TargetType="Button">
@@ -366,7 +369,9 @@
                                 Margin="0,5,0,0">
 
 
-                            <ListView x:Name="ListView_All_ChosenExercises" ItemsSource="{Binding all_ChosenExercises}">
+                            <ListView x:Name="ListView_All_ChosenExercises" 
+                                      ItemsSource="{Binding all_ChosenExercises}"
+                                      SelectedItem="{Binding SelectedClient, Mode=TwoWay}">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel 

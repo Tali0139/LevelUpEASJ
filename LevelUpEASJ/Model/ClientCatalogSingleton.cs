@@ -18,11 +18,13 @@ namespace LevelUpEASJ.Model
         private string serverUrl = "http://localhost:53409";
         private LevelUpCRUD<Client> _levelUpCrud;
         private Client c;
+        
 
         public Client NyClient
         {
             get { return c; } set { c = value; }
         }
+
 
 
         private ClientCatalogSingleton()
@@ -131,10 +133,25 @@ namespace LevelUpEASJ.Model
             _levelUpCrud.Delete(delClient.Id, delClient);
         }
 
-        public async Task<string> UpdateClient(Client selectedClient)
+        public async void UpdateClient(Client upClient)
         {
-            return await _levelUpCrud.Update(_client.UserID, _client);
+            bool exist = false;
+            {
+                foreach (var c in _levelUpCrud.Load().Result)
+                {
+                    if (c.UserName == upClient.UserName)
+                        exist = true;
+                }
+
+                if (exist == true)
+                {
+                    
+                    await _levelUpCrud.Update(upClient.Id, upClient);
+                }
+
+            }
         }
+
 
     }
 }

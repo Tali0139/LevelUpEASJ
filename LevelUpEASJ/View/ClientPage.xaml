@@ -197,18 +197,18 @@
                                        FontSize="18"
                                        Margin="10,0,0,0"/>
 
-                            <Line X1="0"
+                            <!--<Line X1="0"
                                   X2="0"
                                   Y1="23"
                                   Stroke="#66fcf1"
                                   HorizontalAlignment="Center"
-                                  Margin="10,0,0,0"/>
+                                  Margin="10,0,0,0"/>-->
 
-                            <TextBlock x:Name="FedtBox"
+                            <!--<TextBlock x:Name="FedtBox"
                                        Text=""
                                        Foreground="White"
                                        FontSize="18"
-                                       Margin="10,0,0,0"/>
+                                       Margin="10,0,0,0"/>-->
                         </StackPanel>
 
 
@@ -309,7 +309,7 @@
                                     >
                                 <Image Source="../Assets/LevelUpIcon.PNG"></Image>
                             </Button>
-                            <TextBlock Text="Levels / præmier"
+                            <TextBlock Text="Alle levels / præmier"
                                        Foreground="#66f1fc"
                                        HorizontalAlignment="Center"
                                        FontSize="18">
@@ -375,14 +375,15 @@
                                     Width="162"
                                     Margin="25,10,0,0" Click="Button_Click_1">
 
-                                <Image Source="../Assets/CalenderIconGennemsigtig.png"></Image>
+                                <Image Source="../Assets/GiftIconGennemsigitg.png"></Image>
                             </Button>
 
-                            <TextBlock Text="Kalender"
+                            <TextBlock Text="Min præmie"
                                        Foreground="#66f1fc"
                                        HorizontalAlignment="Center"
-                                       FontSize="18">
-
+                                       FontSize="18"
+                                       >
+                                       
                             </TextBlock>
 
 

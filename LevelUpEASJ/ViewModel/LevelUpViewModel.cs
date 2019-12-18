@@ -39,7 +39,7 @@ namespace LevelUpEASJ.ViewModel
         private Exercise _selectedExercise1;
         private Exercise _selectedExercise2;
         private Exercise _selectedExercise3;
-       
+
         private int id;
         private string image;
         private string firstName;
@@ -96,6 +96,7 @@ namespace LevelUpEASJ.ViewModel
             DeleteCommand = new RelayCommand(ToDeleteClient);
             CalculateXP = new RelayCommand(ToCalculateXPForTraining);
             CreateGoalForClient = new RelayCommand(ToCreateClientExercise);
+            AddXPToClient = new RelayCommand(ToUpdateClientXP);
             _køn = new List<string>();
             _køn.Add("Mand");
             _køn.Add("Kvinde");
@@ -164,12 +165,12 @@ namespace LevelUpEASJ.ViewModel
             }
         }
 
-      
+
         public RelayCommand AddCommand { get; set; }
         public RelayCommand DeleteCommand { get; set; }
         public RelayCommand UpdateCommand { get; set; }
         public RelayCommand CalculateXP { get; set; }
-
+        public RelayCommand AddXPToClient { get; set; }
         public RelayCommand CreateGoalForClient { get; set; }
         //public RelayCommand CheckCommand { get; set; }
 
@@ -602,17 +603,18 @@ namespace LevelUpEASJ.ViewModel
 
             int E1ID = exerciseSingleton.Exercises.Find(e => e.ExerciseName == SelectedExercise1.ExerciseName)
                 .ExerciseId;
-            ClientExercise ce1 = new ClientExercise(p.Id, E1ID);
+            ClientExercise ce1 = new ClientExercise(p.Id + E1ID + 100, p.Id, E1ID);
             ClientExerciseCatalogSingleton.AddClientExercise(ce1);
 
-            int E2ID = exerciseSingleton.Exercises.Find(e => e.ExerciseName == SelectedExercise1.ExerciseName)
+            int E2ID = exerciseSingleton.Exercises.Find(e => e.ExerciseName == SelectedExercise2.ExerciseName)
                 .ExerciseId;
-            ClientExercise ce2 = new ClientExercise(p.Id, E2ID);
+
+            ClientExercise ce2 = new ClientExercise(p.Id + E2ID + 200, p.Id, E2ID);
             ClientExerciseCatalogSingleton.AddClientExercise(ce2);
 
-            int E3ID = exerciseSingleton.Exercises.Find(e => e.ExerciseName == SelectedExercise1.ExerciseName)
+            int E3ID = exerciseSingleton.Exercises.Find(e => e.ExerciseName == SelectedExercise3.ExerciseName)
                 .ExerciseId;
-            ClientExercise ce3 = new ClientExercise(p.Id, E3ID);
+            ClientExercise ce3 = new ClientExercise(p.Id + E3ID + 300, p.Id, E3ID);
             ClientExerciseCatalogSingleton.AddClientExercise(ce3);
             OnPropertyChanged(nameof(all_ClientExercises));
         }
@@ -620,7 +622,7 @@ namespace LevelUpEASJ.ViewModel
 
         public List<Exercise> TrainingForClient(Client nc)
         {
-            List<Exercise>myEList = new List<Exercise>();
+            List<Exercise> myEList = new List<Exercise>();
             int input = nc.Id;
             var query =
                 from item in all_ClientExercises
@@ -634,152 +636,156 @@ namespace LevelUpEASJ.ViewModel
             return myEList;
         }
 
-    
-    public async Task<int> ToAddNewXPToTotalXP(Client nc)
-    {
-        if (SelectedClient.UserID == nc.UserID)
+      
+        public Exercise ShowSelectedExercise1
         {
-            int initialXP = nc.TotalXP;
-            nc.TotalXP= initialXP + Tot;
-            await ClientCatalogSingleton.UpdateClient(nc);
-            return nc.TotalXP;
-        }
-        else return nc.TotalXP;
-    }
-
-    public Exercise ShowSelectedExercise1
-    {
-        get
-        {
-            if (clientSingleton.NyClient.UserID == SelectedClient.UserID) { return SelectedExercise1; }
-            else return null;
-        }
-    }
-
-    public Exercise ShowSelectedExercise2
-    {
-        get
-        {
-            if (clientSingleton.NyClient.UserID == SelectedClient.UserID) { return SelectedExercise2; }
-            else return null;
-        }
-    }
-
-    public Exercise ShowSelectedExercise3
-    {
-        get
-        {
-            if (clientSingleton.NyClient.UserID == SelectedClient.UserID) { return SelectedExercise3; }
-            else return null;
-        }
-    }
-
-
-    public int ToAddXPAfterTraining
-    {
-        get { return ToAddNewXPToTotalXP(SelectedClient).Result; }
-    }
-
-    public string NumberOfTraining
-    {
-        get
-        {
-            int result = 0;
-            if (clientSingleton.NyClient.UserID == SelectedClient.UserID)
+            get
             {
-                if (ShowSelectedExercise1.XpForExercise != 0)
-                {
-                    result = +1;
-                }
-                if (ShowSelectedExercise2.XpForExercise != 0)
-                {
-                    result = +1;
-                }
-                if (ShowSelectedExercise2.XpForExercise != 0)
-                {
-                    result = +1;
-                }
-                else result = +0;
-
-                return result.ToString();
+                if (clientSingleton.NyClient.UserID == SelectedClient.UserID) { return SelectedExercise1; }
+                else return null;
             }
+        }
 
-            return "Øvelse(r) kunne ikke findes";
+        public Exercise ShowSelectedExercise2
+        {
+            get
+            {
+                if (clientSingleton.NyClient.UserID == SelectedClient.UserID) { return SelectedExercise2; }
+                else return null;
+            }
+        }
+
+        public Exercise ShowSelectedExercise3
+        {
+            get
+            {
+                if (clientSingleton.NyClient.UserID == SelectedClient.UserID) { return SelectedExercise3; }
+                else return null;
+            }
+        }
+
+
+        public string NumberOfTraining
+        {
+            get
+            {
+                int result = 0;
+                if (clientSingleton.NyClient.UserID == SelectedClient.UserID)
+                {
+                    if (ShowSelectedExercise1.XpForExercise != 0)
+                    {
+                        result = +1;
+                    }
+                    if (ShowSelectedExercise2.XpForExercise != 0)
+                    {
+                        result = +1;
+                    }
+                    if (ShowSelectedExercise2.XpForExercise != 0)
+                    {
+                        result = +1;
+                    }
+                    else result = +0;
+
+                    return result.ToString();
+                }
+
+                return "Øvelse(r) kunne ikke findes";
+            }
+        }
+
+
+
+        public void ToAddNewClient()
+        {
+            Client NewClient = new Client(id, FirstName, LastName, PhoneNumber, UserName, Password, image, age, weight, height, fatPercent,
+                gender, WaistSize, ArmSize, TotalXP);
+            clientSingleton.AddClient(NewClient);
+            OnPropertyChanged(nameof(all_Clients));
+            OnPropertyChanged(nameof(ClientCount));
+        }
+
+
+        public void ToDeleteClient()
+        {
+            clientSingleton.DeleteClient(SelectedClient);
+            OnPropertyChanged(nameof(all_Clients));
+            OnPropertyChanged(nameof(ClientCount));
+        }
+
+        public void ToUpdateClient()
+        {
+            clientSingleton.UpdateClient(SelectedClient);
+            OnPropertyChanged(nameof(all_Clients));
+            OnPropertyChanged(nameof(ClientCount));
+        }
+
+        public void ToUpdateClientXP()
+        {
+            int initialXP = clientSingleton.NyClient.TotalXP;
+            int xpEarned = 0;
+            foreach (var result in TrainingForClient(clientSingleton.NyClient))
+            {
+                xpEarned += result.XpForExercise;
+            }
+            clientSingleton.NyClient.TotalXP = initialXP + xpEarned;
+
+            clientSingleton.UpdateClient(clientSingleton.NyClient);
+            OnPropertyChanged(nameof(all_Clients));
+            OnPropertyChanged(nameof(ClientCount));
+
+           foreach (ClientExercise ce in all_ClientExercises)
+            {
+                if (ce.ClientId == clientSingleton.NyClient.Id)
+                {
+                    ClientExerciseCatalogSingleton.DeleteClientExercise(ce);
+                }
+            }
+         }
+
+
+        public void ToAddNewTrainer()
+        {
+            Trainer newLevels = new Trainer(id, firstName, lastName, PhoneNumber, username, Password, image, yearsOfExperience);
+            trainerSingleton.AddTrainer(newLevels);
+            OnPropertyChanged(nameof(all_Trainers));
+            OnPropertyChanged(nameof(TrainerCount));
+        }
+
+
+        public void ToDeleteTrainer()
+        {
+            trainerSingleton.DeleteTrainer(SelectedTrainer);
+            OnPropertyChanged(nameof(all_Trainers));
+            OnPropertyChanged(nameof(TrainerCount));
+        }
+
+
+        public async void ToUpdateTrainer()
+        {
+            await trainerSingleton.UpdateTrainer(SelectedTrainer);
+            OnPropertyChanged(nameof(all_Trainers));
+            OnPropertyChanged(nameof(TrainerCount));
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
-
-
-
-    public void ToAddNewClient()
-    {
-        Client NewClient = new Client(id, FirstName, LastName, PhoneNumber, UserName, Password, image, age, weight, height, fatPercent,
-            gender, WaistSize, ArmSize, TotalXP);
-        clientSingleton.AddClient(NewClient);
-        OnPropertyChanged(nameof(all_Clients));
-        OnPropertyChanged(nameof(ClientCount));
-    }
-
-
-    public void ToDeleteClient()
-    {
-        clientSingleton.DeleteClient(SelectedClient);
-        OnPropertyChanged(nameof(all_Clients));
-        OnPropertyChanged(nameof(ClientCount));
-    }
-
-
-    public async void ToUpdateClient()
-    {
-        await clientSingleton.UpdateClient(SelectedClient);
-        OnPropertyChanged(nameof(all_Clients));
-        OnPropertyChanged(nameof(ClientCount));
-
-    }
-
-
-    public void ToAddNewTrainer()
-    {
-        Trainer newLevels = new Trainer(id, firstName, lastName, PhoneNumber, username, Password, image, yearsOfExperience);
-        trainerSingleton.AddTrainer(newLevels);
-        OnPropertyChanged(nameof(all_Trainers));
-        OnPropertyChanged(nameof(TrainerCount));
-    }
-
-
-    public void ToDeleteTrainer()
-    {
-        trainerSingleton.DeleteTrainer(SelectedTrainer);
-        OnPropertyChanged(nameof(all_Trainers));
-        OnPropertyChanged(nameof(TrainerCount));
-    }
-
-
-    public async void ToUpdateTrainer()
-    {
-        await trainerSingleton.UpdateTrainer(SelectedTrainer);
-        OnPropertyChanged(nameof(all_Trainers));
-        OnPropertyChanged(nameof(TrainerCount));
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    [NotifyPropertyChangedInvocator]
-    protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-    {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-    }
-}
 }
 
