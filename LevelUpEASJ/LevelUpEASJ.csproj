@@ -162,6 +162,9 @@
     <Compile Include="View\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\SeeLevelsTrainer.xaml.cs">
+      <DependentUpon>SeeLevelsTrainer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\TrainerClientView.xaml.cs">
       <DependentUpon>TrainerClientView.xaml</DependentUpon>
     </Compile>
@@ -270,6 +273,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SeeLevelsTrainer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
