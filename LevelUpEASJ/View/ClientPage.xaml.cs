@@ -50,6 +50,7 @@ namespace LevelUpEASJ.View
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
+            
             NavnBox.Text = luvm.clientSingleton.NyClient.FirstName.ToString() + " " + luvm.clientSingleton.NyClient.LastName;
             WeightBox.Text = luvm.clientSingleton.NyClient.Weight.ToString() +"kg";
             XPBox.Text = "XP: " + luvm.clientSingleton.NyClient.TotalXP.ToString();

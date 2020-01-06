@@ -51,6 +51,7 @@ namespace LevelUpEASJ.ViewModel
         private double fatPercent;
         private string gender;
         private int totalXp;
+        private string goal;
         private int minXp;
         private int maxXp;
         private int levelValue;
@@ -82,7 +83,7 @@ namespace LevelUpEASJ.ViewModel
             _chosenE = new ObservableCollection<Exercise>();
             //_selectedExercise = new Exercise(ExerciseName, XpForExercise, ExerciseId);
             _selectedClient = new Client(UserID, FirstName, LastName, PhoneNumber, UserName, Password, image, Age,
-                Weight, Height, Fatpercent, Gender, WaistSize, ArmSize, TotalXP);
+                Weight, Height, Fatpercent, Gender, WaistSize, ArmSize, TotalXP, Goal);
             _selectedTrainer = new Trainer(UserID, FirstName, LastName, PhoneNumber, UserName, Password, image,
                 YearsOfExperience);
             _selectedLevels = new Levels(levelValue, minXp, maxXp, gave);
@@ -195,8 +196,10 @@ namespace LevelUpEASJ.ViewModel
             {
 
                 if (person.UserName == username && person.Password == password)
+                {
                     ClientCatalogSingleton.ClientInstance.NyClient = person;
-                _exist = true;
+                    _exist = true;
+                }
             }
 
             return _exist;
@@ -489,6 +492,16 @@ namespace LevelUpEASJ.ViewModel
             }
         }
 
+        public string Goal
+        {
+            get { return goal; }
+            set
+            {
+                goal = value;
+                OnPropertyChanged();
+            }
+        }
+
         public int YearsOfExperience
         {
             get { return yearsOfExperience; }
@@ -698,7 +711,7 @@ namespace LevelUpEASJ.ViewModel
         public void ToAddNewClient()
         {
             Client NewClient = new Client(id, FirstName, LastName, PhoneNumber, UserName, Password, image, age, weight, height, fatPercent,
-                gender, WaistSize, ArmSize, TotalXP);
+                gender, WaistSize, ArmSize, TotalXP, Goal);
             clientSingleton.AddClient(NewClient);
             OnPropertyChanged(nameof(all_Clients));
             OnPropertyChanged(nameof(ClientCount));
