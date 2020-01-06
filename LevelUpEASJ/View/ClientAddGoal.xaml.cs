@@ -40,9 +40,7 @@ namespace LevelUpEASJ.View
         {
             base.OnNavigatedTo(e);
             NameOfUser_Box.Text = luvm.clientSingleton.NyClient.FirstName + " " + luvm.clientSingleton.NyClient.LastName;
-
-
-
+            
         }
 
 
@@ -58,7 +56,12 @@ namespace LevelUpEASJ.View
 
         private void Opdater_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(ViewTraining));
+            this.Frame.Navigate(typeof(ClientAddGoal));
+        }
+
+        private void MålBox_OnGotFocus(object sender, RoutedEventArgs e)
+        {
+            MålBox.Text = "Hvad er dit mål?";
         }
     }
 }

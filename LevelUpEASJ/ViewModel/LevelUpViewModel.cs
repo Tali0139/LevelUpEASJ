@@ -98,6 +98,7 @@ namespace LevelUpEASJ.ViewModel
             CalculateXP = new RelayCommand(ToCalculateXPForTraining);
             CreateGoalForClient = new RelayCommand(ToCreateClientExercise);
             AddXPToClient = new RelayCommand(ToUpdateClientXP);
+            AddGoalToClient = new RelayCommand(ToUpdateClientGoal);
             _køn = new List<string>();
             _køn.Add("Mand");
             _køn.Add("Kvinde");
@@ -173,6 +174,7 @@ namespace LevelUpEASJ.ViewModel
         public RelayCommand CalculateXP { get; set; }
         public RelayCommand AddXPToClient { get; set; }
         public RelayCommand CreateGoalForClient { get; set; }
+        public RelayCommand AddGoalToClient { get; set; }
         //public RelayCommand CheckCommand { get; set; }
 
 
@@ -767,6 +769,14 @@ namespace LevelUpEASJ.ViewModel
                 }
             }
          }
+
+
+        public void ToUpdateClientGoal()
+        {
+            clientSingleton.UpdateClient(clientSingleton.NyClient);
+            OnPropertyChanged(nameof(all_Clients));
+            OnPropertyChanged(nameof(ClientCount));
+        }
 
 
         public void ToAddNewTrainer()
