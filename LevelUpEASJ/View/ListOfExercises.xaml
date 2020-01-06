@@ -224,7 +224,7 @@
                                                     Width="150">
                                                 <Image Width="75" 
                                                        Height="75"
-                                                       Source="{Binding Image}"
+                                                       Source="{Binding ExerciseImage}"
                                                        Margin="-42,11,0,0"/>
                                             </StackPanel>
                                             <StackPanel Orientation="Vertical">

@@ -305,6 +305,19 @@ namespace LevelUpEASJ.ViewModel
             }
         }
 
+
+        private string _exerciseImage;
+
+        public string ExerciseImage
+        {
+            get { return _exerciseImage; }
+            set
+            {
+                _exerciseImage = value;
+                OnPropertyChanged();
+            }
+        }
+
         private string _firstName;
 
         public string FirstName

@@ -35,7 +35,7 @@ namespace UnitTestLevelUpEASJ
 
 
             Client c1 = new Client(99, "Kon", "test", 22334455, "test",
-                "1234","../Assets/mand1.png", 10, 10.2, 10, 10.8, "mand", 10, 60,870);
+                "1234","../Assets/mand1.png", 10, 10.2, 10, 10.8, "mand", 10, 60,870, "Vil Løbe húrtigere");
             ClientCatalogSingleton.ClientInstance.AddClient(c1);
 
             Assert.AreEqual(8, luvm.ClientCount);

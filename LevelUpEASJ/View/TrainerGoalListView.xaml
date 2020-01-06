@@ -195,10 +195,6 @@
                             />
 
 
-
-
-
-
                     </StackPanel>
 
 
@@ -217,12 +213,12 @@
                                     <StackPanel 
                                                 Orientation="Vertical"
                                                 HorizontalAlignment="Stretch"
-                                                Height="100"
+                                                MinHeight="100"
                                                 Width="432"
                                                 Margin="-12,0,0,0"
                                                 >
                                         <StackPanel Orientation="Horizontal ">
-                                            <StackPanel Height="100"
+                                            <StackPanel MinHeight="100"
                                                     Width="150">
                                                 <Image Width="75" 
                                                        Height="75"
@@ -230,6 +226,13 @@
                                                        Margin="-42,11,0,0"/>
                                             </StackPanel>
                                             <StackPanel Orientation="Vertical">
+                                                <Line X1="0"
+                                                      X2="400"
+                                                      Stroke="#66fcf1"
+                                                      Margin="-150,0,0,0"
+                                                      VerticalAlignment="Bottom"
+                                                      HorizontalAlignment="Center"/>
+
 
                                                 <StackPanel Orientation="Horizontal" 
                                                          Height="45"
@@ -249,23 +252,19 @@
 
                                                   </StackPanel>
                                                 <StackPanel Orientation="Horizontal"
-                                                        Height="55"
                                                         VerticalAlignment="Bottom">
 
-                                                    <TextBlock Height="50"
-                                                           Text="Mål"
-                                                           Margin="-25,15,0,0"
-                                                           Foreground="White"
+
+                                                    <TextBlock MinHeight="50"
+                                                               MaxWidth="280"
+                                                           Text="{Binding Goal}"
+                                                           TextWrapping="Wrap"
+                                                           Margin="-25,15,0,5"
+                                                           Foreground="#66fcf1"
                                                            FontSize="18"/>
 
                                                     
-                                                    <Line X1="0"
-                                                      X2="400"
-                                                      Stroke="#66fcf1"
-                                                      Margin="-160,48,0,0"
-                                                      VerticalAlignment="Bottom"
-                                                      HorizontalAlignment="Center"/>
-
+                                                 
 
                                                 </StackPanel>
                                             </StackPanel>
