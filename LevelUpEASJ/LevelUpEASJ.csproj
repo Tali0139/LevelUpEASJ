@@ -193,6 +193,7 @@
     <Content Include="Assets\benchpress.png" />
     <Content Include="Assets\BrugerIconGennemsigitg.png" />
     <Content Include="Assets\CalenderIconGennemsigtig.png" />
+    <Content Include="Assets\chinups.png" />
     <Content Include="Assets\ClockIconGennemsigtig.png" />
     <Content Include="Assets\DailyCalenderIconGennemsigitg.png" />
     <Content Include="Assets\Deadlift.png" />
