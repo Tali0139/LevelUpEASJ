@@ -350,7 +350,7 @@
                                     Background="Transparent"
                                     Height="120"
                                     Width="162"
-                                    Margin="25,0,0,0"
+                                    Margin="25,0,0,0" Click="Button_Click_3"
                                     >
 
                                 <Image Source="../Assets/BrugerIconGennemsigitg.png"/>

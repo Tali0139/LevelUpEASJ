@@ -184,10 +184,15 @@
                                    FontSize="25"
                                    HorizontalAlignment="Left"
                                    Margin="0,75,0,0"/>
+                            <StackPanel Orientation="Vertical"
+                                        Height="70">
+                            <StackPanel Orientation="Horizontal"
+                                        Height="30"
+                                        VerticalAlignment="Top">
 
                             <TextBlock Text="Antal træninger:"
-                                       Height="50"
-                                       Width="200"
+                                       Height="35"
+                                       Width="150"
 
                                        HorizontalAlignment="Left"
                                        FontSize="20"
@@ -198,9 +203,30 @@
                                    Foreground="White"
                                    FontSize="20"
                                    Width="45"
-                                   Margin="120,-50,0,0"/>
+                                   HorizontalAlignment="Right"
+                                   Margin="0,0,0,0"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal"
+                                        Height="25"
+                                        VerticalAlignment="Top"
+                                        Margin="0,0,0,70">
+                            <TextBlock Text="Level:"
+                                       Height="25"
+                                       Width="150"
+                                       HorizontalAlignment="Left"
+                                       FontSize="20"
+                                       Foreground="White"
+                                       Margin="0,0,0,0">
+                            </TextBlock>
+                            <TextBlock Text="{Binding ClientLevel, UpdateSourceTrigger=PropertyChanged}"
+                                   Foreground="White"
+                                   FontSize="20"
+                                   HorizontalAlignment="Right"
+                                   Width="45"
+                                   Margin="0,0,0,0"/>
+                            </StackPanel>
                         </StackPanel>
-
+                        </StackPanel>
                         <StackPanel
                         HorizontalAlignment="Left"
                         Orientation="Horizontal"

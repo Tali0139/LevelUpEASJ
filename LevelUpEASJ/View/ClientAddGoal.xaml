@@ -395,8 +395,8 @@
                                                          Height="40"
                                                          Width="150"
                                                         BorderBrush="#66fcf1"
-                                                         HorizontalAlignment="Right"
-                                                       Margin="25,10,0,6"
+                                                         HorizontalAlignment="Center"
+                                                       Margin="130,10,0,6"
                                                       Foreground="white" Background="{x:Null}" 
                                                     BorderThickness="0" Click="Opdater_Button_Click" 
                                                                                                                   >

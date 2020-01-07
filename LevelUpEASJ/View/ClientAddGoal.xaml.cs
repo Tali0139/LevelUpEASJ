@@ -61,7 +61,7 @@ namespace LevelUpEASJ.View
 
         private void MålBox_OnGotFocus(object sender, RoutedEventArgs e)
         {
-            MålBox.Text = "Hvad er dit mål?";
+            MålBox.Text = "";
         }
     }
 }

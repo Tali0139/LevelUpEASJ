@@ -227,7 +227,7 @@
                                             </StackPanel>
                                             <StackPanel Orientation="Vertical">
                                                 <Line X1="0"
-                                                      X2="400"
+                                                      X2="500"
                                                       Stroke="#66fcf1"
                                                       Margin="-150,0,0,0"
                                                       VerticalAlignment="Bottom"
