@@ -206,7 +206,9 @@
                         <TextBlock Text="Telefonnummer"
                                    Foreground="White"
                                    FontSize="18"
-                                   Margin="30,10,0,0"/>
+                                   Margin="110,10,0,0"
+                                   
+                                   />
 
 
 
@@ -393,7 +395,7 @@
                         <TextBlock Text="Alder"
                                    Foreground="White"
                                    FontSize="18"
-                                   Margin="30,10,0,0"/>
+                                   Margin="110,10,0,0"/>
                         <TextBox x:Name="AlderBox"
                                  Text="{Binding Age, Mode =TwoWay}"
                                  Background="White"
@@ -574,7 +576,7 @@
                         <TextBlock Text="Vægt i kg"
                                    Foreground="White"
                                    FontSize="18"
-                                   Margin="25,10,0,0"/>
+                                   Margin="110,10,0,0"/>
 
                         <TextBox Background="White"
                                  Margin="0,5,0,0"
@@ -755,7 +757,7 @@
                         <TextBlock Text="Omkreds af mave i cm"
                                    Foreground="White"
                                    FontSize="18"
-                                   Margin="30,10,0,0"/>
+                                   Margin="110,10,0,0"/>
 
                         <TextBox Background="White"
                                  Margin="0,5,0,0"
@@ -935,7 +937,7 @@
                         <TextBlock Text="Omkreds af arme i cm"
                                    Foreground="White"
                                    FontSize="18"
-                                   Margin="30,10,0,0"/>
+                                   Margin="110,10,0,0"/>
 
                         <TextBox Background="White"
                                  Margin="0,5,0,0"

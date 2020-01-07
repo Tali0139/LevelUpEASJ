@@ -157,8 +157,8 @@
 
                         <TextBlock 
                             x:Name="NavnBox"
-                            Text=""
-                               Foreground="White"
+                            Text="{Binding UpdateSourceTrigger=PropertyChanged}"
+                            Foreground="White"
                                FontSize="30"
                                HorizontalAlignment="Center"
                                Margin ="0,-25,0,0"/>
@@ -179,7 +179,7 @@
                                   Margin="10,0,0,0"/>
 
                             <TextBlock x:Name="WeightBox"
-                                        Text=""
+                                        Text="{Binding UpdateSourceTrigger=PropertyChanged}"
                                        Foreground="White"
                                        FontSize="18"
                                        Margin="10,0,0,0"/>
@@ -192,7 +192,7 @@
                                   Margin="10,0,0,0"/>
 
                             <TextBlock x:Name="BMIblock"
-                                Text=""
+                                Text="{Binding UpdateSourceTrigger=PropertyChanged}"
                                        Foreground="White"
                                        FontSize="18"
                                        Margin="10,0,0,0"/>
@@ -330,7 +330,7 @@
 
                                 <Image Source="../Assets/MedalIconGennemsigtig.png"></Image>
                             </Button>
-                            <TextBlock Text="Mål"
+                            <TextBlock Text="Opret mål"
                                        Foreground="#66f1fc"
                                        HorizontalAlignment="Center"
                                        FontSize="18">

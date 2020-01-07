@@ -768,7 +768,7 @@ namespace LevelUpEASJ.ViewModel
                     ClientExerciseCatalogSingleton.DeleteClientExercise(ce);
                 }
             }
-         }
+        }
 
 
         public void ToUpdateClientGoal()

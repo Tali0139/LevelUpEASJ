@@ -191,7 +191,7 @@
                                    Foreground="#66fcf1"
                                    FontSize="25"
                                    HorizontalAlignment="Left"
-                                   Margin="-50,75,0,0"/>
+                                   Margin="-155,125,0,0"/>
 
                            </StackPanel>
 

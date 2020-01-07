@@ -46,7 +46,7 @@ namespace LevelUpEASJ.View
 
         private void Create_Client_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Login));
+            this.Frame.Navigate(typeof(ClientPage));
         }
 
         private void Go_Back_Click(object sender, RoutedEventArgs e)
