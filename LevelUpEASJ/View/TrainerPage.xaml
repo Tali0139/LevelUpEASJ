@@ -310,13 +310,13 @@
                                     Background="Transparent"
                                     Height="120"
                                     Width="162"
-                                    Margin="25,10,0,0" 
+                                    Margin="25,10,0,0" Click="Button_Click" 
                                     >
 
                                 <Image Source="../Assets/DumbBellIconGennemsigtig.png"></Image>
                             </Button>
 
-                            <TextBlock Text="Oversigt over træninger"
+                            <TextBlock Text="Oversigt over øvelser"
                                        Foreground="#66f1fc"
                                        HorizontalAlignment="Center"
                                        FontSize="18">
@@ -335,13 +335,13 @@
                                     Background="Transparent"
                                     Height="120"
                                     Width="162"
-                                    Margin="25,10,0,0">
+                                    Margin="25,10,0,0" Click="Button_Click_1">
 
 
-                                <Image Source="../Assets/PhoneIconTransparent.PNG"></Image>
+                                <Image Source="../Assets/PocalIconGennemsigtig.png"></Image>
                             </Button>
 
-                            <TextBlock Text="Kontakt klient"
+                            <TextBlock Text="Klient mål"
                                        Foreground="#66f1fc"
                                        HorizontalAlignment="Center"
                                        FontSize="18">

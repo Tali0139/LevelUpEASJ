@@ -19,12 +19,13 @@ namespace LevelUpEASJ.Model
         private double _armSize;
         private int _age;
         private int _id;
+        private string _goal;
 
 
         public Client() { }
 
         public Client(int id, string firstName, string lastName, int phoneNumber,string username, string password, string image, 
-                      int Age, double Weight, int Height, double FatPercent, string Gender, int WaistSize, double ArmSize, int TotalXP) 
+                      int Age, double Weight, int Height, double FatPercent, string Gender, int WaistSize, double ArmSize, int TotalXP, string goal) 
             : base(id, firstName, lastName, phoneNumber, username, password, image)
         {
             _weight = Weight;
@@ -36,6 +37,7 @@ namespace LevelUpEASJ.Model
             _age = Age;
             _totalXp = TotalXP;
             _id = id;
+            _goal = goal;
 
         }
 
@@ -90,6 +92,12 @@ namespace LevelUpEASJ.Model
         {
             get { return _totalXp; }
             set { _totalXp = value; }
+        }
+
+        public string Goal
+        {
+            get { return _goal; }
+            set { _goal = value; }
         }
 
         
