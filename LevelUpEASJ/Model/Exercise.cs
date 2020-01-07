@@ -11,6 +11,7 @@ namespace LevelUpEASJ.Model
         private string _exerciseName;
         private int _xpForExercise;
         private int _exerciseId;
+        private string _exerciseImage;
 
 
         public Exercise()
@@ -19,11 +20,13 @@ namespace LevelUpEASJ.Model
         }
 
 
-        public Exercise(string exerciseName, int xpForExercise, int exerciseId)
+        public Exercise(string exerciseName, int xpForExercise, int exerciseId, string exerciseImage)
         {
             _exerciseName = ExerciseName;
             _xpForExercise = XpForExercise;
             _exerciseId = ExerciseId;
+            _exerciseImage = ExerciseImage;
+
         }
 
         public string ExerciseName
@@ -44,5 +47,10 @@ namespace LevelUpEASJ.Model
             set { _exerciseId = value; }
         }
 
+        public string ExerciseImage
+        {
+            get { return _exerciseImage; }
+            set { _exerciseImage = value; }
+        }
     }
 }
