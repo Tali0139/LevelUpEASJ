@@ -51,6 +51,7 @@ namespace LevelUpEASJ.ViewModel
         private double fatPercent;
         private string gender;
         private int totalXp;
+        private string goal;
         private int minXp;
         private int maxXp;
         private int levelValue;
@@ -82,7 +83,7 @@ namespace LevelUpEASJ.ViewModel
             _chosenE = new ObservableCollection<Exercise>();
             //_selectedExercise = new Exercise(ExerciseName, XpForExercise, ExerciseId);
             _selectedClient = new Client(UserID, FirstName, LastName, PhoneNumber, UserName, Password, image, Age,
-                Weight, Height, Fatpercent, Gender, WaistSize, ArmSize, TotalXP);
+                Weight, Height, Fatpercent, Gender, WaistSize, ArmSize, TotalXP, Goal);
             _selectedTrainer = new Trainer(UserID, FirstName, LastName, PhoneNumber, UserName, Password, image,
                 YearsOfExperience);
             _selectedLevels = new Levels(levelValue, minXp, maxXp, gave);
@@ -97,6 +98,7 @@ namespace LevelUpEASJ.ViewModel
             CalculateXP = new RelayCommand(ToCalculateXPForTraining);
             CreateGoalForClient = new RelayCommand(ToCreateClientExercise);
             AddXPToClient = new RelayCommand(ToUpdateClientXP);
+            AddGoalToClient = new RelayCommand(ToUpdateClientGoal);
             _køn = new List<string>();
             _køn.Add("Mand");
             _køn.Add("Kvinde");
@@ -172,6 +174,7 @@ namespace LevelUpEASJ.ViewModel
         public RelayCommand CalculateXP { get; set; }
         public RelayCommand AddXPToClient { get; set; }
         public RelayCommand CreateGoalForClient { get; set; }
+        public RelayCommand AddGoalToClient { get; set; }
         //public RelayCommand CheckCommand { get; set; }
 
 
@@ -195,8 +198,10 @@ namespace LevelUpEASJ.ViewModel
             {
 
                 if (person.UserName == username && person.Password == password)
+                {
                     ClientCatalogSingleton.ClientInstance.NyClient = person;
-                _exist = true;
+                    _exist = true;
+                }
             }
 
             return _exist;
@@ -298,6 +303,19 @@ namespace LevelUpEASJ.ViewModel
             set
             {
                 _exerciseId = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+        private string _exerciseImage;
+
+        public string ExerciseImage
+        {
+            get { return _exerciseImage; }
+            set
+            {
+                _exerciseImage = value;
                 OnPropertyChanged();
             }
         }
@@ -485,6 +503,16 @@ namespace LevelUpEASJ.ViewModel
             set
             {
                 totalXp = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string Goal
+        {
+            get { return goal; }
+            set
+            {
+                goal = value;
                 OnPropertyChanged();
             }
         }
@@ -698,7 +726,7 @@ namespace LevelUpEASJ.ViewModel
         public void ToAddNewClient()
         {
             Client NewClient = new Client(id, FirstName, LastName, PhoneNumber, UserName, Password, image, age, weight, height, fatPercent,
-                gender, WaistSize, ArmSize, TotalXP);
+                gender, WaistSize, ArmSize, TotalXP, Goal);
             clientSingleton.AddClient(NewClient);
             OnPropertyChanged(nameof(all_Clients));
             OnPropertyChanged(nameof(ClientCount));
@@ -740,7 +768,15 @@ namespace LevelUpEASJ.ViewModel
                     ClientExerciseCatalogSingleton.DeleteClientExercise(ce);
                 }
             }
-         }
+        }
+
+
+        public void ToUpdateClientGoal()
+        {
+            clientSingleton.UpdateClient(clientSingleton.NyClient);
+            OnPropertyChanged(nameof(all_Clients));
+            OnPropertyChanged(nameof(ClientCount));
+        }
 
 
         public void ToAddNewTrainer()

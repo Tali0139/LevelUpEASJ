@@ -74,7 +74,17 @@ namespace LevelUpEASJ.View
 
         private void GoToLevelPage_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(SeeLevels));
+            this.Frame.Navigate(typeof(SeeLevelsTrainer));
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(ListOfExercises));
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(TrainerGoalListView));
         }
     }
 }

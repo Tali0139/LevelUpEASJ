@@ -24,6 +24,9 @@ namespace LevelUpWebAPI
         [Key]
         public int ExerciseId { get; set; }
 
+        [StringLength(50)]
+        public string ExerciseImage { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ClientExercise> ClientExercises { get; set; }
     }

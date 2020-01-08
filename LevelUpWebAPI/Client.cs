@@ -51,6 +51,8 @@ namespace LevelUpWebAPI
         [StringLength(50)]
         public string Image { get; set; }
 
+        public string Goal { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ClientExercise> ClientExercises { get; set; }
     }

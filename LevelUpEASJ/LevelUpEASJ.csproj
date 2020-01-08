@@ -141,6 +141,9 @@
     <Compile Include="View\CalenderTrainer.xaml.cs">
       <DependentUpon>CalenderTrainer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ClientAddGoal.xaml.cs">
+      <DependentUpon>ClientAddGoal.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ClientGiftPage.xaml.cs">
       <DependentUpon>ClientGiftPage.xaml</DependentUpon>
     </Compile>
@@ -153,6 +156,9 @@
     <Compile Include="View\CreateClientGoal.xaml.cs">
       <DependentUpon>CreateClientGoal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ListOfExercises.xaml.cs">
+      <DependentUpon>ListOfExercises.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SeeLevels.xaml.cs">
       <DependentUpon>SeeLevels.xaml</DependentUpon>
     </Compile>
@@ -162,8 +168,14 @@
     <Compile Include="View\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\SeeLevelsTrainer.xaml.cs">
+      <DependentUpon>SeeLevelsTrainer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\TrainerClientView.xaml.cs">
       <DependentUpon>TrainerClientView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrainerGoalListView.xaml.cs">
+      <DependentUpon>TrainerGoalListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\TrainerPage.xaml.cs">
       <DependentUpon>TrainerPage.xaml</DependentUpon>
@@ -180,10 +192,14 @@
   <ItemGroup>
     <Content Include="Assets\AddGoalForClientIconGennemsigtig.png" />
     <Content Include="Assets\AddUserBotton.png" />
+    <Content Include="Assets\armboejninger.png" />
+    <Content Include="Assets\benchpress.png" />
     <Content Include="Assets\BrugerIconGennemsigitg.png" />
     <Content Include="Assets\CalenderIconGennemsigtig.png" />
+    <Content Include="Assets\chinups.png" />
     <Content Include="Assets\ClockIconGennemsigtig.png" />
     <Content Include="Assets\DailyCalenderIconGennemsigitg.png" />
+    <Content Include="Assets\Deadlift.png" />
     <Content Include="Assets\DeleteUserButton.png" />
     <Content Include="Assets\DumbBellIconGennemsigtig.png" />
     <Content Include="Assets\GiftIconGennemsigitg.png" />
@@ -191,16 +207,21 @@
     <Content Include="Assets\kvinde1.png" />
     <Content Include="Assets\Kvinde2.png" />
     <Content Include="Assets\LevelUpIcon.PNG" />
+    <Content Include="Assets\lunges.png" />
     <Content Include="Assets\mand1.png" />
     <Content Include="Assets\Mand2.png" />
     <Content Include="Assets\Mand3.png" />
     <Content Include="Assets\Mand4.png" />
     <Content Include="Assets\Mand5.png" />
+    <Content Include="Assets\maveboejninger.png" />
     <Content Include="Assets\MedalIconGennemsigtig.png" />
     <Content Include="Assets\Oliver.png" />
     <Content Include="Assets\Omar.png" />
     <Content Include="Assets\OversigtOverKlienterIconGennemsigtig.png" />
     <Content Include="Assets\PhoneIconTransparent.PNG" />
+    <Content Include="Assets\plank.png" />
+    <Content Include="Assets\PocalIconGennemsigtig.png" />
+    <Content Include="Assets\running.png" />
     <Content Include="Assets\sportsbar1 .png" />
     <Content Include="Assets\sportsbar2.png" />
     <Content Include="Assets\sportsbar3.png" />
@@ -222,6 +243,7 @@
     <Content Include="Assets\sportsudstyr3.png" />
     <Content Include="Assets\sportsudstyr4.png" />
     <Content Include="Assets\Talia.png" />
+    <Content Include="Assets\template.png" />
     <Content Include="Assets\Trainer.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -245,6 +267,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ClientAddGoal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ClientGiftPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -261,6 +287,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ListOfExercises.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\SeeLevels.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -273,7 +303,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\SeeLevelsTrainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\TrainerClientView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TrainerGoalListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

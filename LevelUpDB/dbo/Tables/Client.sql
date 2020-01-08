@@ -14,6 +14,7 @@
     [PhoneNumber]   INT           NULL,
 	[TotalXP]		INT			NULL,
 	[Image]			NVARCHAR (50) NULL,
+    [Goal] NVARCHAR(MAX) NULL, 
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
